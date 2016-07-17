@@ -1,0 +1,28 @@
+by Mr.Fisch
+
+Demo:
+ So schaut es nach dem Einbau aus: http://cball.de
+
+Was ist zu tun?
++ Im HM-Portal sogenannte php-Boxen einrichten, die jeweils auf das passende php-Script verweisen.
+
+Zur Erinnerung: 
+Wie werden HM-Boxen eingerichtet?
+
+- Eine neue Box im ACP HM Boxen-Konfigurator erstellen und den gewünschten Namen geben z.B. EM Barometer (oder EM Tipper, EM Quote) 
+
+- Die neue Box müssen wir jetzt noch so modifizieren, daß eine PHP-Box daraus wird.
+
+Das macht man z.B. mit phpmyadmin und dort in der DB-Tabelle
+bb?_hm_portal_boxen.
+
+In der DB-Tabelle die richtige Zeile suchen (nach dem neuen Boxnamen) und auf "Ändern" gehen.
+
+Folgende Spalteneinträge müssen geändert werden:
+
+h_boxincl: Hier muß der Name und relative Pfad der php-Datei rein, also
+z.B. hm-portal/em_meister.php (oder /em_rangliste.php , /em_quote.php)
+
+- Jetzt noch die Box im Boxenkonfigurator an die richtige Stelle rücken und die gewünschten Einstellungen machen.
+
+- Testen und fertig! 

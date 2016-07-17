@@ -1,0 +1,32 @@
+Version: v1a
+
+
+De-Installations-Anleitung für das EM2016-Tippspiel
+***************************************************
+
+Um das EM2016-Tippspiel zu deinstallieren, lade einfach die Datei
+em2016_uninstall.php
+ins ACP-Verzeichnis und führe sie aus.
+
+Damit werden folgende Dinge des EM-Tippspiels aus deinem Forum gelöscht:
+- Gruppenrechte und Gruppenvariablen
+- ACP-Menueinträge
+- Board-Templates
+- Tabellen in der Datenbank
+- Sprachvariablen
+
+Nach dem Ausführen der em2016_uninstall.php musst du nun noch folgende Dinge von Hand machen:
+
+- Löschen des Verzeichnisses em2016 inklusive aller Dateien und Unterverzeichnisse im /images-Ordner
+- Löschen aller ACP-Templates aus dem Verzeichnis /acp/templates, die mit em2016_ beginnen
+- Löschen der Dateien em2016.php und em2016_global.php aus dem Hauptverzeichnis
+- Löschen der Datei em2016_admin.php aus dem ACP-Verzeichnis /acp
+- Löschen der Datei em2016_uninstall.php aus dem ACP-Verzeichnis /acp
+
+Dann ist das Tippspiel komplett deinstalliert.
+
+Bei Fragen und/oder Problemen (die hoffentlich nicht vorkommen), schreibe bitte in den entsprechenden Support-Thread
+für das Tippspiel.
+
+Greetz
+Günni, Viktor und kill0rz

@@ -1,0 +1,9 @@
+suche in acp/lib/class_wiw.php
+case "index.php":
+
+
+
+füge darunter ein:
+case "em2016.php":
+$location = $lang->get("LANG_WIW_FILE_EM2016", array('$SID_ARG_1ST' => $SID_ARG_1ST));
+break;

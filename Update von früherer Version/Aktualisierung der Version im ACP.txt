@@ -1,0 +1,4 @@
+Du hast zwei Möglichkeiten:
+
+1) Sprachpaket aus /wbb2/acp/em2016.lng importieren
+2) Sprachvariable LANG_ACP_EM2016_TPL_INFO_3 manuell editieren

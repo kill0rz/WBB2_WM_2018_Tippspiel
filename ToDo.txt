@@ -1,0 +1,78 @@
+ToDo für WM 2018:
+-----------------
++ Mehrmaliges Eintragen eines Spiels verhindern (Post-Parameter checken vor der Verarbeitung im ACP gegen leere Felder in DB)
++ HM-Portal von Mr. Fish suaber implementieren/Änderungen von mir zurückspielen/HTML5-Anpassungen/Code in vorhandene Dateien mergen
++ Nummerfelder verwenden: ACP > Ergebnis eintragen
++ Nummerfelder verwenden: Tipp eintragen/editieren
++ Tageswertung rückbauen: ACP > eintragen
++ Editierfunktion für ACP-Ergebnisse
+	+ komplette Punkteneuberechnung vllt.?
++ Anzeigen des aktuellen Spiels, wenn gerade gespeilt wird auf index
+	+ Übersicht über das Spiel, wer gegen wen 
+	+ Tipps der User
++ Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
++ Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
++ index: Tabelle letzte Spiele in denen man schnell zu Details der letzten 2(?) Spiele kommt
+	+ Per ACP einstellbar machen
++ action: tippsprogame
+	+ Bildchen ob richtig/falsch/tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
++ Eine Art Systemmitteilung (per ACP steuerbar), damit man die Nutzer schneller benachrichtigen kann
++ Tabelle: 4 letzte Spiele mit Links zu
+	+ Tipps
+	+ Spieleübersicht
++ Fehlerseite, wenn Tipps noch nicht einsehbar
++ Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen???
++ Tageswertung in VGPost implementieren
+	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
++ Hinweis auf Forenindex:
+	+ Du musst noch X Tipps für die Spiele innerhalb der nächsten 24h abgeben
+	+ Option deaktivieren
+	+ Option zum Reaktivieren
++ Spielereihenfolde beim Eintragen beachten
+	+ Spiel 36 ist nicht das letzte!
++ Beste Dritte rückbauen
++ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist
++ Update der Versionen einfacher machen, aber wie?
++ Ab Achtelfinale keinen Gleichstand mehr tippen können
+	+ Per ACP Steuerbar ob das so gemacht werden soll
+	+ (nur) dann auch das Eintragen verhindern
++ Verschiedene Board-Nummer (>1) unterstützen
+	+ Bei Installation
+		+ Idee: SQL vom Installer generieren lassen
+		+ $n auslesen und dann SQL aus Roh-.sql lesen und per str_replace die Boardnummer setzen
+	+ Bei Updates
+		+ Keine Ahnung, wie das gehen soll, vllt. per php-Datei machen?
++ action: showusertippsdetail
+	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
++ gelöschte User handeln (Mod fest einbauen; Mod entfernen)
+	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen
++ Umlaute in Teamnamen besser handeln; irgendwo im Text waren 3x replacer drin, die müssen wieder weg
++ action gamedetails
+	+ Linktext schöner machen
+	+ Forenfunktion nutzen zum shrinken
++ ACP > eintragen
+	+ Lik zum Spiel (Forum, neuer Tab) hinter die ID
++ action: showresults
+	+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
++ Kriritische Spielenummern in Variablen auslagern
+	+ z.B.: 36 = Vorrundenende usw.
++ mal grundsätzlich den Quelltext kommentieren
++ Demo aktualisieren, aber erst wenn fertig
+
+
+USERWÜNSCHE
+-----------
+
+- Tipp für Verlängerung und Elfmeterschießen einbauen (wobei Elfmeter im Grunde schon existiert)
+- Jeder Spieler bekommt eine Anzahl Joker, zum Verdoppeln der Punkte
+- Wenn man bei Tippabgabe Felder vergessen hat, nur die Felder anmeckern, die vergessen wurde. Im Moment muss man alles neu eintragen.
+- Korrekturmöglichkeit, falls man Ergebnisse falsch eingetragen hat.
+- Punkte für korrektes Torverhältnis (z.B. Wer bei 1:0 ein 2:1 oder 3:2 getippt hat, bekommt mehr Punkte als jemand der 5:0 getippt hat.)
+- Nach Vorunde: Schöne grafische Übersicht
+	+ http://www.v-gn.de/wbb/thread.php?postid=132239#post132239
+
+
+ToDo für die EM 2020:
+---------------------
++ Spielereihenfolde beim Eintragen beachten
+	+ Bestedritte Berechnung folgt nicht der Spielenummerierung

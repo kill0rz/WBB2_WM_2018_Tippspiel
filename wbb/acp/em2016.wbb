@@ -1,0 +1,109 @@
+<wBBgroupvariablegroup>
+	<name>USER_EM2016</name>
+	<title>EM2016-Tippspiel</title>
+	<parent>USER</parent>
+	<securitylevel>1</securitylevel>
+	<acpmode>2</acpmode>
+</wBBgroupvariablegroup>
+
+<wBBgroupvariable>
+	<name>can_em2016_see</name>
+	<type>truefalse</type>
+	<defaultvalue>0</defaultvalue>
+	<title>D&uuml;rfen Mitglieder dieser Gruppe das EM2016-Tippspiel sehen ?</title>
+	<desc></desc>
+	<group>USER_EM2016</group>
+	<acpmode>2</acpmode>
+</wBBgroupvariable>
+
+<wBBgroupvariable>
+	<name>can_em2016_use</name>
+	<type>truefalse</type>
+	<defaultvalue>0</defaultvalue>
+	<title>D&uuml;rfen Mitglieder dieser Gruppe am EM2016-Tippspiel teilnehmen ?</title>
+	<desc></desc>
+	<group>USER_EM2016</group>
+	<acpmode>2</acpmode>
+</wBBgroupvariable>
+
+<wBBgroupvariablegroup>
+	<name>ADMIN_EM2016</name>
+	<title>Adminoptionen EM2016</title>
+	<parent>ADMIN</parent>
+	<securitylevel>2</securitylevel>
+	<acpmode>2</acpmode>
+</wBBgroupvariablegroup>
+
+<wBBgroupvariable>
+	<name>a_can_em2016_edit</name>
+	<type>truefalse</type>
+	<defaultvalue>0</defaultvalue>
+	<title>EM2016-Tippspiel</title>
+	<desc>Benutzer dieser Gruppe können die Optionen des EM2016-Tippspiels bearbeiten ?</desc>
+	<group>ADMIN_EM2016</group>
+	<acpmode>2</acpmode>
+</wBBgroupvariable>
+
+<wBBacpmenuitemgroup>
+	<name>EM2016</name>
+	<condition></condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitemgroup>
+
+<wBBacpmenuitem>
+	<name>EM2016_INDEX</name>
+	<title>EM2016-Tippspiel</title>
+	<group>EM2016</group>
+	<link>em2016_admin.php?action=info</link>
+	<linkformat>
+		<b>%s</b>
+	</linkformat>
+	<condition>a_can_em2016_edit</condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitem>
+
+<wBBacpmenuitem>
+	<name>EM2016_OPTIONS</name>
+	<title>Optionen</title>
+	<group>EM2016</group>
+	<link>em2016_admin.php?action=options</link>
+	<linkformat></linkformat>
+	<condition>a_can_em2016_edit</condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitem>
+
+<wBBacpmenuitem>
+	<name>EM2016_PUNKTE</name>
+	<title>Punkte bearbeiten</title>
+	<group>EM2016</group>
+	<link>em2016_admin.php?action=punkte</link>
+	<linkformat></linkformat>
+	<condition>a_can_em2016_edit</condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitem>
+
+<wBBacpmenuitem>
+	<name>EM2016_RESULTS</name>
+	<title>Spielergebnisse eintragen</title>
+	<group>EM2016</group>
+	<link>em2016_admin.php?action=results</link>
+	<linkformat></linkformat>
+	<condition>a_can_em2016_edit</condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitem>
+
+<wBBacpmenuitem>
+	<name>EM2016_CORRECT8</name>
+	<title>Achtelfinale korrigieren</title>
+	<group>EM2016</group>
+	<link>em2016_admin.php?action=correct8</link>
+	<linkformat></linkformat>
+	<condition>a_can_em2016_edit</condition>
+	<conditiontype>OR</conditiontype>
+	<acpmode>2</acpmode>
+</wBBacpmenuitem>

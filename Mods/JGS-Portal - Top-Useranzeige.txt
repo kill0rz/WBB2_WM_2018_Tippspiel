@@ -1,0 +1,103 @@
+Editiere die Datei "jgs_portal_meincode.php".
+
+Suche nach
+
+  ##                                            ##
+ ####                                          ####
+######                                        ######
+  ##                                            ##
+  ################################################
+  ## Bitte zwischen diese Markierungen einfügen ##
+  ##     // Eigene Erweiterungen Ende //        ##
+  ################################################
+
+Füge darüber ein:
+
+/* EM2016 - Die Top-Tipper */
+if($seiteninfos[seiten_text]=="[emtippbest5]")
+{
+	include("./em2016_global.php");
+	$lang->load("EM2016");
+	$count = 0;
+		$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_em2016_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,$em2016_options[topuser]");
+		while ($row_topuser = $db->fetch_array($result_topuser)) {
+			$rowclass = getone($count++, "tablea", "tableb");
+			//** Ranking Start *//
+			$em2016_rank_merk = $em2016_rank_merk + 1;
+			if ($em2016_punkte_merk != $row_topuser['punkte']) {
+				$em2016_rank = $em2016_rank_merk;
+				$em2016_punkte_merk = $row_topuser['punkte'];
+			}
+			if ($em2016_rank == 1) {
+				$em2016_userrank = "<img src=\"images/em2016/em2016_rank_1.gif\" border=\"0\" alt=\"em2016_rank_1.gif\" title=\"\" />";
+			}
+
+			if ($em2016_rank == 2) {
+				$em2016_userrank = "<img src=\"images/em2016/em2016_rank_2.gif\" border=\"0\" alt=\"em2016_rank_2.gif\" title=\"\" />";
+			}
+
+			if ($em2016_rank == 3) {
+				$em2016_userrank = "<img src=\"images/em2016/em2016_rank_3.gif\" border=\"0\" alt=\"em2016_rank_3.gif\" title=\"\" />";
+			}
+
+			if ($em2016_rank > 3) {
+				$em2016_userrank = "<b>$em2016_rank</b>";
+			}
+			//** Ranking Ende *//
+
+			$richtig = $row_topuser['tipps_richtig'] + $row_topuser['tipps_tendenz'];
+			if (($richtig + $row_topuser['tipps_falsch']) > 0) {
+				$quote = round($richtig * 100 / ($richtig + $row_topuser['tipps_falsch']));
+			} else {
+				$quote = 0;
+			}
+
+			$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_em2016_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
+
+			$tagerg = $row_topuser['punkte'] - $vortag['punkte'];
+			if ($tagerg >= 0) {
+				$tagerg = "+" . $tagerg;
+			}
+
+			if (!isset($vortag['pos']) || $vortag['pos'] > $em2016_rank) {
+				$tagtendenz = "<img src=\"images/em2016/hoch.jpg\">";
+			} elseif ($vortag['pos'] == $em2016_rank) {
+				$tagtendenz = "<img src=\"images/em2016/gleich.gif\">";
+			} else {
+				$tagtendenz = "<img src=\"images/em2016/runter.jpg\">";
+			}
+
+			if ($em2016_rank == 1) {
+				$krone = "<img src=\"images/em2016/krone.gif\" alt='krone'>";
+			} else {
+				$krone = "";
+			}
+
+			eval("\$em2016_topuser .= \"" . $tpl->get("em2016_topuser") . "\";");
+		}
+	eval ("\$seiteninfos[seiten_text]=\"".$tpl->get("sponsor_portalboxen_emtippbest5")."\";");
+
+}
+/* EM2016 - Die Top-Tipper */
+
+
+
+
+Gehe nun ins ACP und erstelle eine neue Box unter dem Menue-Punkt Box hinzufügen.
+
+Titel der Box: EM2016 - Top Tipper oder was du gerne möchtest.
+Inhalt der Box: [emtippbest5]
+Gruppenrechte und Design der Boxen an Eure Wünsche anpassen.
+Die Box dann an gewünschter Stelle im Portal einfügen.
+
+Gehe nun in das ACP und erstelle ein neues Template unter dem Menue-Punkt Template erstellen.
+
+Templatename: sponsor_portalboxen_emtippbest5
+Inhalt:
+
+<table  cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}"  class="tableinborder">
+	<tr>
+		<td class="tabletitle" align="center" colspan="7"><span class="smallfont"><b><u>{$lang->items['LANG_EM2016_TPL_INDEX_32']}</u></b></span></td>
+	</tr>
+	$em2016_topuser
+</table>

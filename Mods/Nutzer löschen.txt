@@ -1,0 +1,10 @@
+Sollte ein Nutzer gelöscht worden sein, bitte folgende SQL-Befehle im ACP ausführen, sonst kann es zu Problemen kommen.
+Dieser Schritt ist nach Beendigung des Tippspiels nicht mehr notwendig und sollte auch danach nicht mehr durchgeführt werden!
+
+bb1 muss ggf. und 0 auf jeden Fall durch die NutzerID ersetzen werden!
+
+
+
+DELETE * FROM bb1_em2016_usertipps WHERE userid=0;
+DELETE * FROM bb1_em2016_userpunkte WHERE userid=0;
+DELETE * FROM bb1_em2016_vortag WHERE userid=0;
