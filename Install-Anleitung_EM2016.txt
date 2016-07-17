@@ -1,7 +1,7 @@
 Version: v1t
 
 
-Installations-Anleitung für das EM2016-Tippspiel
+Installations-Anleitung für das WM2018-Tippspiel
 ************************************************
 
 Bitte vor der Installation einmal komplett lesen und falls dann schon Fragen aufkommen,
@@ -9,16 +9,16 @@ diese bitte im entsprechenden Supportthread stellen.
 
 1) Lade alle Dateien im Verzeichnis /wbb/ auf den Server.
 
-2) Rufe nun die Datei /acp/em2016_setup.php auf und folge den Installationsschritten.
+2) Rufe nun die Datei /acp/wm2018_setup.php auf und folge den Installationsschritten.
 
 Sollte es während der Installation zu Fehlermeldungen kommen, führe die Installation bis zum Ende aus
 und melde dich bei http://v-gn.de/wbb/ im entsprechenden Thread.
 
 Nach der Installation kannst du folgende Dateien wieder vom Server löschen:
-/acp/em2016.sql
-/acp/em2016.wbb
-/acp/em2016_de.lng
-/acp/em2016_setup.php
+/acp/wm2018.sql
+/acp/wm2018.wbb
+/acp/wm2018_de.lng
+/acp/wm2018_setup.php
 
 Gehe in das ACP, importiere und cache die neuen Templates.
 
@@ -30,7 +30,7 @@ Vorbereitung für den Betrieb
 
 Als nächstes musst du erstmal im ACP die Gruppenrechte für den Admin und die User einstellen.
 Vorher sind die neuen Menupunkte nicht im ACP-Menu zu sehen.
-Bei den Gruppenrechten für Gäste muss der Wert bei "Dürfen Mitglieder dieser Gruppe am EM2016-Tippspiel teilnehmen?"
+Bei den Gruppenrechten für Gäste muss der Wert bei "Dürfen Mitglieder dieser Gruppe am WM2018-Tippspiel teilnehmen?"
 auf NEIN stehen. Ansonsten kann es zu Fehlermeldungen kommen.
 
 Nachdem du die Gruppenrechte eingestellt hast, logge dich neu ins ACP ein. Jetzt solltest du die neuen ACP-Menüpunkte sehen.

@@ -10,50 +10,50 @@ SUCHE
 FÜGE DARÜBER EIN
 ----------------
 
-		//** EM2016 Tippspiel Start **//
-		$em2016_thread_output = '';
-		$em2016_thread_tipps = '';
-		$em2016_thread_userpunkte = 0;
-		$em2016_rank_merk = 0;
-		$em2016_rank = 0;
-		$LANG_THREAD_EM2016_ANZEIGE_1 = '';
-		if ($wbbuserdata['can_em2016_see'] == 1 && $wbbuserdata['can_em2016_use'] == 1) {
+		//** WM2018 Tippspiel Start **//
+		$wm2018_thread_output = '';
+		$wm2018_thread_tipps = '';
+		$wm2018_thread_userpunkte = 0;
+		$wm2018_rank_merk = 0;
+		$wm2018_rank = 0;
+		$LANG_THREAD_WM2018_ANZEIGE_1 = '';
+		if ($wbbuserdata['can_wm2018_see'] == 1 && $wbbuserdata['can_wm2018_use'] == 1) {
 			$row = $db->query("SELECT u.username,u.userid,p.*
-					FROM bb" . $n . "_em2016_userpunkte p
+					FROM bb" . $n . "_wm2018_userpunkte p
 					LEFT JOIN bb" . $n . "_users u ON (u.userid=p.userid)
 					ORDER BY punkte DESC");
-			while ($em2016_thread = $db->fetch_array($row)) {
-				$em2016_thread_username = $em2016_thread['username'];
-				$em2016_thread_userid = intval($em2016_thread['userid']);
-				$em2016_thread_userpunkte = $em2016_thread['punkte'];
-				$em2016_thread_tipps = $em2016_thread['tipps_gesamt'];
-				$em2016_rank_merk = $em2016_rank_merk + 1;
-				if ($em2016_punkte_merk != $em2016_thread['punkte']) {
-					$em2016_rank = $em2016_rank_merk;
-					$em2016_punkte_merk = $em2016_thread['punkte'];
+			while ($wm2018_thread = $db->fetch_array($row)) {
+				$wm2018_thread_username = $wm2018_thread['username'];
+				$wm2018_thread_userid = intval($wm2018_thread['userid']);
+				$wm2018_thread_userpunkte = $wm2018_thread['punkte'];
+				$wm2018_thread_tipps = $wm2018_thread['tipps_gesamt'];
+				$wm2018_rank_merk = $wm2018_rank_merk + 1;
+				if ($wm2018_punkte_merk != $wm2018_thread['punkte']) {
+					$wm2018_rank = $wm2018_rank_merk;
+					$wm2018_punkte_merk = $wm2018_thread['punkte'];
 				}
-				if ($em2016_rank == 1) {
-					$em2016_userrank = "<img src=\"images/em2016/em2016_rank_1.gif\" border=\"0\" alt=\"em2016_rank_1.gif\" title=\"\" />";
-				}
-
-				if ($em2016_rank == 2) {
-					$em2016_userrank = "<img src=\"images/em2016/em2016_rank_2.gif\" border=\"0\" alt=\"em2016_rank_2.gif\" title=\"\" />";
+				if ($wm2018_rank == 1) {
+					$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_1.gif\" border=\"0\" alt=\"wm2018_rank_1.gif\" title=\"\" />";
 				}
 
-				if ($em2016_rank == 3) {
-					$em2016_userrank = "<img src=\"images/em2016/em2016_rank_3.gif\" border=\"0\" alt=\"em2016_rank_3.gif\" title=\"\" />";
+				if ($wm2018_rank == 2) {
+					$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_2.gif\" border=\"0\" alt=\"wm2018_rank_2.gif\" title=\"\" />";
 				}
 
-				if ($em2016_rank > 3) {
-					$em2016_userrank = "<b>{$em2016_rank}</b>";
+				if ($wm2018_rank == 3) {
+					$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_3.gif\" border=\"0\" alt=\"wm2018_rank_3.gif\" title=\"\" />";
 				}
 
-				if ($posts['userid'] == $em2016_thread_userid) {
-					$LANG_THREAD_EM2016_ANZEIGE_1 = $lang->get("LANG_THREAD_EM2016_ANZEIGE_1", array('$em2016_thread_username' => $em2016_thread_username, '$em2016_thread_tipps' => $em2016_thread_tipps, '$em2016_thread_userpunkte' => $em2016_thread_userpunkte, '$em2016_userrank' => $em2016_userrank));
+				if ($wm2018_rank > 3) {
+					$wm2018_userrank = "<b>{$wm2018_rank}</b>";
+				}
+
+				if ($posts['userid'] == $wm2018_thread_userid) {
+					$LANG_THREAD_WM2018_ANZEIGE_1 = $lang->get("LANG_THREAD_WM2018_ANZEIGE_1", array('$wm2018_thread_username' => $wm2018_thread_username, '$wm2018_thread_tipps' => $wm2018_thread_tipps, '$wm2018_thread_userpunkte' => $wm2018_thread_userpunkte, '$wm2018_userrank' => $wm2018_userrank));
 				}
 			}
 		}
-		//** EM2016 Tippspiel Ende **//
+		//** WM2018 Tippspiel Ende **//
 
 
 
@@ -77,4 +77,4 @@ FÜGE DARUNTER EIN
 -----------------
 
 		<br />
-		$LANG_THREAD_EM2016_ANZEIGE_1
+		$LANG_THREAD_WM2018_ANZEIGE_1

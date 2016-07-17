@@ -58,6 +58,7 @@ ToDo für WM 2018:
 	+ z.B.: 36 = Vorrundenende usw.
 + mal grundsätzlich den Quelltext kommentieren
 + Demo aktualisieren, aber erst wenn fertig
++ top_wm2018.gif ändern
 
 
 USERWÜNSCHE

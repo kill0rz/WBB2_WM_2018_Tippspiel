@@ -9,7 +9,7 @@ Was ist zu tun?
 Zur Erinnerung: 
 Wie werden HM-Boxen eingerichtet?
 
-- Eine neue Box im ACP HM Boxen-Konfigurator erstellen und den gewünschten Namen geben z.B. EM Barometer (oder EM Tipper, EM Quote) 
+- Eine neue Box im ACP HM Boxen-Konfigurator erstellen und den gewünschten Namen geben z.B. WM Barometer (oder WM Tipper, WM Quote) 
 
 - Die neue Box müssen wir jetzt noch so modifizieren, daß eine PHP-Box daraus wird.
 
@@ -21,7 +21,7 @@ In der DB-Tabelle die richtige Zeile suchen (nach dem neuen Boxnamen) und auf "Ä
 Folgende Spalteneinträge müssen geändert werden:
 
 h_boxincl: Hier muß der Name und relative Pfad der php-Datei rein, also
-z.B. hm-portal/em_meister.php (oder /em_rangliste.php , /em_quote.php)
+z.B. hm-portal/wm_meister.php (oder /wm_rangliste.php , /wm_quote.php)
 
 - Jetzt noch die Box im Boxenkonfigurator an die richtige Stelle rücken und die gewünschten Einstellungen machen.
 

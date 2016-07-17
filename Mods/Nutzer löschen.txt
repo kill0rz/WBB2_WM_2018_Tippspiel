@@ -5,6 +5,6 @@ bb1 muss ggf. und 0 auf jeden Fall durch die NutzerID ersetzen werden!
 
 
 
-DELETE * FROM bb1_em2016_usertipps WHERE userid=0;
-DELETE * FROM bb1_em2016_userpunkte WHERE userid=0;
-DELETE * FROM bb1_em2016_vortag WHERE userid=0;
+DELETE * FROM bb1_wm2018_usertipps WHERE userid=0;
+DELETE * FROM bb1_wm2018_userpunkte WHERE userid=0;
+DELETE * FROM bb1_wm2018_vortag WHERE userid=0;
