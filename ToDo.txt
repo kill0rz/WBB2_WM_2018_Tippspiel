@@ -60,6 +60,7 @@ ToDo für WM 2018:
 + Demo aktualisieren, aber erst wenn fertig
 + top_wm2018.gif ändern
 + trophy.gif ändern
++ HTML5 validieren? (vermutlich zu viel Arbeit, aber man kann ja mal anfangen)
 
 
 USERWÜNSCHE
