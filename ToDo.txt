@@ -61,6 +61,8 @@ ToDo für WM 2018:
 + top_wm2018.gif ändern
 + trophy.gif ändern
 + HTML5 validieren? (vermutlich zu viel Arbeit, aber man kann ja mal anfangen)
++ Im ACP zwischen FIFA- und UEFA-Feed switchen können
+	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 
 
 USERWÜNSCHE
