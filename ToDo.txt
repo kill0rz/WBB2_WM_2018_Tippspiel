@@ -1,7 +1,10 @@
 ToDo für WM 2018:
 -----------------
 + Mehrmaliges Eintragen eines Spiels verhindern (Post-Parameter checken vor der Verarbeitung im ACP gegen leere Felder in DB)
-+ HM-Portal von Mr. Fish suaber implementieren/Änderungen von mir zurückspielen/HTML5-Anpassungen/Code in vorhandene Dateien mergen
++ HM-Portal von Mr. Fish sauber implementieren
+	+ Änderungen von mir zurückspielen
+	+ HTML5-Anpassungen
+	+ Code in vorhandene Dateien mergen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
 + Anzeigen des aktuellen Spiels, wenn gerade gespielt wird auf index
@@ -81,7 +84,7 @@ ZU TESTEN
 	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
 	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
 + ACP > eintragen
-	+ Lik zum Spiel (Forum, neuer Tab) hinter die ID
+	+ Link zum Spiel (Forum, neuer Tab) hinter die ID
 
 
 DONE
