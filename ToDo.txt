@@ -2,12 +2,9 @@ ToDo für WM 2018:
 -----------------
 + Mehrmaliges Eintragen eines Spiels verhindern (Post-Parameter checken vor der Verarbeitung im ACP gegen leere Felder in DB)
 + HM-Portal von Mr. Fish suaber implementieren/Änderungen von mir zurückspielen/HTML5-Anpassungen/Code in vorhandene Dateien mergen
-+ Nummerfelder verwenden: ACP > Ergebnis eintragen
-+ Nummerfelder verwenden: Tipp eintragen/editieren
-+ Tageswertung rückbauen: ACP > eintragen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ Anzeigen des aktuellen Spiels, wenn gerade gespeilt wird auf index
++ Anzeigen des aktuellen Spiels, wenn gerade gespielt wird auf index
 	+ Übersicht über das Spiel, wer gegen wen 
 	+ Tipps der User
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
@@ -31,8 +28,8 @@ ToDo für WM 2018:
 + Spielereihenfolde beim Eintragen beachten
 	+ Spiel 36 ist nicht das letzte!
 + Beste Dritte rückbauen
-+ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist
-+ Update der Versionen einfacher machen, aber wie?
++ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
++ Update der Versionen einfacher machen, aber wie? (für User)
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
@@ -42,18 +39,15 @@ ToDo für WM 2018:
 		+ $n auslesen und dann SQL aus Roh-.sql lesen und per str_replace die Boardnummer setzen
 	+ Bei Updates
 		+ Keine Ahnung, wie das gehen soll, vllt. per php-Datei machen?
-+ action: showusertippsdetail
-	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
-+ gelöschte User handeln (Mod fest einbauen; Mod entfernen)
-	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen
++ gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
+	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + Umlaute in Teamnamen besser handeln; irgendwo im Text waren 3x replacer drin, die müssen wieder weg
 + action gamedetails
-	+ Linktext schöner machen
+	+ Linktext schöner machen ("Link zum Spiel")
 	+ Forenfunktion nutzen zum shrinken
-+ ACP > eintragen
-	+ Lik zum Spiel (Forum, neuer Tab) hinter die ID
 + action: showresults
 	+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
+	+ hierbei auf die kritischen Spielnummern prüfen
 + Kriritische Spielenummern in Variablen auslagern
 	+ z.B.: 36 = Vorrundenende usw.
 + mal grundsätzlich den Quelltext kommentieren
@@ -63,6 +57,8 @@ ToDo für WM 2018:
 + HTML5 validieren? (vermutlich zu viel Arbeit, aber man kann ja mal anfangen)
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
++ actions tippsprogame und gamedetails zu einer seite zusammenfassen
+	+ bei den ergebniss dann nur ??? anzeigen, statt der Zahlen
 
 
 USERWÜNSCHE
@@ -71,11 +67,25 @@ USERWÜNSCHE
 - Tipp für Verlängerung und Elfmeterschießen einbauen (wobei Elfmeter im Grunde schon existiert)
 - Jeder Spieler bekommt eine Anzahl Joker, zum Verdoppeln der Punkte
 - Wenn man bei Tippabgabe Felder vergessen hat, nur die Felder anmeckern, die vergessen wurde. Im Moment muss man alles neu eintragen.
-- Korrekturmöglichkeit, falls man Ergebnisse falsch eingetragen hat.
 - Punkte für korrektes Torverhältnis (z.B. Wer bei 1:0 ein 2:1 oder 3:2 getippt hat, bekommt mehr Punkte als jemand der 5:0 getippt hat.)
 - Nach Vorunde: Schöne grafische Übersicht
 	+ http://www.v-gn.de/wbb/thread.php?postid=132239#post132239
 	+ https://cloudikon.de/wp-content/uploads/2016/06/Turnierbaum.jpg
+
+ZU TESTEN
+---------
++ Nummerfelder verwenden: ACP > Ergebnis eintragen
++ Tageswertung rückbauen: ACP > eintragen
++ Nummerfelder verwenden: Tipp eintragen/editieren
++ action: showusertippsdetail
+	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
+	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
++ ACP > eintragen
+	+ Lik zum Spiel (Forum, neuer Tab) hinter die ID
+
+
+DONE
+----
 
 
 ToDo für die EM 2020:
