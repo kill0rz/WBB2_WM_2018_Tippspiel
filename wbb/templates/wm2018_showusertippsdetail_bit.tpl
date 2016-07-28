@@ -1,6 +1,6 @@
 <tr>
 	<td class="$rowclass" align="center">
-		<span class="smallfont">$row_game[gameid]$edittipp</span>
+		<span class="smallfont"><a href="./wm2018.php?action=tippsprogame&amp;gameid=$row_game[gameid]" alt="{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_2']}">$row_game[gameid]</a> $edittipp</span>
 	</td>
 	<td class="$rowclass" align="center">
 		<span class="smallfont">$gamedate, $gametime {$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_1']}</span>
