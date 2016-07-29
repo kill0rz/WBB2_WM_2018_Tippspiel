@@ -44,30 +44,6 @@ if ($wm2018_options['gh_aktiv'] == 1) {
 	$waehrung = $waehrung['waehrung'];
 }
 
-/*
-//Reset Tageswertung 1x am Tag
-if ($wm2018_options['lasttageswertungreset'] != date("d")) {
-// update reset-Datum
-$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset='" . date("d") . "';");
-
-// reset tageswertung
-$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
-$db->query("CREATE TABLE bb" . $n . "_wm2018_vortag (userid int(5), punkte int(10), pos int(3) default NULL auto_increment, PRIMARY KEY (pos));");
-$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST, CHANGE `userid` `userid` int(10) NULL AFTER `id`, CHANGE `pos` `pos` int(10) NOT NULL AFTER `punkte`;");
-$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;");
-$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC  Limit 0,{$wm2018_options['topuser']}");
-
-while ($row_topuser = $db->fetch_array($result_topuser)) {
-//insert values vortag
-$wm2018_rank_merk = $wm2018_rank_merk + 1;
-if ($wm2018_punkte_merk != $row_topuser['punkte']) {
-$wm2018_rank = $wm2018_rank_merk;
-$wm2018_punkte_merk = $row_topuser['punkte'];
-}
-$db->query("INSERT INTO bb" . $n . "_wm2018_vortag (userid, punkte, pos) VALUES ('" . $row_topuser['userid'] . "', '" . $row_topuser['punkte'] . "', '" . $wm2018_rank . "');");
-}
-}*/
-
 $lastgame4emtipp = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($wm2018_options['lastgame4emtipp']) . "'");
 $lastgamedate = formatdate($wbbuserdata['dateformat'], $lastgame4emtipp['datetime']);
 $lastgametime = formatdate($wbbuserdata['timeformat'], $lastgame4emtipp['datetime']);
