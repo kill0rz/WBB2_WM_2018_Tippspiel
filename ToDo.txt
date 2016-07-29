@@ -21,15 +21,15 @@ ToDo für WM 2018:
 	+ Tipps
 	+ Spieleübersicht
 + Fehlerseite, wenn Tipps noch nicht einsehbar
-+ Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen???
++ Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
+	+ Speichere Tag bei Rücksetzung
+	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
 + Hinweis auf Forenindex:
 	+ Du musst noch X Tipps für die Spiele innerhalb der nächsten 24h abgeben
 	+ Option deaktivieren
 	+ Option zum Reaktivieren
-+ Spielereihenfolde beim Eintragen beachten
-	+ Spiel 36 ist nicht das letzte!
 + Beste Dritte rückbauen
 + Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 + Update der Versionen einfacher machen, aber wie? (für User)
@@ -61,7 +61,7 @@ ToDo für WM 2018:
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
-	+ bei den ergebniss dann nur ??? anzeigen, statt der Zahlen
+	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 
 
 USERWÜNSCHE
