@@ -20,6 +20,7 @@ ToDo für WM 2018:
 + Tabelle: 4 letzte Spiele mit Links zu
 	+ Tipps
 	+ Spieleübersicht
++ Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen ausgrauen oder weglassen + Hinweis drunter
 + Fehlerseite, wenn Tipps noch nicht einsehbar
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
