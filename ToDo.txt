@@ -1,6 +1,5 @@
 ToDo für WM 2018:
 -----------------
-+ Mehrmaliges Eintragen eines Spiels verhindern (Post-Parameter checken vor der Verarbeitung im ACP gegen leere Felder in DB)
 + HM-Portal von Mr. Fish sauber implementieren
 	+ Änderungen von mir zurückspielen
 	+ HTML5-Anpassungen
@@ -61,6 +60,7 @@ ToDo für WM 2018:
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
++ is_integer in den SQL-Queries checken
 
 
 USERWÜNSCHE
