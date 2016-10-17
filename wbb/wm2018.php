@@ -519,7 +519,7 @@ if ($action == "maketipp") {
 		$timetipp = $row['datetime'] - $wm2018_options['tipptime'];
 		$date2 = formatdate($wbbuserdata['dateformat'], $timetipp, 1);
 		$time2 = formatdate($wbbuserdata['timeformat'], $timetipp);
-		if ($row['gruppe'] == 'A' || 'B' || 'C' || 'D' || 'E' || 'F') {
+		if ($row['gruppe'] == 'A' || 'B' || 'C' || 'D' || 'E' || 'F' || 'G' || 'H') {
 			$type = $lang->items['LANG_WM2018_PHP_18'];
 		}
 
