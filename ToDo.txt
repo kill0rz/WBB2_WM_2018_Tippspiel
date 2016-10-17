@@ -7,8 +7,9 @@ ToDo für WM 2018:
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
 + Anzeigen des aktuellen Spiels, wenn gerade gespielt wird auf index
-	+ Übersicht über das Spiel, wer gegen wen 
+	+ Übersicht über das Spiel, wer gegen wen
 	+ Tipps der User
+		+ maximale Anzahl 4 (?)
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
 + Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
 + index: Tabelle letzte Spiele in denen man schnell zu Details der letzten 2(?) Spiele kommt
@@ -28,19 +29,12 @@ ToDo für WM 2018:
 + Hinweis auf Forenindex:
 	+ Du musst noch X Tipps für die Spiele innerhalb der nächsten 24h abgeben
 	+ Option deaktivieren
-	+ Option zum Reaktivieren
 + Beste Dritte rückbauen
 + Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 + Update der Versionen einfacher machen, aber wie? (für User)
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ Verschiedene Board-Nummer (>1) unterstützen
-	+ Bei Installation
-		+ Idee: SQL vom Installer generieren lassen
-		+ $n auslesen und dann SQL aus Roh-.sql lesen und per str_replace die Boardnummer setzen
-	+ Bei Updates
-		+ Keine Ahnung, wie das gehen soll, vllt. per php-Datei machen?
 + Umlaute in Teamnamen besser handeln; irgendwo im Text waren 3x replacer drin, die müssen wieder weg
 + action gamedetails
 	+ Linktext schöner machen ("Link zum Spiel")
@@ -51,7 +45,6 @@ ToDo für WM 2018:
 + Kriritische Spielenummern in Variablen auslagern
 	+ z.B.: 36 = Vorrundenende usw.
 + mal grundsätzlich den Quelltext kommentieren
-+ Demo aktualisieren, aber erst wenn fertig
 + top_wm2018.gif ändern
 + trophy.gif ändern
 + HTML5 validieren? (vermutlich zu viel Arbeit, aber man kann ja mal anfangen)
@@ -60,6 +53,7 @@ ToDo für WM 2018:
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 + is_integer in den SQL-Queries checken
++ Demo aktualisieren, aber erst wenn fertig
 
 
 USERWÜNSCHE

@@ -510,6 +510,7 @@ if ($action == "maketipp") {
 	$servertime = formatdate($wbbuserdata['timeformat'], $akttime);
 	$tipptime2 = $akttime + $wm2018_options['tipptime'];
 	$templatetime = $wm2018_options['tipptime'] / 60;
+	//irgendwie ist mir hier nicht ganz klar, was der ursprüngliche Autor mit den is_integer-Funktionen wollte. Das mal überarbeiten; kommt auch öfter im Quelltext vor; kill0rz 11.10.2016
 	$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE game_goals_1 = '' AND game_goals_2 = '' AND team_1_id " . is_integer(team_1_id) . " AND team_2_id " . is_integer(team_1_id) . " AND datetime > {$tipptime2} ORDER BY datetime ASC");
 	while ($row = $db->fetch_array($result)) {
 		$rowclass = getone($count++, "tablea", "tableb");
