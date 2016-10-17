@@ -45,14 +45,13 @@ ToDo für WM 2018:
 + Kriritische Spielenummern in Variablen auslagern
 	+ z.B.: 36 = Vorrundenende usw.
 + mal grundsätzlich den Quelltext kommentieren
-+ top_wm2018.gif ändern
-+ trophy.gif ändern
-+ HTML5 validieren? (vermutlich zu viel Arbeit, aber man kann ja mal anfangen)
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 + is_integer in den SQL-Queries checken
++ top_wm2018.gif ändern
++ trophy.gif ändern
 + Demo aktualisieren, aber erst wenn fertig
 
 
