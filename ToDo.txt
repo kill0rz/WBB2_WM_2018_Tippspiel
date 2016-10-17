@@ -35,7 +35,6 @@ ToDo für WM 2018:
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ Umlaute in Teamnamen besser handeln; irgendwo im Text waren 3x replacer drin, die müssen wieder weg
 + action gamedetails
 	+ Linktext schöner machen ("Link zum Spiel")
 	+ Forenfunktion nutzen zum shrinken
@@ -44,7 +43,6 @@ ToDo für WM 2018:
 	+ hierbei auf die kritischen Spielnummern prüfen
 + Kriritische Spielenummern in Variablen auslagern
 	+ z.B.: 36 = Vorrundenende usw.
-+ mal grundsätzlich den Quelltext kommentieren
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
