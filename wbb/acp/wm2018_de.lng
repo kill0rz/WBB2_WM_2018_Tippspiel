@@ -19,9 +19,10 @@
 <text:LANG_ACP_WM2018_PHP_9><br />Ab dem Achtelfinale kann es kein Unentschieden geben</LANG_ACP_WM2018_PHP_9:text>
 <text:LANG_ACP_WM2018_PHP_NO>Nein</LANG_ACP_WM2018_PHP_NO:text>
 <text:LANG_ACP_WM2018_PHP_YES>Ja</LANG_ACP_WM2018_PHP_YES:text>
-<text:LANG_ACP_WM2018_TPL_ERROR_1>WM2018-Tippspiel Fehler !!!</LANG_ACP_WM2018_TPL_ERROR_1:text>
+<text:LANG_ACP_WM2018_TPL_ERROR_1>WM2018-Tippspiel Fehler!</LANG_ACP_WM2018_TPL_ERROR_1:text>
 <text:LANG_ACP_WM2018_TPL_ERROR_2>Folgende Fehler traten auf:</LANG_ACP_WM2018_TPL_ERROR_2:text>
 <text:LANG_ACP_WM2018_TPL_ERROR_3>Bitte gehe zur&uuml;ck und f&uuml;lle alle Felder ordnungsgem&auml;&szlig; aus.</LANG_ACP_WM2018_TPL_ERROR_3:text>
+<text:LANG_ACP_WM2018_TPL_ERROR_4>Du kannst dieses Spiel noch nicht sehen.</LANG_ACP_WM2018_TPL_ERROR_4:text>
 <text:LANG_ACP_WM2018_TPL_INFO_1>WM2006-2014/WM2018-Tippspiel Informationen</LANG_ACP_WM2018_TPL_INFO_1:text>
 <text:LANG_ACP_WM2018_TPL_INFO_10>nur auf <a href="http://www.v-gn.de/wbb" target="_blank">www.v-gn.de</a> im entsprechenden Supportthread</LANG_ACP_WM2018_TPL_INFO_10:text>
 <text:LANG_ACP_WM2018_TPL_INFO_11><strong>KEIN</strong> Support per PN, Email, ICQ, MSN, AIM, Skype o.&auml;.</LANG_ACP_WM2018_TPL_INFO_11:text>
@@ -194,7 +195,7 @@
 <text:LANG_WM2018_PHP_20>Du hast leider zu lange gewartet mit Deinem Tipp.<br />Die Abgabezeit f&uuml;r diesen Tipp ist vorbei.<br />Du wirst jetzt auf die Tipp&uuml;bersicht weitergeleitet.<br /><br /></LANG_WM2018_PHP_20:text>
 <text:LANG_WM2018_PHP_21>Tippabgabe WM2018-Tippspiel (Spiel </LANG_WM2018_PHP_21:text>
 <text:LANG_WM2018_PHP_22>minus</LANG_WM2018_PHP_22:text>
-<text:LANG_WM2018_PHP_23><font size=\"2\" color=\"FF0000\"><b>Bitte alle Felder ausf&uuml;llen !!!</b></font></LANG_WM2018_PHP_23:text>
+<text:LANG_WM2018_PHP_23><font size=\"2\" color=\"FF0000\"><b>Bitte alle Felder ausf&uuml;llen!</b></font></LANG_WM2018_PHP_23:text>
 <text:LANG_WM2018_PHP_24>Du hast leider nicht genug Guthaben, um einen Tipp abgeben zu k&ouml;nnen.<br />Du wirst jetzt auf die Tipp&uuml;bersicht weitergeleitet.<br /><br /></LANG_WM2018_PHP_24:text>
 <text:LANG_WM2018_PHP_25>Tippabgabe WM2018-Tippspiel (Europameistertipp)</LANG_WM2018_PHP_25:text>
 <text:LANG_WM2018_PHP_26>Tippabgabe WM2018-Tippspiel (Vize-Europameistertipp)</LANG_WM2018_PHP_26:text>

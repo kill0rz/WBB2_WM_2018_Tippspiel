@@ -1097,7 +1097,7 @@ if ($action == "showusertippsdetail") {
 		}
 		eval("\$tpl->output(\"" . $tpl->get("wm2018_showusertippsdetail") . "\");");
 	} else {
-		header("Location: wm2018.php");
+		eval("\$tpl->output(\"" . $tpl->get("wm2018_error") . "\");");
 	}
 }
 // +++++++++++++++++++++++++++++++++++++++++++
