@@ -140,7 +140,7 @@ if ($step == "delete") {
 	@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_teams");
 	@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_userpunkte");
 	@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_usertipps");
-	@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_bestedrittetmp");
+	//@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_bestedrittetmp");
 	@$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
 	print "<br />Tabellen erfolgreich aus der Datenbank entfernt...";
 
