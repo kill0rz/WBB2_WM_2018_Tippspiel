@@ -65,7 +65,7 @@
 			</font>
 		</td>
 	</tr>
-	<if($wm2018_options['showemticker']==1)>
+	<if($wm2018_options['showwmticker']==1)>
 		<then>
 			<tr>
 				<td class="tableb" align="center">
