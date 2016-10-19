@@ -19,8 +19,8 @@
 			<font size="3" color="yellow">
 				<div id=counter1 style="visibility: visible; position: relative" align=center></div>
 				<script language=JavaScript type=text/javascript>
-				var em = new Date(" July 15, 2018 17:00:00");
-				goal1 = new Date(em.getTime());
+				var wm = new Date(" July 15, 2018 17:00:00");
+				goal1 = new Date(wm.getTime());
 				var jetzta = new Date();
 				servernow1 = new Date(jetzta.getTime());
 				clientnow1 = new Date();
@@ -53,7 +53,7 @@
 					if (minutes1 == 1) {
 						minutesstring1 = "Minute";
 					}
-					value1 = "EM Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
+					value1 = "WM Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
 					if (document.getElementById) {
 						document.getElementById("counter1").innerHTML = value1;
 					} else if (document.all) {
@@ -70,7 +70,7 @@
 			<tr>
 				<td class="tableb" align="center">
 					<span class="smallfont">
-						<iframe src="http://www.fussballportal.de/c4u_ticker.php?mouse_stop=1&amp;speed=10&amp;category=em-2016&amp;box_width=$wm2018_options[emticker_width]&amp;bg_color=$bgcolor&amp;bg_box_color=$bgcolor&amp;border_color=$bgcolor&amp;link_color=$fontcolor&amp;link_color_over=$fontcolor" name="iframe" width="$wm2018_options[emticker_width]" height="24" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://www.fussballportal.de" target="_blank">Fussball Datenbank auf www.fussballportal.de</a></iframe>
+						<iframe src="http://www.fussballportal.de/c4u_ticker.php?mouse_stop=1&amp;speed=10&amp;category=wm-2018&amp;box_width=$wm2018_options[wmticker_width]&amp;bg_color=$bgcolor&amp;bg_box_color=$bgcolor&amp;border_color=$bgcolor&amp;link_color=$fontcolor&amp;link_color_over=$fontcolor" name="iframe" width="$wm2018_options[wmticker_width]" height="24" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://www.fussballportal.de" target="_blank">Fussball Datenbank auf www.fussballportal.de</a></iframe>
 					</span>
 				</td>
 			</tr>

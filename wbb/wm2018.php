@@ -26,13 +26,13 @@ if ($wm2018_options['wm2018aktiv'] == 0 || !$wbbuserdata['can_wm2018_see']) {
 	redirect($lang->get("LANG_WM2018_PHP_1"), $url = "index.php" . $SID_ARG_1ST);
 }
 
-$wm2018userdata = $db->query_first("SELECT userid,tipp_em,tipp_vem FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
-if ($wm2018userdata['tipp_em'] != 0) {
-	$useremtipp = $wm2018userdata['tipp_em'];
+$wm2018userdata = $db->query_first("SELECT userid,tipp_wm,tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
+if ($wm2018userdata['tipp_wm'] != 0) {
+	$userwmtipp = $wm2018userdata['tipp_wm'];
 }
 
-if ($wm2018userdata['tipp_vem'] != 0) {
-	$uservemtipp = $wm2018userdata['tipp_vem'];
+if ($wm2018userdata['tipp_vwm'] != 0) {
+	$uservwmtipp = $wm2018userdata['tipp_vwm'];
 }
 
 if (!empty($wm2018userdata['userid'])) {
@@ -44,9 +44,9 @@ if ($wm2018_options['gh_aktiv'] == 1) {
 	$waehrung = $waehrung['waehrung'];
 }
 
-$lastgame4emtipp = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($wm2018_options['lastgame4emtipp']) . "'");
-$lastgamedate = formatdate($wbbuserdata['dateformat'], $lastgame4emtipp['datetime']);
-$lastgametime = formatdate($wbbuserdata['timeformat'], $lastgame4emtipp['datetime']);
+$lastgame4wmtipp = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($wm2018_options['lastgame4wmtipp']) . "'");
+$lastgamedate = formatdate($wbbuserdata['dateformat'], $lastgame4wmtipp['datetime']);
+$lastgametime = formatdate($wbbuserdata['timeformat'], $lastgame4wmtipp['datetime']);
 // ++++++++++++++++++
 // +++ Startseite +++
 // ++++++++++++++++++
@@ -203,12 +203,12 @@ if ($action == "index") {
 		eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_nextgames") . "\";");
 	}
 	// Next X Games Ende
-	// EM beendet ?
+	// WM beendet ?
 	if ($wm2018_options['1st'] > 0) {
 		$result_1st = $db->query_first("SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($wm2018_options['1st']) . "'");
 		$result_2nd = $db->query_first("SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($wm2018_options['2nd']) . "'");
 	}
-	// EM beendet ?
+	// WM beendet ?
 	// Gruppentabelle Anfang
 	if (isset($_REQUEST['gruppensort'])) {
 		$gruppensort = wbb_trim($_REQUEST['gruppensort']);
@@ -307,30 +307,30 @@ if ($action == "index") {
 		eval("\$wm2018_topuser .= \"" . $tpl->get("wm2018_topuser") . "\";");
 	}
 
-	//** Europameisterquote Start **//
+	//** Weltmeisterquote Start **//
 	$wm2018_meisterquote = '';
-	$emtipp_tipps_gesamt = '';
-	list($emtipp_tipps_gesamt) = $db->query_first("SELECT COUNT(tipp_em) FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_em > 0");
-	$result = $db->query("SELECT tipp_em, COUNT(tipp_em) AS anzahl FROM bb" . $n . "_wm2018_userpunkte
-						WHERE tipp_em > 0
-						GROUP BY tipp_em
+	$wmtipp_tipps_gesamt = '';
+	list($wmtipp_tipps_gesamt) = $db->query_first("SELECT COUNT(tipp_wm) FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_wm > 0");
+	$result = $db->query("SELECT tipp_wm, COUNT(tipp_wm) AS anzahl FROM bb" . $n . "_wm2018_userpunkte
+						WHERE tipp_wm > 0
+						GROUP BY tipp_wm
 						ORDER BY anzahl DESC");
-	while ($quote_emtipp = $db->fetch_array($result)) {
+	while ($quote_wmtipp = $db->fetch_array($result)) {
 		$rowclass = getone($count++, "tablea", "tableb");
 		for ($i = 0; $i < count($allids2); $i++, $count++) {
-			if ($quote_emtipp['tipp_em'] == $allids2[$i]) {
+			if ($quote_wmtipp['tipp_wm'] == $allids2[$i]) {
 				$teamname1 = $allnames2[$i];
 				$name1 = "$teamname1";
 				$flagge1 = $allflags2[$i];
 				//** gleiche Tipps zählen
-				$emtipp_tipps = $quote_emtipp['anzahl'];
+				$wmtipp_tipps = $quote_wmtipp['anzahl'];
 				//** Quote berechnen
-				$emtipp_quote = round($emtipp_tipps * 100 / $emtipp_tipps_gesamt);
+				$wmtipp_quote = round($wmtipp_tipps * 100 / $wmtipp_tipps_gesamt);
 			}
 		}
 		eval("\$wm2018_meisterquote .= \"" . $tpl->get("wm2018_meisterquote") . "\";");
 	}
-	//** Europameisterquote Ende **//
+	//** Weltmeisterquote Ende **//
 
 	// Top-X-User Ende
 	eval("\$lang->items['LANG_WM2018_TPL_INDEX_8'] = \"" . $lang->get4eval("LANG_WM2018_TPL_INDEX_8") . "\";");
@@ -561,11 +561,11 @@ if ($action == "maketipp") {
 		}
 	}
 
-	//check if em and vem tipp still possible
+	//check if emwm and vwm tipp still possible
 	$result = $db->query("SELECT gameid FROM bb" . $n . "_wm2018_spiele WHERE team_1_id AND team_2_id AND game_goals_1 != '' AND game_goals_2 != '' ORDER BY datetime ASC");
 	$lastgametipped = $db->num_rows($result);
 
-	if ($wm2018_options['winnertipp_jn'] == 1 && $wm2018_options['lastgame4emtipp'] > $lastgametipped) {
+	if ($wm2018_options['winnertipp_jn'] == 1 && $wm2018_options['lastgame4wmtipp'] > $lastgametipped) {
 		eval("\$wm2018_maketipp_bit_bit .= \"" . $tpl->get("wm2018_maketipp_bit_bit") . "\";");
 	}
 
@@ -636,7 +636,7 @@ if ($action == "tippabgabe") {
 				$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipps_gesamt=tipps_gesamt+1 WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
 			}
 			if ($userdatayes == 0) {
-				$db->unbuffered_query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_em,tipp_vem) VALUES ('" . intval($wbbuserdata['userid']) . "','0','1','0','0','0','0','0')");
+				$db->unbuffered_query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_wm,tipp_vwm) VALUES ('" . intval($wbbuserdata['userid']) . "','0','1','0','0','0','0','0')");
 			}
 			// Guthaben aktiv ? Dann speichern
 			if ($wm2018_options['gh_aktiv'] == 1) {
@@ -680,25 +680,25 @@ if ($action == "tippabgabe") {
 		}
 	}
 	if ($wm2018_options['winnertipp_jn'] == 1) {
-		if ($useremtipp == 0) {
+		if ($userwmtipp == 0) {
 			for ($i = 0; $i < count($allids2); $i++) {
-				if ($useremtipp != $allids2[$i]) {
-					eval("\$wm2018_auswahl_emtipp .= \"" . $tpl->get("wm2018_auswahl_emtipp") . "\";");
+				if ($userwmtipp != $allids2[$i]) {
+					eval("\$wm2018_auswahl_wmtipp .= \"" . $tpl->get("wm2018_auswahl_wmtipp") . "\";");
 				}
 			}
-			eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_EM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_EM_2") . "\";");
-			eval("\$wm2018_tippabgabe_em .= \"" . $tpl->get("wm2018_tippabgabe_em") . "\";");
+			eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_WM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_WM_2") . "\";");
+			eval("\$wm2018_tippabgabe_wm .= \"" . $tpl->get("wm2018_tippabgabe_wm") . "\";");
 		}
 	}
 	if ($wm2018_options['winnertipp_jn'] == 1) {
-		if ($uservemtipp == 0) {
+		if ($uservwmtipp == 0) {
 			for ($j = 0; $j < count($allids2); $j++) {
-				if ($uservemtipp != $allids2[$j]) {
-					eval("\$wm2018_auswahl_vemtipp .= \"" . $tpl->get("wm2018_auswahl_vemtipp") . "\";");
+				if ($uservwmtipp != $allids2[$j]) {
+					eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
 				}
 			}
-			eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_VEM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_VEM_2") . "\";");
-			eval("\$wm2018_tippabgabe_vem .= \"" . $tpl->get("wm2018_tippabgabe_vem") . "\";");
+			eval("\$lang->items['LANG_WM2018_TPL_tippabgabe_vwm_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_tippabgabe_vwm_2") . "\";");
+			eval("\$wm2018_tippabgabe_vwm .= \"" . $tpl->get("wm2018_tippabgabe_vwm") . "\";");
 		}
 	}
 	if ($wm2018_options['gk_jn'] == 1) {
@@ -723,34 +723,34 @@ if ($action == "tipok") {
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_tipok") . "\");");
 }
 // ++++++++++++++++++++++++
-// ++ Europameister-Tipp ++
+// ++ Weltmeister-Tipp ++
 // ++++++++++++++++++++++++
-if ($action == "tippabgabe_em") {
+if ($action == "tippabgabe_wm") {
 	if (isset($_POST['send'])) {
 		// Erneute Prüfung der Tippabgabezeit
-		$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4emtipp'] . "'");
+		$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4wmtipp'] . "'");
 		$time2 = $result_time['datetime'] - $wm2018_options['tipptime'];
 		if ($akttime > $time2) {
 			redirect($lang->get("LANG_WM2018_PHP_20"), $url = "wm2018.php?action=maketipp" . $SID_ARG_2ND);
 		}
 
 		// +++++++++++++++++++++++++++++++++++
-		if ($_POST['tipp_em'] != -1) {
-			if ($wm2018_options['winnertipp_jn'] == 1 && ($uservemtipp != intval($_POST['tipp_em'])) && $userdatayes == 0) {
-				$db->query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_em,tipp_vem) VALUES ('" . intval($wbbuserdata['userid']) . "','0','0','0','0','0','" . intval($_POST['tipp_em']) . "','0')");
+		if ($_POST['tipp_wm'] != -1) {
+			if ($wm2018_options['winnertipp_jn'] == 1 && ($uservwmtipp != intval($_POST['tipp_wm'])) && $userdatayes == 0) {
+				$db->query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_wm,tipp_vwm) VALUES ('" . intval($wbbuserdata['userid']) . "','0','0','0','0','0','" . intval($_POST['tipp_wm']) . "','0')");
 				// Guthaben aktiv ? Dann speichern
 				if ($wm2018_options['gh_aktiv'] == 1) {
-					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_25'] . "','" . $wm2018_options['gh_ab_emtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
-					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_emtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_25'] . "','" . $wm2018_options['gh_ab_wmtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_wmtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
 				}
 				// +++++++++++++++++++++++++++++++
 				header("Location: wm2018.php?action=tipok{$SID_ARG_2ND_UN}");
-			} elseif ($wm2018_options['winnertipp_jn'] == 1 && ($uservemtipp != intval($_POST['tipp_em'])) && $userdatayes == 1) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_em = '" . intval($_POST['tipp_em']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
+			} elseif ($wm2018_options['winnertipp_jn'] == 1 && ($uservwmtipp != intval($_POST['tipp_wm'])) && $userdatayes == 1) {
+				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_wm = '" . intval($_POST['tipp_wm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
 				// Guthaben aktiv ? Dann speichern
 				if ($wm2018_options['gh_aktiv'] == 1) {
-					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_25'] . "','" . $wm2018_options['gh_ab_emtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
-					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_emtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_25'] . "','" . $wm2018_options['gh_ab_wmtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_wmtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
 				}
 				// +++++++++++++++++++++++++++++++
 				header("Location: wm2018.php?action=tipok{$SID_ARG_2ND_UN}");
@@ -761,35 +761,35 @@ if ($action == "tippabgabe_em") {
 	}
 }
 // +++++++++++++++++++++++++++
-// ++ Vizeeuropameister-Tipp +++
+// ++ VizeWeltmeister-Tipp +++
 // +++++++++++++++++++++++++++
-if ($action == "tippabgabe_vem") {
+if ($action == "tippabgabe_vwm") {
 	if (isset($_POST['send'])) {
 		// Erneute Prüfung der Tippabgabezeit
-		$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4emtipp'] . "'");
+		$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4wmtipp'] . "'");
 		$time2 = $result_time['datetime'] - $wm2018_options['tipptime'];
 		if ($akttime > $time2) {
 			redirect($lang->get("LANG_WM2018_PHP_20"), $url = "wm2018.php?action=maketipp" . $SID_ARG_2ND);
 		}
 
 		// +++++++++++++++++++++++++++++++++++
-		if ($_POST['tipp_vem'] != -1) {
-			if ($wm2018_options['winnertipp_jn'] == 1 && ($useremtipp != $_POST['tipp_vem']) && $userdatayes == 0) {
-				$db->query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_em,tipp_vem) VALUES ('" . intval($wbbuserdata['userid']) . "','0','0','0','0','0','0','" . intval($_POST['tipp_vem']) . "')");
+		if ($_POST['tipp_vwm'] != -1) {
+			if ($wm2018_options['winnertipp_jn'] == 1 && ($userwmtipp != $_POST['tipp_vwm']) && $userdatayes == 0) {
+				$db->query("INSERT INTO bb" . $n . "_wm2018_userpunkte (userid,punkte,tipps_gesamt,tipps_richtig,tipps_falsch,tipps_tendenz,tipp_wm,tipp_vwm) VALUES ('" . intval($wbbuserdata['userid']) . "','0','0','0','0','0','0','" . intval($_POST['tipp_vwm']) . "')");
 				// Guthaben aktiv ? Dann speichern
 				if ($wm2018_options['gh_aktiv'] == 1) {
-					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_26'] . "','" . $wm2018_options['gh_ab_emtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
-					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_emtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_26'] . "','" . $wm2018_options['gh_ab_wmtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_wmtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
 				}
 				// +++++++++++++++++++++++++++++++
 				header("Location: wm2018.php?action=tipok{$SID_ARG_2ND_UN}");
 			}
-			if ($wm2018_options['winnertipp_jn'] == 1 && ($useremtipp != intval($_POST['tipp_vem'])) && $userdatayes == 1) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_vem = '" . intval($_POST['tipp_vem']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
+			if ($wm2018_options['winnertipp_jn'] == 1 && ($userwmtipp != intval($_POST['tipp_vwm'])) && $userdatayes == 1) {
+				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_vwm = '" . intval($_POST['tipp_vwm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
 				// Guthaben aktiv ? Dann speichern
 				if ($wm2018_options['gh_aktiv'] == 1) {
-					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_26'] . "','" . $wm2018_options['gh_ab_emtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
-					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_emtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . intval($wbbuserdata['userid']) . "','" . time() . "','" . $lang->items['LANG_WM2018_PHP_26'] . "','" . $wm2018_options['gh_ab_wmtipp'] . "','" . $lang->items['LANG_WM2018_PHP_22'] . "')");
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-'" . $wm2018_options['gh_ab_wmtipp'] . "' WHERE userid='" . intval($wbbuserdata['userid']) . "'");
 				}
 				// +++++++++++++++++++++++++++++++
 				header("Location: wm2018.php?action=tipok{$SID_ARG_2ND_UN}");
@@ -809,44 +809,44 @@ if ($action == "showusertipps") {
 	$result = $db->query("SELECT up.*,uu.username FROM bb" . $n . "_wm2018_userpunkte up LEFT JOIN bb" . $n . "_users uu ON up.userid=uu.userid ORDER BY punkte DESC, tipps_gesamt DESC");
 	while ($row = $db->fetch_array($result)) {
 		$rowclass = getone($count++, "tablea", "tableb");
-		if ($row['tipp_em'] == 0) {
-			$image_emtipp = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_27']}\" title=\"{$lang->items['LANG_WM2018_PHP_27']}\" />";
+		if ($row['tipp_wm'] == 0) {
+			$image_wmtipp = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_27']}\" title=\"{$lang->items['LANG_WM2018_PHP_27']}\" />";
 		} else {
 			for ($i = 0; $i < count($allids2); $i++) {
 				if ($wbbuserdata['userid'] == intval($row['userid'])) {
-					if ($akttime > $lastgame4emtipp['datetime']) {
-						if ($row['tipp_em'] == $allids2[$i]) {
-							$image_emtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
+					if ($akttime > $lastgame4wmtipp['datetime']) {
+						if ($row['tipp_wm'] == $allids2[$i]) {
+							$image_wmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 						}
 					}
 				} else {
-					if ($akttime > $lastgame4emtipp['datetime']) {
-						if ($row['tipp_em'] == $allids2[$i]) {
-							$image_emtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
+					if ($akttime > $lastgame4wmtipp['datetime']) {
+						if ($row['tipp_wm'] == $allids2[$i]) {
+							$image_wmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 						}
 					} else {
-						$image_emtipp = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
+						$image_wmtipp = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
 					}
 				}
 			}
 		}
-		if ($row['tipp_vem'] == 0) {
-			$image_vemtipp = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_28']}\" title=\"{$lang->items['LANG_WM2018_PHP_28']}\" />";
+		if ($row['tipp_vwm'] == 0) {
+			$image_vwmtipp = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_28']}\" title=\"{$lang->items['LANG_WM2018_PHP_28']}\" />";
 		} else {
 			for ($i = 0; $i < count($allids2); $i++) {
 				if ($wbbuserdata['userid'] == intval($row['userid'])) {
-					if ($akttime > $lastgame4emtipp['datetime']) {
-						if ($row['tipp_vem'] == $allids2[$i]) {
-							$image_vemtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
+					if ($akttime > $lastgame4wmtipp['datetime']) {
+						if ($row['tipp_vwm'] == $allids2[$i]) {
+							$image_vwmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 						}
 					}
 				} else {
-					if ($akttime > $lastgame4emtipp['datetime']) {
-						if ($row['tipp_vem'] == $allids2[$i]) {
-							$image_vemtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
+					if ($akttime > $lastgame4wmtipp['datetime']) {
+						if ($row['tipp_vwm'] == $allids2[$i]) {
+							$image_vwmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 						}
 					} else {
-						$image_vemtipp = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
+						$image_vwmtipp = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
 					}
 				}
 			}
@@ -861,72 +861,72 @@ if ($action == "showusertipps") {
 if ($action == "showusertippsdetail") {
 	if (isset($_REQUEST['userid']) && trim($_REQUEST['userid']) != '') {
 		$result_username = $db->query_first("SELECT username FROM bb" . $n . "_users WHERE userid = '" . intval($_REQUEST['userid']) . "'");
-		// Europameister und Vizeeuropameister auslesen und anzeigen
-		$emtipp_done = '0';
-		$vemtipp_done = '0';
-		$result_emtipp = $db->query_first("SELECT tipp_em,tipp_vem FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
-		if ($result_emtipp['tipp_em'] == '0') {
+		// Weltmeister und VizeWeltmeister auslesen und anzeigen
+		$wmtipp_done = '0';
+		$vwmtipp_done = '0';
+		$result_wmtipp = $db->query_first("SELECT tipp_wm,tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
+		if ($result_wmtipp['tipp_wm'] == '0') {
 			if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
-				$emtipp_name = "<a href=\"wm2018.php?action=emtipp_only" . $SID_ARG_2ND . "\">{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</a>";
+				$wmtipp_name = "<a href=\"wm2018.php?action=wmtipp_only" . $SID_ARG_2ND . "\">{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</a>";
 			}
 
 			if ($wbbuserdata['userid'] != intval($_REQUEST['userid'])) {
-				$emtipp_name = "{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}";
+				$wmtipp_name = "{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}";
 			}
 
-			$emtipp_flagge = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" />";
-			$emtipp_done = '1';
+			$wmtipp_flagge = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" />";
+			$wmtipp_done = '1';
 		}
-		if ($result_emtipp['tipp_vem'] == '0') {
+		if ($result_wmtipp['tipp_vwm'] == '0') {
 			if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
-				$vemtipp_name = "<a href=\"wm2018.php?action=emtipp_only" . $SID_ARG_2ND . "\">{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</a>";
+				$vwmtipp_name = "<a href=\"wm2018.php?action=wmtipp_only" . $SID_ARG_2ND . "\">{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</a>";
 			}
 
 			if ($wbbuserdata['userid'] != intval($_REQUEST['userid'])) {
-				$vemtipp_name = "{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}";
+				$vwmtipp_name = "{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}";
 			}
 
-			$vemtipp_flagge = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" />";
-			$vemtipp_done = '1';
+			$vwmtipp_flagge = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_16']}\" />";
+			$vwmtipp_done = '1';
 		}
-		if ($emtipp_done == '0' || $vemtipp_done == '0') {
+		if ($wmtipp_done == '0' || $vwmtipp_done == '0') {
 			for ($ii = 0; $ii < count($allids2); $ii++) {
-				if ($result_emtipp['tipp_em'] != '0' && $result_emtipp['tipp_em'] == $allids2[$ii]) {
+				if ($result_wmtipp['tipp_wm'] != '0' && $result_wmtipp['tipp_wm'] == $allids2[$ii]) {
 					if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
-						$emtipp_name = $allnames2[$ii];
-						$emtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$emtipp_name\" title=\"$emtipp_name\" />";
+						$wmtipp_name = $allnames2[$ii];
+						$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$wmtipp_name\" title=\"$wmtipp_name\" />";
 						$emtipp_edit = '';
-						if ($lastgame4emtipp['datetime'] > $akttime) {
-							$emtipp_edit = "&nbsp;<a href=\"wm2018.php?action=editemtipp&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
+						if ($lastgame4wmtipp['datetime'] > $akttime) {
+							$emtipp_edit = "&nbsp;<a href=\"wm2018.php?action=EDITWMTIPP&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
 						}
 					} else {
-						if ($akttime > $lastgame4emtipp['datetime']) {
-							$emtipp_name = $allnames2[$ii];
-							$emtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$emtipp_name\" title=\"$emtipp_name\" />";
+						if ($akttime > $lastgame4wmtipp['datetime']) {
+							$wmtipp_name = $allnames2[$ii];
+							$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$wmtipp_name\" title=\"$wmtipp_name\" />";
 							$emtipp_edit = '';
 						} else {
-							$emtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
-							$emtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
+							$wmtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
+							$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
 						}
 					}
 				}
-				if ($result_emtipp['tipp_vem'] != '0' && $result_emtipp['tipp_vem'] == $allids2[$ii]) {
+				if ($result_wmtipp['tipp_vwm'] != '0' && $result_wmtipp['tipp_vwm'] == $allids2[$ii]) {
 					if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
-						$vemtipp_name = $allnames2[$ii];
-						$vemtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vemtipp_name\" title=\"$vemtipp_name\" />";
+						$vwmtipp_name = $allnames2[$ii];
+						$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vwmtipp_name\" title=\"$vwmtipp_name\" />";
 						$vemtipp_edit = '';
-						if ($lastgame4emtipp['datetime'] > $akttime) {
-							$vemtipp_edit = "&nbsp;<a href=\"wm2018.php?action=editvemtipp&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
+						if ($lastgame4wmtipp['datetime'] > $akttime) {
+							$vemtipp_edit = "&nbsp;<a href=\"wm2018.php?action=EDITVWMTIPP&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
 						}
 
 					} else {
-						if ($akttime > $lastgame4emtipp['datetime']) {
-							$vemtipp_name = $allnames2[$ii];
-							$vemtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vemtipp_name\" title=\"$vemtipp_name\" />";
+						if ($akttime > $lastgame4wmtipp['datetime']) {
+							$vwmtipp_name = $allnames2[$ii];
+							$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vwmtipp_name\" title=\"$vwmtipp_name\" />";
 							$vemtipp_edit = '';
 						} else {
-							$vemtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
-							$vemtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
+							$vwmtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
+							$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
 						}
 					}
 				}
@@ -1439,20 +1439,20 @@ if ($action == "edittipp") {
 	}
 }
 // ++++++++++++++++++++++++
-// ++ EM-Tipp editieren +++
+// ++ WM-Tipp editieren +++
 // ++++++++++++++++++++++++
-if ($action == "editemtipp") {
-	if ($lastgame4emtipp['datetime'] < $akttime) {
+if ($action == "EDITWMTIPP") {
+	if ($lastgame4wmtipp['datetime'] < $akttime) {
 		redirect($lang->get("LANG_WM2018_PHP_50"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
 	// +++++++++++++++++++++++++++++++++++
 	if (isset($_POST['send'])) {
-		if ($_POST['tipp_em'] == -1) {
+		if ($_POST['tipp_wm'] == -1) {
 			redirect($lang->get("LANG_WM2018_PHP_51"), $url = "wm2018.php" . $SID_ARG_1ST);
 		}
 
-		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_em = '" . intval($_POST['tipp_em']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
+		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_wm = '" . intval($_POST['tipp_wm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
 		redirect($lang->get("LANG_WM2018_PHP_52"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 	// +++++++++++++++++++++++++++++++++++
@@ -1460,39 +1460,39 @@ if ($action == "editemtipp") {
 		redirect($lang->get("LANG_WM2018_PHP_53"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
-	$result = $db->query_first("SELECT tipp_em, tipp_vem FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
-	if (!$result['tipp_em']) {
+	$result = $db->query_first("SELECT tipp_wm, tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
+	if (!$result['tipp_wm']) {
 		redirect($lang->get("LANG_WM2018_PHP_54"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
 	for ($j = 0; $j < count($allids2); $j++) {
-		if ($result['tipp_em'] == $allids2[$j]) {
-			$em_name = $allnames2[$j];
-			$em_flagge = "<img src=\"images/wm2018/flaggen/{$allflags2[$j]}\" alt=\"{$em_name}\" title=\"{$em_name}\" />";
+		if ($result['tipp_wm'] == $allids2[$j]) {
+			$wm_name = $allnames2[$j];
+			$wm_flagge = "<img src=\"images/wm2018/flaggen/{$allflags2[$j]}\" alt=\"{$wm_name}\" title=\"{$wm_name}\" />";
 		}
 	}
 	for ($i = 0; $i < count($allids2); $i++) {
-		if ($result['tipp_em'] != $allids2[$i] && $result['tipp_vem'] != $allids2[$i]) {
-			eval("\$wm2018_auswahl_emtipp .= \"" . $tpl->get("wm2018_auswahl_emtipp") . "\";");
+		if ($result['tipp_wm'] != $allids2[$i] && $result['tipp_vwm'] != $allids2[$i]) {
+			eval("\$wm2018_auswahl_wmtipp .= \"" . $tpl->get("wm2018_auswahl_wmtipp") . "\";");
 		}
 	}
-	eval("\$tpl->output(\"" . $tpl->get("wm2018_editemtipp") . "\");");
+	eval("\$tpl->output(\"" . $tpl->get("wm2018_EDITWMTIPP") . "\");");
 }
 // +++++++++++++++++++++++++++++
 // ++ Vize-EM-Tipp editieren +++
 // +++++++++++++++++++++++++++++
-if ($action == "editvemtipp") {
-	if ($lastgame4emtipp['datetime'] < $akttime) {
+if ($action == "EDITVWMTIPP") {
+	if ($lastgame4wmtipp['datetime'] < $akttime) {
 		redirect($lang->get("LANG_WM2018_PHP_55"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
 	// +++++++++++++++++++++++++++++++++++
 	if (isset($_POST['send'])) {
-		if ($_POST['tipp_vem'] == -1) {
+		if ($_POST['tipp_vwm'] == -1) {
 			redirect($lang->get("LANG_WM2018_PHP_56"), $url = "wm2018.php" . $SID_ARG_1ST);
 		}
 
-		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_vem = '" . intval($_POST['tipp_vem']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
+		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_vwm = '" . intval($_POST['tipp_vwm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
 		redirect($lang->get("LANG_WM2018_PHP_57"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 	// +++++++++++++++++++++++++++++++++++
@@ -1500,28 +1500,28 @@ if ($action == "editvemtipp") {
 		redirect($lang->get("LANG_WM2018_PHP_58"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
-	$result = $db->query_first("SELECT tipp_em, tipp_vem FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
-	if (!$result['tipp_vem']) {
+	$result = $db->query_first("SELECT tipp_wm, tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
+	if (!$result['tipp_vwm']) {
 		redirect($lang->get("LANG_WM2018_PHP_59"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
 
 	for ($j = 0; $j < count($allids2); $j++) {
-		if ($result['tipp_vem'] == $allids2[$j]) {
-			$vem_name = $allnames2[$j];
-			$vem_flagge = "<img src=\"images/wm2018/flaggen/{$allflags2[$j]}\" alt=\"$vem_name\" title=\"$vem_name\" />";
+		if ($result['tipp_vwm'] == $allids2[$j]) {
+			$vwm_name = $allnames2[$j];
+			$vwm_flagge = "<img src=\"images/wm2018/flaggen/{$allflags2[$j]}\" alt=\"$vwm_name\" title=\"$vwm_name\" />";
 		}
 	}
 	for ($j = 0; $j < count($allids2); $j++) {
-		if ($result['tipp_vem'] != $allids2[$j] && $result['tipp_em'] != $allids2[$j]) {
-			eval("\$wm2018_auswahl_vemtipp .= \"" . $tpl->get("wm2018_auswahl_vemtipp") . "\";");
+		if ($result['tipp_vwm'] != $allids2[$j] && $result['tipp_wm'] != $allids2[$j]) {
+			eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
 		}
 	}
-	eval("\$tpl->output(\"" . $tpl->get("wm2018_editvemtipp") . "\");");
+	eval("\$tpl->output(\"" . $tpl->get("wm2018_EDITVWMTIPP") . "\");");
 }
 
-if ($action == "emtipp_only") {
+if ($action == "wmtipp_only") {
 	// Prüfen auf genug Tippzeit
-	$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4emtipp'] . "'");
+	$result_time = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $wm2018_options['lastgame4wmtipp'] . "'");
 	$time2 = $result_time['datetime'] - $wm2018_options['tipptime'];
 	if ($akttime > $time2) {
 		redirect($lang->get("LANG_WM2018_PHP_20"), $url = "wm2018.php?action=maketipp" . $SID_ARG_2ND);
@@ -1530,26 +1530,26 @@ if ($action == "emtipp_only") {
 	if ($wm2018_options['winnertipp_jn'] == 1) {
 		$selected = '';
 		for ($i = 0; $i < count($allids2); $i++) {
-			if ($useremtipp != $allids2[$i]) {
-				eval("\$wm2018_auswahl_emtipp .= \"" . $tpl->get("wm2018_auswahl_emtipp") . "\";");
+			if ($userwmtipp != $allids2[$i]) {
+				eval("\$wm2018_auswahl_wmtipp .= \"" . $tpl->get("wm2018_auswahl_wmtipp") . "\";");
 			} else {
-				eval("\$wm2018_auswahl_emtipp .= \"" . $tpl->get("wm2018_auswahl_emtipp_selected") . "\";");
+				eval("\$wm2018_auswahl_wmtipp .= \"" . $tpl->get("wm2018_auswahl_wmtipp_selected") . "\";");
 			}
 		}
-		eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_EM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_EM_2") . "\";");
-		eval("\$wm2018_tippabgabe_em.= \"" . $tpl->get("wm2018_tippabgabe_em") . "\";");
+		eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_WM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_WM_2") . "\";");
+		eval("\$wm2018_tippabgabe_wm.= \"" . $tpl->get("wm2018_tippabgabe_wm") . "\";");
 	}
 	if ($wm2018_options['winnertipp_jn'] == 1) {
 		$selected = '';
 		for ($j = 0; $j < count($allids2); $j++) {
-			if ($uservemtipp != $allids2[$j]) {
-				eval("\$wm2018_auswahl_vemtipp .= \"" . $tpl->get("wm2018_auswahl_vemtipp") . "\";");
+			if ($uservwmtipp != $allids2[$j]) {
+				eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
 			} else {
-				eval("\$wm2018_auswahl_vemtipp .= \"" . $tpl->get("wm2018_auswahl_vemtipp_selected") . "\";");
+				eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp_selected") . "\";");
 			}
 		}
-		eval("\$lang->items['LANG_WM2018_TPL_TIPPABGABE_VEM_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_TIPPABGABE_VEM_2") . "\";");
-		eval("\$wm2018_tippabgabe_vem .= \"" . $tpl->get("wm2018_tippabgabe_vem") . "\";");
+		eval("\$lang->items['LANG_WM2018_TPL_tippabgabe_vwm_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_tippabgabe_vwm_2") . "\";");
+		eval("\$wm2018_tippabgabe_vwm .= \"" . $tpl->get("wm2018_tippabgabe_vwm") . "\";");
 	}
-	eval("\$tpl->output(\"" . $tpl->get("wm2018_emtipp_only") . "\");");
+	eval("\$tpl->output(\"" . $tpl->get("wm2018_wmtipp_only") . "\");");
 }

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{$lang->items['LANG_GLOBAL_DIRECTION']}" lang="{$lang->items['LANG_GLOBAL_LANGCODE']}" xml:lang="{$lang->items['LANG_GLOBAL_LANGCODE']}">
 
 <head>
-	<title>$master_board_name | {$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_1']}</title>
+	<title>$master_board_name | {$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_1']}</title>
 	$headinclude
 </head>
 
@@ -16,7 +16,7 @@
 					<tr class="tablea_fc">
 						<td align="left">
 							<span class="smallfont">
-								<b><a href="index.php{$SID_ARG_1ST}">$master_board_name</a> &raquo; <a href="wm2018.php?action=index{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_MAKETIPP_2']}</a> &raquo; {$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_2']}</b>
+								<b><a href="index.php{$SID_ARG_1ST}">$master_board_name</a> &raquo; <a href="wm2018.php?action=index{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_MAKETIPP_2']}</a> &raquo; {$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_2']}</b>
 							</span>
 						</td>
 						<td align="right">
@@ -36,33 +36,33 @@
 			<td class="tabletitle" align="center">
 				<span class="smallfont">
 					<b>
-						<u>{$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_3']}</u>
+						<u>{$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_3']}</u>
 					</b>
 				</span>
 			</td>
 		</tr>
 		<tr>
 			<td class="tableb" align="center">
-				<span class="smallfont">{$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_4']}
+				<span class="smallfont">{$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_4']}
 					<br />
-					<br />{$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_5']} $vem_flagge
-					<b>$vem_name</b> $vem_flagge</span>
+					<br />{$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_5']} $vwm_flagge
+					<b>$vwm_name</b> $vwm_flagge</span>
 			</td>
 		</tr>
 	</table>
 	<br />
-	<form method="post" action="wm2018.php?action=editvemtipp">
+	<form method="post" action="wm2018.php?action=EDITVWMTIPP">
 		<input type="hidden" name="send" value="send" />
 		<input type="hidden" name="sid" value="$session['hash']" />
 		<table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
 			<tr>
 				<td class="tablea" align="center" width="50%">
-					<span class="smallfont">{$lang->items['LANG_WM2018_TPL_EDITVEMTIPP_6']} </span>
+					<span class="smallfont">{$lang->items['LANG_WM2018_TPL_EDITVWMTIPP_6']} </span>
 				</td>
 				<td class="tablea" align="center" width="50%">
-					<select name="tipp_vem">
+					<select name="tipp_vwm">
 						<option value="-1">{$lang->items['LANG_WM2018_GLOBAL_CHOICE']}</option>
-						$wm2018_auswahl_vemtipp
+						$wm2018_auswahl_vwmtipp
 					</select>&nbsp;
 					<input type="submit" value="{$lang->items['LANG_WM2018_GLOBAL_SAVE']}" />
 				</td>

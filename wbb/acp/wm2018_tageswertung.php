@@ -14,7 +14,7 @@ require "./lib/admin_functions.php";
 $db = new db($sqlhost, $sqluser, $sqlpassword, $sqldb, $phpversion);
 
 // Header ausgeben
-echo "<h2><center>EM-Tippspiel Reset Tageswertung</center></h2>\n<br />\n";
+echo "<h2><center>WM-Tippspiel Reset Tageswertung</center></h2>\n<br />\n";
 
 @$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
 @$db->query("CREATE TABLE bb" . $n . "_wm2018_vortag (userid int(5), punkte int(10), pos int(3) default NULL auto_increment, PRIMARY KEY (pos));");

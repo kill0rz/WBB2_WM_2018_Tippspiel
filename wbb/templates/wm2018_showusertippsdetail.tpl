@@ -35,11 +35,11 @@
 		<tr>
 			<td class="tableb" width="50%" align="center">
 				<span class="smallfont">
-					<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</b> $emtipp_flagge $emtipp_name$emtipp_edit</span>
+					<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12']}</b> $wmtipp_flagge $wmtipp_name$emtipp_edit</span>
 			</td>
 			<td class="tableb" width="50%" align="center">
 				<span class="smallfont">
-					<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13']}</b> $vemtipp_flagge $vemtipp_name$vwetipp_edit</span>
+					<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13']}</b> $vwmtipp_flagge $vwmtipp_name$vwetipp_edit</span>
 			</td>
 		</tr>
 	</table>

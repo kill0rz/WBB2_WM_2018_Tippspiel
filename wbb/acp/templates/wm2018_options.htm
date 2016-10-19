@@ -202,9 +202,9 @@ var imageMaxHeight = $picmaxheight;
 					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_6']}</b>
 				</td>
 				<td>
-					<select name="showemticker">
-						<option value="1" $sel_showemticker[1]>{$lang->items['LANG_ACP_GLOBAL_YES']}</option>
-						<option value="0" $sel_showemticker[0]>{$lang->items['LANG_ACP_GLOBAL_NO']}</option>
+					<select name="showwmticker">
+						<option value="1" $sel_showwmticker[1]>{$lang->items['LANG_ACP_GLOBAL_YES']}</option>
+						<option value="0" $sel_showwmticker[0]>{$lang->items['LANG_ACP_GLOBAL_NO']}</option>
 					</select>
 				</td>
 			</tr>
@@ -213,7 +213,7 @@ var imageMaxHeight = $picmaxheight;
 					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_7']}</b>
 				</td>
 				<td>
-					<input type="number" min="0" name="emticker_width" maxLength="15" size="10" value="$wm2018_options[emticker_width]" /> {$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_8']}</td>
+					<input type="number" min="0" name="wmticker_width" maxLength="15" size="10" value="$wm2018_options[wmticker_width]" /> {$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_8']}</td>
 			</tr>
 			<tr class="firstrow">
 				<td>
@@ -312,7 +312,7 @@ var imageMaxHeight = $picmaxheight;
 					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_19']}</b>
 					<br />{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_20']}</td>
 				<td>
-					<input type="number" min="0" name="lastgame4emtipp" maxLength="15" size="10" value="$wm2018_options[lastgame4emtipp]" />
+					<input type="number" min="0" name="lastgame4wmtipp" maxLength="15" size="10" value="$wm2018_options[lastgame4wmtipp]" />
 				</td>
 			</tr>
 			<tr class="tblsection">
@@ -354,7 +354,7 @@ var imageMaxHeight = $picmaxheight;
 				<td>
 					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_25']}</td>
 				<td>
-					<input type="number" min="0" name="gh_ab_emtipp" maxLength="15" size="10" value="$wm2018_options[gh_ab_emtipp]" />
+					<input type="number" min="0" name="gh_ab_wmtipp" maxLength="15" size="10" value="$wm2018_options[gh_ab_wmtipp]" />
 				</td>
 			</tr>
 			<tr class="firstrow">
@@ -376,7 +376,7 @@ var imageMaxHeight = $picmaxheight;
 				<td>
 					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_28']}</td>
 				<td>
-					<input type="number" min="0" name="gh_gut_emtipp_richtig" maxLength="15" size="10" value="$wm2018_options[gh_gut_emtipp_richtig]" />
+					<input type="number" min="0" name="gh_gut_wmtipp_richtig" maxLength="15" size="10" value="$wm2018_options[gh_gut_wmtipp_richtig]" />
 				</td>
 			</tr>
 			<tr class="tblsection">

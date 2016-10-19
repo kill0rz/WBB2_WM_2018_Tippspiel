@@ -10,8 +10,8 @@
 <text:LANG_ACP_WM2018_CHOICE>Bitte w&auml;hlen</LANG_ACP_WM2018_CHOICE:text>
 <text:LANG_ACP_WM2018_PHP_1>Gutschrift WM2018-Tippspiel (SpielLANG_WM2018_TPL_INDEX_8LANG_WM2018_TPL_INDEX_8</LANG_ACP_WM2018_PHP_1:text>
 <text:LANG_ACP_WM2018_PHP_2>plus</LANG_ACP_WM2018_PHP_2:text>
-<text:LANG_ACP_WM2018_PHP_3>Gutschrift WM2018-Tippspiel (Europameister-Tipp)</LANG_ACP_WM2018_PHP_3:text>
-<text:LANG_ACP_WM2018_PHP_4>Gutschrift WM2018-Tippspiel (Vize-Europameister-Tipp)</LANG_ACP_WM2018_PHP_4:text>
+<text:LANG_ACP_WM2018_PHP_3>Gutschrift WM2018-Tippspiel (Weltmeister-Tipp)</LANG_ACP_WM2018_PHP_3:text>
+<text:LANG_ACP_WM2018_PHP_4>Gutschrift WM2018-Tippspiel (Vize-Weltmeister-Tipp)</LANG_ACP_WM2018_PHP_4:text>
 <text:LANG_ACP_WM2018_PHP_5><br />Es wurde mindestens ein Ergebnis vergessen</LANG_ACP_WM2018_PHP_5:text>
 <text:LANG_ACP_WM2018_PHP_6><br />Es wurde nicht ausgew&auml;hlt, ob es gelbe Karten im Spiel gab</LANG_ACP_WM2018_PHP_6:text>
 <text:LANG_ACP_WM2018_PHP_7><br />Es wurde nicht ausgew&auml;hlt, ob es gelb-rote/rote Karten im Spiel gab</LANG_ACP_WM2018_PHP_7:text>
@@ -38,14 +38,14 @@
 <text:LANG_ACP_WM2018_TPL_INFO_9>Support</LANG_ACP_WM2018_TPL_INFO_9:text>
 <text:LANG_ACP_WM2018_TPL_INFO_14>Angepasst für die WM-2014</LANG_ACP_WM2018_TPL_INFO_14:text>
 <text:LANG_ACP_WM2018_TPL_INFO_15>Viktor (<a href="http://www.v-gn.de/wbb" target="_blank">www.v-gn.de/wbb</a>)<br />Viktor's Supportboard</LANG_ACP_WM2018_TPL_INFO_15:text>
-<text:LANG_ACP_WM2018_TPL_INFO_16>Angepasst für die EM-2016</LANG_ACP_WM2018_TPL_INFO_16:text>
+<text:LANG_ACP_WM2018_TPL_INFO_16>Angepasst für die WM-2016</LANG_ACP_WM2018_TPL_INFO_16:text>
 <text:LANG_ACP_WM2018_TPL_INFO_17>kill0rz (<a href="http://kill0rz.com/" target="_blank">kill0rz' Blog</a>)</LANG_ACP_WM2018_TPL_INFO_17:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_1>WM2018-Tippspiel Optionen</LANG_ACP_WM2018_TPL_OPTIONS_1:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_2>Allgemeine Einstellungen</LANG_ACP_WM2018_TPL_OPTIONS_2:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_3>Ist das WM2018-Tippspiel aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_3:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_4>Sind die RSS-News aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_4:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_5>Wieviele RSS-News sollen angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_5:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_6>Ist der EM-Ticker aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_6:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_6>Ist der WM-Ticker aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_6:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_7>Wie breit soll der Ticker angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_7:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_8>Pixel</LANG_ACP_WM2018_TPL_OPTIONS_8:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_9>Wieviele n&auml;chste Spiele sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_9:text>
@@ -57,24 +57,24 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_15>Kann getippt werden, ob es gelbe Karten im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_15:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_16>Kann getippt werden, ob es gelb-rote/rote Karten im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_16:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_17>Kann getippt werden, ob es Elfmeter im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_17:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Europameister / Vize-Europameister getippt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Europameister / Vizeeuropameister getippt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Weltmeister / Vize-Weltmeister getippt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Weltmeister / VizeWeltmeister getippt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_20>(Gameid, Wert zwischen 1 und 51<br />Game 36 = letztes Vorrundenspiel<br />Game 51 = Finalspiel)</LANG_ACP_WM2018_TPL_OPTIONS_20:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_21>Einstellungen f&uuml;r den Guthabenhack (V1.9.5 von Lasall ben&ouml;tigt)</LANG_ACP_WM2018_TPL_OPTIONS_21:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_22>Soll der Guthabenhack f&uuml;r das WM2018-Tippspiel genutzt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_22:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_23>Sollen die Infos zu Kosten und Gewinnen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_23:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_24>Wieviel kostet ein normaler Spiel-Tipp ?</LANG_ACP_WM2018_TPL_OPTIONS_24:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_25>Wieviel kostet der Europameister / Vize-Europameister-Tipp ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_25:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_25>Wieviel kostet der Weltmeister / Vize-Weltmeister-Tipp ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_25:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_26>Wieviel Gewinn gibt es f&uuml;r einen exakten Spiel-Tipp ?</LANG_ACP_WM2018_TPL_OPTIONS_26:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_27>Wieviel Gewinn gibt es f&uuml;r einen Tipp, bei dem die Tendenz richtig ist ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_27:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_28>Wieviel Gewinn gibt es f&uuml;r das richtige Tippen des Europameisters / Vize-Europameisters ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_28:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_28>Wieviel Gewinn gibt es f&uuml;r das richtige Tippen des Weltmeisters / Vize-Weltmeisters ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_28:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_29>Einstellungen f&uuml;r die Ebay RelevanceAd-Anzeige</LANG_ACP_WM2018_TPL_OPTIONS_29:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_30>Soll der Ebay RelevanceAd-Banner angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_30:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_31>Welcher affili.net-PublisherId ist der Banner zugeordnet ?</LANG_ACP_WM2018_TPL_OPTIONS_31:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_32>(Voreinstellung ist die Publisher-ID von Batida444 *zwinker*)</LANG_ACP_WM2018_TPL_OPTIONS_32:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_33>Welche Kategorie soll bei Ebay ausgelesen werden ?</b> (optionale Angabe)</LANG_ACP_WM2018_TPL_OPTIONS_33:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_34>Sollte zur EM bei Ebay eine extra Kategorie erstellt werden, kannst Du die ID hier eintragen</LANG_ACP_WM2018_TPL_OPTIONS_34:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_35>Board, in dem die Diskussion zur EM stattfindet</LANG_ACP_WM2018_TPL_OPTIONS_35:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_34>Sollte zur WM bei Ebay eine extra Kategorie erstellt werden, kannst Du die ID hier eintragen</LANG_ACP_WM2018_TPL_OPTIONS_34:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_35>Board, in dem die Diskussion zur WM stattfindet</LANG_ACP_WM2018_TPL_OPTIONS_35:text>
 	<text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
@@ -197,10 +197,10 @@
 <text:LANG_WM2018_PHP_22>minus</LANG_WM2018_PHP_22:text>
 <text:LANG_WM2018_PHP_23><font size=\"2\" color=\"FF0000\"><b>Bitte alle Felder ausf&uuml;llen!</b></font></LANG_WM2018_PHP_23:text>
 <text:LANG_WM2018_PHP_24>Du hast leider nicht genug Guthaben, um einen Tipp abgeben zu k&ouml;nnen.<br />Du wirst jetzt auf die Tipp&uuml;bersicht weitergeleitet.<br /><br /></LANG_WM2018_PHP_24:text>
-<text:LANG_WM2018_PHP_25>Tippabgabe WM2018-Tippspiel (Europameistertipp)</LANG_WM2018_PHP_25:text>
-<text:LANG_WM2018_PHP_26>Tippabgabe WM2018-Tippspiel (Vize-Europameistertipp)</LANG_WM2018_PHP_26:text>
-<text:LANG_WM2018_PHP_27>Noch keinen Europameistertipp abgegeben</LANG_WM2018_PHP_27:text>
-<text:LANG_WM2018_PHP_28>Noch keinen Vize-Europameistertipp abgegeben</LANG_WM2018_PHP_28:text>
+<text:LANG_WM2018_PHP_25>Tippabgabe WM2018-Tippspiel (Weltmeistertipp)</LANG_WM2018_PHP_25:text>
+<text:LANG_WM2018_PHP_26>Tippabgabe WM2018-Tippspiel (Vize-Weltmeistertipp)</LANG_WM2018_PHP_26:text>
+<text:LANG_WM2018_PHP_27>Noch keinen Weltmeistertipp abgegeben</LANG_WM2018_PHP_27:text>
+<text:LANG_WM2018_PHP_28>Noch keinen Vize-Weltmeistertipp abgegeben</LANG_WM2018_PHP_28:text>
 <text:LANG_WM2018_PHP_29>wird es geben</LANG_WM2018_PHP_29:text>
 <text:LANG_WM2018_PHP_3>Gruppenspiele der Gruppe </LANG_WM2018_PHP_3:text>
 <text:LANG_WM2018_PHP_30>wird es nicht geben</LANG_WM2018_PHP_30:text>
@@ -227,32 +227,32 @@
 <text:LANG_WM2018_PHP_5>Gruppe</LANG_WM2018_PHP_5:text>
 <text:LANG_WM2018_PHP_50>Die Mindestabgabezeit f&uuml;r diesen Tipp ist schon erreicht.<br />Du kannst diesen Tipp nicht mehr editieren.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_50:text>
 <text:LANG_WM2018_PHP_51>Du hast keine Mannschaft ausgew&auml;hlt.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_51:text>
-<text:LANG_WM2018_PHP_52>Dein Europameister-Tipp wurde erfolgreich ge&auml;ndert.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_52:text>
+<text:LANG_WM2018_PHP_52>Dein Weltmeister-Tipp wurde erfolgreich ge&auml;ndert.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_52:text>
 <text:LANG_WM2018_PHP_53>Du kannst nur eigene Tipps editieren.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_53:text>
-<text:LANG_WM2018_PHP_54>Du hast noch keinen Europameister-Tipp abgegeben, den Du editieren k&ouml;nntest.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_54:text>
+<text:LANG_WM2018_PHP_54>Du hast noch keinen Weltmeister-Tipp abgegeben, den Du editieren k&ouml;nntest.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_54:text>
 <text:LANG_WM2018_PHP_55>Die Mindestabgabezeit f&uuml;r diesen Tipp ist schon erreicht.<br />Du kannst diesen Tipp nicht mehr editieren.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_55:text>
 <text:LANG_WM2018_PHP_56>Du hast keine Mannschaft ausgew&auml;hlt.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_56:text>
-<text:LANG_WM2018_PHP_57>Dein Vize-Europameister-Tipp wurde erfolgreich ge&auml;ndert.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_57:text>
+<text:LANG_WM2018_PHP_57>Dein Vize-Weltmeister-Tipp wurde erfolgreich ge&auml;ndert.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_57:text>
 <text:LANG_WM2018_PHP_58>Du kannst nur eigene Tipps editieren.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_58:text>
-<text:LANG_WM2018_PHP_59>Du hast noch keinen Vize-Europameister-Tipp abgegeben, den Du editieren k&ouml;nntest.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_59:text>
+<text:LANG_WM2018_PHP_59>Du hast noch keinen Vize-Weltmeister-Tipp abgegeben, den Du editieren k&ouml;nntest.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_59:text>
 <text:LANG_WM2018_PHP_60>Du kannst Dir nur Spieltipps ansehen von Spielen, die schon vorbei sind.</LANG_WM2018_PHP_60:text>
 <text:LANG_WM2018_PHP_6>Viertelfinale</LANG_WM2018_PHP_6:text>
 <text:LANG_WM2018_PHP_7>Spiel</LANG_WM2018_PHP_7:text>
 <text:LANG_WM2018_PHP_8>Halbfinale</LANG_WM2018_PHP_8:text>
 <text:LANG_WM2018_PHP_9>Spiel um Platz 3</LANG_WM2018_PHP_9:text>
 <text:LANG_WM2018_TPL_EBAY_1>Ebay-Angebote zur WM2018</LANG_WM2018_TPL_EBAY_1:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_1>Vize-Europameister-Tipp editieren</LANG_WM2018_TPL_EDITVEMTIPP_1:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_2>Vize-Europameister-Tipp editieren</LANG_WM2018_TPL_EDITVEMTIPP_2:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_3>Vize-Europameister-Tipp editieren</LANG_WM2018_TPL_EDITVEMTIPP_3:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_4>Hier kannst Du Deinen bisher abgegebenen Vize-Europameister-Tipp editieren.</LANG_WM2018_TPL_EDITVEMTIPP_4:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_5>Dein bisheriger Tipp:</LANG_WM2018_TPL_EDITVEMTIPP_5:text>
-<text:LANG_WM2018_TPL_EDITVEMTIPP_6>Dein neuer Tipp:</LANG_WM2018_TPL_EDITVEMTIPP_6:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_1>Europameister-Tipp editieren</LANG_WM2018_TPL_EDITEMTIPP_1:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_2>Europameister-Tipp editieren</LANG_WM2018_TPL_EDITEMTIPP_2:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_3>Europameister-Tipp editieren</LANG_WM2018_TPL_EDITEMTIPP_3:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_4>Hier kannst Du Deinen bisher abgegebenen Europameister-Tipp editieren.</LANG_WM2018_TPL_EDITEMTIPP_4:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_5>Dein bisheriger Tipp:</LANG_WM2018_TPL_EDITEMTIPP_5:text>
-<text:LANG_WM2018_TPL_EDITEMTIPP_6>Dein neuer Tipp:</LANG_WM2018_TPL_EDITEMTIPP_6:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_1>Vize-Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITVWMTIPP_1:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_2>Vize-Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITVWMTIPP_2:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_3>Vize-Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITVWMTIPP_3:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_4>Hier kannst Du Deinen bisher abgegebenen Vize-Weltmeister-Tipp editieren.</LANG_WM2018_TPL_EDITVWMTIPP_4:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_5>Dein bisheriger Tipp:</LANG_WM2018_TPL_EDITVWMTIPP_5:text>
+<text:LANG_WM2018_TPL_EDITVWMTIPP_6>Dein neuer Tipp:</LANG_WM2018_TPL_EDITVWMTIPP_6:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_1>Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITWMTIPP_1:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_2>Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITWMTIPP_2:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_3>Weltmeister-Tipp editieren</LANG_WM2018_TPL_EDITWMTIPP_3:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_4>Hier kannst Du Deinen bisher abgegebenen Weltmeister-Tipp editieren.</LANG_WM2018_TPL_EDITWMTIPP_4:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_5>Dein bisheriger Tipp:</LANG_WM2018_TPL_EDITWMTIPP_5:text>
+<text:LANG_WM2018_TPL_EDITWMTIPP_6>Dein neuer Tipp:</LANG_WM2018_TPL_EDITWMTIPP_6:text>
 <text:LANG_WM2018_TPL_FOOTER_1>WM2018-Tippspiel &copy; 2016 kill0rz</LANG_WM2018_TPL_FOOTER_1:text>
 <text:LANG_WM2018_TPL_GAMEDETAILS_1>WM2018-Tippspiel | Spiel-Details</LANG_WM2018_TPL_GAMEDETAILS_1:text>
 <text:LANG_WM2018_TPL_GAMEDETAILS_10>Ergebnis</LANG_WM2018_TPL_GAMEDETAILS_10:text>
@@ -287,7 +287,7 @@
 <text:LANG_WM2018_TPL_INDEX_21>Pkt</LANG_WM2018_TPL_INDEX_21:text>
 <text:LANG_WM2018_TPL_INDEX_22>Ergebnis der WM2018</LANG_WM2018_TPL_INDEX_22:text>
 <text:LANG_WM2018_TPL_INDEX_23>EM-Trophy</LANG_WM2018_TPL_INDEX_23:text>
-<text:LANG_WM2018_TPL_INDEX_24>Vize-Europameister</LANG_WM2018_TPL_INDEX_24:text>
+<text:LANG_WM2018_TPL_INDEX_24>Vize-Weltmeister</LANG_WM2018_TPL_INDEX_24:text>
 <text:LANG_WM2018_TPL_INDEX_25>Punkteverteilung</LANG_WM2018_TPL_INDEX_25:text>
 <text:LANG_WM2018_TPL_INDEX_26>M&ouml;gliche Gewinne und Verluste</LANG_WM2018_TPL_INDEX_26:text>
 <text:LANG_WM2018_TPL_INDEX_27>Kosten f&uuml;r einen normalen Tipp</LANG_WM2018_TPL_INDEX_27:text>
@@ -295,7 +295,7 @@
 <text:LANG_WM2018_TPL_INDEX_29>Gewinn f&uuml;r einen exakten Tipp</LANG_WM2018_TPL_INDEX_29:text>
 <text:LANG_WM2018_TPL_INDEX_3>Hallo</LANG_WM2018_TPL_INDEX_3:text>
 <text:LANG_WM2018_TPL_INDEX_30>Gewinn f&uuml;r einen Tipp mit richtiger Tendenz</LANG_WM2018_TPL_INDEX_30:text>
-<text:LANG_WM2018_TPL_INDEX_31>Gewinn f&uuml;r einen richtigen Europameister/Vizeeuropameister-Tipp</LANG_WM2018_TPL_INDEX_31:text>
+<text:LANG_WM2018_TPL_INDEX_31>Gewinn f&uuml;r einen richtigen Weltmeister/VizeWeltmeister-Tipp</LANG_WM2018_TPL_INDEX_31:text>
 <text:LANG_WM2018_TPL_INDEX_32>Top $wm2018_options[topuser] -User</LANG_WM2018_TPL_INDEX_32:text>
 <text:LANG_WM2018_TPL_INDEX_33>Hallo <b>Gast</b></LANG_WM2018_TPL_INDEX_33:text>
 <text:LANG_WM2018_TPL_INDEX_4>du hast bis jetzt $tippsgesamt Tipps abgegeben.</LANG_WM2018_TPL_INDEX_4:text>
@@ -353,8 +353,8 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_1>WM2018-Tippspiel | Tipps von</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_1:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_10>Elfmeter</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_10:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_11>Ergebnis</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_11:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12>Europameister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13>Vizeeuropameister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12>Weltmeister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13>VizeWeltmeister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_2>WM2018-Tippspiel-Startseite</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_2:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_3>Tipps von</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_3:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_4>Spiel-Nr.</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_4:text>
@@ -369,7 +369,7 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_1>Uhr</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_1:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_2>Link zum Spiel</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_2:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_1>WM2018-Tippspiel | Usertipps-&Uuml;bersicht</LANG_WM2018_TPL_SHOWUSERTIPPS_1:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPS_10>Vize-Europameister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_10:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPS_10>Vize-Weltmeister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_10:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_11>Punkte</LANG_WM2018_TPL_SHOWUSERTIPPS_11:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_3>Usertipps-&Uuml;bersicht</LANG_WM2018_TPL_SHOWUSERTIPPS_3:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_4>Username</LANG_WM2018_TPL_SHOWUSERTIPPS_4:text>
@@ -377,7 +377,7 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_6>Richtige Tipps</LANG_WM2018_TPL_SHOWUSERTIPPS_6:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_7>Falsche Tipps</LANG_WM2018_TPL_SHOWUSERTIPPS_7:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_8>Tendenz richtig</LANG_WM2018_TPL_SHOWUSERTIPPS_8:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPS_9>Europameister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_9:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPS_9>Weltmeister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_9:text>
 <text:LANG_WM2018_TPL_TIPOK_1>Erfolgreiche Tipabgabe</LANG_WM2018_TPL_TIPOK_1:text>
 <text:LANG_WM2018_TPL_TIPOK_2>Dein Tip wurde erfolgreich angenommen.</LANG_WM2018_TPL_TIPOK_2:text>
 <text:LANG_WM2018_TPL_TIPOK_3>Klicke hier, um zum Tipspiel zur&uuml;ckzukehren.</LANG_WM2018_TPL_TIPOK_3:text>
@@ -392,12 +392,12 @@
 <text:LANG_WM2018_TPL_TIPPABGABE_GK_2>Wird es gelbe Karten im Spiel geben ?</LANG_WM2018_TPL_TIPPABGABE_GK_2:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_RK_1>Rote Karten</LANG_WM2018_TPL_TIPPABGABE_RK_1:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_RK_2>Wird es gelb-rote / rote Karten im Spiel geben ?</LANG_WM2018_TPL_TIPPABGABE_RK_2:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_VEM_1>Vize-Europameister</LANG_WM2018_TPL_TIPPABGABE_VEM_1:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_VEM_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_TIPPABGABE_VEM_2:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_VEM_3>Welche Mannschaft wird Vize-Europameister 2016 ?</LANG_WM2018_TPL_TIPPABGABE_VEM_3:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_EM_1>Europameister</LANG_WM2018_TPL_TIPPABGABE_EM_1:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_EM_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_TIPPABGABE_EM_2:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_EM_3>Welche Mannschaft wird Europameister 2016 ?</LANG_WM2018_TPL_TIPPABGABE_EM_3:text>
+<text:LANG_WM2018_TPL_tippabgabe_vwm_1>Vize-Weltmeister</LANG_WM2018_TPL_tippabgabe_vwm_1:text>
+<text:LANG_WM2018_TPL_tippabgabe_vwm_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_tippabgabe_vwm_2:text>
+<text:LANG_WM2018_TPL_tippabgabe_vwm_3>Welche Mannschaft wird Vize-Weltmeister 2016 ?</LANG_WM2018_TPL_tippabgabe_vwm_3:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_WM_1>Weltmeister</LANG_WM2018_TPL_TIPPABGABE_WM_1:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_WM_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_TIPPABGABE_WM_2:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_WM_3>Welche Mannschaft wird Weltmeister 2016 ?</LANG_WM2018_TPL_TIPPABGABE_WM_3:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_1>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_1:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_2>WM2018-Tippspiel-Startseite</LANG_WM2018_TPL_TIPPEDIT_2:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_3>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_3:text>
@@ -415,15 +415,15 @@
 <text:LANG_WM2018_TPL_TIPPSPROGAME_8>Tipp Elfmeter</LANG_WM2018_TPL_TIPPSPROGAME_8:text>
 <text:LANG_WM2018_TPL_TOPUSER_1>Punkte</LANG_WM2018_TPL_TOPUSER_1:text>
 <text:LANG_WM2018_TPL_TOPUSER_2>Tipps</LANG_WM2018_TPL_TOPUSER_2:text>
-<text:LANG_WM2018_TPL_INDEX_40>Europameister Quote</LANG_WM2018_TPL_INDEX_40:text>
+<text:LANG_WM2018_TPL_INDEX_40>Weltmeister Quote</LANG_WM2018_TPL_INDEX_40:text>
 <text:LANG_WM2018_TPL_INDEX_41><b>Land</b></LANG_WM2018_TPL_INDEX_41:text>
 <text:LANG_WM2018_TPL_INDEX_42><b>Flagge</b></LANG_WM2018_TPL_INDEX_42:text>
 <text:LANG_WM2018_TPL_INDEX_43><b>Tipps</b></LANG_WM2018_TPL_INDEX_43:text>
 <text:LANG_WM2018_TPL_INDEX_44><b>Quote</b></LANG_WM2018_TPL_INDEX_44:text>
-<text:LANG_WM2018_TPL_EMTIPPONLY_1>Europameister / Vizeeuropameister tippen</LANG_WM2018_TPL_EMTIPPONLY_1:text>
-<text:LANG_WM2018_TPL_EMTIPPONLY_2>Hier kannst Du den Europameister / Vizeeuropameister tippen.</LANG_WM2018_TPL_EMTIPPONLY_2:text>
-<text:LANG_WM2018_TPL_EMTIPPONLY_3>Vize-/Europameister tippen</LANG_WM2018_TPL_EMTIPPONLY_3:text>
-<text:LANG_WM2018_TPL_EMTIPPONLY_4><span class="smallfont"><b><h2>Wichtig!</h2><br />Es z&auml;hlen immer alle Tore, auch die in der Verl&auml;ngerung und im Elfmeterschie&szlig;en!</b></span></LANG_WM2018_TPL_EMTIPPONLY_4:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_1>Weltmeister / VizeWeltmeister tippen</LANG_WM2018_TPL_WMTIPPONLY_1:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_2>Hier kannst Du den Weltmeister / VizeWeltmeister tippen.</LANG_WM2018_TPL_WMTIPPONLY_2:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_3>Vize-/Weltmeister tippen</LANG_WM2018_TPL_WMTIPPONLY_3:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_4><span class="smallfont"><b><h2>Wichtig!</h2><br />Es z&auml;hlen immer alle Tore, auch die in der Verl&auml;ngerung und im Elfmeterschie&szlig;en!</b></span></LANG_WM2018_TPL_WMTIPPONLY_4:text>
 
 
 [global]

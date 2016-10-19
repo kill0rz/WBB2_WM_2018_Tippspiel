@@ -10,24 +10,24 @@ $points = 0;
 $meister = array();
 
 // alle tipps durchgehen
-$result_m = $db->query("SELECT tipp_em,tipp_vem FROM bb" . $n . "_wm2018_userpunkte");
+$result_m = $db->query("SELECT tipp_wm,tipp_vwm FROM bb" . $n . "_wm2018_userpunkte");
 
 while ($row = $db->fetch_array($result_m)) {
-	if ($row['tipp_em'] > 0) {
-		if (array_key_exists($row['tipp_em'], $meister)) {
-			$meister[$row['tipp_em']] += 1;
+	if ($row['tipp_wm'] > 0) {
+		if (array_key_exists($row['tipp_wm'], $meister)) {
+			$meister[$row['tipp_wm']] += 1;
 		} else {
-			$meister[$row['tipp_em']] = 1;
+			$meister[$row['tipp_wm']] = 1;
 		}
 		$points += 1;
 	}
-	if ($row['tipp_vem'] > 0) {
-		if (array_key_exists($row['tipp_vem'], $meister)) {
-			$meister[$row['tipp_vem']] += 0.5;
+	if ($row['tipp_vwm'] > 0) {
+		if (array_key_exists($row['tipp_vwm'], $meister)) {
+			$meister[$row['tipp_vwm']] += 0.5;
 		} else {
-			$meister[$row['tipp_vem']] = 0.5;
+			$meister[$row['tipp_vwm']] = 0.5;
 		}
-		if ($row['tipp_em'] == 0) {
+		if ($row['tipp_wm'] == 0) {
 			$points += 0.5;
 		}
 	}
@@ -78,7 +78,7 @@ if ($points > 0) {
 
 	}
 
-	eval("print(\"" . $tpl->get("wm2018_sponsor_portalboxen_emmeister") . "\");");
+	eval("print(\"" . $tpl->get("wm2018_sponsor_portalboxen_wmmeister") . "\");");
 
 } // (point>0)
 eval("print(\"" . $hm_boxtail_tpl . "\");");

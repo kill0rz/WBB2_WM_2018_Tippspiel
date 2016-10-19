@@ -12,8 +12,8 @@
 
 $lang->load("WM2018");
 
-$useremtipp = 0;
-$uservemtipp = 0;
+$userwmtipp = 0;
+$uservwmtipp = 0;
 $userdatayes = 0;
 $akttime = time();
 

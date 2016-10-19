@@ -93,7 +93,7 @@ if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
 		eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_nextgames") . "\";");
 	}
 
-	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_emtippnext5") . "\";");
+	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_wmtippnext5") . "\";");
 }
 /* WM2018 - Die nächsten Spiele */
 

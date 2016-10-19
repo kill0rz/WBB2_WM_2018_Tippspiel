@@ -6,9 +6,9 @@
 		<span class="smallfont"><img src="images/wm2018/flaggen/$flagge1" alt="$teamname1" title="$teamname1" /></span>
 	</td>
 	<td class="$rowclass" align="center">
-		<span class="smallfont">$emtipp_tipps</span>
+		<span class="smallfont">$wmtipp_tipps</span>
 	</td>
 	<td class="$rowclass" align="center">
-		<span class="smallfont">$emtipp_quote %</span>
+		<span class="smallfont">$wmtipp_quote %</span>
 	</td>
 </tr>

@@ -64,8 +64,8 @@ INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (2, 'Tendenz
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (3, 'Gelbe Karten', 3);
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (4, 'Rote Karten', 3);
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (5, 'Elfmeter', 3);
-INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (6, 'Europameister', 10);
-INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (7, 'Vize-Europameister', 10);
+INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (6, 'Weltmeister', 10);
+INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (7, 'Vize-Weltmeister', 10);
 
 -- --------------------------------------------------------
 
@@ -213,8 +213,8 @@ CREATE TABLE `bb1_wm2018_userpunkte` (
   `tipps_richtig` int(5) NOT NULL default '0',
   `tipps_falsch` int(5) NOT NULL default '0',
   `tipps_tendenz` int(5) NOT NULL default '0',
-  `tipp_em` int(5) NOT NULL default '0',
-  `tipp_vem` int(5) NOT NULL default '0'
+  `tipp_wm` int(5) NOT NULL default '0',
+  `tipp_vwm` int(5) NOT NULL default '0'
 ) ENGINE=MyISAM;
 
 -- 

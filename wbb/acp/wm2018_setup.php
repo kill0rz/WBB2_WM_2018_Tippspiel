@@ -132,7 +132,7 @@ if (!$step) {
 
 	// WBB-Version checken
 	if (version_compare($wbbversion, "2.3.0") < 0) {
-		print "Das EM-Tippspiel $version braucht ein Woltlab Burning Board in der Version 2.3.x oder h&ouml;her!<p />";
+		print "Das WM-Tippspiel $version braucht ein Woltlab Burning Board in der Version 2.3.x oder h&ouml;her!<p />";
 		print "Ihre WBB-Version ist " . $wbbversion . ".<p />";
 		print "<b>Installation wird abgebrochen.</b>";
 		print "</td></tr></table></body></html>";

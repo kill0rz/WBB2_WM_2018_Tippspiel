@@ -42,7 +42,7 @@ if ($action == "options") {
 
 	if (isset($_POST['send'])) {
 		$tipptime = $_POST['tipptime'] * 60;
-		$sql_query = "UPDATE bb" . $n . "_wm2018_options SET wm2018aktiv = '" . intval($_POST['wm2018_aktiv_jn']) . "', showrssnews = '" . intval($_POST['showrssnews']) . "', rssnews = '" . intval($_POST['rssnews']) . "', showemticker = '" . intval($_POST['showemticker']) . "', emticker_width = '" . intval($_POST['emticker_width']) . "', nextxgames = '" . intval($_POST['nextxgames']) . "', topuser = '" . intval($_POST['topuser']) . "', tipptime = '" . intval($tipptime) . "', tendenz = '" . intval($_POST['tendenz']) . "', gk_jn = '" . intval($_POST['gk_jn']) . "', rk_jn = '" . intval($_POST['rk_jn']) . "', elfer_jn = '" . intval($_POST['elfer_jn']) . "', winnertipp_jn = '" . intval($_POST['winnertipp_jn']) . "', lastgame4emtipp = '" . intval($_POST['lastgame4emtipp']) . "', gh_aktiv = '" . intval($_POST['gh_aktiv']) . "', gh_infos = '" . intval($_POST['gh_infos']) . "', gh_ab_normtipp = '" . intval($_POST['gh_ab_normtipp']) . "', gh_ab_emtipp = '" . intval($_POST['gh_ab_emtipp']) . "', gh_gut_normtipp_richtig = '" . intval($_POST['gh_gut_normtipp_richtig']) . "', gh_gut_normtipp_tendenz = '" . intval($_POST['gh_gut_normtipp_tendenz']) . "', gh_gut_emtipp_richtig = '" . intval($_POST['gh_gut_emtipp_richtig']) . "', ebay_rel_aktiv = '" . intval($_POST['ebay_rel_aktiv']) . "', ebay_pub_id = '" . intval($_POST['ebay_pub_id']) . "', ebay_cat = '" . intval($_POST['ebay_cat']) . "', po_aktiv = '" . intval($_POST['po_aktiv']) . "', vgposttid = '" . intval($_POST['vgposttid']) . "', vgpostuid = '" . intval($_POST['vgpostuid']) . "', viconid = '" . intval($_POST['viconid']) . "', vgthema = '" . addslashes($_POST['vgthema']) . "', message = '" . addslashes($_POST['message']) . "', vboardid = '" . intval($_POST['vboardid']) . "', vprefix = '" . addslashes($_POST['vprefix']) . "', vgposthtml = '" . intval($_POST['vgposthtml']) . "', diskussionsthreadid = '" . intval($_POST['diskussionsthreadid']) . "', showrssnews_method = '" . intval($_POST['showrssnews_method']) . "'";
+		$sql_query = "UPDATE bb" . $n . "_wm2018_options SET wm2018aktiv = '" . intval($_POST['wm2018_aktiv_jn']) . "', showrssnews = '" . intval($_POST['showrssnews']) . "', rssnews = '" . intval($_POST['rssnews']) . "', showwmticker = '" . intval($_POST['showwmticker']) . "', wmticker_width = '" . intval($_POST['wmticker_width']) . "', nextxgames = '" . intval($_POST['nextxgames']) . "', topuser = '" . intval($_POST['topuser']) . "', tipptime = '" . intval($tipptime) . "', tendenz = '" . intval($_POST['tendenz']) . "', gk_jn = '" . intval($_POST['gk_jn']) . "', rk_jn = '" . intval($_POST['rk_jn']) . "', elfer_jn = '" . intval($_POST['elfer_jn']) . "', winnertipp_jn = '" . intval($_POST['winnertipp_jn']) . "', lastgame4wmtipp = '" . intval($_POST['lastgame4wmtipp']) . "', gh_aktiv = '" . intval($_POST['gh_aktiv']) . "', gh_infos = '" . intval($_POST['gh_infos']) . "', gh_ab_normtipp = '" . intval($_POST['gh_ab_normtipp']) . "', gh_ab_wmtipp = '" . intval($_POST['gh_ab_wmtipp']) . "', gh_gut_normtipp_richtig = '" . intval($_POST['gh_gut_normtipp_richtig']) . "', gh_gut_normtipp_tendenz = '" . intval($_POST['gh_gut_normtipp_tendenz']) . "', gh_gut_wmtipp_richtig = '" . intval($_POST['gh_gut_wmtipp_richtig']) . "', ebay_rel_aktiv = '" . intval($_POST['ebay_rel_aktiv']) . "', ebay_pub_id = '" . intval($_POST['ebay_pub_id']) . "', ebay_cat = '" . intval($_POST['ebay_cat']) . "', po_aktiv = '" . intval($_POST['po_aktiv']) . "', vgposttid = '" . intval($_POST['vgposttid']) . "', vgpostuid = '" . intval($_POST['vgpostuid']) . "', viconid = '" . intval($_POST['viconid']) . "', vgthema = '" . addslashes($_POST['vgthema']) . "', message = '" . addslashes($_POST['message']) . "', vboardid = '" . intval($_POST['vboardid']) . "', vprefix = '" . addslashes($_POST['vprefix']) . "', vgposthtml = '" . intval($_POST['vgposthtml']) . "', diskussionsthreadid = '" . intval($_POST['diskussionsthreadid']) . "', showrssnews_method = '" . intval($_POST['showrssnews_method']) . "'";
 		$db->unbuffered_query($sql_query);
 		header("Location: wm2018_admin.php?action=options&sid={$session['hash']}");
 		exit();
@@ -78,10 +78,10 @@ if ($action == "options") {
 		$sel_showrssnews_method[0] = " selected";
 	}
 
-	if ($wm2018_options['showemticker'] == "1") {
-		$sel_showemticker[1] = " selected";
+	if ($wm2018_options['showwmticker'] == "1") {
+		$sel_showwmticker[1] = " selected";
 	} else {
-		$sel_showemticker[0] = " selected";
+		$sel_showwmticker[0] = " selected";
 	}
 
 	if ($wm2018_options['tendenz'] == "1") {
@@ -754,19 +754,19 @@ if ($action == "result_save") {
 				if ($wm2018_options['winnertipp_jn'] == 1) {
 					$punkte4user_em = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '6'");
 					$punkte4user_vem = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '7'");
-					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte = punkte + {$punkte4user_em['wert']} WHERE tipp_em = '{$team_g}'");
-					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte = punkte + {$punkte4user_vem['wert']} WHERE tipp_vem = '{$team_v}'");
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte = punkte + {$punkte4user_em['wert']} WHERE tipp_wm = '{$team_g}'");
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte = punkte + {$punkte4user_vem['wert']} WHERE tipp_vwm = '{$team_v}'");
 					// Guthabenhack aktiv ?
 					if ($wm2018_options['gh_aktiv'] == 1) {
-						$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_em = '{$team_g}'");
+						$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_wm = '{$team_g}'");
 						while ($row = $db->fetch_array($result)) {
-							$db->query("UPDATE bb" . $n . "_users SET guthaben = guthaben + {$wm2018_options['gh_gut_emtipp_richtig']} WHERE userid = '" . $row['userid'] . "'");
-							$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_3'] . "','" . $wm2018_options['gh_gut_emtipp_richtig'] . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
+							$db->query("UPDATE bb" . $n . "_users SET guthaben = guthaben + {$wm2018_options['gh_gut_wmtipp_richtig']} WHERE userid = '" . $row['userid'] . "'");
+							$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_3'] . "','" . $wm2018_options['gh_gut_wmtipp_richtig'] . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
 						}
-						$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_vem = '{$team_v}'");
+						$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE tipp_vwm = '{$team_v}'");
 						while ($row = $db->fetch_array($result)) {
-							$db->query("UPDATE bb" . $n . "_users SET guthaben = guthaben + {$wm2018_options['gh_gut_emtipp_richtig']} WHERE userid = '" . $row['userid'] . "'");
-							$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_4'] . "','" . $wm2018_options['gh_gut_emtipp_richtig'] . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
+							$db->query("UPDATE bb" . $n . "_users SET guthaben = guthaben + {$wm2018_options['gh_gut_wmtipp_richtig']} WHERE userid = '" . $row['userid'] . "'");
+							$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_4'] . "','" . $wm2018_options['gh_gut_wmtipp_richtig'] . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
 						}
 					}
 				}

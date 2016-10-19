@@ -47,7 +47,7 @@
 			</td>
 		</tr>
 	</table>
-	$wm2018_tippabgabe_em $wm2018_tippabgabe_vem
+	$wm2018_tippabgabe_wm $wm2018_tippabgabe_vwm
 	<hr />
 	<center>$error</center>
 	<form method="post" action="wm2018.php?action=tippabgabe">

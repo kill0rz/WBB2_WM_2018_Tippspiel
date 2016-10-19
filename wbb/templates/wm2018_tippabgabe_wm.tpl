@@ -1,5 +1,5 @@
 <br />
-<form method="post" action="wm2018.php?action=tippabgabe_em">
+<form method="post" action="wm2018.php?action=tippabgabe_wm">
 	<input type="hidden" name="send" value="send" />
 	<input type="hidden" name="gameid" value="$_REQUEST[gameid]" />
 	<input type="hidden" name="sid" value="$session[hash]" />
@@ -8,19 +8,19 @@
 			<td class="tabletitle" colspan="3" align="center">
 				<span class="smallfont">
 					<b>
-						<u>{$lang->items['LANG_WM2018_TPL_TIPPABGABE_EM_1']}</u>
+						<u>{$lang->items['LANG_WM2018_TPL_TIPPABGABE_WM_1']}</u>
 					</b>
-					<br />{$lang->items['LANG_WM2018_TPL_TIPPABGABE_EM_2']}</span>
+					<br />{$lang->items['LANG_WM2018_TPL_TIPPABGABE_WM_2']}</span>
 			</td>
 		</tr>
 		<tr>
 			<td class="tableb" align="center" width="70%">
-				<span class="smallfont">{$lang->items['LANG_WM2018_TPL_TIPPABGABE_EM_3']}</span>
+				<span class="smallfont">{$lang->items['LANG_WM2018_TPL_TIPPABGABE_WM_3']}</span>
 			</td>
 			<td class="tableb" align="center" width="30%">
-				<select name="tipp_em">
+				<select name="tipp_wm">
 					<option value="-1">{$lang->items['LANG_WM2018_GLOBAL_CHOICE']}</option>
-					$wm2018_auswahl_emtipp
+					$wm2018_auswahl_wmtipp
 				</select>
 			</td>
 			<td align="center" class="tableb">

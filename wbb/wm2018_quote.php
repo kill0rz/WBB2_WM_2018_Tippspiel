@@ -103,7 +103,7 @@ while ($row_nextgames = $db->fetch_array($result_nextgames)) {
 	eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_sponsor_wm2018_nextgames") . "\";");
 }
 
-eval("print(\"" . $tpl->get("wm2018_sponsor_portalboxen_emtippnext5") . "\");");
+eval("print(\"" . $tpl->get("wm2018_sponsor_portalboxen_wmtippnext5") . "\");");
 
 eval("print(\"" . $hm_boxtail_tpl . "\");");
 ?>
