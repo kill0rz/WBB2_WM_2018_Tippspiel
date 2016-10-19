@@ -19,7 +19,7 @@
 			<font size="3" color="yellow">
 				<div id=counter1 style="visibility: visible; position: relative" align=center></div>
 				<script language=JavaScript type=text/javascript>
-				var em = new Date(" July 10, 2016 21:00:00");
+				var em = new Date(" July 15, 2018 17:00:00");
 				goal1 = new Date(em.getTime());
 				var jetzta = new Date();
 				servernow1 = new Date(jetzta.getTime());
