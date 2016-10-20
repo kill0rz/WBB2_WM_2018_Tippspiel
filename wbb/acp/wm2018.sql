@@ -174,30 +174,39 @@ CREATE TABLE `bb1_wm2018_teams` (
 -- Daten für Tabelle `bb1_wm2018_teams`
 -- 
 
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (1, 'Frankreich', 'A', 'fr.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (2, 'Rum&auml;nien', 'A', 'rou.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (3, 'Albanien', 'A', 'alb.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (4, 'Schweiz', 'A', 'ch.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (5, 'England', 'B', 'gb.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (6, 'Russland', 'B', 'ru.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (7, 'Wales', 'B', 'wal.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (8, 'Slowakei', 'B', 'svk.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (9, 'Deutschland', 'C', 'de.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (10, 'Ukraine', 'C', 'ukr.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (11, 'Polen', 'C', 'pol.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (12, 'Nordirland', 'C', 'nir.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (13, 'Spanien', 'D', 'es.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (14, 'Tschechien', 'D', 'cze.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (15, 'T&uuml;rkei', 'D', 'tur.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (16, 'Kroatien', 'D', 'hr.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (17, 'Belgien', 'E', 'be.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (18, 'Italien', 'E', 'it.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (19, 'Irland', 'E', 'irl.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (20, 'Schweden', 'E', 'swe.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (21, 'Portugal', 'F', 'pt.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (22, 'Island', 'F', 'isl.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (23, '&Ouml;sterreich', 'F', 'aut.png', 0, 0, 0, 0, 0, 0);
-INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES (24, 'Ungarn', 'F', 'hun.png', 0, 0, 0, 0, 0, 0);
+INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES
+(1, 'Russland', 'A',  'ru.png', 0,  0,  0,  0,  0,  0),
+(2, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
+(3, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
+(4, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
+(5, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
+(6, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
+(7, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
+(8, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
+(9, 'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
+(10,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
+(11,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
+(12,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
+(13,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
+(14,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
+(15,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
+(16,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
+(17,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
+(18,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
+(19,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
+(20,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
+(21,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
+(22,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
+(23,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
+(24,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
+(25,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
+(26,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
+(27,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
+(28,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
+(29,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
+(30,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
+(31,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
+(32,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0);
 
 -- --------------------------------------------------------
 
