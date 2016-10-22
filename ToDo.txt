@@ -47,6 +47,7 @@ ToDo für WM 2018:
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 + is_integer in den SQL-Queries checken
++ Spiel um Platz 3 wieder einführen
 + top_wm2018.gif ändern
 + trophy.gif ändern
 + Demo aktualisieren, aber erst wenn fertig
