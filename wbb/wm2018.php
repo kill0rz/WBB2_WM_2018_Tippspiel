@@ -128,7 +128,7 @@ if ($action == "index") {
 				$teamname1 = $lang->items['LANG_WM2018_PHP_12'];
 			}
 
-			if ($check1[0] == "D") {
+			if ($check1[0] == "V") {
 				$teamname1 = $lang->items['LANG_WM2018_PHP_13'];
 			}
 
@@ -152,7 +152,7 @@ if ($action == "index") {
 				$teamname2 = $lang->items['LANG_WM2018_PHP_12'];
 			}
 
-			if ($check2[0] == "D") {
+			if ($check2[0] == "V") {
 				$teamname2 = $lang->items['LANG_WM2018_PHP_13'];
 			}
 
@@ -412,7 +412,7 @@ if ($action == "showresults") {
 					$name1 = $lang->items['LANG_WM2018_PHP_12'];
 				}
 
-				if ($result_vorrunde[0] == "D") {
+				if ($result_vorrunde[0] == "V") {
 					$name1 = $lang->items['LANG_WM2018_PHP_13'];
 				}
 
@@ -428,7 +428,7 @@ if ($action == "showresults") {
 					$name2 = $lang->items['LANG_WM2018_PHP_12'];
 				}
 
-				if ($result_vorrunde[0] == "D") {
+				if ($result_vorrunde[0] == "V") {
 					$name2 = $lang->items['LANG_WM2018_PHP_13'];
 				}
 
