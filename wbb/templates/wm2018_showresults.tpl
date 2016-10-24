@@ -39,6 +39,7 @@
 					<b><a href="wm2018.php?action=showresults&amp;auswahl=2{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_SHOWRESULTS_5']}</a></b> |
 					<b><a href="wm2018.php?action=showresults&amp;auswahl=3{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_SHOWRESULTS_6']}</a></b> |
 					<b><a href="wm2018.php?action=showresults&amp;auswahl=4{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_SHOWRESULTS_7']}</a></b> |
+					<b><a href="wm2018.php?action=showresults&amp;auswahl=5{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_SHOWRESULTS_8']}</a></b> |
 					<b><a href="wm2018.php?action=showresults&amp;auswahl=6{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_SHOWRESULTS_9']}</a></b>
 				</span>
 			</td>
