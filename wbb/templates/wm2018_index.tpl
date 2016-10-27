@@ -237,7 +237,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="tablea" align="center" width="25%"><img src="images/wm2018/trophy.gif" alt="{$lang->items['LANG_WM2018_TPL_INDEX_23']}" title="{$lang->items['LANG_WM2018_TPL_INDEX_23']}" /></td>
+					<td class="tablea" align="center" width="25%"><img src="images/wm2018/trophy.jpg" alt="{$lang->items['LANG_WM2018_TPL_INDEX_23']}" title="{$lang->items['LANG_WM2018_TPL_INDEX_23']}" /></td>
 					<td class="tablea" align="center" width="75%">
 						<span class="normalfont">
 							<b><img src="images/wm2018/flaggen/$result_1st[flagge]" alt="$result_1st[name]" title="$result_1st[name]" />&nbsp;$result_1st[name]&nbsp;<img src="images/wm2018/flaggen/$result_1st[flagge]" alt="$result_1st[name]" title="$result_1st[name]" /></b>

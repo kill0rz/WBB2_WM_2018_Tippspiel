@@ -49,7 +49,7 @@ ToDo für WM 2018:
 + is_integer in den SQL-Queries checken
 + Spiel um Platz 3 wieder einführen
 + top_wm2018.gif ändern
-+ trophy.gif ändern
++ trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
 
 Spielplan --> http://www.weltfussball.de/alle_spiele/wm-2018-in-russland/gi
