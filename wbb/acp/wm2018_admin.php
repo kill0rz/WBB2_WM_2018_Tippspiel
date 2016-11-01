@@ -18,6 +18,31 @@ if (!checkAdminPermissions("a_can_wm2018_edit")) {
 	access_error(1);
 }
 
+// Konfiguration für die WM 2018
+$gameid_vorrundenendspiel = 48;
+
+$gameid_achtelfinal1 = 49;
+$gameid_achtelfinal2 = 50;
+$gameid_achtelfinal3 = 51;
+$gameid_achtelfinal4 = 52;
+$gameid_achtelfinal5 = 53;
+$gameid_achtelfinal6 = 54;
+$gameid_achtelfinal7 = 55;
+$gameid_achtelfinal8 = 56;
+
+$gameid_viertelfinal1 = 57;
+$gameid_viertelfinal2 = 58;
+$gameid_viertelfinal3 = 59;
+$gameid_viertelfinal4 = 60;
+
+$gameid_halbfinal1 = 61;
+$gameid_halbfinal2 = 62;
+
+$gameid_spielumplatzdrei = 63;
+$gameid_final = 64;
+
+// Konfiguration Ende
+
 $lang->load("ACP_WM2018,MISC,POSTINGS");
 
 if (isset($_REQUEST['action'])) {
@@ -219,100 +244,98 @@ if ($action == "punkteedit") {
 	eval("\$tpl->output(\"" . $tpl->get('wm2018_punkte_edit', 1) . "\");");
 }
 
-/*
-unnötig für WM 2018
-//fuer eventuelle Korrekturen am Achtelfinale
-if ($action == "correct8") {
-$spiele_mit_dritten = array(38, 39, 40, 41);
+// //unnötig für WM 2018
+// //fuer eventuelle Korrekturen am Achtelfinale
+// if ($action == "correct8") {
+// 	$spiele_mit_dritten = array(38, 39, 40, 41);
 
-$erfolgsmeldung = '';
-$wm2018_correct8_erfolgsmeldung = '';
+// 	$erfolgsmeldung = '';
+// 	$wm2018_correct8_erfolgsmeldung = '';
 
-if (isset($_POST['values_are_sent']) && trim($_POST['values_are_sent']) == "true") {
-//da hat jemand im ACP eine Mannschaft geändert
-foreach ($spiele_mit_dritten as $key => $spielid) {
-if (isset($_POST['changeteam_' . $spielid]) && intval($_POST['changeteam_' . $spielid]) != null && intval($_POST['changeteam_' . $spielid]) != 0) {
-$newteam_id = intval($_POST['changeteam_' . $spielid]);
-$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = " . $newteam_id . " WHERE gameid = '" . $spielid . "';");
-$erfolgsmeldung .= "<font color='green'>{$lang->items['LANG_ACP_WM2018_CORRECT8_10']} " . $spielid . " {$lang->items['LANG_ACP_WM2018_CORRECT8_11']}</font><br>";
-}
-}
-}
+// 	if (isset($_POST['values_are_sent']) && trim($_POST['values_are_sent']) == "true") {
+// 		//da hat jemand im ACP eine Mannschaft geändert
+// 		foreach ($spiele_mit_dritten as $key => $spielid) {
+// 			if (isset($_POST['changeteam_' . $spielid]) && intval($_POST['changeteam_' . $spielid]) != null && intval($_POST['changeteam_' . $spielid]) != 0) {
+// 				$newteam_id = intval($_POST['changeteam_' . $spielid]);
+// 				$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = " . $newteam_id . " WHERE gameid = '" . $spielid . "';");
+// 				$erfolgsmeldung .= "<font color='green'>{$lang->items['LANG_ACP_WM2018_CORRECT8_10']} " . $spielid . " {$lang->items['LANG_ACP_WM2018_CORRECT8_11']}</font><br>";
+// 			}
+// 		}
+// 	}
 
-if ($erfolgsmeldung != '') {
-eval("\$wm2018_correct8_erfolgsmeldung = \"" . $tpl->get('wm2018_correct8_erfolgsmeldung', 1) . "\";");
-}
+// 	if ($erfolgsmeldung != '') {
+// 		eval("\$wm2018_correct8_erfolgsmeldung = \"" . $tpl->get('wm2018_correct8_erfolgsmeldung', 1) . "\";");
+// 	}
 
-function bestedritte_alle($groupids) {
-global $db, $n, $wm2018_correct8_bit_select_bit, $tpl, $lang;
+// 	function bestedritte_alle($groupids) {
+// 		global $db, $n, $wm2018_correct8_bit_select_bit, $tpl, $lang;
 
-$wm2018_correct8_bit_select_bit = '';
+// 		$wm2018_correct8_bit_select_bit = '';
 
-$db->query("TRUNCATE TABLE bb" . $n . "_wm2018_bestedrittetmp;");
-foreach ($groupids as $groupid) {
-$counter = 0;
-$result = $db->query("SELECT teamid, td, punkte, g FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . $groupid . "' ORDER BY punkte DESC, td DESC, g DESC LIMIT 3");
-while ($row = $db->fetch_array($result)) {
-if (++$counter > 2) {
-$db->query("INSERT INTO bb" . $n . "_wm2018_bestedrittetmp (`teamid`, `punkte`, `td`, `g`) VALUES ('" . $row['teamid'] . "', '" . $row['punkte'] . "', '" . $row['td'] . "', '" . $row['g'] . "');");
-}
-}
-}
+// 		$db->query("TRUNCATE TABLE bb" . $n . "_wm2018_bestedrittetmp;");
+// 		foreach ($groupids as $groupid) {
+// 			$counter = 0;
+// 			$result = $db->query("SELECT teamid, td, punkte, g FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . $groupid . "' ORDER BY punkte DESC, td DESC, g DESC LIMIT 3");
+// 			while ($row = $db->fetch_array($result)) {
+// 				if (++$counter > 2) {
+// 					$db->query("INSERT INTO bb" . $n . "_wm2018_bestedrittetmp (`teamid`, `punkte`, `td`, `g`) VALUES ('" . $row['teamid'] . "', '" . $row['punkte'] . "', '" . $row['td'] . "', '" . $row['g'] . "');");
+// 				}
+// 			}
+// 		}
 
-$result = $db->query("SELECT teamid FROM bb" . $n . "_wm2018_bestedrittetmp ORDER BY punkte DESC, td DESC, g DESC LIMIT 3;");
-while ($row = $db->fetch_array($result)) {
-$sql2 = "SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['teamid'] . "' LIMIT 1;";
-$result2 = $db->query($sql2);
-while ($row2 = $db->fetch_array($result2)) {
-$mannschaft_id = $row['teamid'];
-$mannschaft = $row2['name'];
-eval("\$wm2018_correct8_bit_select_bit .= \"" . $tpl->get('wm2018_correct8_bit_select_bit', 1) . "\";");
-}
+// 		$result = $db->query("SELECT teamid FROM bb" . $n . "_wm2018_bestedrittetmp ORDER BY punkte DESC, td DESC, g DESC LIMIT 3;");
+// 		while ($row = $db->fetch_array($result)) {
+// 			$sql2 = "SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['teamid'] . "' LIMIT 1;";
+// 			$result2 = $db->query($sql2);
+// 			while ($row2 = $db->fetch_array($result2)) {
+// 				$mannschaft_id = $row['teamid'];
+// 				$mannschaft = $row2['name'];
+// 				eval("\$wm2018_correct8_bit_select_bit .= \"" . $tpl->get('wm2018_correct8_bit_select_bit', 1) . "\";");
+// 			}
 
-}
-}
+// 		}
+// 	}
 
-$spiele_mit_dritten_team1 = array("{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} B", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} D", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} A", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} C");
-$spiele_mit_dritten_team2 = array("A/C/D", "B/E/F", "C/D/E", "A/B/F");
-$spiele_mit_dritten_dritte_aus_gruppen = array(array("A", "C", "D"), array("B", "E", "F"), array("C", "D", "E"), array("A", "B", "F"));
+// 	$spiele_mit_dritten_team1 = array("{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} B", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} D", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} A", "{$lang->items['LANG_ACP_WM2018_CORRECT8_9']} C");
+// 	$spiele_mit_dritten_team2 = array("A/C/D", "B/E/F", "C/D/E", "A/B/F");
+// 	$spiele_mit_dritten_dritte_aus_gruppen = array(array("A", "C", "D"), array("B", "E", "F"), array("C", "D", "E"), array("A", "B", "F"));
 
-foreach ($spiele_mit_dritten as $key => $spielid) {
-$spiel_team_1 = $spiele_mit_dritten_team1[$key];
-$spiel_team_2 = "Dritter " . $spiele_mit_dritten_team2[$key];
-$result = $db->unbuffered_query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid='" . $spielid . "'");
-while ($row = $db->fetch_array($result)) {
-$wm2018_correct8_bit_select = '';
-$sql2 = "SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['team_1_id'] . "' LIMIT 1;";
-$result2 = $db->unbuffered_query($sql2);
-if ($db->num_rows($result2) == 0) {
-// Spiel steht noch nicht fest
-$spiel_team_1_name = "{$lang->items['LANG_ACP_WM2018_CORRECT8_8']} <img src=\"../images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" title=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" />";
-} else {
-while ($row2 = $db->fetch_array($result2)) {
-$spiel_team_1_name = $row2['name'] . " <img src=\"../images/wm2018/flaggen/{$row2['flagge']}\" border=\"0\" alt=\"{$row2['name']}\" title=\"{$row2['name']}\" />";
-}
-}
+// 	foreach ($spiele_mit_dritten as $key => $spielid) {
+// 		$spiel_team_1 = $spiele_mit_dritten_team1[$key];
+// 		$spiel_team_2 = "Dritter " . $spiele_mit_dritten_team2[$key];
+// 		$result = $db->unbuffered_query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid='" . $spielid . "'");
+// 		while ($row = $db->fetch_array($result)) {
+// 			$wm2018_correct8_bit_select = '';
+// 			$sql2 = "SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['team_1_id'] . "' LIMIT 1;";
+// 			$result2 = $db->unbuffered_query($sql2);
+// 			if ($db->num_rows($result2) == 0) {
+// 				// Spiel steht noch nicht fest
+// 				$spiel_team_1_name = "{$lang->items['LANG_ACP_WM2018_CORRECT8_8']} <img src=\"../images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" title=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" />";
+// 			} else {
+// 				while ($row2 = $db->fetch_array($result2)) {
+// 					$spiel_team_1_name = $row2['name'] . " <img src=\"../images/wm2018/flaggen/{$row2['flagge']}\" border=\"0\" alt=\"{$row2['name']}\" title=\"{$row2['name']}\" />";
+// 				}
+// 			}
 
-$sql2 = "SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['team_2_id'] . "' LIMIT 1;";
-$result2 = $db->unbuffered_query($sql2);
-if ($db->num_rows($result2) == 0) {
-$spiel_team_2_name = "{$lang->items['LANG_ACP_WM2018_CORRECT8_8']} <img src=\"../images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" title=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" />";
-} else {
-while ($row2 = $db->fetch_array($result2)) {
-$spiel_team_2_name = $row2['name'] . " <img src=\"../images/wm2018/flaggen/{$row2['flagge']}\" border=\"0\" alt=\"{$row2['name']}\" title=\"{$row2['name']}\" />";
+// 			$sql2 = "SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $row['team_2_id'] . "' LIMIT 1;";
+// 			$result2 = $db->unbuffered_query($sql2);
+// 			if ($db->num_rows($result2) == 0) {
+// 				$spiel_team_2_name = "{$lang->items['LANG_ACP_WM2018_CORRECT8_8']} <img src=\"../images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" title=\"{$lang->items['LANG_ACP_WM2018_CORRECT8_8']}\" />";
+// 			} else {
+// 				while ($row2 = $db->fetch_array($result2)) {
+// 					$spiel_team_2_name = $row2['name'] . " <img src=\"../images/wm2018/flaggen/{$row2['flagge']}\" border=\"0\" alt=\"{$row2['name']}\" title=\"{$row2['name']}\" />";
 
-bestedritte_alle($spiele_mit_dritten_dritte_aus_gruppen[$key]);
+// 					bestedritte_alle($spiele_mit_dritten_dritte_aus_gruppen[$key]);
 
-eval("\$wm2018_correct8_bit_select .= \"" . $lang->items['LANG_ACP_WM2018_CORRECT8_3'] . " " . $tpl->get('wm2018_correct8_bit_select', 1) . "\";");
-}
-}
-}
-eval("\$wm2018_correct8_bit .= \"" . $tpl->get('wm2018_correct8_bit', 1) . "\";");
-}
-$punkte = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '" . intval($_REQUEST['punkteid']) . "'");
-eval("\$tpl->output(\"" . $tpl->get('wm2018_correct8', 1) . "\");");
-}
- */
+// 					eval("\$wm2018_correct8_bit_select .= \"" . $lang->items['LANG_ACP_WM2018_CORRECT8_3'] . " " . $tpl->get('wm2018_correct8_bit_select', 1) . "\";");
+// 				}
+// 			}
+// 		}
+// 		eval("\$wm2018_correct8_bit .= \"" . $tpl->get('wm2018_correct8_bit', 1) . "\";");
+// 	}
+// 	$punkte = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '" . intval($_REQUEST['punkteid']) . "'");
+// 	eval("\$tpl->output(\"" . $tpl->get('wm2018_correct8', 1) . "\");");
+// }
 
 if ($action == "results") {
 	$allids2[] = array();
@@ -533,7 +556,7 @@ if ($action == "result_save") {
 			// Speichern des Spielergebnisses
 			$db->query("UPDATE bb" . $n . "_wm2018_spiele SET game_goals_1 = '" . intval($_POST['game_goals_1']) . "', game_goals_2 = '" . intval($_POST['game_goals_2']) . "', game_gk = '" . intval($_POST['game_gk_jn']) . "', game_rk = '" . intval($_POST['game_rk_jn']) . "', game_elfer = '" . intval($_POST['game_elfer_jn']) . "', gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
 			// Update der Teamdaten bei Vorrundenspielen
-			if (intval($_POST['gameid']) <= 36) {
+			if (intval($_POST['gameid']) <= $gameid_vorrundenendspiel) {
 				// Tordifferenz berechnen
 				$td1 = intval($_POST['game_goals_1']) - intval($_POST['game_goals_2']);
 				$td2 = intval($_POST['game_goals_2']) - intval($_POST['game_goals_1']);
@@ -574,94 +597,96 @@ if ($action == "result_save") {
 			}
 
 			/*
-				//Sonderlocken seit EM 2016: beste Dritte der jeweiligen Gruppen
-				function bestedritte($groupids, $currentgameid) {
-					global $db, $n;
+					//Sonderlocken seit EM 2016: beste Dritte der jeweiligen Gruppen
+					function bestedritte($groupids, $currentgameid) {
+						global $db, $n;
 
-					$db->query("TRUNCATE TABLE bb" . $n . "_wm2018_bestedrittetmp;");
-					foreach ($groupids as $groupid) {
-						$counter = 0;
-						$result = $db->query("SELECT teamid, td, punkte, g FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . $groupid . "' ORDER BY punkte DESC, td DESC, g DESC LIMIT 3");
-						while ($row = $db->fetch_array($result)) {
-							if (++$counter < 3) {
-								continue;
+						$db->query("TRUNCATE TABLE bb" . $n . "_wm2018_bestedrittetmp;");
+						foreach ($groupids as $groupid) {
+							$counter = 0;
+							$result = $db->query("SELECT teamid, td, punkte, g FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . $groupid . "' ORDER BY punkte DESC, td DESC, g DESC LIMIT 3");
+							while ($row = $db->fetch_array($result)) {
+								if (++$counter < 3) {
+									continue;
+								}
+								$db->query("INSERT INTO bb" . $n . "_wm2018_bestedrittetmp (`teamid`, `punkte`, `td`, `g`) VALUES ('" . $row['teamid'] . "', '" . $row['punkte'] . "', '" . $row['td'] . "', '" . $row['g'] . "');");
 							}
-							$db->query("INSERT INTO bb" . $n . "_wm2018_bestedrittetmp (`teamid`, `punkte`, `td`, `g`) VALUES ('" . $row['teamid'] . "', '" . $row['punkte'] . "', '" . $row['td'] . "', '" . $row['g'] . "');");
 						}
-					}
 
-					$result = $db->query("SELECT teamid FROM bb" . $n . "_wm2018_bestedrittetmp ORDER BY punkte DESC, td DESC, g DESC");
-					while ($row = $db->fetch_array($result)) {
-						// $docontinue -> ist das gefunde team schon in einem anderen Spiel?
-						$docontinue = false;
-						if ($currentgameid != 32) {
-							if ($currentgameid >= 34) {
-								$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '38';");
-								while ($row2 = $db->fetch_array($result)) {
-									if ($row2['team_2_id'] == $row['teamid']) {
-										$docontinue = true;
-									}
-								}
-							}
-
-							if ($currentgameid >= 36) {
-								$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '39';");
-								while ($row2 = $db->fetch_array($result)) {
-									if ($row2['team_2_id'] == $row['teamid']) {
-										$docontinue = true;
-									}
-								}
-							}
-
-							if ($currentgameid >= 36) {
-								$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '39';");
-								while ($row2 = $db->fetch_array($result)) {
-									if ($row2['team_2_id'] == $row['teamid']) {
-										$docontinue = true;
+						$result = $db->query("SELECT teamid FROM bb" . $n . "_wm2018_bestedrittetmp ORDER BY punkte DESC, td DESC, g DESC");
+						while ($row = $db->fetch_array($result)) {
+							// $docontinue -> ist das gefunde team schon in einem anderen Spiel?
+							$docontinue = false;
+							if ($currentgameid != 32) {
+								if ($currentgameid >= 34) {
+									$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '38';");
+									while ($row2 = $db->fetch_array($result)) {
+										if ($row2['team_2_id'] == $row['teamid']) {
+											$docontinue = true;
+										}
 									}
 								}
 
-								$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '41';");
-								while ($row2 = $db->fetch_array($result)) {
-									if ($row2['team_2_id'] == $row['teamid']) {
-										$docontinue = true;
+								if ($currentgameid >= 36) {
+									$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '39';");
+									while ($row2 = $db->fetch_array($result)) {
+										if ($row2['team_2_id'] == $row['teamid']) {
+											$docontinue = true;
+										}
 									}
 								}
-							}
 
-							if ($docontinue) {
-								continue;
+								if ($currentgameid >= 36) {
+									$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '39';");
+									while ($row2 = $db->fetch_array($result)) {
+										if ($row2['team_2_id'] == $row['teamid']) {
+											$docontinue = true;
+										}
+									}
+
+									$result = $db->query("SELECT team_2_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '41';");
+									while ($row2 = $db->fetch_array($result)) {
+										if ($row2['team_2_id'] == $row['teamid']) {
+											$docontinue = true;
+										}
+									}
+								}
+
+								if ($docontinue) {
+									continue;
+								} else {
+									return $row['teamid'];
+								}
+
 							} else {
 								return $row['teamid'];
 							}
-
-						} else {
-							return $row['teamid'];
 						}
-					}
+
+				if (intval($_POST['gameid']) == 32) {
+					//Dritter A/C/D in 2. 38
+					// $bestteam_id = bestedritte(array("A", "C", "D"), 32);
+					$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '38'");
+				} elseif (intval($_POST['gameid']) == 34) {
+					//Dritter C/D/E in 2. 40
+					// $bestteam_id = bestedritte(array("C", "D", "E"), 34);
+					$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '40'");
+				} elseif (intval($_POST['gameid']) == 36) {
+					//Dritter B/E/F in 2. 39
+					// $bestteam_id = bestedritte(array("B", "E", "F"), 36);
+					$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '39'");
+					//Dritter A/B/F in 2. 41
+					// $bestteam_id = bestedritte(array("A", "B", "F"), 36);
+					$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '41'");
+				}
 			*/
 
-			if (intval($_POST['gameid']) == 32) {
-				//Dritter A/C/D in 2. 38
-				// $bestteam_id = bestedritte(array("A", "C", "D"), 32);
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '38'");
-			} elseif (intval($_POST['gameid']) == 34) {
-				//Dritter C/D/E in 2. 40
-				// $bestteam_id = bestedritte(array("C", "D", "E"), 34);
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '40'");
-			} elseif (intval($_POST['gameid']) == 36) {
-				//Dritter B/E/F in 2. 39
-				// $bestteam_id = bestedritte(array("B", "E", "F"), 36);
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '39'");
-				//Dritter A/B/F in 2. 41
-				// $bestteam_id = bestedritte(array("A", "B", "F"), 36);
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $bestteam_id . "' WHERE gameid = '41'");
-			}
+			// Vorrunde vorbei, jetzt wird die KO-Runde aufgebaut
 
 			// Viertelfinale aufbauen
 			$checkgameids1 = array(37, 38, 41, 40);
 			$checkgameids2 = array(39, 42, 43, 44);
-			$savegameids = array(45, 46, 47, 48);
+			$savegameids = array($gameid_viertelfinal1, $gameid_viertelfinal2, $gameid_viertelfinal3, $gameid_viertelfinal4);
 			if (in_array($_POST['gameid'], $checkgameids1)) {
 				for ($i = 0; $i < count($checkgameids1); $i++) {
 					if ($_POST['gameid'] == $checkgameids1[$i]) {
@@ -693,55 +718,55 @@ if ($action == "result_save") {
 			}
 
 			// Halbfinale aufbauen
-			if (intval($_POST['gameid']) == 45) {
+			if (intval($_POST['gameid']) == $gameid_viertelfinal1) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '49'");
-			} elseif (intval($_POST['gameid']) == 46) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal1}'");
+			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal2) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '49'");
-			} elseif (intval($_POST['gameid']) == 47) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal1}'");
+			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal3) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '50'");
-			} elseif (intval($_POST['gameid']) == 48) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal2}'");
+			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal4) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '50'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal2}'");
 			}
 
 			// Finale aufbauen
-			if (intval($_POST['gameid']) == 49) {
+			if (intval($_POST['gameid']) == $gameid_halbfinal1) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '51'");
-			} elseif (intval($_POST['gameid']) == 50) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_final}'");
+			} elseif (intval($_POST['gameid']) == $gameid_halbfinal2) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '51'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_final}'");
 			}
 
 			// Finale abschließen
-			if (intval($_POST['gameid']) == 51) {
+			if (intval($_POST['gameid']) == $gameid_final) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 					$team_v = intval($_POST['team2']);

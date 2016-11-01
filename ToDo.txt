@@ -40,8 +40,6 @@ ToDo für WM 2018:
 + action: showresults
 	+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
 	+ hierbei auf die kritischen Spielnummern prüfen
-+ Kriritische Spielenummern in Variablen auslagern
-	+ z.B.: 36 = Vorrundenende usw.
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
