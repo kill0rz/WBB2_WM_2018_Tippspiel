@@ -61,9 +61,6 @@ USERWÜNSCHE
 
 ZU TESTEN
 ---------
-+ action: showusertippsdetail
-	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
-	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
 + ACP > eintragen
 	+ Link zum Spiel (Forum, neuer Tab) hinter die ID
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
@@ -82,6 +79,8 @@ DONE
 + Nummerfelder verwenden: Tipp eintragen/editieren
 + Tageswertung rückbauen: ACP > eintragen
 + Variablen verwenden: ACP > Optionen > Bis zu welchem Spiel kann der Weltmeister / VizeWeltmeister getippt werden?
++ action: showusertippsdetail
+	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
 
 
 

@@ -1098,7 +1098,7 @@ if ($action == "showusertippsdetail") {
 		}
 		eval("\$tpl->output(\"" . $tpl->get("wm2018_showusertippsdetail") . "\");");
 	} else {
-		eval("\$tpl->output(\"" . $tpl->get("wm2018_error") . "\");");
+		redirect($lang->get("LANG_WM2018_PHP_61"), $url = "wm2018.php?action=showusertipps" . $SID_ARG_1ST);
 	}
 }
 // +++++++++++++++++++++++++++++++++++++++++++
