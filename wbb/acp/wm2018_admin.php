@@ -572,10 +572,10 @@ if ($action == "result_save") {
 			}
 
 			// Achtelfinale aufbauen
-			$check_8_gameids = array(26, 28, 30, 32, 34, 36);
+			$check_8_gameids = array(34, 36, 38, 40, 44, 42, 48, 46);
 			$gruppenids = array("A", "B", "C", "D", "E", "F", "G", "H");
-			$savegameids1 = array(40, 38, 41, 39, 43, 42);
-			$savegameids2 = array(37, 44, 37, 43, 42, 44);
+			$savegameids1 = array(50, 51, 49, 52, 54, 56, 53, 55);
+			$savegameids2 = array(51, 50, 52, 49, 56, 54, 55, 53);
 			if (in_array(intval($_POST['gameid']), $check_8_gameids)) {
 				for ($i = 0; $i < count($check_8_gameids); $i++) {
 					if (intval($_POST['gameid']) == $check_8_gameids[$i]) {
@@ -586,11 +586,7 @@ if ($action == "result_save") {
 
 						$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '" . $teamids['0'] . "' WHERE gameid = '" . $savegameids1[$i] . "'");
 
-						if ($i == 0 || $i == 1) {
-							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
-						} else {
-							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
-						}
+						$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
 					}
 				}
 			}
@@ -683,9 +679,10 @@ if ($action == "result_save") {
 			// Vorrunde vorbei, jetzt wird die KO-Runde aufgebaut
 
 			// Viertelfinale aufbauen
-			$checkgameids1 = array(37, 38, 41, 40);
-			$checkgameids2 = array(39, 42, 43, 44);
+			$checkgameids1 = array(54, 59, 56, 51);
+			$checkgameids2 = array(53, 60, 55, 52);
 			$savegameids = array($gameid_viertelfinal1, $gameid_viertelfinal2, $gameid_viertelfinal3, $gameid_viertelfinal4);
+			// Team 1 eintragen
 			if (in_array($_POST['gameid'], $checkgameids1)) {
 				for ($i = 0; $i < count($checkgameids1); $i++) {
 					if ($_POST['gameid'] == $checkgameids1[$i]) {
@@ -696,11 +693,12 @@ if ($action == "result_save") {
 						if (intval($_POST['game_goals_1']) < intval($_POST['game_goals_2'])) {
 							$teamid = intval($_POST['team2']);
 						}
-
 						$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$teamid}' WHERE gameid = '" . $savegameids[$i] . "'");
 					}
 				}
 			}
+
+			// Team 2 eintragen
 			if (in_array(intval($_POST['gameid']), $checkgameids2)) {
 				for ($i = 0; $i < count($checkgameids2); $i++) {
 					if (intval($_POST['gameid']) == $checkgameids2[$i]) {
@@ -710,7 +708,6 @@ if ($action == "result_save") {
 						if (intval($_POST['game_goals_1']) < intval($_POST['game_goals_2'])) {
 							$teamid = intval($_POST['team2']);
 						}
-
 						$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$teamid}' WHERE gameid = '" . $savegameids[$i] . "'");
 					}
 				}
@@ -990,7 +987,6 @@ if ($action == "result_save") {
 		$result_1 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team1']) . "'");
 		$result_2 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team2']) . "'");
 		$gameid = intval($_POST['gameid']);
-		// echo("Team1: $result_1['name']<br>Team2: $result_2['name']<br>Gameid: $gameid");
 		$tore1 = intval($_POST['game_goals_1']);
 		$tore2 = intval($_POST['game_goals_2']);
 		$error = '';
@@ -1010,7 +1006,7 @@ if ($action == "result_save") {
 			$error .= $lang->get("LANG_ACP_WM2018_PHP_8");
 		}
 
-		if ($gameid > 48 && ($tore1 == $tore2)) {
+		if ($gameid > $gameid_vorrundenendspiel && ($tore1 == $tore2)) {
 			$error .= $lang->get("LANG_ACP_WM2018_PHP_9");
 		}
 

@@ -53,7 +53,6 @@ Spielplan --> http://www.weltfussball.de/alle_spiele/wm-2018-in-russland/gi
 
 USERWÜNSCHE
 -----------
-
 - Tipp für Verlängerung und Elfmeterschießen einbauen (wobei Elfmeter im Grunde schon existiert)
 - Jeder Spieler bekommt eine Anzahl Joker, zum Verdoppeln der Punkte
 - Wenn man bei Tippabgabe Felder vergessen hat, nur die Felder anmeckern, die vergessen wurde. Im Moment muss man alles neu eintragen.
@@ -77,6 +76,7 @@ ZU TESTEN
 + Fehlerseite, wenn Tipps noch nicht einsehbar
 + Beste Dritte rückbauen
 + is_integer in den SQL-Queries checken
++ Kriritische Spielenummern in Variablen auslagern
 
 
 DONE
