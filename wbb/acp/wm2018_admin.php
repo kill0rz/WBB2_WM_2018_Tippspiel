@@ -11,10 +11,11 @@
  *   Boardversion         : Burning Board wBB 2.3
  ***************************************************************************/
 
-require "./global.php";
+require './global.php';
 require './lib/class_parse.php';
 require './lib/class_parsecode.php';
-include './wm2018_gameids.php';
+require './wm2018_gameids.php';
+
 if (!checkAdminPermissions("a_can_wm2018_edit")) {
 	access_error(1);
 }
@@ -198,6 +199,7 @@ if ($action == "options") {
 		$wm2018_options['vgposttid'] = 0;
 	}
 
+	eval("\$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_20'] = \"" . $lang->get4eval("LANG_ACP_WM2018_TPL_OPTIONS_20") . "\";");
 	eval("\$tpl->output(\"" . $tpl->get('wm2018_options', 1) . "\");");
 }
 

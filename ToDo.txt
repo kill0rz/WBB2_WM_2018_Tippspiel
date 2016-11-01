@@ -48,8 +48,6 @@ ToDo für WM 2018:
 + trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
 
-Spielplan --> http://www.weltfussball.de/alle_spiele/wm-2018-in-russland/gi
-
 
 USERWÜNSCHE
 -----------
@@ -63,7 +61,6 @@ USERWÜNSCHE
 
 ZU TESTEN
 ---------
-+ Tageswertung rückbauen: ACP > eintragen
 + action: showusertippsdetail
 	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
 	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
@@ -83,6 +80,9 @@ DONE
 ----
 + Nummerfelder verwenden: ACP > Ergebnis eintragen
 + Nummerfelder verwenden: Tipp eintragen/editieren
++ Tageswertung rückbauen: ACP > eintragen
++ Variablen verwenden: ACP > Optionen > Bis zu welchem Spiel kann der Weltmeister / VizeWeltmeister getippt werden?
+
 
 
 ToDo für die EM 2020:
