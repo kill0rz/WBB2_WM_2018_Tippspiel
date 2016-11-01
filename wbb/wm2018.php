@@ -14,6 +14,7 @@ $filename = "wm2018.php";
 
 require "./global.php";
 include "./wm2018_global.php";
+include "./acp/wm2018_gameids.php";
 $lang->load("WM2018");
 
 if (isset($_REQUEST['action'])) {
@@ -597,7 +598,7 @@ if ($action == "tippabgabe") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > 48 && ($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
+		if (intval($_POST['gameid']) > $gameid_vorrundenendspiel && ($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=tippabgabe&amp;gameid={$_POST['gameid']}" . $SID_ARG_2ND);
 		}
 
@@ -1343,7 +1344,7 @@ if ($action == "edittipp") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale, Spiel um Platz 3 oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > 48 && (intval($_POST['tipp_1']) == intval($_POST['tipp_2']))) {
+		if (intval($_POST['gameid']) > $gameid_vorrundenendspiel && (intval($_POST['tipp_1']) == intval($_POST['tipp_2']))) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=edittipp&amp;gameid={$_POST['gameid']}&amp;userid={$wbbuserdata['userid']}" . $SID_ARG_2ND);
 		}
 

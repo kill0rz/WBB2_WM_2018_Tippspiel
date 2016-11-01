@@ -96,14 +96,3 @@
 	<conditiontype>OR</conditiontype>
 	<acpmode>2</acpmode>
 </wBBacpmenuitem>
-
-<wBBacpmenuitem>
-	<name>WM2018_CORRECT8</name>
-	<title>Achtelfinale korrigieren</title>
-	<group>WM2018</group>
-	<link>wm2018_admin.php?action=correct8</link>
-	<linkformat></linkformat>
-	<condition>a_can_wm2018_edit</condition>
-	<conditiontype>OR</conditiontype>
-	<acpmode>2</acpmode>
-</wBBacpmenuitem>

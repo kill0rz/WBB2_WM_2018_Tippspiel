@@ -63,9 +63,7 @@ USERWÜNSCHE
 
 ZU TESTEN
 ---------
-+ Nummerfelder verwenden: ACP > Ergebnis eintragen
 + Tageswertung rückbauen: ACP > eintragen
-+ Nummerfelder verwenden: Tipp eintragen/editieren
 + action: showusertippsdetail
 	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
 	+ Link hinter SpielNr zu ?action=tippsprogame&gameid=
@@ -77,10 +75,14 @@ ZU TESTEN
 + Beste Dritte rückbauen
 + is_integer in den SQL-Queries checken
 + Kriritische Spielenummern in Variablen auslagern
+	+ Front- und Backend testen
++ Achtelfinale korrigieren im ACP-Menü rückbauen
 
 
 DONE
 ----
++ Nummerfelder verwenden: ACP > Ergebnis eintragen
++ Nummerfelder verwenden: Tipp eintragen/editieren
 
 
 ToDo für die EM 2020:
