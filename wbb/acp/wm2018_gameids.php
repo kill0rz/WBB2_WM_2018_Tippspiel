@@ -21,6 +21,6 @@ $gameid_halbfinal1 = 61;
 $gameid_halbfinal2 = 62;
 
 $gameid_spielumplatzdrei = 63;
-$gameid_final = 64;
+$gameid_finale = 64;
 
 // Konfiguration Ende

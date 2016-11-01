@@ -345,6 +345,41 @@ if ($action == "showresults") {
 	if (isset($_REQUEST['auswahl'])) {
 		$auswahl = intval($_REQUEST['auswahl']);
 	} else {
+		// Prüfen, ob ein Tab vorausgewählt werden kann
+		// Keinen Tab wählen, wenn WM vorbei ist
+		if ($wm2018_options['1st'] == 0) {
+			$curr_timestamp = time();
+
+			// Achtelfinale
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_achtelfinal1) . ";");
+			if ($result['datetime'] < $curr_timestamp) {
+				$auswahl = "2";
+			}
+
+			// Viertelfinale
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_viertelfinal1) . ";");
+			if ($result['datetime'] < $curr_timestamp) {
+				$auswahl = "3";
+			}
+
+			// Halbfinale
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_halbfinal1) . ";");
+			if ($result['datetime'] < $curr_timestamp) {
+				$auswahl = "4";
+			}
+
+			// Spiel um Platz 3
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_spielumplatzdrei) . ";");
+			if ($result['datetime'] < $curr_timestamp) {
+				$auswahl = "5";
+			}
+
+			// Finale
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_finale) . ";");
+			if ($result['datetime'] < $curr_timestamp) {
+				$auswahl = "6";
+			}
+		}
 		$auswahl = "1";
 	}
 

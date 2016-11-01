@@ -729,18 +729,18 @@ if ($action == "result_save") {
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_final}'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_finale}'");
 			} elseif (intval($_POST['gameid']) == $gameid_halbfinal2) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_final}'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_finale}'");
 			}
 
 			// Finale abschließen
-			if (intval($_POST['gameid']) == $gameid_final) {
+			if (intval($_POST['gameid']) == $gameid_finale) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 					$team_v = intval($_POST['team2']);

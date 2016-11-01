@@ -37,9 +37,6 @@ ToDo für WM 2018:
 + action gamedetails
 	+ Linktext schöner machen ("Link zum Spiel")
 	+ Forenfunktion nutzen zum shrinken
-+ action: showresults
-	+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
-	+ hierbei auf die kritischen Spielnummern prüfen
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
@@ -68,6 +65,8 @@ ZU TESTEN
 + Kriritische Spielenummern in Variablen auslagern
 	+ Front- und Backend testen
 + Achtelfinale korrigieren im ACP-Menü rückbauen
++ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
+
 
 
 DONE
