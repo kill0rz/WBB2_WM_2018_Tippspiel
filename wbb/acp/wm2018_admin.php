@@ -347,8 +347,7 @@ if ($action == "results") {
 		$allnames2[] = $row_teams['name'];
 		$allflags2[] = $row_teams['flagge'];
 	}
-	//irgendwie ist mir hier nicht ganz klar, was der ursprüngliche Autor mit den is_integer-Funktionen wollte. Das mal überarbeiten; kommt auch öfter im Quelltext vor; kill0rz 11.10.2016
-	$result_games = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE team_1_id " . is_integer(team_1_id) . " AND team_2_id " . is_integer(team_2_id) . " ORDER BY datetime ASC");
+	$result_games = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE team_1_id IS NOT NULL AND team_2_id IS NOT NULL ORDER BY datetime ASC");
 	while ($row_games = $db->fetch_array($result_games)) {
 		$rowclass = getone($count++, "firstrow", "secondrow");
 		$date = formatdate($wbbuserdata['dateformat'], $row_games['datetime'], 1);

@@ -44,8 +44,6 @@ ToDo für WM 2018:
 	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
-+ is_integer in den SQL-Queries checken
-+ Spiel um Platz 3 wieder einführen
 + top_wm2018.gif ändern
 + trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
@@ -78,6 +76,7 @@ ZU TESTEN
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + Fehlerseite, wenn Tipps noch nicht einsehbar
 + Beste Dritte rückbauen
++ is_integer in den SQL-Queries checken
 
 
 DONE
