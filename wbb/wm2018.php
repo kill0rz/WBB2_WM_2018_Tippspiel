@@ -1292,7 +1292,7 @@ if ($action == "tippsprogame") {
 	// Tipps nur anzeigen, wenn Spiel schon gespielt
 	$result_datetime = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
 	if ($result_datetime['datetime'] > $akttime) {
-		redirect($lang->get("LANG_WM2018_PHP_60"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_60"), $url = "wm2018.php?action=showresults" . $SID_ARG_1ST);
 	}
 
 	$result = $db->query("SELECT ut.*,u.username FROM bb" . $n . "_wm2018_usertipps ut LEFT JOIN bb" . $n . "_users u ON ut.userid=u.userid WHERE gameid = '" . intval($_REQUEST['gameid']) . "' ORDER BY userid ASC");
