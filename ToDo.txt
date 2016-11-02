@@ -62,8 +62,6 @@ ZU TESTEN
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
 + Achtelfinale korrigieren im ACP-Menü rückbauen
-+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
-
 
 
 DONE
@@ -79,6 +77,8 @@ DONE
 + Fehlerseite, wenn Tipps noch nicht einsehbar
 + Kriritische Spielenummern in Variablen auslagern
 + Beste Dritte rückbauen
++ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
+
 
 
 ToDo für die EM 2020:
