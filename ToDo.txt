@@ -56,6 +56,7 @@ USERWÜNSCHE
 	+ http://www.v-gn.de/wbb/thread.php?postid=132239#post132239
 	+ https://cloudikon.de/wp-content/uploads/2016/06/Turnierbaum.jpg
 
+
 ZU TESTEN
 ---------
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
