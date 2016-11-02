@@ -444,6 +444,7 @@ if ($action == "index") {
 	eval("\$lang->items['LANG_WM2018_TPL_INDEX_32'] = \"" . $lang->get4eval("LANG_WM2018_TPL_INDEX_32") . "\";");
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_index") . "\");");
 }
+
 // +++++++++++++++++
 // ++ Ergebnisse +++
 // +++++++++++++++++
@@ -492,7 +493,7 @@ if ($action == "showresults") {
 	}
 
 	if ($auswahl == 1) {
-		$gruppen = "A,B,C,D,E,F";
+		$gruppen = "A,B,C,D,E,F,G,H";
 		$type = $lang->items['LANG_WM2018_PHP_3'];
 	}
 	if ($auswahl == 2) {
