@@ -437,7 +437,6 @@ if ($action == "index") {
 		//!mf Quote
 
 		eval("\$wm2018_nonaddedgames .= \"" . $tpl->get("wm2018_nonaddedgames") . "\";");
-		echo strlen($wm2018_nonaddedgames) . "<br />";
 	}
 	// Next X Games Ende
 	// Offene Ergebnisse Ende
@@ -456,6 +455,7 @@ if ($action == "showresults") {
 		// Keinen Tab wählen, wenn WM vorbei ist
 		if ($wm2018_options['1st'] == 0) {
 			$curr_timestamp = time();
+			$auswahl = "1";
 
 			// Achtelfinale
 			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_achtelfinal1) . ";");
