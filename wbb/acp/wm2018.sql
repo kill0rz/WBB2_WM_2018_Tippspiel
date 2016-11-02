@@ -13,6 +13,7 @@ CREATE TABLE `bb1_wm2018_options` (
   `wmticker_width` int(5) NOT NULL default '800',
   `nextxgames` int(3) NOT NULL default '4',
   `nonaddedgamescount` int(3) NOT NULL default '4',
+  `currentgamescount` int(3) NOT NULL default '4',
   `topuser` int(3) NOT NULL default '10',
   `tipptime` int(10) NOT NULL default '300',
   `tendenz` int(1) NOT NULL default '1',
@@ -40,7 +41,20 @@ CREATE TABLE `bb1_wm2018_options` (
 -- Daten für Tabelle `bb1_wm2018_options`
 -- 
 
-INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 1, 800, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
+INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `currentgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 1, 800, 4, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
+ALTER TABLE `bb1_wm2018_options` ADD `po_aktiv` int(1) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `vgposttid` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `vgpostuid` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `viconid` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `vgthema` varchar(100) NOT NULL default 'Ergebnis: {vgp_name1} - {vgp_name2}';
+ALTER TABLE `bb1_wm2018_options` ADD `message` text NOT NULL;
+ALTER TABLE `bb1_wm2018_options` ADD `vboardid` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `vprefix` varchar(50) NOT NULL default 'WM2018';
+ALTER TABLE `bb1_wm2018_options` ADD `vgposthtml` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `diskussionsthreadid` int(11) NOT NULL DEFAULT '0';
+ALTER TABLE `bb1_wm2018_options` ADD `lasttageswertungreset` int(11) NOT NULL default '0';
+ALTER TABLE `bb1_wm2018_options` ADD `showrssnews_method` int(11) NOT NULL default '0';
+UPDATE bb1_wm2018_options SET message='Hallo,\r\n\r\nhier das Ergebnis von Spiel [B]{vgp_gameid}[/B] der Gruppe [B]{vgp_gruppe}[/B].\r\n\r\nDas Spiel fand in {vgp_stadion}, am {vgp_datum} um {vgp_zeit} Uhr statt.\r\n\r\n[CENTER][B]{vgp_name1}[/B] {vgp_flagge1} - [B]{vgp_name2}[/B] {vgp_flagge2}[/CENTER]\r\n[CENTER][SIZE=16][B]{vgp_tore1}[/B] - [B]{vgp_tore2}[/B][/SIZE][/CENTER]\r\n\r\nGelbe-Karten: [B]{vgp_gk}[/B]\r\nRote-Karten; [B]{vgp_rk}[/B]\r\nElfmeter: [B]{vgp_elfer} [/B]\r\n\r\nEs haben [B]{vgp_anztipp}[/B] User am Tipp für das Spiel teilgenommen.\r\n\r\nHier mehr zum Spiel: {vgp_glink}\r\n\r\nMein Kommentar zum Spiel:\r\n {vgp_comment}\r\n\r\n[B][SIZE=16][CENTER]Aktuelles Top-User-Ranking:[/CENTER][/SIZE][/B]\r\n[CENTER]{vgp_user_ranking_01} [/CENTER]\r\n[CENTER]{vgp_user_ranking_02} [/CENTER]\r\n[CENTER]{vgp_user_ranking_03} [/CENTER]\r\n[CENTER]{vgp_user_ranking_04} [/CENTER]\r\n[CENTER]{vgp_user_ranking_05} [/CENTER]\r\n[CENTER]{vgp_user_ranking_06} [/CENTER]\r\n[CENTER]{vgp_user_ranking_07} [/CENTER]\r\n[CENTER]{vgp_user_ranking_08} [/CENTER]\r\n[CENTER]{vgp_user_ranking_09} [/CENTER]\r\n[CENTER]{vgp_user_ranking_10} [/CENTER]';
 
 -- --------------------------------------------------------
 
@@ -285,27 +299,9 @@ CREATE TABLE `bb1_wm2018_vortag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Tabellenstruktur für Tabelle `bb1_wm2018_options` ändern
--- 
-
-ALTER TABLE `bb1_wm2018_options` ADD `po_aktiv` int(1) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgposttid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgpostuid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `viconid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgthema` varchar(100) NOT NULL default 'Ergebnis: {vgp_name1} - {vgp_name2}';
-ALTER TABLE `bb1_wm2018_options` ADD `message` text NOT NULL;
-ALTER TABLE `bb1_wm2018_options` ADD `vboardid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vprefix` varchar(50) NOT NULL default 'WM2018';
-ALTER TABLE `bb1_wm2018_options` ADD `vgposthtml` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `diskussionsthreadid` int(11) NOT NULL DEFAULT '0';
-ALTER TABLE `bb1_wm2018_options` ADD `lasttageswertungreset` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `showrssnews_method` int(11) NOT NULL default '0';
-
---
 -- UNIQUE für Tabelle `bb1_wm2018_userpunkte` setzen
 -- 
 
 ALTER TABLE `bb1_wm2018_userpunkte` ADD UNIQUE(`userid`);
-UPDATE bb1_wm2018_options SET message='Hallo,\r\n\r\nhier das Ergebnis von Spiel [B]{vgp_gameid}[/B] der Gruppe [B]{vgp_gruppe}[/B].\r\n\r\nDas Spiel fand in {vgp_stadion}, am {vgp_datum} um {vgp_zeit} Uhr statt.\r\n\r\n[CENTER][B]{vgp_name1}[/B] {vgp_flagge1} - [B]{vgp_name2}[/B] {vgp_flagge2}[/CENTER]\r\n[CENTER][SIZE=16][B]{vgp_tore1}[/B] - [B]{vgp_tore2}[/B][/SIZE][/CENTER]\r\n\r\nGelbe-Karten: [B]{vgp_gk}[/B]\r\nRote-Karten; [B]{vgp_rk}[/B]\r\nElfmeter: [B]{vgp_elfer} [/B]\r\n\r\nEs haben [B]{vgp_anztipp}[/B] User am Tipp für das Spiel teilgenommen.\r\n\r\nHier mehr zum Spiel: {vgp_glink}\r\n\r\nMein Kommentar zum Spiel:\r\n {vgp_comment}\r\n\r\n[B][SIZE=16][CENTER]Aktuelles Top-User-Ranking:[/CENTER][/SIZE][/B]\r\n[CENTER]{vgp_user_ranking_01} [/CENTER]\r\n[CENTER]{vgp_user_ranking_02} [/CENTER]\r\n[CENTER]{vgp_user_ranking_03} [/CENTER]\r\n[CENTER]{vgp_user_ranking_04} [/CENTER]\r\n[CENTER]{vgp_user_ranking_05} [/CENTER]\r\n[CENTER]{vgp_user_ranking_06} [/CENTER]\r\n[CENTER]{vgp_user_ranking_07} [/CENTER]\r\n[CENTER]{vgp_user_ranking_08} [/CENTER]\r\n[CENTER]{vgp_user_ranking_09} [/CENTER]\r\n[CENTER]{vgp_user_ranking_10} [/CENTER]';
 ALTER TABLE `bb1_wm2018_vortag` ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST, CHANGE `userid` `userid` int(10) NULL AFTER `id`, CHANGE `pos` `pos` int(10) NOT NULL AFTER `punkte`;
 ALTER TABLE `bb1_wm2018_vortag` ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;

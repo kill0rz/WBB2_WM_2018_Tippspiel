@@ -32,7 +32,6 @@
 	<br /> $wm2018_header
 	<br />
 
-
 	<!-- Spiele, die noch nicht im ACP eingetragen wurden -->
 	<if($wm2018_nonaddedgameresults)>
 		<then>
@@ -50,10 +49,26 @@
 			</table>
 			<br />
 		</then>
-	</if>
+	</if><br />
 
-
-
+	<!-- Spiele, die noch nicht im ACP eingetragen wurden -->
+	<if($wm2018_currentgameplaying)>
+		<then>
+			<table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
+				<tr>
+					<td class="tabletitle" align="center" colspan="5">
+						<span class="smallfont">
+							<b><u>{$lang->items['LANG_WM2018_TPL_INDEX_35']}</u></b>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					$wm2018_currentgames
+				</tr>
+			</table>
+			<br />
+		</then>
+	</if><br />
 
 	<table cellpadding="4" cellspacing="1" border="0" style="width:{$style['tableinwidth']}">
 		<tr>

@@ -6,10 +6,6 @@ ToDo für WM 2018:
 	+ Code in vorhandene Dateien mergen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ Anzeigen des aktuellen Spiels, wenn gerade gespielt wird auf index
-	+ Übersicht über das Spiel, wer gegen wen
-	+ Tipps der User
-		+ maximale Anzahl 4 (?)
 + Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
 + index: Tabelle letzte Spiele in denen man schnell zu Details der letzten 2(?) Spiele kommt
 	+ Per ACP einstellbar machen

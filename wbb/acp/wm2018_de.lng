@@ -77,6 +77,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_35>Board, in dem die Diskussion zur WM stattfindet</LANG_ACP_WM2018_TPL_OPTIONS_35:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_37>Wie viele noch nicht eingetragene Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_37:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_38>Wie viele aktuell laufende Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_38:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3>Punkte</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3:text>
@@ -301,6 +302,7 @@
 <text:LANG_WM2018_TPL_INDEX_32>Top $wm2018_options[topuser] -User</LANG_WM2018_TPL_INDEX_32:text>
 <text:LANG_WM2018_TPL_INDEX_33>Hallo <b>Gast</b></LANG_WM2018_TPL_INDEX_33:text>
 <text:LANG_WM2018_TPL_INDEX_34>Noch nicht eingetragene Spiele</LANG_WM2018_TPL_INDEX_34:text>
+<text:LANG_WM2018_TPL_INDEX_35>Es spielt gerade:</LANG_WM2018_TPL_INDEX_35:text>
 <text:LANG_WM2018_TPL_INDEX_4>du hast bis jetzt $tippsgesamt Tipps abgegeben.</LANG_WM2018_TPL_INDEX_4:text>
 <text:LANG_WM2018_TPL_INDEX_5>Dein verf&uuml;gbares Tippguthaben betr&auml;gt noch</LANG_WM2018_TPL_INDEX_5:text>
 <text:LANG_WM2018_TPL_INDEX_6>Du musst registriert sein, um selber Tipps abgeben zu k&ouml;nnen.<br />Als unregistrierter User kannst Du Dir aber alles ansehen.</LANG_WM2018_TPL_INDEX_6:text>
