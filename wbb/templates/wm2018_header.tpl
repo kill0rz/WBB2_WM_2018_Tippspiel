@@ -7,7 +7,7 @@
 					<then>
 						<b><a href="wm2018.php?action=maketipp{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_HEADER_2']}</a></b> | </then>
 					</if>
-					<b><a href="wm2018.php?action=showresults&amp;auswahl=1{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_HEADER_3']}</a></b> |
+					<b><a href="wm2018.php?action=showresults{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_HEADER_3']}</a></b> |
 					<b><a href="board.php?boardid={$wm2018_options['diskussionsthreadid']}" target="_blank">Fragen&amp;Talk zum Spiel</a></b> |
 					<b><a href="wm2018.php?action=showusertippsdetail&amp;userid=$wbbuserdata[userid]{$SID_ARG_2ND}">Meine Tipps</a></b> |
 					<b><a href="wm2018.php?action=showusertipps{$SID_ARG_2ND}">{$lang->items['LANG_WM2018_TPL_HEADER_4']}</a></b>
