@@ -379,8 +379,9 @@ if ($action == "showresults") {
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "6";
 			}
+		} else {
+			$auswahl = "1";
 		}
-		$auswahl = "1";
 	}
 
 	if ($auswahl == 1) {
