@@ -61,7 +61,6 @@ ZU TESTEN
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
-+ Achtelfinale korrigieren im ACP-Menü rückbauen
 
 
 DONE
@@ -78,7 +77,7 @@ DONE
 + Kriritische Spielenummern in Variablen auslagern
 + Beste Dritte rückbauen
 + Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
-
++ Achtelfinale korrigieren im ACP-Menü rückbauen
 
 
 ToDo für die EM 2020:

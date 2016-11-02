@@ -181,7 +181,6 @@ if (!$step) {
 
 	print "Die ben&ouml;tigten Dateien wurden gefunden (Stichproben).<br>\n";
 	print "<a href=\"./$filename?step=acptemplates\">Installation fortsetzen</a> (Installation der Board-Templates)";
-	print "<br /><br /><font color='red'>Vielen Dank an Batida444, Viktor, Mr. Fish und Steinadler f&uuml;r die vielen tollen Hacks und Addons zum Tippspiel!</font><br /><br />- kill0rz";
 	print "</td></tr></table></body></html>";
 	exit();
 }
