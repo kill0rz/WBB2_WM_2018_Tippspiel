@@ -44,12 +44,12 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_2>Allgemeine Einstellungen</LANG_ACP_WM2018_TPL_OPTIONS_2:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_3>Ist das WM2018-Tippspiel aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_3:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_4>Sind die RSS-News aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_4:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_5>Wieviele RSS-News sollen angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_5:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_5>Wie viele RSS-News sollen angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_5:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_6>Ist der WM-Ticker aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_6:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_7>Wie breit soll der Ticker angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_7:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_8>Pixel</LANG_ACP_WM2018_TPL_OPTIONS_8:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_9>Wieviele n&auml;chste Spiele sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_9:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_10>Wieviele User sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_10:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_9>Wie viele n&auml;chste Spiele sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_9:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_10>Wie viele User sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_10:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_11>Bis wieviel Minuten vor Anpfiff eines Spiels kann ein Tipp abgegeben werden ?</LANG_ACP_WM2018_TPL_OPTIONS_11:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_12>Minuten</LANG_ACP_WM2018_TPL_OPTIONS_12:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_13>Einstellungen f&uuml;r die Zusatztipps</LANG_ACP_WM2018_TPL_OPTIONS_13:text>
@@ -75,7 +75,8 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_33>Welche Kategorie soll bei Ebay ausgelesen werden ?</b> (optionale Angabe)</LANG_ACP_WM2018_TPL_OPTIONS_33:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_34>Sollte zur WM bei Ebay eine extra Kategorie erstellt werden, kannst Du die ID hier eintragen</LANG_ACP_WM2018_TPL_OPTIONS_34:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_35>Board, in dem die Diskussion zur WM stattfindet</LANG_ACP_WM2018_TPL_OPTIONS_35:text>
-	<text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_37>Wie viele noch nicht eingetragene Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_37:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3>Punkte</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3:text>
@@ -299,6 +300,7 @@
 <text:LANG_WM2018_TPL_INDEX_31>Gewinn f&uuml;r einen richtigen Weltmeister/VizeWeltmeister-Tipp</LANG_WM2018_TPL_INDEX_31:text>
 <text:LANG_WM2018_TPL_INDEX_32>Top $wm2018_options[topuser] -User</LANG_WM2018_TPL_INDEX_32:text>
 <text:LANG_WM2018_TPL_INDEX_33>Hallo <b>Gast</b></LANG_WM2018_TPL_INDEX_33:text>
+<text:LANG_WM2018_TPL_INDEX_34>Noch nicht eingetragene Spiele</LANG_WM2018_TPL_INDEX_34:text>
 <text:LANG_WM2018_TPL_INDEX_4>du hast bis jetzt $tippsgesamt Tipps abgegeben.</LANG_WM2018_TPL_INDEX_4:text>
 <text:LANG_WM2018_TPL_INDEX_5>Dein verf&uuml;gbares Tippguthaben betr&auml;gt noch</LANG_WM2018_TPL_INDEX_5:text>
 <text:LANG_WM2018_TPL_INDEX_6>Du musst registriert sein, um selber Tipps abgeben zu k&ouml;nnen.<br />Als unregistrierter User kannst Du Dir aber alles ansehen.</LANG_WM2018_TPL_INDEX_6:text>

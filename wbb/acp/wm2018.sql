@@ -11,7 +11,8 @@ CREATE TABLE `bb1_wm2018_options` (
   `rssnews` int(5) NOT NULL default '5',
   `showwmticker` int(1) NOT NULL default '1',
   `wmticker_width` int(5) NOT NULL default '800',
-  `nextxgames` int(3) NOT NULL default '5',
+  `nextxgames` int(3) NOT NULL default '4',
+  `nonaddedgamescount` int(3) NOT NULL default '4',
   `topuser` int(3) NOT NULL default '10',
   `tipptime` int(10) NOT NULL default '300',
   `tendenz` int(1) NOT NULL default '1',
@@ -39,7 +40,7 @@ CREATE TABLE `bb1_wm2018_options` (
 -- Daten für Tabelle `bb1_wm2018_options`
 -- 
 
-INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `showwmticker`, `wmticker_width`, `nextxgames`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 1, 800, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
+INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 1, 800, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
 
 -- --------------------------------------------------------
 
@@ -189,37 +190,37 @@ CREATE TABLE `bb1_wm2018_teams` (
 
 INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES
 (1, 'Russland', 'A',  'ru.png', 0,  0,  0,  0,  0,  0),
-(2, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
-(3, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
-(4, 'unknown',  'A',  '?.png',  0,  0,  0,  0,  0,  0),
-(5, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
-(6, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
-(7, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
-(8, 'unknown',  'B',  '?.png',  0,  0,  0,  0,  0,  0),
-(9, 'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
-(10,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
-(11,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
-(12,  'unknown',  'C',  '?.png',  0,  0,  0,  0,  0,  0),
-(13,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
-(14,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
-(15,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
-(16,  'unknown',  'D',  '?.png',  0,  0,  0,  0,  0,  0),
-(17,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
-(18,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
-(19,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
-(20,  'unknown',  'E',  '?.png',  0,  0,  0,  0,  0,  0),
-(21,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
-(22,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
-(23,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
-(24,  'unknown',  'F',  '?.png',  0,  0,  0,  0,  0,  0),
-(25,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
-(26,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
-(27,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
-(28,  'unknown',  'G',  '?.png',  0,  0,  0,  0,  0,  0),
-(29,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
-(30,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
-(31,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0),
-(32,  'unknown',  'H',  '?.png',  0,  0,  0,  0,  0,  0);
+(2, 'unknown',  'A',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(3, 'unknown',  'A',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(4, 'unknown',  'A',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(5, 'unknown',  'B',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(6, 'unknown',  'B',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(7, 'unknown',  'B',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(8, 'unknown',  'B',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(9, 'unknown',  'C',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(10,  'unknown',  'C',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(11,  'unknown',  'C',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(12,  'unknown',  'C',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(13,  'unknown',  'D',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(14,  'unknown',  'D',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(15,  'unknown',  'D',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(16,  'unknown',  'D',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(17,  'unknown',  'E',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(18,  'unknown',  'E',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(19,  'unknown',  'E',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(20,  'unknown',  'E',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(21,  'unknown',  'F',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(22,  'unknown',  'F',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(23,  'unknown',  'F',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(24,  'unknown',  'F',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(25,  'unknown',  'G',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(26,  'unknown',  'G',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(27,  'unknown',  'G',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(28,  'unknown',  'G',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(29,  'unknown',  'H',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(30,  'unknown',  'H',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(31,  'unknown',  'H',  'unknown.png',  0,  0,  0,  0,  0,  0),
+(32,  'unknown',  'H',  'unknown.png',  0,  0,  0,  0,  0,  0);
 
 -- --------------------------------------------------------
 
