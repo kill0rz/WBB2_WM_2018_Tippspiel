@@ -24,7 +24,6 @@ ToDo für WM 2018:
 + Hinweis auf Forenindex:
 	+ Du musst noch X Tipps für die Spiele innerhalb der nächsten 24h abgeben
 	+ Option deaktivieren
-+ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 + Update der Versionen einfacher machen, aber wie? (für User)
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
@@ -57,6 +56,7 @@ ZU TESTEN
 + is_integer in den SQL-Queries checken
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
++ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 
 
 
