@@ -54,8 +54,6 @@ ZU TESTEN
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
-+ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
-
 
 
 DONE
@@ -75,6 +73,7 @@ DONE
 + Achtelfinale korrigieren im ACP-Menü rückbauen
 + Im ACP zwischen FIFA- und UEFA-Feed switchen können
 + Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
++ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 
 
 ToDo für die EM 2020:
