@@ -32,8 +32,6 @@ ToDo für WM 2018:
 + action gamedetails
 	+ Linktext schöner machen ("Link zum Spiel")
 	+ Forenfunktion nutzen zum shrinken
-+ Im ACP zwischen FIFA- und UEFA-Feed switchen können
-	+ Viktor hatte hierzu schon Quelltext bei sich im Forum gepostet -> diesen nutzen
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 + top_wm2018.gif ändern
@@ -58,6 +56,8 @@ ZU TESTEN
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
++ Im ACP zwischen FIFA- und UEFA-Feed switchen können
+
 
 
 DONE

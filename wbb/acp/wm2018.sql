@@ -9,6 +9,7 @@ CREATE TABLE `bb1_wm2018_options` (
   `wm2018aktiv` int(1) NOT NULL default '0',
   `showrssnews` int(1) NOT NULL default '1',
   `rssnews` int(5) NOT NULL default '5',
+  `rssnews_showfeed` varchar(10) NOT NULL default 'fifa',
   `showwmticker` int(1) NOT NULL default '1',
   `wmticker_width` int(5) NOT NULL default '800',
   `nextxgames` int(3) NOT NULL default '4',
@@ -41,7 +42,7 @@ CREATE TABLE `bb1_wm2018_options` (
 -- Daten für Tabelle `bb1_wm2018_options`
 -- 
 
-INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `currentgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 1, 800, 4, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
+INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `rssnews_showfeed`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `currentgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 'fifa', 1, 800, 4, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
 ALTER TABLE `bb1_wm2018_options` ADD `po_aktiv` int(1) NOT NULL default '0';
 ALTER TABLE `bb1_wm2018_options` ADD `vgposttid` int(11) NOT NULL default '0';
 ALTER TABLE `bb1_wm2018_options` ADD `vgpostuid` int(11) NOT NULL default '0';
