@@ -1063,8 +1063,8 @@ if ($action == "result_edit") {
 	}
 	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 	$result = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
-	$result_1 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
-	$result_2 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_2_id'] . "'");
+	$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
+	$result_2 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_2_id'] . "'");
 	if ($wm2018_options['gk_jn'] == '1' && $result['game_gk'] == '1') {
 		$result_gk = $lang->get("LANG_ACP_WM2018_PHP_YES");
 	}
