@@ -626,7 +626,6 @@ if ($action == "index") {
 			} else {
 				$minusanzahl++;
 			}
-
 		}
 
 		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
