@@ -14,7 +14,7 @@
 						<b>Viktor</b>
 					</a>
 					<br />
-					<b><a href="http://www.v-gn.de" target="_blank" style="text-decoration: none">Angepasst für die EM 2016 kill0rz' Blog</a></b> &copy; 2016
+					<b><a href="http://www.v-gn.de" target="_blank" style="text-decoration: none">Angepasst für die EM 2016 und die WM 2018 kill0rz' Blog</a></b> &copy; 2018
 					<a href="https://blog.kill0rz.com" target="_blank" class="smallfont">
 						<b>kill0rz</b>
 					</a>

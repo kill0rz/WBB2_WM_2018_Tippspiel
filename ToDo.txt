@@ -35,9 +35,7 @@ ToDo für WM 2018:
 + top_wm2018.gif ändern
 + trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
-+ Link zu Spiel hinter
-	+ aktuell laufende Spiele
-	+ noch nicht eingetragene Spiele
+
 
 
 USERWÜNSCHE
@@ -77,6 +75,10 @@ DONE
 + Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
 + Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
++ Link zu Spiel hinter
+	+ aktuell laufende Spiele
+	+ noch nicht eingetragene Spiele
+	+ nächste Spiele
 
 
 ToDo für die EM 2020:
