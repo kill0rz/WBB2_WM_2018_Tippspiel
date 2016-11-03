@@ -11,9 +11,6 @@ ToDo für WM 2018:
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Eine Art Systemmitteilung (per ACP steuerbar), damit man die Nutzer schneller benachrichtigen kann
-+ Tabelle: 4 letzte Spiele mit Links zu
-	+ Tipps
-	+ Spieleübersicht
 + Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen ausgrauen oder weglassen + Hinweis drunter
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
