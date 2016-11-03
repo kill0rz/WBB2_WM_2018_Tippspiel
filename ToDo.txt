@@ -78,6 +78,7 @@ DONE
 + Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
 + Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
 
+
 ToDo für die EM 2020:
 ---------------------
 + Spielereihenfolde beim Eintragen beachten
