@@ -42,42 +42,43 @@
 <text:LANG_ACP_WM2018_TPL_INFO_17>kill0rz (<a href="http://kill0rz.com/" target="_blank">kill0rz' Blog</a>)</LANG_ACP_WM2018_TPL_INFO_17:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_1>WM2018-Tippspiel Optionen</LANG_ACP_WM2018_TPL_OPTIONS_1:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_2>Allgemeine Einstellungen</LANG_ACP_WM2018_TPL_OPTIONS_2:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_3>Ist das WM2018-Tippspiel aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_3:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_4>Sind die RSS-News aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_4:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_5>Wie viele RSS-News sollen angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_5:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_6>Ist der WM-Ticker aktiv ?</LANG_ACP_WM2018_TPL_OPTIONS_6:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_7>Wie breit soll der Ticker angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_7:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_3>Ist das WM2018-Tippspiel aktiv?</LANG_ACP_WM2018_TPL_OPTIONS_3:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_4>Sind die RSS-News aktiv?</LANG_ACP_WM2018_TPL_OPTIONS_4:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_5>Wie viele RSS-News sollen angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_5:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_6>Ist der WM-Ticker aktiv?</LANG_ACP_WM2018_TPL_OPTIONS_6:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_7>Wie breit soll der Ticker angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_7:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_8>Pixel</LANG_ACP_WM2018_TPL_OPTIONS_8:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_9>Wie viele n&auml;chste Spiele sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_9:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_10>Wie viele User sollen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_10:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_11>Bis wieviel Minuten vor Anpfiff eines Spiels kann ein Tipp abgegeben werden ?</LANG_ACP_WM2018_TPL_OPTIONS_11:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_9>Wie viele n&auml;chste Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_9:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_10>Wie viele User sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_10:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_11>Bis wieviel Minuten vor Anpfiff eines Spiels kann ein Tipp abgegeben werden?</LANG_ACP_WM2018_TPL_OPTIONS_11:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_12>Minuten</LANG_ACP_WM2018_TPL_OPTIONS_12:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_13>Einstellungen f&uuml;r die Zusatztipps</LANG_ACP_WM2018_TPL_OPTIONS_13:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_14>Soll bei der Auswertung der Tipps die Tendenz ber&uuml;cksichtigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_14:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_15>Kann getippt werden, ob es gelbe Karten im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_15:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_16>Kann getippt werden, ob es gelb-rote/rote Karten im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_16:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_17>Kann getippt werden, ob es Elfmeter im Spiel gab ?</LANG_ACP_WM2018_TPL_OPTIONS_17:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Weltmeister / Vize-Weltmeister getippt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_14>Soll bei der Auswertung der Tipps die Tendenz ber&uuml;cksichtigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_14:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_15>Kann getippt werden, ob es gelbe Karten im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_15:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_16>Kann getippt werden, ob es gelb-rote/rote Karten im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_16:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_17>Kann getippt werden, ob es Elfmeter im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_17:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Weltmeister / Vize-Weltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Weltmeister / VizeWeltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_20>(Gameid, Wert zwischen 1 und $gameid_finale<br />Game $gameid_vorrundenendspiel = letztes Vorrundenspiel<br />Game $gameid_finale = Finalspiel)</LANG_ACP_WM2018_TPL_OPTIONS_20:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_21>Einstellungen f&uuml;r den Guthabenhack (V1.9.5 von Lasall ben&ouml;tigt)</LANG_ACP_WM2018_TPL_OPTIONS_21:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_22>Soll der Guthabenhack f&uuml;r das WM2018-Tippspiel genutzt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_22:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_23>Sollen die Infos zu Kosten und Gewinnen auf der Startseite angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_23:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_24>Wieviel kostet ein normaler Spiel-Tipp ?</LANG_ACP_WM2018_TPL_OPTIONS_24:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_25>Wieviel kostet der Weltmeister / Vize-Weltmeister-Tipp ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_25:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_26>Wieviel Gewinn gibt es f&uuml;r einen exakten Spiel-Tipp ?</LANG_ACP_WM2018_TPL_OPTIONS_26:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_27>Wieviel Gewinn gibt es f&uuml;r einen Tipp, bei dem die Tendenz richtig ist ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_27:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_28>Wieviel Gewinn gibt es f&uuml;r das richtige Tippen des Weltmeisters / Vize-Weltmeisters ?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_28:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_22>Soll der Guthabenhack f&uuml;r das WM2018-Tippspiel genutzt werden?</LANG_ACP_WM2018_TPL_OPTIONS_22:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_23>Sollen die Infos zu Kosten und Gewinnen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_23:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_24>Wieviel kostet ein normaler Spiel-Tipp?</LANG_ACP_WM2018_TPL_OPTIONS_24:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_25>Wieviel kostet der Weltmeister / Vize-Weltmeister-Tipp?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_25:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_26>Wieviel Gewinn gibt es f&uuml;r einen exakten Spiel-Tipp?</LANG_ACP_WM2018_TPL_OPTIONS_26:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_27>Wieviel Gewinn gibt es f&uuml;r einen Tipp, bei dem die Tendenz richtig ist?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_27:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_28>Wieviel Gewinn gibt es f&uuml;r das richtige Tippen des Weltmeisters / Vize-Weltmeisters?</b> (Zusatztipp)</LANG_ACP_WM2018_TPL_OPTIONS_28:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_29>Einstellungen f&uuml;r die Ebay RelevanceAd-Anzeige</LANG_ACP_WM2018_TPL_OPTIONS_29:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_30>Soll der Ebay RelevanceAd-Banner angezeigt werden ?</LANG_ACP_WM2018_TPL_OPTIONS_30:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_31>Welcher affili.net-PublisherId ist der Banner zugeordnet ?</LANG_ACP_WM2018_TPL_OPTIONS_31:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_30>Soll der Ebay RelevanceAd-Banner angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_30:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_31>Welcher affili.net-PublisherId ist der Banner zugeordnet?</LANG_ACP_WM2018_TPL_OPTIONS_31:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_32>(Voreinstellung ist die Publisher-ID von Batida444 *zwinker*)</LANG_ACP_WM2018_TPL_OPTIONS_32:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_33>Welche Kategorie soll bei Ebay ausgelesen werden ?</b> (optionale Angabe)</LANG_ACP_WM2018_TPL_OPTIONS_33:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_33>Welche Kategorie soll bei Ebay ausgelesen werden?</b> (optionale Angabe)</LANG_ACP_WM2018_TPL_OPTIONS_33:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_34>Sollte zur WM bei Ebay eine extra Kategorie erstellt werden, kannst Du die ID hier eintragen</LANG_ACP_WM2018_TPL_OPTIONS_34:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_35>Board, in dem die Diskussion zur WM stattfindet</LANG_ACP_WM2018_TPL_OPTIONS_35:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_37>Wie viele noch nicht eingetragene Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_37:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_38>Wie viele aktuell laufende Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_38:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_39><b>Welcher Feed soll verwendet werden?</b><br /><br />FIFA = Weltfuﬂballnachrichten<br />UEFA = Europafuﬂballnachrichten</b></LANG_ACP_WM2018_TPL_OPTIONS_39:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3>Punkte</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3:text>
@@ -99,9 +100,9 @@
 <text:LANG_ACP_WM2018_TPL_RESULTS_VIEW_9>eintragen</LANG_ACP_WM2018_TPL_RESULTS_VIEW_9:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_1>Ergebnis eintragen</LANG_ACP_WM2018_TPL_RESULT_ADD_1:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_2>Erziele Tore von</LANG_ACP_WM2018_TPL_RESULT_ADD_2:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_ADD_3>Gab es gelbe Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_ADD_3:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_ADD_4>Gab es gelb-rote/rote Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_ADD_4:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_ADD_5>Gab es Elfmeter im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_ADD_5:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_ADD_3>Gab es gelbe Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_ADD_3:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_ADD_4>Gab es gelb-rote/rote Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_ADD_4:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_ADD_5>Gab es Elfmeter im Spiel?</LANG_ACP_WM2018_TPL_RESULT_ADD_5:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_6>Externer Link zum Spiel</b> (optionale Eingabe)</LANG_ACP_WM2018_TPL_RESULT_ADD_6:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_7>Kommentar zum Spiel</b> (optionale Eingabe)</LANG_ACP_WM2018_TPL_RESULT_ADD_7:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_1>Fehler!</LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_1:text>
@@ -112,18 +113,18 @@
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_1>Ergebnis best&auml;tigen</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_1:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_2>Bisher wurde noch nichts in die Datenbank eingetragen.<br />Bitte &uuml;berpr&uuml;fe die von Dir eingetragenen Werte und best&auml;tige dann.<br />Da es keine Editierfunktion f&uuml;r die Ergebnisse gibt, kontrolliere genau !!!</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_2:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_3>Erzielte Tore von</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_3:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_4>Gab es gelbe Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_4:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_5>Gab es gelb-rote/rote Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_5:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_6>Gab es Elfmeter im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_6:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_4>Gab es gelbe Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_4:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_5>Gab es gelb-rote/rote Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_5:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_6>Gab es Elfmeter im Spiel?</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_6:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_7>Eingetragener Link zum Spiel:</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_7:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_8>Eingetragener Kommentar zum Spiel:</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_8:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_9>Ja, die eingetragenen Werte stimmen so</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_9:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_1>Ergebnis editieren</LANG_ACP_WM2018_TPL_RESULT_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_2><b>Hinweis:</b> Es kann nur der externe Link zum Spiel oder der Kommentar zum Spiel ge&auml;ndert werden.</LANG_ACP_WM2018_TPL_RESULT_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_3>Erzielte Tore von</LANG_ACP_WM2018_TPL_RESULT_EDIT_3:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_4>Gab es gelbe Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_EDIT_4:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_5>Gab es gelb-rote/rote Karten im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_EDIT_5:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_6>Gab es Elfmeter im Spiel ?</LANG_ACP_WM2018_TPL_RESULT_EDIT_6:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_4>Gab es gelbe Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_EDIT_4:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_5>Gab es gelb-rote/rote Karten im Spiel?</LANG_ACP_WM2018_TPL_RESULT_EDIT_5:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_EDIT_6>Gab es Elfmeter im Spiel?</LANG_ACP_WM2018_TPL_RESULT_EDIT_6:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_7>Eingetragener Link zum Spiel:</LANG_ACP_WM2018_TPL_RESULT_EDIT_7:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_8>Eingetragener Kommentar zum Spiel:</LANG_ACP_WM2018_TPL_RESULT_EDIT_8:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_EDIT_9>&Auml;nderungen speichern</LANG_ACP_WM2018_TPL_RESULT_EDIT_9:text>
@@ -304,10 +305,11 @@
 <text:LANG_WM2018_TPL_INDEX_33>Hallo <b>Gast</b></LANG_WM2018_TPL_INDEX_33:text>
 <text:LANG_WM2018_TPL_INDEX_34>Noch nicht eingetragene Spiele</LANG_WM2018_TPL_INDEX_34:text>
 <text:LANG_WM2018_TPL_INDEX_35>Es spielt gerade:</LANG_WM2018_TPL_INDEX_35:text>
+<text:LANG_WM2018_TPL_INDEX_36>Neueste News der UEFA</LANG_WM2018_TPL_INDEX_36:text>
 <text:LANG_WM2018_TPL_INDEX_4>du hast bis jetzt $tippsgesamt Tipps abgegeben.</LANG_WM2018_TPL_INDEX_4:text>
 <text:LANG_WM2018_TPL_INDEX_5>Dein verf&uuml;gbares Tippguthaben betr&auml;gt noch</LANG_WM2018_TPL_INDEX_5:text>
 <text:LANG_WM2018_TPL_INDEX_6>Du musst registriert sein, um selber Tipps abgeben zu k&ouml;nnen.<br />Als unregistrierter User kannst Du Dir aber alles ansehen.</LANG_WM2018_TPL_INDEX_6:text>
-<text:LANG_WM2018_TPL_INDEX_7>Neueste News von FIFAworldcup.com</LANG_WM2018_TPL_INDEX_7:text>
+<text:LANG_WM2018_TPL_INDEX_7>Neueste News der FIFA</LANG_WM2018_TPL_INDEX_7:text>
 <text:LANG_WM2018_TPL_INDEX_8>Die n&auml;chsten $wm2018_options[nextxgames] Spiele</LANG_WM2018_TPL_INDEX_8:text>
 <text:LANG_WM2018_TPL_INDEX_9>Gruppe</LANG_WM2018_TPL_INDEX_9:text>
 <text:LANG_WM2018_TPL_MAKETIPP_1>WM2018-Tippspiel-Tippabgabe</LANG_WM2018_TPL_MAKETIPP_1:text>
@@ -393,17 +395,17 @@
 <text:LANG_WM2018_TPL_TIPPABGABE_4>Tippabgabe</LANG_WM2018_TPL_TIPPABGABE_4:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_5>Hier kannst Du nun Deinen Tipp f&uuml;r das Spiel<br /><b>$name1</b> gegen <b>$name2</b> am <b>$date</b> um <b>$time</b> Uhr in <b>$result_game[stadion]</b><br />abgeben</LANG_WM2018_TPL_TIPPABGABE_5:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_ELFER_1>Elfmeter</LANG_WM2018_TPL_TIPPABGABE_ELFER_1:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_ELFER_2>Wird es Elfmeter im Spiel geben ?</LANG_WM2018_TPL_TIPPABGABE_ELFER_2:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_ELFER_2>Wird es Elfmeter im Spiel geben?</LANG_WM2018_TPL_TIPPABGABE_ELFER_2:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_GK_1>Gelbe Karten</LANG_WM2018_TPL_TIPPABGABE_GK_1:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_GK_2>Wird es gelbe Karten im Spiel geben ?</LANG_WM2018_TPL_TIPPABGABE_GK_2:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_GK_2>Wird es gelbe Karten im Spiel geben?</LANG_WM2018_TPL_TIPPABGABE_GK_2:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_RK_1>Rote Karten</LANG_WM2018_TPL_TIPPABGABE_RK_1:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_RK_2>Wird es gelb-rote / rote Karten im Spiel geben ?</LANG_WM2018_TPL_TIPPABGABE_RK_2:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_RK_2>Wird es gelb-rote / rote Karten im Spiel geben?</LANG_WM2018_TPL_TIPPABGABE_RK_2:text>
 <text:LANG_WM2018_TPL_tippabgabe_vwm_1>Vize-Weltmeister</LANG_WM2018_TPL_tippabgabe_vwm_1:text>
 <text:LANG_WM2018_TPL_tippabgabe_vwm_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_tippabgabe_vwm_2:text>
-<text:LANG_WM2018_TPL_tippabgabe_vwm_3>Welche Mannschaft wird Vize-Weltmeister 2016 ?</LANG_WM2018_TPL_tippabgabe_vwm_3:text>
+<text:LANG_WM2018_TPL_tippabgabe_vwm_3>Welche Mannschaft wird Vize-Weltmeister 2016?</LANG_WM2018_TPL_tippabgabe_vwm_3:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_WM_1>Weltmeister</LANG_WM2018_TPL_TIPPABGABE_WM_1:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_WM_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_TIPPABGABE_WM_2:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_WM_3>Welche Mannschaft wird Weltmeister 2016 ?</LANG_WM2018_TPL_TIPPABGABE_WM_3:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_WM_3>Welche Mannschaft wird Weltmeister 2016?</LANG_WM2018_TPL_TIPPABGABE_WM_3:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_1>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_1:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_2>WM2018-Tippspiel-Startseite</LANG_WM2018_TPL_TIPPEDIT_2:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_3>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_3:text>

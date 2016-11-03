@@ -133,7 +133,14 @@
 								<td class="tabletitle" align="center">
 									<span class="smallfont">
 										<b>
-											<u>{$lang->items['LANG_WM2018_TPL_INDEX_7']}</u>
+											<if($wm2018_options['rssnews_showfeed']=="fifa")>
+												<then>
+													<u>{$lang->items['LANG_WM2018_TPL_INDEX_7']}</u>
+												</then>
+												<else>
+													<u>{$lang->items['LANG_WM2018_TPL_INDEX_36']}</u>
+												</else>
+											</if>
 										</b>
 									</span>
 								</td>

@@ -52,7 +52,7 @@ $lastgametime = formatdate($wbbuserdata['timeformat'], $lastgame4wmtipp['datetim
 // +++ Startseite +++
 // ++++++++++++++++++
 if ($action == "index") {
-	// FIFA News Anfang
+	// FIFA/UEFA News Anfang
 	if ($wm2018_options['showrssnews'] == 1) {
 		if ($wm2018_options['rssnews_showfeed'] == "fifa") {
 			$count = "0";
@@ -123,7 +123,7 @@ if ($action == "index") {
 						}
 
 						// Einträge speichern //
-						$this->saveItems($xml);
+						$this->__saveItems($xml);
 					}
 				}
 
@@ -179,13 +179,13 @@ if ($action == "index") {
 				foreach ($items AS $item) {
 					$count++;
 					if ($count <= $wm2018_options['rssnews']) {
-						$newswm2018total .= "&raquo; <a href='{$item['link']}' target='_blank' title='>" . utf8_decode($item['title']) . "</a><br />";
+						$newswm2018total .= "&raquo; <a href='{$item['link']}' target='_blank' title='{$item['title']}''>" . utf8_decode($item['title']) . "</a><br />";
 					}
 				}
 			}
 		}
 	}
-	// FIFA News Ende
+	// FIFA/UEFA News Ende
 	// Persönliche Box Anfang
 	if ($wbbuserdata['userid']) {
 		$result_userdata = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
