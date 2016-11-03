@@ -169,6 +169,8 @@
 			</table>
 		</then>
 	</if>
+
+	$wm2018_tippsprogame_include
 	$wm2018_footer $footer
 </body>
 

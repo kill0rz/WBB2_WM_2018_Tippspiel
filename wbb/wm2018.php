@@ -1629,6 +1629,51 @@ if ($action == "gamedetails") {
 		$comment1 = nl2br($result['gamecomment']);
 		$comment2 = "<tr><td class=\"tablea\" align=\"left\"><span class=\"normalfont\">{$comment1}</span></td></tr>";
 	}
+
+	//1:1-Kopie von tippsprogame
+
+	// Tipps nur anzeigen, wenn Spiel schon gespielt
+	$result_datetime = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
+	if ($result_datetime['datetime'] > $akttime) {
+		redirect($lang->get("LANG_WM2018_PHP_60"), $url = "wm2018.php?action=showresults" . $SID_ARG_1ST);
+	}
+
+	$result_tippsprograme_include = $db->query("SELECT ut.*,u.username FROM bb" . $n . "_wm2018_usertipps ut LEFT JOIN bb" . $n . "_users u ON ut.userid=u.userid WHERE gameid = '" . intval($_REQUEST['gameid']) . "' ORDER BY userid ASC");
+	while ($row = $db->fetch_array($result_tippsprograme_include)) {
+		$rowclass = getone($count++, "tablea", "tableb");
+		if ($wm2018_options['gk_jn'] == 1) {
+			if ($row['gk'] == 0) {
+				$game_gk = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
+			}
+
+			if ($row['gk'] == 1) {
+				$game_gk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
+			}
+
+		}
+		if ($wm2018_options['rk_jn'] == 1) {
+			if ($row['rk'] == 0) {
+				$game_rk = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
+			}
+
+			if ($row['rk'] == 1) {
+				$game_rk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
+			}
+
+		}
+		if ($wm2018_options['elfer_jn'] == 1) {
+			if ($row['elfer'] == 0) {
+				$game_elfer = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
+			}
+
+			if ($row['elfer'] == 1) {
+				$game_elfer = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
+			}
+
+		}
+		eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
+	}
+	eval("\$wm2018_tippsprogame_include .= \"" . $tpl->get("wm2018_tippsprogame_include") . "\";");
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_gamedetails") . "\");");
 }
 // ++++++++++++++++++++++++++++++++++++++++++++

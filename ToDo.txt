@@ -18,17 +18,11 @@ ToDo für WM 2018:
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
 + Hinweis auf Forenindex:
-	+ Du musst noch X Tipps für die Spiele innerhalb der nächsten 24h abgeben
+	+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
 	+ Option deaktivieren
-+ Update der Versionen einfacher machen, aber wie? (für User)
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ action gamedetails
-	+ Linktext schöner machen ("Link zum Spiel")
-	+ Forenfunktion nutzen zum shrinken
-+ actions tippsprogame und gamedetails zu einer seite zusammenfassen
-	+ bei dem Ergebnis dann nur ??? anzeigen, statt der Zahlen
 + top_wm2018.gif ändern
 + trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
@@ -76,6 +70,7 @@ DONE
 	+ aktuell laufende Spiele
 	+ noch nicht eingetragene Spiele
 	+ nächste Spiele
++ actions tippsprogame und gamedetails zu einer seite zusammenfassen
 
 
 ToDo für die EM 2020:

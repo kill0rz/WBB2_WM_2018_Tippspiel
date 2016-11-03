@@ -47,7 +47,7 @@
 					</b>
 				</span>
 			</td>
-			<if($wm2018_options[ 'gk_jn']==1)>
+			<if($wm2018_options['gk_jn']==1)>
 				<then>
 					<td class="tabletitle" align="center">
 						<span class="smallfont">
@@ -58,7 +58,7 @@
 					</td>
 				</then>
 			</if>
-			<if($wm2018_options[ 'rk_jn']==1)>
+			<if($wm2018_options['rk_jn']==1)>
 				<then>
 					<td class="tabletitle" align="center">
 						<span class="smallfont">
@@ -69,7 +69,7 @@
 					</td>
 				</then>
 			</if>
-			<if($wm2018_options[ 'elfer_jn']==1)>
+			<if($wm2018_options['elfer_jn']==1)>
 				<then>
 					<td class="tabletitle" align="center">
 						<span class="smallfont">
