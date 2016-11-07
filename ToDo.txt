@@ -13,7 +13,7 @@ ToDo für WM 2018:
 		+ roter Rand
 	+ unterer Teil:
 		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
-			+ Optionen per ACP
+			+ Optionen per ACP (deaktivieren, Anzahl)
 			+ grüner Rand
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
