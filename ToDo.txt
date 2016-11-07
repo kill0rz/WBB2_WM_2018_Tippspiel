@@ -23,7 +23,6 @@ ToDo für WM 2018:
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ top_wm2018.gif ändern
 + trophy.jpg ändern --> transparenter hintergrund fehlt
 + Demo aktualisieren, aber erst wenn fertig
 
@@ -71,6 +70,8 @@ DONE
 	+ noch nicht eingetragene Spiele
 	+ nächste Spiele
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
++ top_wm2018.gif ändern
+	+ Das von der WM 2014 genutzt
 
 
 ToDo für die EM 2020:
