@@ -6,8 +6,15 @@ ToDo für WM 2018:
 	+ Code in vorhandene Dateien mergen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ index: Tabelle letzte Spiele in denen man schnell zu Details der letzten 2(?) Spiele kommt
-	+ Per ACP einstellbar machen
++ Auf Foren-Index: Tabelle mit Spielübersichten
+	+ oberer Teil:
+		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
+		+ Option zum deaktivieren -> Extra Abschnitt im ACP
+		+ roter Rand
+	+ unterer Teil:
+		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
+			+ Optionen per ACP
+			+ grüner Rand
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Eine Art Systemmitteilung (per ACP steuerbar), damit man die Nutzer schneller benachrichtigen kann
@@ -17,9 +24,6 @@ ToDo für WM 2018:
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
-+ Hinweis auf Forenindex:
-	+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
-	+ Option deaktivieren
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
