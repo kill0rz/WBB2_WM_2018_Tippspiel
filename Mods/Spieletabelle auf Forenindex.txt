@@ -1,6 +1,6 @@
 Dieser Mod zeigt eine Tabelle auf der Startseite des Forums an mit
 	a) Spielen, die in den nächsten 24h fällig sind und vom User noch nicht getuppt wurden
-	b) den letzten X 8per ACP steuerbar) Spielen, mit denen man schnell zu den Spieldetails kommt
+	b) den letzten X (per ACP steuerbar) Spielen, mit denen man schnell zu den Spieldetails kommt
 
 
 Suche in Template index:
@@ -11,35 +11,34 @@ Suche in Template index:
 
 Füge darunter ein:
 
-<!-- WM 2016 Spieletabelle Anfang -->
-<if($wm2018options==1 and $wbbuserdata['userid']!=0)>
+<!-- WM 2018 Spieletabelle Anfang -->
+<if($wm2018_options['showtableonindex']==1 and $wbbuserdata['userid']!=0)>
 	<then>
 		<table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
 			<tr class="tablecat">
 				<td>
 					<span class="normalfont">
-						<b>{$lang->items['LANG_GLOBAL_SYSMSG']}</b>
+						<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_42']}</b>
 					</span>
 				</td>
 			</tr>
-			<tr>
-				<td class="tablea">
-					<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
-						<tr class="tablea_fc">
-							<td align="center">
-								<span class="smallfont">
-									<if($sysmsg_text=="")>
-										<then>{$lang->items['LANG_GLOBAL_SYSMSG_NA']}</then>
-										<else>{$sysmsg_text}</else>
-									</if>
-								</span>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
+			$tableonindex_upper_bit
 		</table>
 		<br />
 	</then>
-	</if>
-	<!-- WM 2016 Spieletabelle Ende -->
+</if>
+<!-- WM 2018 Spieletabelle Ende -->
+
+
+
+
+
+
+Suche in index.php
+
+require './global.php';
+
+
+füge darunter ein:
+
+require './wm2018_global.php';
