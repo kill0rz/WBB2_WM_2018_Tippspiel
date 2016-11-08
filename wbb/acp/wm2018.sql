@@ -6,7 +6,7 @@
 
 DROP TABLE IF EXISTS `bb1_wm2018_options`;
 CREATE TABLE `bb1_wm2018_options` (
-  `wm2018aktiv` int(1) NOT NULL default '0',
+  `wm2018aktiv` int(1) NOT NULL default '1',
   `showrssnews` int(1) NOT NULL default '1',
   `rssnews` int(5) NOT NULL default '5',
   `rssnews_showfeed` varchar(10) NOT NULL default 'fifa',
@@ -35,27 +35,27 @@ CREATE TABLE `bb1_wm2018_options` (
   `3rd` int(3) NOT NULL default '0',
   `ebay_rel_aktiv` int(1) NOT NULL default '0',
   `ebay_pub_id` int(11) NOT NULL default '178702',
-  `ebay_cat` int(11) NOT NULL default '0'
+  `ebay_cat` int(11) NOT NULL default '0',
+  `po_aktiv` int(1) NOT NULL default '0',
+  `vgposttid` int(11) NOT NULL default '0',
+  `vgpostuid` int(11) NOT NULL default '0',
+  `viconid` int(11) NOT NULL default '0',
+  `vgthema` varchar(100) NOT NULL default 'Ergebnis: {vgp_name1} - {vgp_name2}',
+  `message` text NOT NULL,
+  `vboardid` int(11) NOT NULL default '0',
+  `vprefix` varchar(50) NOT NULL default 'WM2018',
+  `vgposthtml` int(11) NOT NULL default '0',
+  `diskussionsthreadid` int(11) NOT NULL DEFAULT '0',
+  `lasttageswertungreset` int(11) NOT NULL default '0',
+  `showrssnews_method` int(11) NOT NULL default '0',
+  `showtableonindex` int(1) NOT NULL default '0'
 ) ENGINE=MyISAM;
 
 -- 
 -- Daten für Tabelle `bb1_wm2018_options`
 -- 
 
-INSERT INTO `bb1_wm2018_options` (`wm2018aktiv`, `showrssnews`, `rssnews`, `rssnews_showfeed`, `showwmticker`, `wmticker_width`, `nextxgames`, `nonaddedgamescount`, `currentgamescount`, `topuser`, `tipptime`, `tendenz`, `gk_jn`, `rk_jn`, `elfer_jn`, `winnertipp_jn`, `lastgame4wmtipp`, `gh_aktiv`, `gh_infos`, `gh_ab_normtipp`, `gh_ab_wmtipp`, `gh_gut_normtipp_richtig`, `gh_gut_normtipp_tendenz`, `gh_gut_wmtipp_richtig`, `1st`, `2nd`, `3rd`, `ebay_rel_aktiv`, `ebay_pub_id`, `ebay_cat`) VALUES (1, 1, 5, 'fifa', 1, 800, 4, 4, 4, 10, 300, 1, 1, 1, 1, 1, 48, 0, 1, 10, 10, 25, 15, 150, 0, 0, 0, 0, 178702, 0);
-ALTER TABLE `bb1_wm2018_options` ADD `po_aktiv` int(1) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgposttid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgpostuid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `viconid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vgthema` varchar(100) NOT NULL default 'Ergebnis: {vgp_name1} - {vgp_name2}';
-ALTER TABLE `bb1_wm2018_options` ADD `message` text NOT NULL;
-ALTER TABLE `bb1_wm2018_options` ADD `vboardid` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `vprefix` varchar(50) NOT NULL default 'WM2018';
-ALTER TABLE `bb1_wm2018_options` ADD `vgposthtml` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `diskussionsthreadid` int(11) NOT NULL DEFAULT '0';
-ALTER TABLE `bb1_wm2018_options` ADD `lasttageswertungreset` int(11) NOT NULL default '0';
-ALTER TABLE `bb1_wm2018_options` ADD `showrssnews_method` int(11) NOT NULL default '0';
-UPDATE bb1_wm2018_options SET message='Hallo,\r\n\r\nhier das Ergebnis von Spiel [B]{vgp_gameid}[/B] der Gruppe [B]{vgp_gruppe}[/B].\r\n\r\nDas Spiel fand in {vgp_stadion}, am {vgp_datum} um {vgp_zeit} Uhr statt.\r\n\r\n[CENTER][B]{vgp_name1}[/B] {vgp_flagge1} - [B]{vgp_name2}[/B] {vgp_flagge2}[/CENTER]\r\n[CENTER][SIZE=16][B]{vgp_tore1}[/B] - [B]{vgp_tore2}[/B][/SIZE][/CENTER]\r\n\r\nGelbe-Karten: [B]{vgp_gk}[/B]\r\nRote-Karten; [B]{vgp_rk}[/B]\r\nElfmeter: [B]{vgp_elfer} [/B]\r\n\r\nEs haben [B]{vgp_anztipp}[/B] User am Tipp für das Spiel teilgenommen.\r\n\r\nHier mehr zum Spiel: {vgp_glink}\r\n\r\nMein Kommentar zum Spiel:\r\n {vgp_comment}\r\n\r\n[B][SIZE=16][CENTER]Aktuelles Top-User-Ranking:[/CENTER][/SIZE][/B]\r\n[CENTER]{vgp_user_ranking_01} [/CENTER]\r\n[CENTER]{vgp_user_ranking_02} [/CENTER]\r\n[CENTER]{vgp_user_ranking_03} [/CENTER]\r\n[CENTER]{vgp_user_ranking_04} [/CENTER]\r\n[CENTER]{vgp_user_ranking_05} [/CENTER]\r\n[CENTER]{vgp_user_ranking_06} [/CENTER]\r\n[CENTER]{vgp_user_ranking_07} [/CENTER]\r\n[CENTER]{vgp_user_ranking_08} [/CENTER]\r\n[CENTER]{vgp_user_ranking_09} [/CENTER]\r\n[CENTER]{vgp_user_ranking_10} [/CENTER]';
+INSERT INTO `bb1_wm2018_options` (`message`) VALUES ('Hallo,\r\n\r\nhier das Ergebnis von Spiel [B]{vgp_gameid}[/B] der Gruppe [B]{vgp_gruppe}[/B].\r\n\r\nDas Spiel fand in {vgp_stadion}, am {vgp_datum} um {vgp_zeit} Uhr statt.\r\n\r\n[CENTER][B]{vgp_name1}[/B] {vgp_flagge1} - [B]{vgp_name2}[/B] {vgp_flagge2}[/CENTER]\r\n[CENTER][SIZE=16][B]{vgp_tore1}[/B] - [B]{vgp_tore2}[/B][/SIZE][/CENTER]\r\n\r\nGelbe-Karten: [B]{vgp_gk}[/B]\r\nRote-Karten; [B]{vgp_rk}[/B]\r\nElfmeter: [B]{vgp_elfer} [/B]\r\n\r\nEs haben [B]{vgp_anztipp}[/B] User am Tipp für das Spiel teilgenommen.\r\n\r\nHier mehr zum Spiel: {vgp_glink}\r\n\r\nMein Kommentar zum Spiel:\r\n {vgp_comment}\r\n\r\n[B][SIZE=16][CENTER]Aktuelles Top-User-Ranking:[/CENTER][/SIZE][/B]\r\n[CENTER]{vgp_user_ranking_01} [/CENTER]\r\n[CENTER]{vgp_user_ranking_02} [/CENTER]\r\n[CENTER]{vgp_user_ranking_03} [/CENTER]\r\n[CENTER]{vgp_user_ranking_04} [/CENTER]\r\n[CENTER]{vgp_user_ranking_05} [/CENTER]\r\n[CENTER]{vgp_user_ranking_06} [/CENTER]\r\n[CENTER]{vgp_user_ranking_07} [/CENTER]\r\n[CENTER]{vgp_user_ranking_08} [/CENTER]\r\n[CENTER]{vgp_user_ranking_09} [/CENTER]\r\n[CENTER]{vgp_user_ranking_10} [/CENTER]');
 
 -- --------------------------------------------------------
 
