@@ -14,9 +14,9 @@ Füge darunter ein:
 ------------------
 
 	<!-- WM 2018 Spieletabelle Anfang -->
-	<if($wm2018_options['showtableonindex']==1 and $wbbuserdata['userid']!=0)>
+	<if($wm2018_options['showtableonindex_nontippedgames']==1 and $wbbuserdata['userid']!=0)>
 		<then>
-			<if($wm2018_showtableonindex)>
+			<if($wm2018_showtableonindex_nontippedgames)>
 				<then>
 					<table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
 						<tr class="tablecat">
@@ -73,9 +73,9 @@ foreach ($tableonindex_gameids as $tableonindex_gameid) {
 }
 $result_tableonindex = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid IN ('" . join(",", $tableonindex_gameids_nottippedyet) . "')");
 
-$wm2018_showtableonindex = false;
+$wm2018_showtableonindex_nontippedgames = false;
 while ($row_tableonindex = $db->fetch_array($result_tableonindex)) {
-	$wm2018_showtableonindex = true;
+	$wm2018_showtableonindex_nontippedgames = true;
 	$rowclass = getone($count++, "tablea", "tableb");
 	$gamedate = formatdate($wbbuserdata['dateformat'], $row_tableonindex['datetime'], 1);
 	$gamedate = strtr($gamedate, $replace_datum_komma);
