@@ -1,14 +1,5 @@
 ToDo für WM 2018:
 -----------------
-+ Auf Foren-Index: Tabelle mit Spielübersichten
-	+ Hinweis im ACP auf Mod
-	+ oberer Teil:
-		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
-		+ Option zum deaktivieren -> Extra Abschnitt im ACP
-	! unterer Teil:
-		! letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
-			! Optionen per ACP (deaktivieren, Anzahl)
-			! grüner Rand
 
 + HM-Portal von Mr. Fish sauber implementieren
 	+ Änderungen von mir zurückspielen
@@ -49,6 +40,14 @@ ZU TESTEN
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
++ Auf Foren-Index: Tabelle mit Spielübersichten
+	+ Hinweis im ACP auf Mod
+	+ oberer Teil:
+		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
+		+ Option zum deaktivieren -> Extra Abschnitt im ACP
+	+ unterer Teil:
+		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
+			+ Optionen per ACP (deaktivieren, Anzahl)
 
 
 DONE
@@ -77,6 +76,7 @@ DONE
 + actions tippsprogame und gamedetails zu einer seite zusammenfassen
 + top_wm2018.gif ändern
 	+ Das von der WM 2014 genutzt
++ Rechtschreibung korrigiert
 
 
 ToDo für die EM 2020:

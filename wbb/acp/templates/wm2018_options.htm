@@ -297,6 +297,26 @@ var imageMaxHeight = $picmaxheight;
 					</select>
 				</td>
 			</tr>
+			//todo
+			<tr class="firstrow">
+				<td>
+					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_43']}</b>
+				</td>
+				<td>
+					<select name="showtableonindex_donegames">
+						<option value="1" $sel_showtableonindex_donegames[1]>{$lang->items['LANG_ACP_GLOBAL_YES']}</option>
+						<option value="0" $sel_showtableonindex_donegames[0]>{$lang->items['LANG_ACP_GLOBAL_NO']}</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="secondrow">
+				<td>
+					<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_44']}</b>
+				</td>
+				<td>
+					<input type="number" min="0" name="showtableonindex_donegamescount" maxLength="15" size="10" value="$wm2018_options[showtableonindex_donegamescount]" />
+				</td>
+			</tr>
 			<!-- Forenindexoptionen Anfang -->
 
 			<tr class="tblsection">
