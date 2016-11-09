@@ -3,13 +3,15 @@ Dieser Mod zeigt eine Tabelle auf der Startseite des Forums an mit
 	b) den letzten X (per ACP steuerbar) Spielen, mit denen man schnell zu den Spieldetails kommt
 
 
-Suche in Template index:
+
+
+Suche im Template index:
+------------------------
 
 <body>{$header}
 
-
-
 Füge darunter ein:
+------------------
 
 	<!-- WM 2018 Spieletabelle Anfang -->
 	<if($wm2018_options['showtableonindex']==1 and $wbbuserdata['userid']!=0)>
@@ -39,11 +41,13 @@ Füge darunter ein:
 
 
 Suche in index.php
+------------------
 
 require './global.php';
 
 
 füge darunter ein:
+------------------
 
 // WM 2018 *MOD Spieletabelle auf Forenindex* Anfang
 require './wm2018_global.php';
