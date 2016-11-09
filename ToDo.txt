@@ -8,8 +8,7 @@ ToDo für WM 2018:
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
 + action: tippsprogame
-	+ Bildchen ob richtig/falsch/tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
-+ Eine Art Systemmitteilung (per ACP steuerbar), damit man die Nutzer schneller benachrichtigen kann
+	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen ausgrauen oder weglassen + Hinweis drunter
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
@@ -19,8 +18,8 @@ ToDo für WM 2018:
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ trophy.jpg ändern --> transparenter hintergrund fehlt
-+ Demo aktualisieren, aber erst wenn fertig
++ trophy.jpg ändern --> transparenter Hintergrund fehlt
++ Demo aktualisieren
 
 
 
@@ -73,7 +72,7 @@ DONE
 	+ aktuell laufende Spiele
 	+ noch nicht eingetragene Spiele
 	+ nächste Spiele
-+ actions tippsprogame und gamedetails zu einer seite zusammenfassen
++ actions tippsprogame und gamedetails zu einer Seite zusammenfassen
 + top_wm2018.gif ändern
 	+ Das von der WM 2014 genutzt
 + Rechtschreibung korrigiert
