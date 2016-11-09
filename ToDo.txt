@@ -2,8 +2,8 @@ ToDo für WM 2018:
 -----------------
 + Auf Foren-Index: Tabelle mit Spielübersichten
 	+ Hinweis im ACP auf Mod
-	! oberer Teil:
-		! In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
+	+ oberer Teil:
+		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
 		+ Option zum deaktivieren -> Extra Abschnitt im ACP
 		! roter Rand
 	! unterer Teil:
