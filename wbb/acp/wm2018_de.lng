@@ -81,7 +81,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_39><b>Welcher Feed soll verwendet werden?</b><br /><br />FIFA = Weltfußballnachrichten<br />UEFA = Europafußballnachrichten</b></LANG_ACP_WM2018_TPL_OPTIONS_39:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_40>Einstellungen für die Tabelle auf dem Forenindex</LANG_ACP_WM2018_TPL_OPTIONS_40:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_41>Soll die Tabelle für noch nicht getippte Spiele angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_41:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_42>In den folgenden 24h finden folgende Spiele statt, f&uuml;r die du noch keine Tipps abgegeben hast:</LANG_ACP_WM2018_TPL_OPTIONS_42:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_42>Diese Optionen kannst du nur nutzen, wenn du den Mod "Spieletabelle auf Forenindex" installiert hast.</LANG_ACP_WM2018_TPL_OPTIONS_42:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3>Punkte</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3:text>
@@ -309,6 +309,7 @@
 <text:LANG_WM2018_TPL_INDEX_34>Noch nicht eingetragene Spiele</LANG_WM2018_TPL_INDEX_34:text>
 <text:LANG_WM2018_TPL_INDEX_35>Es spielt gerade:</LANG_WM2018_TPL_INDEX_35:text>
 <text:LANG_WM2018_TPL_INDEX_36>Neueste News der UEFA</LANG_WM2018_TPL_INDEX_36:text>
+<text:LANG_WM2018_TPL_INDEX_37>In den folgenden 24h finden folgende Spiele statt, f&uuml;r die du noch keine Tipps abgegeben hast:</LANG_WM2018_TPL_INDEX_37:text>
 <text:LANG_WM2018_TPL_INDEX_4>du hast bis jetzt $tippsgesamt Tipps abgegeben.</LANG_WM2018_TPL_INDEX_4:text>
 <text:LANG_WM2018_TPL_INDEX_5>Dein verf&uuml;gbares Tippguthaben betr&auml;gt noch</LANG_WM2018_TPL_INDEX_5:text>
 <text:LANG_WM2018_TPL_INDEX_6>Du musst registriert sein, um selber Tipps abgeben zu k&ouml;nnen.<br />Als unregistrierter User kannst Du Dir aber alles ansehen.</LANG_WM2018_TPL_INDEX_6:text>

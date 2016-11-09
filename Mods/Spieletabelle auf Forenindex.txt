@@ -18,7 +18,7 @@ Füge darunter ein:
 			<tr class="tablecat">
 				<td>
 					<span class="normalfont">
-						<b>{$lang->items['LANG_ACP_WM2018_TPL_OPTIONS_42']}</b>
+						<b>{$lang->items['LANG_WM2018_TPL_INDEX_37']}</b>
 					</span>
 				</td>
 			</tr>
