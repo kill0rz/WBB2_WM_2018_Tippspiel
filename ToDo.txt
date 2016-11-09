@@ -2,14 +2,14 @@ ToDo für WM 2018:
 -----------------
 + Auf Foren-Index: Tabelle mit Spielübersichten
 	+ Hinweis im ACP auf Mod
-	+ oberer Teil:
-		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
+	! oberer Teil:
+		! In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
 		+ Option zum deaktivieren -> Extra Abschnitt im ACP
-		+ roter Rand
-	+ unterer Teil:
-		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
-			+ Optionen per ACP (deaktivieren, Anzahl)
-			+ grüner Rand
+		! roter Rand
+	! unterer Teil:
+		! letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
+			! Optionen per ACP (deaktivieren, Anzahl)
+			! grüner Rand
 
 + HM-Portal von Mr. Fish sauber implementieren
 	+ Änderungen von mir zurückspielen

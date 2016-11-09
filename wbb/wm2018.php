@@ -186,6 +186,7 @@ if ($action == "index") {
 		}
 	}
 	// FIFA/UEFA News Ende
+
 	// Persönliche Box Anfang
 	if ($wbbuserdata['userid']) {
 		$result_userdata = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
@@ -197,6 +198,7 @@ if ($action == "index") {
 		eval("\$lang->items['LANG_WM2018_TPL_INDEX_4'] = \"" . $lang->get4eval("LANG_WM2018_TPL_INDEX_4") . "\";");
 	}
 	// Persönliche Box Ende
+
 	// Next X Games Anfang
 	$result_nextgames = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE datetime > '" . intval($akttime) . "' ORDER BY datetime ASC Limit 0,{$wm2018_options['nextxgames']}");
 	while ($row_nextgames = $db->fetch_array($result_nextgames)) {
@@ -300,12 +302,14 @@ if ($action == "index") {
 		eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_nextgames") . "\";");
 	}
 	// Next X Games Ende
+
 	// WM beendet ?
 	if ($wm2018_options['1st'] > 0) {
 		$result_1st = $db->query_first("SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($wm2018_options['1st']) . "'");
 		$result_2nd = $db->query_first("SELECT name, flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($wm2018_options['2nd']) . "'");
 	}
 	// WM beendet ?
+
 	// Gruppentabelle Anfang
 	if (isset($_REQUEST['gruppensort'])) {
 		$gruppensort = wbb_trim($_REQUEST['gruppensort']);
@@ -345,6 +349,7 @@ if ($action == "index") {
 
 	}
 	// Punkteverteilung Ende
+
 	// Top-X-User Anfang
 	$count = 0;
 	$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
