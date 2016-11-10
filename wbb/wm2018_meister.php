@@ -9,7 +9,7 @@ $wm2018_meister = "";
 $points = 0;
 $meister = array();
 
-// alle tipps durchgehen
+// alle Tipps durchgehen
 $result_m = $db->query("SELECT tipp_wm,tipp_vwm FROM bb" . $n . "_wm2018_userpunkte");
 
 while ($row = $db->fetch_array($result_m)) {
@@ -56,7 +56,7 @@ if ($points > 0) {
 
 		$wm2018_meister .= "<tr><td class=\"tableb\"><font size=2>" . $lauf . "</font></td>";
 
-		$wm2018_meister .= "<td class=\"tablea\"><font size=2><a href=\"wm2018.php?action=showusertipps\">";
+		$wm2018_meister .= "<td class=\"tablea\"><font size=2><a href=\"wm2018.php?action=showusertipps\" alt='showusertipps'>";
 		if ($lauf == 1) {
 			$wm2018_meister .= "<b>" . $sort[$lauf - 1][0] . "</b>";
 		} else {

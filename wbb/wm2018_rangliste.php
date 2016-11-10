@@ -11,7 +11,7 @@ $result_topuser = $db->query('SELECT u.username,p.* FROM bb' . $n . '_wm2018_use
 while ($row_topuser = $db->fetch_array($result_topuser)) {
 	$rowclass = getone($count++, 'tablea', 'tableb');
 	if ($count == 1) {
-		$krone = '<img src="images/wm2018/krone.gif" alt="krone"><br>';
+		$krone = '<img src="images/wm2018/krone.gif" alt="krone.gif"><br>';
 	} else {
 		$krone = '';
 	}

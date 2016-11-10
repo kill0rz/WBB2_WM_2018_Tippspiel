@@ -15,9 +15,9 @@ while ($row_nextgames = $db->fetch_array($result_nextgames)) {
 
 	$checkgame1 = $row_nextgames['team_1_id']{0};
 	$checkgame2 = $row_nextgames['team_2_id']{0};
-	if ($checkgame1 == "W" || $checkgame1 == "S" || $checkgame1 == "V") {
+	if ($checkgame1 == "W" || $checkgame1 == "S" || $checkgame1 == "L") {
 		$check1 = explode('-', $row_nextgames['team_1_id']);
-		if ($check1[1] == "A" || $check1[1] == "B" || $check1[1] == "C" || $check1[1] == "D" || $check1[1] == "E" || $check1[1] == "F") {
+		if ($check1[1] == "A" || $check1[1] == "B" || $check1[1] == "C" || $check1[1] == "D" || $check1[1] == "E" || $check1[1] == "F" || $check1[1] == "Ĝ" || $check1[1] == "H") {
 			$tabelle = $lang->items['LANG_WM2018_PHP_5'];
 		} else {
 			$tabelle = $lang->items['LANG_WM2018_PHP_7'];
@@ -31,17 +31,17 @@ while ($row_nextgames = $db->fetch_array($result_nextgames)) {
 			$teamname1 = $lang->items['LANG_WM2018_PHP_12'];
 		}
 
-		if ($check1[0] == "V") {
+		if ($check1[0] == "L") {
 			$teamname1 = $lang->items['LANG_WM2018_PHP_13'];
 		}
 
-		$teamname1 .= "&nbsp;$tabelle&nbsp;$check1[1]";
+		$teamname1 .= "&nbsp;$tabelle&nbsp;{$check1[1]}";
 		$name1 = $teamname1;
 		$flagge1 = "spacer.gif";
 	}
-	if ($checkgame2 == "W" || $checkgame2 == "S" || $checkgame2 == "V") {
+	if ($checkgame2 == "W" || $checkgame2 == "S" || $checkgame2 == "L") {
 		$check2 = explode('-', $row_nextgames['team_2_id']);
-		if ($check2[1] == "A" || $check2[1] == "B" || $check2[1] == "C" || $check2[1] == "D" || $check2[1] == "E" || $check2[1] == "F") {
+		if ($check2[1] == "A" || $check2[1] == "B" || $check2[1] == "C" || $check2[1] == "D" || $check2[1] == "E" || $check2[1] == "F" || $check1[1] == "Ĝ" || $check1[1] == "H") {
 			$tabelle = $lang->items['LANG_WM2018_PHP_5'];
 		} else {
 			$tabelle = $lang->items['LANG_WM2018_PHP_7'];
@@ -55,11 +55,11 @@ while ($row_nextgames = $db->fetch_array($result_nextgames)) {
 			$teamname2 = $lang->items['LANG_WM2018_PHP_12'];
 		}
 
-		if ($check2[0] == "V") {
+		if ($check2[0] == "L") {
 			$teamname2 = $lang->items['LANG_WM2018_PHP_13'];
 		}
 
-		$teamname2 .= "&nbsp;$tabelle&nbsp;$check2[1]";
+		$teamname2 .= "&nbsp;$tabelle&nbsp;{$check2[1]}";
 		$name2 = $teamname2;
 		$flagge2 = "spacer.gif";
 	}
