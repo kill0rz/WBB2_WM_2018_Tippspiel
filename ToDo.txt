@@ -16,7 +16,6 @@ ToDo für WM 2018:
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
-+ Wenn Endspiel vorbei ist, Datum statt Counter im Header anzeigen lassen
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
@@ -49,7 +48,6 @@ ZU TESTEN
 			+ Optionen per ACP (deaktivieren, Anzahl)
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
-+ Javascript gegen JSHint geprüft
 
 
 
@@ -80,6 +78,8 @@ User betreffend:
 + actions tippsprogame und gamedetails zu einer Seite zusammenfassen
 + Rechtschreibung korrigiert
 + JGS-Portal-Mod Anpassungen
++ Wenn Endspiel vorbei ist, Datum statt Counter im Header anzeigen lassen
+
 
 
 technisch:
@@ -88,6 +88,7 @@ technisch:
 + Variablen verwenden: ACP > Optionen > Bis zu welchem Spiel kann der Weltmeister / Vizeweltmeister getippt werden?
 + Kriritische Spielenummern in Variablen auslagern
 + Beste Dritte rückbauen
++ Javascript gegen JSHint geprüft
 
 
 

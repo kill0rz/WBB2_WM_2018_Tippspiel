@@ -19,7 +19,7 @@
 			<font size="3" color="yellow">
 				<div id=counter1 style="visibility: visible; position: relative" align=center></div>
 				<script language=JavaScript type=text/javascript>
-					var wm = new Date(" July 15, 2018 17:00:00");
+					var wm = new Date("July 15, 2018 17:00:00");
 					var goal1 = new Date(wm.getTime());
 					var jetzta = new Date();
 					var servernow1 = new Date(jetzta.getTime());
@@ -54,7 +54,13 @@
 						if (minutes1 == 1) {
 							minutesstring1 = "Minute";
 						}
-						var value1 = "WM Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
+
+						if (wm < jetzta) {
+							var value1 = "Die WM wurde am " + wm.getDate() + "." + (wm.getMonth()+1) + "." + wm.getFullYear() + " beendet.";
+						}else{
+							var value1 = "WM-Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
+						}
+
 						if (document.getElementById) {
 							document.getElementById("counter1").innerHTML = value1;
 						} else if (document.all) {
