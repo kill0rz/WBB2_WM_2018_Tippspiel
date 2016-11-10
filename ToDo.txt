@@ -18,6 +18,7 @@ ToDo für WM 2018:
 + Ab Achtelfinale keinen Gleichstand mehr tippen können
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
++ Wenn Endspiel vorbei ist, Datum statt Counter im Header anzeigen lassen
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
