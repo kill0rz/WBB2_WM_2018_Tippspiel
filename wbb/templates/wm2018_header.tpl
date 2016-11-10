@@ -42,7 +42,7 @@
 						if (minutes1 < 10) {
 							minutes1 = "0" + minutes1;
 						}
-						var daystring1 = "Tage";
+						var daystring1 = "Tagen";
 						if (days1 == 1) {
 							daystring1 = "Tag";
 						}
