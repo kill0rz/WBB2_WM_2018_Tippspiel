@@ -1691,16 +1691,90 @@ if ($action == "tippsprogame") {
 		redirect($lang->get("LANG_WM2018_PHP_60"), $url = "wm2018.php?action=showresults" . $SID_ARG_1ST);
 	}
 
+	$result_gamedetails = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
 	$result = $db->query("SELECT ut.*,u.username FROM bb" . $n . "_wm2018_usertipps ut LEFT JOIN bb" . $n . "_users u ON ut.userid=u.userid WHERE gameid = '" . intval($_REQUEST['gameid']) . "' ORDER BY userid ASC");
 	while ($row = $db->fetch_array($result)) {
 		$rowclass = getone($count++, "tablea", "tableb");
+
+		// Tendenzbildchen
+		// Result
+
+		$ende = 0;
+		// +++++++++++++++++++ 1. Prüfung
+		// Tipp exakt richtig ?
+		if ($result_gamedetails['game_goals_1'] == $row['goals_1'] && $result_gamedetails['game_goals_2'] == $row['goals_2']) {
+			$tippright_result = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+			$ende = 1;
+		}
+		// +++++++++++++++++++
+		// +++++++++++++++++++ 2. Prüfung
+		// Spiel unentschieden, Tipp unentschieden, Tendenz richtig ?
+		if ($ende == 0) {
+			if ($wm2018_options['tendenz'] == 1) {
+				if (($result_gamedetails['game_goals_1'] == $result_gamedetails['game_goals_2']) && ($row['goals_1'] == $row['goals_2'])) {
+					$tippright_result = "&nbsp;<img src=\"images/wm2018/tendenz.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_33']}\" title=\"{$lang->items['LANG_WM2018_PHP_33']}\" />";
+					$ende = 1;
+				}
+			}
+			if ($wm2018_options['tendenz'] == 0) {
+				if (($result_gamedetails['game_goals_1'] == $result_gamedetails['game_goals_2']) && ($row['goals_1'] == $row['goals_2'])) {
+					$tippright_result = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+					$ende = 1;
+				}
+			}
+		}
+		// +++++++++++++++++++
+		// +++++++++++++++++++ 3. Prüfung
+		// Spiel unentschieden, Tipp Sieg
+		if ($ende == 0) {
+			if (($result_gamedetails['game_goals_1'] == $result_gamedetails['game_goals_2']) && ($row['goals_1'] != $row['goals_2'])) {
+				$tippright_result = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+				$ende = 1;
+			}
+		}
+		// +++++++++++++++++++
+		// +++++++++++++++++++ 4. Prüfung
+		// Spiel Sieg, Tipp Sieg (falsch), Tendenz richtig ?
+		if ($ende == 0) {
+			if ($wm2018_options['tendenz'] == 1) {
+				if (($result_gamedetails['game_goals_1'] < $result_gamedetails['game_goals_2']) && ($row['goals_1'] < $row['goals_2']) || ($result_gamedetails['game_goals_1'] > $result_gamedetails['game_goals_2']) && ($row['goals_1'] > $row['goals_2'])) {
+					$tippright_result = "&nbsp;<img src=\"images/wm2018/tendenz.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_33']}\" title=\"{$lang->items['LANG_WM2018_PHP_33']}\" />";
+					$ende = 1;
+				}
+			}
+			if ($wm2018_options['tendenz'] == 0) {
+				if (($result_gamedetails['game_goals_1'] < $result_gamedetails['game_goals_2']) && ($row['goals_1'] < $row['goals_2']) || ($result_gamedetails['game_goals_1'] > $result_gamedetails['game_goals_2']) && ($row['goals_1'] > $row['goals_2'])) {
+					$tippright_result = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+					$ende = 1;
+				}
+			}
+		}
+		// +++++++++++++++++++
+		// +++++++++++++++++++ 5. Prüfung
+		// Spiel Sieg, Tipp Niederlage
+		// Siel Niederlage, Tipp Sieg
+		// Spiel Sieg, Tipp unentschieden
+		if ($ende == 0) {
+			if (($result_gamedetails['game_goals_1'] < $result_gamedetails['game_goals_2']) && ($row['goals_1'] > $row['goals_2']) || ($result_gamedetails['game_goals_1'] > $result_gamedetails['game_goals_2']) && ($row['goals_1'] < $row['goals_2']) || ($result_gamedetails['game_goals_1'] != $result_gamedetails['game_goals_2']) && ($row['goals_1'] == $row['goals_2'])) {
+				$tippright_result = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+				$ende = 1;
+			}
+		}
+		// +++++++++++++++++++
+
 		if ($wm2018_options['gk_jn'] == 1) {
 			if ($row['gk'] == 0) {
 				$game_gk = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
-			}
 
+			}
 			if ($row['gk'] == 1) {
 				$game_gk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
+			}
+			// Prüfung, ob User richtig lag
+			if ($row['gk'] == $result_gamedetails['game_gk']) {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+			} else {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
 			}
 
 		}
@@ -1708,21 +1782,29 @@ if ($action == "tippsprogame") {
 			if ($row['rk'] == 0) {
 				$game_rk = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
 			}
-
 			if ($row['rk'] == 1) {
 				$game_rk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
 			}
-
+			// Prüfung, ob User richtig lag
+			if ($row['rk'] == $result_gamedetails['game_rk']) {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+			} else {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+			}
 		}
 		if ($wm2018_options['elfer_jn'] == 1) {
 			if ($row['elfer'] == 0) {
 				$game_elfer = "<img src=\"images/wm2018/notok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_30']}\" title=\"{$lang->items['LANG_WM2018_PHP_30']}\" />";
 			}
-
 			if ($row['elfer'] == 1) {
 				$game_elfer = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
 			}
-
+			// Prüfung, ob User richtig lag
+			if ($row['elfer'] == $result_gamedetails['game_elfer']) {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+			} else {
+				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+			}
 		}
 		eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
 	}
