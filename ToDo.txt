@@ -49,7 +49,7 @@ ZU TESTEN
 			+ Optionen per ACP (deaktivieren, Anzahl)
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
-
++ Javascript gegen JSHint geprüft
 
 
 
