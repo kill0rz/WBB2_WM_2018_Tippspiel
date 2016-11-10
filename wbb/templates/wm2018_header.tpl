@@ -19,48 +19,49 @@
 			<font size="3" color="yellow">
 				<div id=counter1 style="visibility: visible; position: relative" align=center></div>
 				<script language=JavaScript type=text/javascript>
-				var wm = new Date(" July 15, 2018 17:00:00");
-				goal1 = new Date(wm.getTime());
-				var jetzta = new Date();
-				servernow1 = new Date(jetzta.getTime());
-				clientnow1 = new Date();
-				countdownTimer1 = window.setTimeout("countdown1()", 1000);
-				function countdown1() {
-					now1 = new Date();
-					seconds1 = Math.floor((goal1.getTime() - servernow1.getTime() - now1.getTime() + clientnow1.getTime()) / 1000);
-					if (seconds1 < 0) {
-						seconds1 = 0;
+					var wm = new Date(" July 15, 2018 17:00:00");
+					var goal1 = new Date(wm.getTime());
+					var jetzta = new Date();
+					var servernow1 = new Date(jetzta.getTime());
+					var clientnow1 = new Date();
+					var countdownTimer1 = window.setTimeout(countdown1(), 1000);
+
+					function countdown1() {
+						var now1 = new Date();
+						var seconds1 = Math.floor((goal1.getTime() - servernow1.getTime() - now1.getTime() + clientnow1.getTime()) / 1000);
+						if (seconds1 < 0) {
+							seconds1 = 0;
+						}
+						var days1 = Math.floor(seconds1 / 60 / 60 / 24);
+						var hours1 = Math.floor((seconds1 - days1 * 24 * 60 * 60) / 60 / 60);
+						var minutes1 = Math.floor((seconds1 - (days1 * 24 + hours1) * 60 * 60) / 60);
+						seconds1 = (seconds1 - ((days1 * 24 + hours1) * 60 + minutes1) * 60);
+						if (seconds1 < 10) {
+							seconds1 = "0" + seconds1;
+						}
+						if (minutes1 < 10) {
+							minutes1 = "0" + minutes1;
+						}
+						var daystring1 = "Tage";
+						if (days1 == 1) {
+							daystring1 = "Tag";
+						}
+						var hoursstring1 = "Stunden";
+						if (hours1 == 1) {
+							hoursstring1 = "Stunde";
+						}
+						var minutesstring1 = "Minuten";
+						if (minutes1 == 1) {
+							minutesstring1 = "Minute";
+						}
+						var value1 = "WM Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
+						if (document.getElementById) {
+							document.getElementById("counter1").innerHTML = value1;
+						} else if (document.all) {
+							document.all["counter1"].innerHTML = value1;
+						}
+						var countdownTimer = window.setTimeout("countdown1()", 1000);
 					}
-					days1 = Math.floor(seconds1 / 60 / 60 / 24);
-					hours1 = Math.floor((seconds1 - days1 * 24 * 60 * 60) / 60 / 60);
-					minutes1 = Math.floor((seconds1 - (days1 * 24 + hours1) * 60 * 60) / 60);
-					seconds1 = (seconds1 - ((days1 * 24 + hours1) * 60 + minutes1) * 60);
-					if (seconds1 < 10) {
-						seconds1 = "0" + seconds1;
-					}
-					if (minutes1 < 10) {
-						minutes1 = "0" + minutes1;
-					}
-					daystring1 = "Tage";
-					if (days1 == 1) {
-						daystring1 = "Tag";
-					}
-					hoursstring1 = "Stunden";
-					if (hours1 == 1) {
-						hoursstring1 = "Stunde";
-					}
-					minutesstring1 = "Minuten";
-					if (minutes1 == 1) {
-						minutesstring1 = "Minute";
-					}
-					value1 = "WM Endspiel in <b>" + days1 + "</b> " + daystring1 + " | <b>" + hours1 + "</b>  " + hoursstring1 + " | <b>" + minutes1 + " </b> " + minutesstring1 + " | <b>" + seconds1 + "</b> Sekunden";
-					if (document.getElementById) {
-						document.getElementById("counter1").innerHTML = value1;
-					} else if (document.all) {
-						document.all["counter1"].innerHTML = value1;
-					}
-					countdownTimer = window.setTimeout("countdown1()", 1000);
-				}
 				</script>
 			</font>
 		</td>
