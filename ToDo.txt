@@ -41,14 +41,6 @@ ZU TESTEN
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
-+ Auf Foren-Index: Tabelle mit Spielübersichten
-	+ Hinweis im ACP auf Mod
-	+ oberer Teil:
-		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
-		+ Option zum deaktivieren -> Extra Abschnitt im ACP
-	+ unterer Teil:
-		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
-			+ Optionen per ACP (deaktivieren, Anzahl)
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Template maketipp: JS gegen JSHint geprüft
@@ -82,7 +74,14 @@ User betreffend:
 + Rechtschreibung korrigiert
 + JGS-Portal-Mod Anpassungen
 + Wenn Endspiel vorbei ist, Datum statt Counter im Header anzeigen lassen
-
++ Auf Foren-Index: Tabelle mit Spielübersichten
+	+ Hinweis im ACP auf Mod
+	+ oberer Teil:
+		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
+		+ Option zum deaktivieren -> Extra Abschnitt im ACP
+	+ unterer Teil:
+		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
+			+ Optionen per ACP (deaktivieren, Anzahl)
 
 
 technisch:

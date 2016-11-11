@@ -87,9 +87,9 @@ foreach ($tableonindex_gameids as $tableonindex_gameid) {
 }
 $result_tableonindex = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid IN ('" . join(",", $tableonindex_gameids_nottippedyet) . "') ORDER BY datetime ASC");
 
-$wm2018_showtableonindex = false;
+$wm2018_showtableonindex_nontippedgames = false;
 while ($row_tableonindex = $db->fetch_array($result_tableonindex)) {
-	$wm2018_showtableonindex = true;
+	$wm2018_showtableonindex_nontippedgames = true;
 	$rowclass = getone($count++, "tablea", "tableb");
 	$gamedate = formatdate($wbbuserdata['dateformat'], $row_tableonindex['datetime'], 1);
 	$gamedate = strtr($gamedate, $replace_datum_komma);
