@@ -18,6 +18,7 @@ ToDo für WM 2018:
 	+ (nur) dann auch das Eintragen verhindern
 + fussballportal.de gibt es nicht mehr? Prüfen!
 	+ Ticker entweder rückbauen oder ersetzen
+	+ Forumsdiskussion steht noch aus: http://www.v-gn.de/wbb/thread.php?postid=132614#post132614
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
