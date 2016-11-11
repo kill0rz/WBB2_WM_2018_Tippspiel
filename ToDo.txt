@@ -91,7 +91,7 @@ technisch:
 + Variablen verwenden: ACP > Optionen > Bis zu welchem Spiel kann der Weltmeister / Vizeweltmeister getippt werden?
 + Kriritische Spielenummern in Variablen auslagern
 + Beste Dritte rückbauen
-+ Javascript gegen JSHint geprüft
++ Countdown im Header: Javascript gegen JSHint geprüft
 
 
 
