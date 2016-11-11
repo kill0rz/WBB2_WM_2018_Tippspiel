@@ -17,7 +17,7 @@ ToDo für WM 2018:
 	+ Per ACP Steuerbar ob das so gemacht werden soll
 	+ (nur) dann auch das Eintragen verhindern
 + fussballportal.de gibt es nicht mehr? Prüfen!
-	+ RSS entweder rückbauen oder ersetzen
+	+ Ticker entweder rückbauen oder ersetzen
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
