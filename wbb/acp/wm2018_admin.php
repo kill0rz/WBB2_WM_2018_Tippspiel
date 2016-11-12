@@ -32,12 +32,6 @@ if ($action == "info") {
 	eval("\$tpl->output(\"" . $tpl->get('wm2018_info', 1) . "\");");
 }
 
-$replace_datum_komma = array(
-	"<b>Heute</b>," => "<b>Heute</b>",
-	"Gestern," => "Gestern",
-	"<b>Morgen</b>," => "<b>Morgen</b>",
-);
-
 if ($action == "options") {
 	$message = stripcrap(wbb_trim($_POST['message']));
 	$message = parseURL($message);
@@ -355,7 +349,7 @@ if ($action == "results") {
 	while ($row_games = $db->fetch_array($result_games)) {
 		$rowclass = getone($count++, "firstrow", "secondrow");
 		$date = formatdate($wbbuserdata['dateformat'], $row_games['datetime'], 1);
-		$date = strtr($date, $replace_datum_komma);
+		$date = preg_replace("/((<b>)?[a-zA-Z]*(<\/b>)?),/", "$1", $date);
 		$time = formatdate($wbbuserdata['timeformat'], $row_games['datetime']);
 		for ($i = 0; $i < count($allids2); $i++) {
 			if ($row_games['team_1_id'] == $allids2[$i]) {

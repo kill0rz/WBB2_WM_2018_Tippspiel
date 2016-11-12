@@ -46,12 +46,6 @@ if ($wm2018_options['ebay_cat'] != 0) {
 	$ebay_cat = "&CategoryID={$wm2018_options['ebay_cat']}";
 }
 
-$replace_datum_komma = array(
-	"<b>Heute</b>," => "<b>Heute</b>",
-	"Gestern," => "Gestern",
-	"<b>Morgen</b>," => "<b>Morgen</b>",
-);
-
 eval("\$wm2018_ebay = \"" . $tpl->get("wm2018_ebay") . "\";");
 eval("\$wm2018_header = \"" . $tpl->get("wm2018_header") . "\";");
 eval("\$wm2018_footer = \"" . $tpl->get("wm2018_footer") . "\";");
