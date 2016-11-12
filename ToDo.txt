@@ -19,6 +19,8 @@ ToDo für WM 2018:
 + fussballportal.de gibt es nicht mehr? Prüfen!
 	+ Ticker entweder rückbauen oder ersetzen
 	+ Forumsdiskussion steht noch aus: http://www.v-gn.de/wbb/thread.php?postid=132614#post132614
++ action wmtipp_only
+	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
