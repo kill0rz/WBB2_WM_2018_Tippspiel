@@ -49,9 +49,9 @@
 				document.getElementById(clockid[i]).innerHTML = thistime;
 			}
 		}
-		setTimeout(clockon(), 1000);
+		setTimeout("clockon()",1000);
 	}
-	window.onload = clockon;
+	window.onload = clockon();
 	//-->
 	</script>
 </head>

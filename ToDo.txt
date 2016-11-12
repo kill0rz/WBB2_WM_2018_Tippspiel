@@ -43,7 +43,6 @@ ZU TESTEN
 + is_integer in den SQL-Queries checken
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
-+ Template maketipp: JS gegen JSHint geprüft
 
 
 DONE
@@ -91,6 +90,7 @@ technisch:
 + Kriritische Spielenummern in Variablen auslagern
 + Beste Dritte rückbauen
 + Countdown im Header: Javascript gegen JSHint geprüft
++ Template maketipp: JS gegen JSHint geprüft
 
 
 
