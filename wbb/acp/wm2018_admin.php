@@ -164,6 +164,14 @@ if ($action == "options") {
 		$sel_vgposthtml[0] = " selected";
 	}
 
+	// Check if CURL exists
+	if (!function_exists('curl_version')) {
+		// does not exist
+		$curl_exists_lng = $lang->items['LANG_ACP_WM2018_TPL_OPTIONS_45'];
+	} else {
+		$curl_exists_lng = "";
+	}
+
 	//Anzahl Nutzer
 	$maxnutzer = $db->query_first("SELECT count(userid) FROM bb" . $n . "_users");
 

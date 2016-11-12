@@ -58,7 +58,7 @@ if ($action == "index") {
 			$count = "0";
 			$newswm2018total = "";
 			$feedurl = "http://de.fifa.com/worldcup/news/rss.xml";
-			if ($wm2018_options['showrssnews_method'] == "0") {
+			if ($wm2018_options['showrssnews_method'] == "0" && function_exists('curl_version')) {
 				$data = file_get_contents($feedurl);
 			} else {
 				$ch = curl_init();

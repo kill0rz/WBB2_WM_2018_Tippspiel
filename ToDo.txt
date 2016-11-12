@@ -7,7 +7,6 @@ ToDo für WM 2018:
 	+ Code in vorhandene Dateien mergen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen ausgrauen oder weglassen + Hinweis drunter
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
@@ -87,6 +86,9 @@ User betreffend:
 	+ Nach Speichern: Weiterleitung auf Tippseite
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
++ Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen einen Hinweis drunter
+
+
 
 technisch:
 ----------
