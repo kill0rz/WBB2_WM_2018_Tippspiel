@@ -1246,15 +1246,15 @@ if ($action == "showusertippsdetail") {
 					if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
 						$wmtipp_name = $allnames2[$ii];
 						$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$wmtipp_name\" title=\"$wmtipp_name\" />";
-						$emtipp_edit = '';
+						$wmtipp_edit = '';
 						if ($lastgame4wmtipp['datetime'] > $akttime) {
-							$emtipp_edit = "&nbsp;<a href=\"wm2018.php?action=EDITWMTIPP&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
+							$wmtipp_edit = "&nbsp;<a href=\"wm2018.php?action=editwmtipp&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
 						}
 					} else {
 						if ($akttime > $lastgame4wmtipp['datetime']) {
 							$wmtipp_name = $allnames2[$ii];
 							$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$wmtipp_name\" title=\"$wmtipp_name\" />";
-							$emtipp_edit = '';
+							$wmtipp_edit = '';
 						} else {
 							$wmtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
 							$wmtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
@@ -1265,16 +1265,16 @@ if ($action == "showusertippsdetail") {
 					if ($wbbuserdata['userid'] == intval($_REQUEST['userid'])) {
 						$vwmtipp_name = $allnames2[$ii];
 						$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vwmtipp_name\" title=\"$vwmtipp_name\" />";
-						$vemtipp_edit = '';
+						$vwmtipp_edit = '';
 						if ($lastgame4wmtipp['datetime'] > $akttime) {
-							$vemtipp_edit = "&nbsp;<a href=\"wm2018.php?action=EDITVWMTIPP&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
+							$vwmtipp_edit = "&nbsp;<a href=\"wm2018.php?action=editvwmtipp&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
 						}
 
 					} else {
 						if ($akttime > $lastgame4wmtipp['datetime']) {
 							$vwmtipp_name = $allnames2[$ii];
 							$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/$allflags2[$ii]\" border=\"0\" alt=\"$vwmtipp_name\" title=\"$vwmtipp_name\" />";
-							$vemtipp_edit = '';
+							$vwmtipp_edit = '';
 						} else {
 							$vwmtipp_name = "<b>{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}</b>";
 							$vwmtipp_flagge = "<img src=\"images/wm2018/flaggen/unknown.png\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_15']}\" />";
@@ -1919,7 +1919,7 @@ if ($action == "edittipp") {
 // ++++++++++++++++++++++++
 // ++ WM-Tipp editieren +++
 // ++++++++++++++++++++++++
-if ($action == "EDITWMTIPP") {
+if ($action == "editwmtipp") {
 	if ($lastgame4wmtipp['datetime'] < $akttime) {
 		redirect($lang->get("LANG_WM2018_PHP_50"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
@@ -1954,12 +1954,12 @@ if ($action == "EDITWMTIPP") {
 			eval("\$wm2018_auswahl_wmtipp .= \"" . $tpl->get("wm2018_auswahl_wmtipp") . "\";");
 		}
 	}
-	eval("\$tpl->output(\"" . $tpl->get("wm2018_EDITWMTIPP") . "\");");
+	eval("\$tpl->output(\"" . $tpl->get("wm2018_editwmtipp") . "\");");
 }
 // +++++++++++++++++++++++++++++
 // ++ Vize-EM-Tipp editieren +++
 // +++++++++++++++++++++++++++++
-if ($action == "EDITVWMTIPP") {
+if ($action == "editvwmtipp") {
 	if ($lastgame4wmtipp['datetime'] < $akttime) {
 		redirect($lang->get("LANG_WM2018_PHP_55"), $url = "wm2018.php" . $SID_ARG_1ST);
 	}
@@ -1994,7 +1994,7 @@ if ($action == "EDITVWMTIPP") {
 			eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
 		}
 	}
-	eval("\$tpl->output(\"" . $tpl->get("wm2018_EDITVWMTIPP") . "\");");
+	eval("\$tpl->output(\"" . $tpl->get("wm2018_editvwmtipp") . "\");");
 }
 
 if ($action == "wmtipp_only") {

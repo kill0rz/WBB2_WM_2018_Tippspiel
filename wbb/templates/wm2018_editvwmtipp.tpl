@@ -51,9 +51,9 @@
 		</tr>
 	</table>
 	<br />
-	<form method="post" action="wm2018.php?action=EDITVWMTIPP">
+	<form method="post" action="wm2018.php?action=editvwmtipp">
 		<input type="hidden" name="send" value="send" />
-		<input type="hidden" name="sid" value="$session['hash']" />
+		<input type="hidden" name="sid" value="$session[hash]" />
 		<table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
 			<tr>
 				<td class="tablea" align="center" width="50%">

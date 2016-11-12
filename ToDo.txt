@@ -21,6 +21,9 @@ ToDo für WM 2018:
 	+ Forumsdiskussion steht noch aus: http://www.v-gn.de/wbb/thread.php?postid=132614#post132614
 + action wmtipp_only
 	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
++ action editwmtipp/editvwmtipp
+	+ Vorauswahl, wenn schon was getippt wurde
+	+ Nach Speichern: Weiterleitung auf Tippseite
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
