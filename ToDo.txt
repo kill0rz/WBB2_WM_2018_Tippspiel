@@ -23,7 +23,6 @@ ToDo für WM 2018:
 	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
 + action editwmtipp/editvwmtipp
 	+ Vorauswahl, wenn schon was getippt wurde
-	+ Nach Speichern: Weiterleitung auf Tippseite
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
@@ -46,8 +45,7 @@ ZU TESTEN
 + gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
 	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 + is_integer in den SQL-Queries checken
-+ action: tippsprogame
-	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
+
 
 
 DONE
@@ -86,7 +84,10 @@ User betreffend:
 	+ unterer Teil:
 		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
 			+ Optionen per ACP (deaktivieren, Anzahl)
-
++ action editwmtipp/editvwmtipp
+	+ Nach Speichern: Weiterleitung auf Tippseite
++ action: tippsprogame
+	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 
 technisch:
 ----------

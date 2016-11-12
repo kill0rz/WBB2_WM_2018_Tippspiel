@@ -1772,9 +1772,9 @@ if ($action == "tippsprogame") {
 			}
 			// Prüfung, ob User richtig lag
 			if ($row['gk'] == $result_gamedetails['game_gk']) {
-				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+				$tippright_gk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
 			} else {
-				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+				$tippright_gk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
 			}
 
 		}
@@ -1801,9 +1801,9 @@ if ($action == "tippsprogame") {
 			}
 			// Prüfung, ob User richtig lag
 			if ($row['elfer'] == $result_gamedetails['game_elfer']) {
-				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
+				$tippright_elfer = "&nbsp;<img src=\"images/wm2018/thumbs_up.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_31']}\" title=\"{$lang->items['LANG_WM2018_PHP_31']}\" />";
 			} else {
-				$tippright_rk = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
+				$tippright_elfer = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
 			}
 		}
 		eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
@@ -1921,26 +1921,26 @@ if ($action == "edittipp") {
 // ++++++++++++++++++++++++
 if ($action == "editwmtipp") {
 	if ($lastgame4wmtipp['datetime'] < $akttime) {
-		redirect($lang->get("LANG_WM2018_PHP_50"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_50"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	// +++++++++++++++++++++++++++++++++++
 	if (isset($_POST['send'])) {
 		if ($_POST['tipp_wm'] == -1) {
-			redirect($lang->get("LANG_WM2018_PHP_51"), $url = "wm2018.php" . $SID_ARG_1ST);
+			redirect($lang->get("LANG_WM2018_PHP_51"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 		}
 
 		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_wm = '" . intval($_POST['tipp_wm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
-		redirect($lang->get("LANG_WM2018_PHP_52"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_52"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 	// +++++++++++++++++++++++++++++++++++
 	if ($_REQUEST['userid'] != $wbbuserdata['userid']) {
-		redirect($lang->get("LANG_WM2018_PHP_53"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_53"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	$result = $db->query_first("SELECT tipp_wm, tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
 	if (!$result['tipp_wm']) {
-		redirect($lang->get("LANG_WM2018_PHP_54"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_54"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	for ($j = 0; $j < count($allids2); $j++) {
@@ -1961,26 +1961,26 @@ if ($action == "editwmtipp") {
 // +++++++++++++++++++++++++++++
 if ($action == "editvwmtipp") {
 	if ($lastgame4wmtipp['datetime'] < $akttime) {
-		redirect($lang->get("LANG_WM2018_PHP_55"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_55"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	// +++++++++++++++++++++++++++++++++++
 	if (isset($_POST['send'])) {
 		if ($_POST['tipp_vwm'] == -1) {
-			redirect($lang->get("LANG_WM2018_PHP_56"), $url = "wm2018.php" . $SID_ARG_1ST);
+			redirect($lang->get("LANG_WM2018_PHP_56"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 		}
 
 		$db->unbuffered_query("UPDATE bb" . $n . "_wm2018_userpunkte SET tipp_vwm = '" . intval($_POST['tipp_vwm']) . "' WHERE userid = '" . intval($wbbuserdata['userid']) . "'");
-		redirect($lang->get("LANG_WM2018_PHP_57"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_57"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 	// +++++++++++++++++++++++++++++++++++
 	if ($_REQUEST['userid'] != $wbbuserdata['userid']) {
-		redirect($lang->get("LANG_WM2018_PHP_58"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_58"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	$result = $db->query_first("SELECT tipp_wm, tipp_vwm FROM bb" . $n . "_wm2018_userpunkte WHERE userid = '" . intval($_REQUEST['userid']) . "'");
 	if (!$result['tipp_vwm']) {
-		redirect($lang->get("LANG_WM2018_PHP_59"), $url = "wm2018.php" . $SID_ARG_1ST);
+		redirect($lang->get("LANG_WM2018_PHP_59"), $url = "wm2018.php?action=maketipp" . $SID_ARG_1ST);
 	}
 
 	for ($j = 0; $j < count($allids2); $j++) {
