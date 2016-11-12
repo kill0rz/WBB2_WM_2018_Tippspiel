@@ -58,7 +58,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_16>Kann getippt werden, ob es gelb-rote/rote Karten im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_16:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_17>Kann getippt werden, ob es Elfmeter im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_17:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Weltmeister / Vize-Weltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Weltmeister / VizeWeltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Weltmeister / Vizeweltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_20>(Gameid, Wert zwischen 1 und $gameid_finale<br />Game $gameid_vorrundenendspiel = letztes Vorrundenspiel<br />Game $gameid_finale = Finalspiel)</LANG_ACP_WM2018_TPL_OPTIONS_20:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_21>Einstellungen f&uuml;r den Guthabenhack (V1.9.5 von Lasall ben&ouml;tigt)</LANG_ACP_WM2018_TPL_OPTIONS_21:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_22>Soll der Guthabenhack f&uuml;r das WM2018-Tippspiel genutzt werden?</LANG_ACP_WM2018_TPL_OPTIONS_22:text>
@@ -305,7 +305,7 @@
 <text:LANG_WM2018_TPL_INDEX_29>Gewinn f&uuml;r einen exakten Tipp</LANG_WM2018_TPL_INDEX_29:text>
 <text:LANG_WM2018_TPL_INDEX_3>Hallo</LANG_WM2018_TPL_INDEX_3:text>
 <text:LANG_WM2018_TPL_INDEX_30>Gewinn f&uuml;r einen Tipp mit richtiger Tendenz</LANG_WM2018_TPL_INDEX_30:text>
-<text:LANG_WM2018_TPL_INDEX_31>Gewinn f&uuml;r einen richtigen Weltmeister/VizeWeltmeister-Tipp</LANG_WM2018_TPL_INDEX_31:text>
+<text:LANG_WM2018_TPL_INDEX_31>Gewinn f&uuml;r einen richtigen Weltmeister/Vizeweltmeister-Tipp</LANG_WM2018_TPL_INDEX_31:text>
 <text:LANG_WM2018_TPL_INDEX_32>Top $wm2018_options[topuser] -User</LANG_WM2018_TPL_INDEX_32:text>
 <text:LANG_WM2018_TPL_INDEX_33>Hallo <b>Gast</b></LANG_WM2018_TPL_INDEX_33:text>
 <text:LANG_WM2018_TPL_INDEX_34>Noch nicht eingetragene Spiele</LANG_WM2018_TPL_INDEX_34:text>
@@ -370,7 +370,7 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_10>Elfmeter</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_10:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_11>Ergebnis</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_11:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12>Weltmeister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_12:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13>VizeWeltmeister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13>Vizeweltmeister-Tipp:</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_13:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_2>WM2018-Tippspiel-Startseite</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_2:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_3>Tipps von</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_3:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_4>Spiel-Nr.</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_4:text>
@@ -436,8 +436,8 @@
 <text:LANG_WM2018_TPL_INDEX_42><b>Flagge</b></LANG_WM2018_TPL_INDEX_42:text>
 <text:LANG_WM2018_TPL_INDEX_43><b>Tipps</b></LANG_WM2018_TPL_INDEX_43:text>
 <text:LANG_WM2018_TPL_INDEX_44><b>Quote</b></LANG_WM2018_TPL_INDEX_44:text>
-<text:LANG_WM2018_TPL_WMTIPPONLY_1>Weltmeister / VizeWeltmeister tippen</LANG_WM2018_TPL_WMTIPPONLY_1:text>
-<text:LANG_WM2018_TPL_WMTIPPONLY_2>Hier kannst Du den Weltmeister / VizeWeltmeister tippen.</LANG_WM2018_TPL_WMTIPPONLY_2:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_1>Weltmeister / Vizeweltmeister tippen</LANG_WM2018_TPL_WMTIPPONLY_1:text>
+<text:LANG_WM2018_TPL_WMTIPPONLY_2>Hier kannst Du den Weltmeister / Vizeweltmeister tippen.</LANG_WM2018_TPL_WMTIPPONLY_2:text>
 <text:LANG_WM2018_TPL_WMTIPPONLY_3>Vize-/Weltmeister tippen</LANG_WM2018_TPL_WMTIPPONLY_3:text>
 <text:LANG_WM2018_TPL_WMTIPPONLY_4><span class="smallfont"><b><h2>Wichtig!</h2><br />Es z&auml;hlen immer alle Tore, auch die in der Verl&auml;ngerung und im Elfmeterschie&szlig;en!</b></span></LANG_WM2018_TPL_WMTIPPONLY_4:text>
 
