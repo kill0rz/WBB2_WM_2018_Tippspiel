@@ -28,6 +28,12 @@ ToDo für WM 2018:
 + Demo aktualisieren
 
 
+KNOWN BUGS:
+-----------
++ gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
+	+ Ersetzt ganze Datumsstrings durch ein Komma
+
+
 
 USERWÜNSCHE
 -----------
@@ -86,7 +92,6 @@ User betreffend:
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen einen Hinweis drunter
-+ gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
 
 
 
