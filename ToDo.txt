@@ -22,7 +22,8 @@ ToDo für WM 2018:
 + action wmtipp_only
 	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
 + action editwmtipp/editvwmtipp
-	+ Vorauswahl, wenn schon was getippt wurde
+	+ Vorauswahl, wenn schon was getippt wurde7
++ gestern, heute, morgen in Sprachvariablen auslagern
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
