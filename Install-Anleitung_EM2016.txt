@@ -33,9 +33,9 @@ Füge darunter ein
 // WM 2018 Tippspiel
 $wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 if ($wm2018_options['1st'] == 0) {
-	$db->unbuffered_query("DELETE * FROM bb" . $n . "_wm2018_usertipps WHERE userid IN ($userids)", 1);
-	$db->unbuffered_query("DELETE * FROM bb" . $n . "_wm2018_userpunkte WHERE userid IN ($userids)", 1);
-	$db->unbuffered_query("DELETE * FROM bb" . $n . "_wm2018_vortag WHERE userid IN ($userids)", 1);
+	$db->unbuffered_query("DELETE FROM bb" . $n . "_wm2018_usertipps WHERE userid IN ($userids)", 1);
+	$db->unbuffered_query("DELETE FROM bb" . $n . "_wm2018_userpunkte WHERE userid IN ($userids)", 1);
+	$db->unbuffered_query("DELETE FROM bb" . $n . "_wm2018_vortag WHERE userid IN ($userids)", 1);
 }
 
 
