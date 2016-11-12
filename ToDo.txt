@@ -21,7 +21,7 @@ ToDo für WM 2018:
 + action wmtipp_only
 	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
 + action editwmtipp/editvwmtipp
-	+ Vorauswahl, wenn schon was getippt wurde7
+	+ Vorauswahl, wenn schon was getippt wurde
 
 
 + trophy.jpg ändern --> transparenter Hintergrund fehlt
@@ -43,7 +43,6 @@ USERWÜNSCHE
 ZU TESTEN
 ---------
 + is_integer in den SQL-Queries checken
-+ gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
 
 
 DONE
@@ -87,6 +86,7 @@ User betreffend:
 + action: tippsprogame
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen einen Hinweis drunter
++ gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
 
 
 
