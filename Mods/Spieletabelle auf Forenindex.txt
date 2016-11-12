@@ -92,7 +92,7 @@ while ($row_tableonindex = $db->fetch_array($result_tableonindex)) {
 	$wm2018_showtableonindex_nontippedgames = true;
 	$rowclass = getone($count++, "tablea", "tableb");
 	$gamedate = formatdate($wbbuserdata['dateformat'], $row_tableonindex['datetime'], 1);
-	$gamedate = strtr($gamedate, $replace_datum_komma);
+	$gamedate = preg_replace("/((<b>)?[a-zA-Z]*(<\/b>)?),/", "$1", $gamedate);
 	$gametime = formatdate($wbbuserdata['timeformat'], $row_tableonindex['datetime']);
 
 	$checkgame1 = $row_tableonindex['team_1_id']{
@@ -204,7 +204,7 @@ while ($row_tableonindex = $db->fetch_array($result_tableonindex)) {
 	$wm2018_showtableonindex_donegames = true;
 	$rowclass = getone($count++, "tablea", "tableb");
 	$gamedate = formatdate($wbbuserdata['dateformat'], $row_tableonindex['datetime'], 1);
-	$gamedate = strtr($gamedate, $replace_datum_komma);
+	$gamedate = preg_replace("/((<b>)?[a-zA-Z]*(<\/b>)?),/", "$1", $gamedate);
 	$gametime = formatdate($wbbuserdata['timeformat'], $row_tableonindex['datetime']);
 
 	$checkgame1 = $row_tableonindex['team_1_id']{
