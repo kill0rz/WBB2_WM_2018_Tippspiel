@@ -24,7 +24,6 @@ ToDo für WM 2018:
 	+ Vorauswahl, wenn schon was getippt wurde
 
 
-+ trophy.jpg ändern --> transparenter Hintergrund fehlt
 + Demo aktualisieren
 
 
@@ -87,6 +86,7 @@ User betreffend:
 	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
 + Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen einen Hinweis drunter
 + gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
++ trophy.jpg ändern --> transparenter Hintergrund fehlt
 
 
 
