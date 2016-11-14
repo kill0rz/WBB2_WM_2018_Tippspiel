@@ -887,7 +887,7 @@ if ($action == "maketipp") {
 		}
 
 		if ($row['gruppe'] == '3') {
-			$type = $lang->items['LANG_WM2018_PHP_19'];
+			$type = $lang->items['LANG_WM2018_PHP_9'];
 		}
 
 		if ($row['gruppe'] == '1') {
@@ -1479,7 +1479,7 @@ if ($action == "showallgames") {
 		}
 
 		if ($row['gruppe'] == '3') {
-			$type = $lang->items['LANG_WM2018_PHP_19'];
+			$type = $lang->items['LANG_WM2018_PHP_9'];
 		}
 
 		if ($row['gruppe'] == '1') {
@@ -1576,7 +1576,7 @@ if ($action == "gamedetails") {
 	}
 
 	if ($result['gruppe'] == '3') {
-		$type = $lang->items['LANG_WM2018_PHP_19'];
+		$type = $lang->items['LANG_WM2018_PHP_9'];
 	}
 
 	if ($result['gruppe'] == '1') {

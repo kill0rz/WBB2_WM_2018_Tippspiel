@@ -85,7 +85,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_43>Soll die Tabelle für die letzten Spiele angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_43:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_44>Wie viele letzte Spiele sollen angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_44:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_45><font color='red'>Du hast cURL nicht installiert, der Feed wird automatisch &uumlber <i>file_get_contents</i> geladen.</font></LANG_ACP_WM2018_TPL_OPTIONS_45:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_46>Soll ab dem Achtelfinale noch ein Tippen von Gleichstand m&ouml;glich sein?</LANG_ACP_WM2018_TPL_OPTIONS_45:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_46>Soll ab dem Achtelfinale noch ein Tippen von Gleichstand m&ouml;glich sein?</LANG_ACP_WM2018_TPL_OPTIONS_46:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1>Punkte bearbeiten</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_1:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2>Beschreibung</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_2:text>
 <text:LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3>Punkte</LANG_ACP_WM2018_TPL_PUNKTE_EDIT_3:text>
