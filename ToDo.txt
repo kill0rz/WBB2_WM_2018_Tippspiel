@@ -1,9 +1,6 @@
 ToDo für WM 2018:
 -----------------
 
-+ Ab Achtelfinale keinen Gleichstand mehr tippen können
-	+ Per ACP Steuerbar ob das so gemacht werden soll
-	+ (nur) dann auch das Eintragen verhindern
 + HM-Portal von Mr. Fish sauber implementieren
 	+ Änderungen von mir zurückspielen
 	+ HTML5-Anpassungen
