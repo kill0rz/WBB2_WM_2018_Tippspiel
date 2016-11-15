@@ -10,7 +10,6 @@ CREATE TABLE `bb1_wm2018_options` (
   `showrssnews` int(1) NOT NULL default '1',
   `rssnews` int(5) NOT NULL default '5',
   `rssnews_showfeed` varchar(10) NOT NULL default 'fifa',
-  `showwmticker` int(1) NOT NULL default '1',
   `wmticker_width` int(5) NOT NULL default '800',
   `nextxgames` int(3) NOT NULL default '4',
   `nonaddedgamescount` int(3) NOT NULL default '4',

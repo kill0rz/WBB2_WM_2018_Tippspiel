@@ -72,17 +72,6 @@
 			</font>
 		</td>
 	</tr>
-	<if($wm2018_options['showwmticker']==1)>
-		<then>
-			<tr>
-				<td class="tableb" align="center">
-					<span class="smallfont">
-						<iframe src="http://www.fussballportal.de/c4u_ticker.php?mouse_stop=1&amp;speed=10&amp;category=wm-2018&amp;box_width=$wm2018_options[wmticker_width]&amp;bg_color=$bgcolor&amp;bg_box_color=$bgcolor&amp;border_color=$bgcolor&amp;link_color=$fontcolor&amp;link_color_over=$fontcolor" name="iframe" width="$wm2018_options[wmticker_width]" height="24" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://www.fussballportal.de" target="_blank">Fussball Datenbank auf www.fussballportal.de</a></iframe>
-					</span>
-				</td>
-			</tr>
-		</then>
-	</if>
 </table>
 <if($wm2018_options['ebay_rel_aktiv']==1)>
 	<then>
