@@ -46,59 +46,6 @@ ZU TESTEN
 DONE
 ----
 
-User betreffend:
-----------------
-+ Nummerfelder verwenden: ACP > Ergebnis eintragen
-+ Nummerfelder verwenden: Tipp eintragen/editieren
-+ action: showusertippsdetail
-	+ Errorseite, wenn keine User-ID in $_REQUEST übergeben
-+ ACP > eintragen
-	+ Link zum Spiel (Forum, neuer Tab) hinter die ID
-+ Fehlerseite, wenn Tipps noch nicht einsehbar
-+ Ab Achtelfinale soll man direkt zum Tab des jeweiligen Spiels geleitet werden, nicht immer zur Vorrunde
-+ Achtelfinale korrigieren im ACP-Menü rückbauen
-+ Im ACP zwischen FIFA- und UEFA-Feed switchen können
-+ Bei Tippabgabe Fahnen neben dem Text im ACP anzeigen (save result step 2)
-+ Link zu Spiel hinter
-	+ aktuell laufende Spiele
-	+ noch nicht eingetragene Spiele
-	+ nächste Spiele
-+ top_wm2018.gif ändern
-	+ Das von der WM 2014 genutzt
-+ Spiele können erst eingetragen werden, wenn das Spiel begonnen hat/vorbei ist (ACP, Ergebnis)
-+ Anzeigen der Spiele, die noch nicht eingetragen wurden auf index
-+ actions tippsprogame und gamedetails zu einer Seite zusammenfassen
-+ Rechtschreibung korrigiert
-+ JGS-Portal-Mod Anpassungen
-+ Wenn Endspiel vorbei ist, Datum statt Counter im Header anzeigen lassen
-+ Auf Foren-Index: Tabelle mit Spielübersichten
-	+ Hinweis im ACP auf Mod
-	+ oberer Teil:
-		+ In den kommenden 24h finden folgende Spiele statt, für die du noch nicht getippt hast:
-		+ Option zum deaktivieren -> Extra Abschnitt im ACP
-	+ unterer Teil:
-		+ letzte Spiele in denen man schnell zu Details der letzten X Spiele kommt (Einstellung ACP)
-			+ Optionen per ACP (deaktivieren, Anzahl)
-+ action editwmtipp/editvwmtipp
-	+ Nach Speichern: Weiterleitung auf Tippseite
-+ action: tippsprogame
-	+ Bildchen ob richtig/falsch/Tendenz wie bei User-Tipps neben den Tipps, aber nur wenn Spiel vorbei
-+ Prüfen, ob cURL installiert ist, wenn nein, dann im ACP > Optionen einen Hinweis drunter
-+ gestern, heute, morgen Kommaersetzung unabhängig von Sprachvariablen
-+ trophy.jpg ändern --> transparenter Hintergrund fehlt
-
-
-
-technisch:
-----------
-+ Tageswertung rückbauen: ACP > eintragen
-+ Variablen verwenden: ACP > Optionen > Bis zu welchem Spiel kann der Weltmeister / Vizeweltmeister getippt werden?
-+ Kriritische Spielenummern in Variablen auslagern
-+ Beste Dritte rückbauen
-+ Countdown im Header: Javascript gegen JSHint geprüft
-+ Template maketipp: JS gegen JSHint geprüft
-+ gelöschte User handeln (Mod fest einbauen; Mod entfernen) (muss direkt ins WBB rein, also in die Install/Uninstall-Anleitung mit aufnehmen)
-	+ Nur während des Tippspiels, danach kann es nachträglich Statistiken verfälschen (Prüfung bauen, falls es jemand nicht deinstalliert!)
 
 
 

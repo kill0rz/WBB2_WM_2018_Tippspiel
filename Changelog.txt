@@ -1,3 +1,62 @@
 Änderungen zur WM 2018
 ----------------------
 
+Tippspiel
+---------
+	+ Es werden Nummernfelder bei der Tippabgabe und dem Tipp editieren verwendet
+	+ Es wird eine Fehlerseite angezeigt, wenn Tipps noch nicht einsehbar sind
+	+ Man wird in der Ergebnisübersicht automatisch auf den entsprechenden Tab (Vorrunde, Achtelfinale, Viertelfinale, ...) geleitet, je nach dem was gerade aktiv ist
+	+ WM 2014-Headergrafik wieder eingespielt
+	+ WM 2018 Trophäenbildchen angepasst
+	+ Unterseiten "Tipps für das Spiel" und "Spieledetails" zu einer Seite zusammengefasst
+	+ Wenn das Endspiel vorbei ist, wird statt dem Countdown ein Hinweis auf das Endspiel angezeigt
+	+ Nach dem Editieren des Vize-/Weltmeisters wird man nun zurück auf die Tippabgabe geleitet, nicht mehr zur Startseite
+	+ Unterseite "Tipps für das Spiel" zeigt nun auch "Tendenzbildchen" an (Pfeil nach oben, unten wie bei den User-Tipps), aber erst, wenn das Spiel vorbei ist
+	+ Fehlerseite, wenn bei "Tipps von Nutzer anzeigen" keine UserID übergeben wurde
+	+ Tabelle auf Tippspiel-Startseite hinzugefügt, die die noch nicht eingetragenen Spiele anzeigt
+	+ Links hinter die SpieleID gelegt in Tabellen
+		+ aktuell laufende Spiele
+		+ noch nicht eingetragene Spiele
+		+ nächste Spiele
+
+
+WBB-Forum
+---------
+	+ Es wurde eine Integration geschaffen, die aus dem Forum gelöschte User aus dem Tippspiel entfernt um die Statistiken nicht zu verfälschen und tote Links zu generieren (Hinweis in der Installationsanleitung beachten!)
+	+ Integration in die Startseite (Möglichkeit, diese im ACP auszuschalten, Anzahl einzustellen): Zeige zwei Tabellen
+		1) Spiele, die der User noch nicht getippt hat und die in den kommenden 24h stattfinden
+		2) Details zu den letzten X Spielen
+	+ 
+
+JGS-Portal
+----------
+	+ Anpassungen an HTML5
+	+ Anpassungen an die WM 2018
+	+ Korrekturen in der Punkteberechnung
+
+
+ACP
+---
+	+ Es werden Nummernfelder beim Ergebnisse eintragen verwendet
+	+ Hinter der SpielID beim Eintragen der Ergebnisse befindet sich nun ein Link ins Tippspiel zu den Spieldetails
+	+ Möglichkeit, einfach zwischen FIFA und UEFA-Feed wechseln zu können (Option hinzugefügt)
+	+ Beim Eintragen der Ergebnisse werden die Fahnen neben den Mannschaftsnamen angezeigt
+	+ Spiele können erst eingetragen werden, wenn das Spiel vorbei ist
+	+ Prüfen, ob cURL installiert ist. Wenn nicht, dann wird im ACP > Optionen einen Hinweis anzgezeigt, dass die Option nicht verfügbar ist
+	+ Menüpunkt "Achtelfinale korrigieren" entfernt (Sonderlocke EM 2016)
+
+
+Technisches
+-----------
+	+ Sämtliches Javascript korrigiert, formatiert und gegen JSHint geprüft
+	+ Quelltext nach k&r formatiert
+	+ kritische Spielenummern in Variablen ausgelagert und diese im Quelltext verwendet (zukünftig nur noch eine Anpassung notwendig)
+		+ ACP -> Optionen -> Bis zu welchem Spiel kann der Vize-/Weltmeister getippt werden --> Sprachvariable für Beschreibung verwendet auch die Variablen
+	+ Kommaersetzung für gestern/heute/morgen Sprachvariablen überarbeitet; Sprachvariablen unabhängig von Fettschreibung und Textinhalt (funktioniert auch mit anderen Worten); hardgecodeten Text entfernt
+	+ Rücksetzung der Tageswertung aus dem ACP entfernt (bei Ergebnisse eintragen)
+
+
+Sonstiges
+---------
+	+ Rechtschreibung und Grammatik korrigiert
+	+ "Beste Dritte" aus dem EM 2016 rückgebaut
