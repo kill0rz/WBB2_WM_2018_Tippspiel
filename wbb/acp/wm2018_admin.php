@@ -38,7 +38,7 @@ if ($action == "options") {
 
 	if (isset($_POST['send'])) {
 		$tipptime = $_POST['tipptime'] * 60;
-		$sql_query = "UPDATE bb" . $n . "_wm2018_options SET wm2018aktiv = '" . intval($_POST['wm2018_aktiv_jn']) . "', showrssnews = '" . intval($_POST['showrssnews']) . "', rssnews = '" . intval($_POST['rssnews']) . "', rssnews_showfeed = '" . mysqli_escape_string($db->link_id, $_POST['rssnews_showfeed']) . "', wmticker_width = '" . intval($_POST['wmticker_width']) . "', nextxgames = '" . intval($_POST['nextxgames']) . "', topuser = '" . intval($_POST['topuser']) . "', tipptime = '" . intval($tipptime) . "', tendenz = '" . intval($_POST['tendenz']) . "', gk_jn = '" . intval($_POST['gk_jn']) . "', rk_jn = '" . intval($_POST['rk_jn']) . "', elfer_jn = '" . intval($_POST['elfer_jn']) . "', winnertipp_jn = '" . intval($_POST['winnertipp_jn']) . "', lastgame4wmtipp = '" . intval($_POST['lastgame4wmtipp']) . "', nonaddedgamescount = '" . intval($_POST['nonaddedgamescount']) . "', currentgamescount = '" . intval($_POST['currentgamescount']) . "', gh_aktiv = '" . intval($_POST['gh_aktiv']) . "', gh_infos = '" . intval($_POST['gh_infos']) . "', gh_ab_normtipp = '" . intval($_POST['gh_ab_normtipp']) . "', gh_ab_wmtipp = '" . intval($_POST['gh_ab_wmtipp']) . "', gh_gut_normtipp_richtig = '" . intval($_POST['gh_gut_normtipp_richtig']) . "', gh_gut_normtipp_tendenz = '" . intval($_POST['gh_gut_normtipp_tendenz']) . "', gh_gut_wmtipp_richtig = '" . intval($_POST['gh_gut_wmtipp_richtig']) . "', ebay_rel_aktiv = '" . intval($_POST['ebay_rel_aktiv']) . "', ebay_pub_id = '" . intval($_POST['ebay_pub_id']) . "', ebay_cat = '" . intval($_POST['ebay_cat']) . "', po_aktiv = '" . intval($_POST['po_aktiv']) . "', vgposttid = '" . intval($_POST['vgposttid']) . "', vgpostuid = '" . intval($_POST['vgpostuid']) . "', viconid = '" . intval($_POST['viconid']) . "', vgthema = '" . addslashes($_POST['vgthema']) . "', message = '" . addslashes($_POST['message']) . "', vboardid = '" . intval($_POST['vboardid']) . "', vprefix = '" . addslashes($_POST['vprefix']) . "', vgposthtml = '" . intval($_POST['vgposthtml']) . "', diskussionsthreadid = '" . intval($_POST['diskussionsthreadid']) . "', showrssnews_method = '" . intval($_POST['showrssnews_method']) . "', showtableonindex_nontippedgames = '" . intval($_POST['showtableonindex_nontippedgames']) . "', showtableonindex_donegames = '" . intval($_POST['showtableonindex_donegames']) . "', showtableonindex_donegamescount = '" . intval($_POST['showtableonindex_donegamescount'])"';";
+		$sql_query = "UPDATE bb" . $n . "_wm2018_options SET wm2018aktiv = '" . intval($_POST['wm2018_aktiv_jn']) . "', showrssnews = '" . intval($_POST['showrssnews']) . "', rssnews = '" . intval($_POST['rssnews']) . "', rssnews_showfeed = '" . mysqli_escape_string($db->link_id, $_POST['rssnews_showfeed']) . "', wmticker_width = '" . intval($_POST['wmticker_width']) . "', nextxgames = '" . intval($_POST['nextxgames']) . "', topuser = '" . intval($_POST['topuser']) . "', tipptime = '" . intval($tipptime) . "', tendenz = '" . intval($_POST['tendenz']) . "', gk_jn = '" . intval($_POST['gk_jn']) . "', rk_jn = '" . intval($_POST['rk_jn']) . "', elfer_jn = '" . intval($_POST['elfer_jn']) . "', winnertipp_jn = '" . intval($_POST['winnertipp_jn']) . "', lastgame4wmtipp = '" . intval($_POST['lastgame4wmtipp']) . "', nonaddedgamescount = '" . intval($_POST['nonaddedgamescount']) . "', currentgamescount = '" . intval($_POST['currentgamescount']) . "', gh_aktiv = '" . intval($_POST['gh_aktiv']) . "', gh_infos = '" . intval($_POST['gh_infos']) . "', gh_ab_normtipp = '" . intval($_POST['gh_ab_normtipp']) . "', gh_ab_wmtipp = '" . intval($_POST['gh_ab_wmtipp']) . "', gh_gut_normtipp_richtig = '" . intval($_POST['gh_gut_normtipp_richtig']) . "', gh_gut_normtipp_tendenz = '" . intval($_POST['gh_gut_normtipp_tendenz']) . "', gh_gut_wmtipp_richtig = '" . intval($_POST['gh_gut_wmtipp_richtig']) . "', ebay_rel_aktiv = '" . intval($_POST['ebay_rel_aktiv']) . "', ebay_pub_id = '" . intval($_POST['ebay_pub_id']) . "', ebay_cat = '" . intval($_POST['ebay_cat']) . "', po_aktiv = '" . intval($_POST['po_aktiv']) . "', vgposttid = '" . intval($_POST['vgposttid']) . "', vgpostuid = '" . intval($_POST['vgpostuid']) . "', viconid = '" . intval($_POST['viconid']) . "', vgthema = '" . addslashes($_POST['vgthema']) . "', message = '" . addslashes($_POST['message']) . "', vboardid = '" . intval($_POST['vboardid']) . "', vprefix = '" . addslashes($_POST['vprefix']) . "', vgposthtml = '" . intval($_POST['vgposthtml']) . "', diskussionsthreadid = '" . intval($_POST['diskussionsthreadid']) . "', showrssnews_method = '" . intval($_POST['showrssnews_method']) . "', showtableonindex_nontippedgames = '" . intval($_POST['showtableonindex_nontippedgames']) . "', showtableonindex_donegames = '" . intval($_POST['showtableonindex_donegames']) . "', showtableonindex_donegamescount = '" . intval($_POST['showtableonindex_donegamescount']) . "';";
 		$db->unbuffered_query($sql_query);
 		header("Location: wm2018_admin.php?action=options&sid={$session['hash']}");
 		exit();
@@ -401,22 +401,31 @@ if ($action == "result_save") {
 		$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 
 		if (!$do_not_proceed) {
-			// Reset "Tageswertung", aber nach jedem Spiel
-			$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
-			$db->query("CREATE TABLE bb" . $n . "_wm2018_vortag (userid int(5), punkte int(10), pos int(3) default NULL auto_increment, PRIMARY KEY (pos));");
-			$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST, CHANGE `userid` `userid` int(10) NULL AFTER `id`, CHANGE `pos` `pos` int(10) NOT NULL AFTER `punkte`;");
-			$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;");
-			$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
+			// Reset "Tageswertung" *Anfang*
 
-			while ($row_topuser = $db->fetch_array($result_topuser)) {
-				//insert values vortag
-				$wm2018_rank_merk = $wm2018_rank_merk + 1;
-				if ($wm2018_punkte_merk != $row_topuser['punkte']) {
-					$wm2018_rank = $wm2018_rank_merk;
-					$wm2018_punkte_merk = $row_topuser['punkte'];
+			// check, ob heute schon geresettet wurde
+			$result_lastreset = $db->query_first("SELECT lasttageswertungreset FROM bb" . $n . "_wm2018_options LIMIT 1;");
+
+			// Wenn nein, dann fahre ein Update
+			if (date("m", $result_lastreset['lasttageswertungreset']) < date("m", time())) {
+				$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
+				$db->query("CREATE TABLE bb" . $n . "_wm2018_vortag (userid int(5), punkte int(10), pos int(3) default NULL auto_increment, PRIMARY KEY (pos));");
+				$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST, CHANGE `userid` `userid` int(10) NULL AFTER `id`, CHANGE `pos` `pos` int(10) NOT NULL AFTER `punkte`;");
+				$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;");
+				$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset = '" . time() . "';");
+				$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
+
+				while ($row_topuser = $db->fetch_array($result_topuser)) {
+					//insert values vortag
+					$wm2018_rank_merk = $wm2018_rank_merk + 1;
+					if ($wm2018_punkte_merk != $row_topuser['punkte']) {
+						$wm2018_rank = $wm2018_rank_merk;
+						$wm2018_punkte_merk = $row_topuser['punkte'];
+					}
+					$db->query("INSERT INTO bb" . $n . "_wm2018_vortag (userid, punkte, pos) VALUES ('" . $row_topuser['userid'] . "', '" . $row_topuser['punkte'] . "', '" . $wm2018_rank . "');");
 				}
-				$db->query("INSERT INTO bb" . $n . "_wm2018_vortag (userid, punkte, pos) VALUES ('" . $row_topuser['userid'] . "', '" . $row_topuser['punkte'] . "', '" . $wm2018_rank . "');");
 			}
+			// Reset "Tageswertung" *Ende*
 
 			// Alle Usertipps zu diesem Spiel auslesen
 			$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");

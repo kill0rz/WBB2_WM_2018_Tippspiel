@@ -7,11 +7,6 @@ ToDo für WM 2018:
 	+ Code in vorhandene Dateien mergen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
-	+ Speichere Tag bei Rücksetzung
-		+ hier nicht zur den day speichern, weil Zeitzonen
-		+ timestamp speichern und per date("m.", $timestamp); prüfen
-	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
 + action wmtipp_only
@@ -41,6 +36,12 @@ ZU TESTEN
 + fussballportal.de gibt es nicht mehr? Prüfen!
 	+ Ticker entweder rückbauen oder ersetzen
 	+ Forumsdiskussion steht noch aus: http://www.v-gn.de/wbb/thread.php?postid=132614#post132614
++ Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
+	+ Speichere Tag bei Rücksetzung
+		+ hier nicht zur den day speichern, weil Zeitzonen
+		+ timestamp speichern und per date("m.", $timestamp); prüfen
+	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
+
 
 DONE
 ----
