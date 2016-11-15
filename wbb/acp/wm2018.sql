@@ -49,7 +49,7 @@ CREATE TABLE `bb1_wm2018_options` (
   `showrssnews_method` int(11) NOT NULL default '0',
   `showtableonindex_nontippedgames` int(1) NOT NULL default '0',
   `showtableonindex_donegames` int(1) NOT NULL default '0',
-  `showtableonindex_donegamescount` int(1) NOT NULL default '4',
+  `showtableonindex_donegamescount` int(1) NOT NULL default '4'
 
 ) ENGINE=MyISAM;
 
