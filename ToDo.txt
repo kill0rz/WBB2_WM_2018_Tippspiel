@@ -33,9 +33,6 @@ USERWÜNSCHE
 ZU TESTEN
 ---------
 + is_integer in den SQL-Queries checken
-+ fussballportal.de gibt es nicht mehr? Prüfen!
-	+ Ticker entweder rückbauen oder ersetzen
-	+ Forumsdiskussion steht noch aus: http://www.v-gn.de/wbb/thread.php?postid=132614#post132614
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
 		+ hier nicht zur den day speichern, weil Zeitzonen

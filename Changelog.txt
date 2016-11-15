@@ -18,6 +18,7 @@ Tippspiel
 		+ aktuell laufende Spiele
 		+ noch nicht eingetragene Spiele
 		+ nächste Spiele
+	+ Liveticker entfernt, da dieser nur http erreichbar ist mit häufiger Downtime
 
 
 WBB-Forum
