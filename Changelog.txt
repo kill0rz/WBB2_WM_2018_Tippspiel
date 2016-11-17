@@ -19,6 +19,7 @@ Tippspiel
 		+ noch nicht eingetragene Spiele
 		+ nächste Spiele
 	+ Liveticker entfernt, da dieser nur http erreichbar ist mit häufiger Downtime
+	+ Die Tageswertung wird nun nur noch maximal einmal pro Tag zurückgesetzt und zwar beim Eintragen des ersten Spiels am Tag
 
 
 WBB-Forum
