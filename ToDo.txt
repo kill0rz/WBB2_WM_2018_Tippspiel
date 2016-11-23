@@ -9,8 +9,6 @@ ToDo für WM 2018:
 	+ komplette Punkteneuberechnung vllt.?
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
-+ action wmtipp_only
-	+ Nur noch einen Speichern-Button, um beide Vize-/Weltmeister zu tippen
 + action editwmtipp/editvwmtipp
 	+ Vorauswahl, wenn schon was getippt wurde
 
