@@ -1516,26 +1516,28 @@ if ($action == "showallgames") {
 		//mf Quote
 		$quote1 = 0;
 		$quote2 = 0;
+		$minusanzahl = 0;
 
-		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid'] . " ");
-		while ($row2 = $db->fetch_array($result_q)) {
-			if ($row2['goals_1'] > $row2['goals_2']) {
+		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid']);
+		while ($row_quote = $db->fetch_array($result_q)) {
+			if ($row_quote['goals_1'] > $row_quote['goals_2']) {
 				$quote1++;
-			}
-
-			if ($row2['goals_2'] > $row2['goals_1']) {
+			} elseif ($row_quote['goals_2'] > $row_quote['goals_1']) {
 				$quote2++;
+			} else {
+				$minusanzahl++;
 			}
 
 		}
 
 		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid']);
 
+		$anzahl -= $minusanzahl;
 		if ($anzahl > 0) {
 			$quote1 = round(($quote1 / $anzahl) * 100, 0);
 			$quote2 = round(($quote2 / $anzahl) * 100, 0);
 		}
-		//mf !Quote
+		//!mf Quote
 
 		if ($row['game_goals_1'] != '' && $row['game_goals_2'] != '') {
 			$gamedetails = "<a href=\"wm2018.php?action=gamedetails&amp;gameid={$row['gameid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/details.gif\" border=\"0\"alt=\"{$lang->items['LANG_WM2018_PHP_14']}\" title=\"{$lang->items['LANG_WM2018_PHP_14']}\"></a>";
