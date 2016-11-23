@@ -1,7 +1,6 @@
 ToDo für WM 2018:
 -----------------
 
-+ Quotenberechnugn in Funktion auslagern
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
 + Tageswertung in VGPost implementieren
@@ -37,6 +36,8 @@ ZU TESTEN
 	+ Änderungen von mir zurückspielen
 	+ HTML5-Anpassungen
 	+ Code in vorhandene Dateien mergen
++ Quotenberechnung in Funktion auslagern
+
 
 DONE
 ----

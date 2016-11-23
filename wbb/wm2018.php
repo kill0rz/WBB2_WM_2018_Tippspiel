@@ -274,29 +274,7 @@ if ($action == "index") {
 		}
 
 		//mf Quote
-		$quote1 = 0;
-		$quote2 = 0;
-		$minusanzahl = 0;
-
-		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-		while ($row = $db->fetch_array($result_q)) {
-			if ($row['goals_1'] > $row['goals_2']) {
-				$quote1++;
-			} elseif ($row['goals_2'] > $row['goals_1']) {
-				$quote2++;
-			} else {
-				$minusanzahl++;
-			}
-
-		}
-
-		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-
-		$anzahl -= $minusanzahl;
-		if ($anzahl > 0) {
-			$quote1 = round(($quote1 / $anzahl) * 100, 0);
-			$quote2 = round(($quote2 / $anzahl) * 100, 0);
-		}
+		getQuote($row_nextgames['gameid']);
 		//!mf Quote
 
 		eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_nextgames") . "\";");
@@ -512,29 +490,7 @@ if ($action == "index") {
 		}
 
 		//mf Quote
-		$quote1 = 0;
-		$quote2 = 0;
-		$minusanzahl = 0;
-
-		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-		while ($row = $db->fetch_array($result_q)) {
-			if ($row['goals_1'] > $row['goals_2']) {
-				$quote1++;
-			} elseif ($row['goals_2'] > $row['goals_1']) {
-				$quote2++;
-			} else {
-				$minusanzahl++;
-			}
-
-		}
-
-		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-
-		$anzahl -= $minusanzahl;
-		if ($anzahl > 0) {
-			$quote1 = round(($quote1 / $anzahl) * 100, 0);
-			$quote2 = round(($quote2 / $anzahl) * 100, 0);
-		}
+		getQuote($row_nextgames['gameid']);
 		//!mf Quote
 
 		eval("\$wm2018_nonaddedgames .= \"" . $tpl->get("wm2018_nonaddedgames") . "\";");
@@ -618,28 +574,7 @@ if ($action == "index") {
 		}
 
 		//mf Quote
-		$quote1 = 0;
-		$quote2 = 0;
-		$minusanzahl = 0;
-
-		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-		while ($row = $db->fetch_array($result_q)) {
-			if ($row['goals_1'] > $row['goals_2']) {
-				$quote1++;
-			} elseif ($row['goals_2'] > $row['goals_1']) {
-				$quote2++;
-			} else {
-				$minusanzahl++;
-			}
-		}
-
-		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row_nextgames['gameid']);
-
-		$anzahl -= $minusanzahl;
-		if ($anzahl > 0) {
-			$quote1 = round(($quote1 / $anzahl) * 100, 0);
-			$quote2 = round(($quote2 / $anzahl) * 100, 0);
-		}
+		getQuote($row_nextgames['gameid']);
 		//!mf Quote
 
 		eval("\$wm2018_currentgames .= \"" . $tpl->get("wm2018_currentgames") . "\";");
@@ -798,30 +733,8 @@ if ($action == "showresults") {
 			}
 
 			//mf Quote
-			$quote1 = 0;
-			$quote2 = 0;
-			$minusanzahl = 0;
-
-			$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid'] . " ");
-			while ($row2 = $db->fetch_array($result_q)) {
-				if ($row2['goals_1'] > $row2['goals_2']) {
-					$quote1++;
-				} elseif ($row2['goals_2'] > $row2['goals_1']) {
-					$quote2++;
-				} else {
-					$minusanzahl++;
-				}
-
-			}
-
-			list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid']);
-
-			$anzahl -= $minusanzahl;
-			if ($anzahl > 0) {
-				$quote1 = round(($quote1 / $anzahl) * 100, 0);
-				$quote2 = round(($quote2 / $anzahl) * 100, 0);
-			}
-			//mf !Quote
+			getQuote($row['gameid']);
+			//!mf Quote
 
 			eval("\$wm2018_showresult_bit_bit .= \"" . $tpl->get("wm2018_showresult_bit_bit") . "\";");
 			$done1 = 0;
@@ -1514,29 +1427,7 @@ if ($action == "showallgames") {
 		$gamedetails = '';
 
 		//mf Quote
-		$quote1 = 0;
-		$quote2 = 0;
-		$minusanzahl = 0;
-
-		$result_q = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid']);
-		while ($row_quote = $db->fetch_array($result_q)) {
-			if ($row_quote['goals_1'] > $row_quote['goals_2']) {
-				$quote1++;
-			} elseif ($row_quote['goals_2'] > $row_quote['goals_1']) {
-				$quote2++;
-			} else {
-				$minusanzahl++;
-			}
-
-		}
-
-		list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $row['gameid']);
-
-		$anzahl -= $minusanzahl;
-		if ($anzahl > 0) {
-			$quote1 = round(($quote1 / $anzahl) * 100, 0);
-			$quote2 = round(($quote2 / $anzahl) * 100, 0);
-		}
+		getQuote($row['gameid']);
 		//!mf Quote
 
 		if ($row['game_goals_1'] != '' && $row['game_goals_2'] != '') {
