@@ -53,8 +53,7 @@ eval("\$wm2018_footer = \"" . $tpl->get("wm2018_footer") . "\";");
 function getQuote($gameid) {
 	// Original by Mr.Fisch, Anpassungen by kill0rz
 	// berechnet die Tippquoten für das übergebene Spiel
-	global $quote1, $quote2, $db;
-	$quote1 = 0;
+	global $quote1, $quote2, $db, $n;
 	$quote2 = 0;
 	$minusanzahl = 0;
 

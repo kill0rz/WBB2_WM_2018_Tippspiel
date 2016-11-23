@@ -35,6 +35,7 @@ JGS-Portal
 	+ Anpassungen an HTML5
 	+ Anpassungen an die WM 2018
 	+ Korrekturen in der Punkteberechnung
+	+ sauberere Implementierung in das Tippspiel
 
 
 ACP
@@ -56,6 +57,7 @@ Technisches
 		+ ACP -> Optionen -> Bis zu welchem Spiel kann der Vize-/Weltmeister getippt werden --> Sprachvariable für Beschreibung verwendet auch die Variablen
 	+ Kommaersetzung für gestern/heute/morgen Sprachvariablen überarbeitet; Sprachvariablen unabhängig von Fettschreibung und Textinhalt (funktioniert auch mit anderen Worten); hardgecodeten Text entfernt
 	+ Rücksetzung der Tageswertung aus dem ACP entfernt (bei Ergebnisse eintragen)
+	+ Quotenberechnung wurde in eine globale Funktion ausgelagert und kann nun von überall getriggert werden.
 
 
 Sonstiges

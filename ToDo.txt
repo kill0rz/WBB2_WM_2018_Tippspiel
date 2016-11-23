@@ -36,11 +36,11 @@ ZU TESTEN
 	+ Änderungen von mir zurückspielen
 	+ HTML5-Anpassungen
 	+ Code in vorhandene Dateien mergen
-+ Quotenberechnung in Funktion auslagern
 
 
 DONE
 ----
+
 
 
 
