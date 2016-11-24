@@ -959,6 +959,8 @@ if ($action == "tippabgabe") {
 			for ($j = 0; $j < count($allids2); $j++) {
 				if ($uservwmtipp != $allids2[$j]) {
 					eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
+				} else {
+					eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp_selected") . "\";");
 				}
 			}
 			eval("\$lang->items['LANG_WM2018_TPL_tippabgabe_vwm_2'] = \"" . $lang->get4eval("LANG_WM2018_TPL_tippabgabe_vwm_2") . "\";");
@@ -1885,6 +1887,8 @@ if ($action == "editvwmtipp") {
 	for ($j = 0; $j < count($allids2); $j++) {
 		if ($result['tipp_vwm'] != $allids2[$j] && $result['tipp_wm'] != $allids2[$j]) {
 			eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp") . "\";");
+		} else {
+			eval("\$wm2018_auswahl_vwmtipp .= \"" . $tpl->get("wm2018_auswahl_vwmtipp_selected") . "\";");
 		}
 	}
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_editvwmtipp") . "\");");

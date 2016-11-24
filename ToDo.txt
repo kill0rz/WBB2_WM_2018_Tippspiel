@@ -5,8 +5,6 @@ ToDo für WM 2018:
 	+ komplette Punkteneuberechnung vllt.?
 + Tageswertung in VGPost implementieren
 	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
-+ action editwmtipp/editvwmtipp
-	+ Vorauswahl, wenn schon was getippt wurde
 
 
 + Demo aktualisieren
@@ -32,7 +30,8 @@ ZU TESTEN
 		+ hier nicht zur den day speichern, weil Zeitzonen
 		+ timestamp speichern und per date("m.", $timestamp); prüfen
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
-
++ action editwmtipp/editvwmtipp
+	+ Vorauswahl, wenn schon was getippt wurde
 
 
 ZU TESTEN (extern)
