@@ -307,22 +307,17 @@ if ($action == "index") {
 	while ($row_punkte = $db->fetch_array($result_punkte)) {
 		$rowclass = getone($count++, "tablea", "tableb");
 		if ($row_punkte['punkteid'] == 2 && $wm2018_options['tendenz'] == 0) {
-			$wm2018_punkte .= '';
 			$count++;
 		} elseif ($row_punkte['punkteid'] == 3 && $wm2018_options['gk_jn'] == 0) {
-			$wm2018_punkte .= '';
 			$count++;
 		} elseif ($row_punkte['punkteid'] == 4 && $wm2018_options['rk_jn'] == 0) {
-			$wm2018_punkte .= '';
 			$count++;
 		} elseif ($row_punkte['punkteid'] == 5 && $wm2018_options['elfer_jn'] == 0) {
-			$wm2018_punkte .= '';
 			$count++;
 		} elseif (($row_punkte['punkteid'] == 6 || $row_punkte['punkteid'] == 7) && $wm2018_options['winnertipp_jn'] == 0) {
-			$wm2018_punkte .= '';
 			$count++;
 		} else {
-			eval("\$wm2018_punkte .= \"" . $tpl->get("wm2018_punkte") . "\";");
+			eval("\$wm2018_punkte = \"" . $tpl->get("wm2018_punkte") . "\";");
 		}
 
 	}

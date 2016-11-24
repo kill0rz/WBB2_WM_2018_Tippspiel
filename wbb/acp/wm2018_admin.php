@@ -800,7 +800,7 @@ if ($action == "result_save") {
 				}
 			}
 
-			/* Anfang Posting erstellen */
+			/* Anfang Posting erstellen vgpost */
 			if ($wm2018_options['po_aktiv'] == 1) {
 				$spiel_erg = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "'");
 				$vgp_gameid = $spiel_erg['gameid'];
@@ -981,7 +981,7 @@ if ($action == "result_save") {
 					}
 				}
 			}
-			/* Ende Posting erstellen */
+			/* Ende Posting erstellen vgpost */
 		}
 		// Weiterleitung auf die Ergebnisübersicht
 		header("Location: wm2018_admin.php?action=results&sid={$session['hash']}");
