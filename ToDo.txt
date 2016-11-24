@@ -3,7 +3,7 @@ ToDo für WM 2018:
 
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-
++ "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 
 + Demo aktualisieren
 

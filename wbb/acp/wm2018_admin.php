@@ -854,24 +854,6 @@ if ($action == "result_save") {
 				while ($row_topuser = $db->fetch_array($result_topuser)) {
 					$vgp_count++;
 
-					// Tageswertung *Anfang*
-					$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
-
-					if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
-						$tagtendenz = "<img src=\"images/wm2018/hoch.jpg\" alt='hoch'>";
-					} elseif ($vortag['pos'] == $wm2018_rank) {
-						$tagtendenz = "<img src=\"images/wm2018/gleich.gif\" alt='gleich'>";
-					} else {
-						$tagtendenz = "<img src=\"images/wm2018/runter.jpg\" alt='runter'>";
-					}
-
-					if ($wm2018_rank == 1) {
-						$krone = "<img src=\"images/wm2018/krone.gif\" alt='krone'>";
-					} else {
-						$krone = "";
-					}
-					// Tageswertung *Ende*
-
 					// ** Ranking Start *//
 					$wm2018_rank_merk = $wm2018_rank_merk + 1;
 					if ($wm2018_punkte_merk != $row_topuser['punkte']) {
@@ -894,46 +876,57 @@ if ($action == "result_save") {
 						$wm2018_userrank = "[b]{$wm2018_rank}[/b]";
 					}
 
-					$wm2018_userrank = $tagtendenz . " " . $wm2018_userrank . " " . $krone;
+					// Tageswertung *Anfang*
+					$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
+
+					if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
+						$tagtendenz = "[img]./images/wm2018/hoch.jpg[/IMG]";
+					} elseif ($vortag['pos'] == $wm2018_rank) {
+						$tagtendenz = "[img]./images/wm2018/gleich.gif[/IMG]";
+					} else {
+						$tagtendenz = "[img]./images/wm2018/runter.jpg[/IMG]";
+					}
+
+					// Tageswertung *Ende*
 
 					if ($vgp_count == 1) {
-						$vgp_user_ranking_01 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_01 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 2) {
-						$vgp_user_ranking_02 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_02 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 3) {
-						$vgp_user_ranking_03 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_03 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 4) {
-						$vgp_user_ranking_04 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_04 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 5) {
-						$vgp_user_ranking_05 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_05 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 6) {
-						$vgp_user_ranking_06 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_06 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 7) {
-						$vgp_user_ranking_07 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_07 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 8) {
-						$vgp_user_ranking_08 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_08 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 9) {
-						$vgp_user_ranking_09 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_09 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					if ($vgp_count == 10) {
-						$vgp_user_ranking_10 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'];
+						$vgp_user_ranking_10 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
 					}
 
 					// ** Ranking Ende *//
