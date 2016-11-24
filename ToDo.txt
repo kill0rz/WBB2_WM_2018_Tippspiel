@@ -30,7 +30,6 @@ ZU TESTEN
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + action editwmtipp/editvwmtipp
 	+ Vorauswahl, wenn schon was getippt wurde
-+ Tageswertung in VGPost implementieren
 
 
 ZU TESTEN (extern)
