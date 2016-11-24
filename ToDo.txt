@@ -3,8 +3,6 @@ ToDo für WM 2018:
 
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung vllt.?
-+ Tageswertung in VGPost implementieren
-	+ Tipps der einzelnen Nutzer mit Tendenz und dem ganzen Sums implementieren
 
 
 + Demo aktualisieren
@@ -32,6 +30,7 @@ ZU TESTEN
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + action editwmtipp/editvwmtipp
 	+ Vorauswahl, wenn schon was getippt wurde
++ Tageswertung in VGPost implementieren
 
 
 ZU TESTEN (extern)

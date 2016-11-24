@@ -358,6 +358,7 @@ if ($action == "index") {
 			$quote = 0;
 		}
 
+		// Tageswertung *Anfang*
 		$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
 
 		$tagerg = $row_topuser['punkte'] - $vortag['punkte'];
@@ -366,11 +367,11 @@ if ($action == "index") {
 		}
 
 		if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
-			$tagtendenz = "<img src=\"images/wm2018/hoch.jpg\">";
+			$tagtendenz = "<img src=\"images/wm2018/hoch.jpg\" alt='hoch'>";
 		} elseif ($vortag['pos'] == $wm2018_rank) {
-			$tagtendenz = "<img src=\"images/wm2018/gleich.gif\">";
+			$tagtendenz = "<img src=\"images/wm2018/gleich.gif\" alt='gleich'>";
 		} else {
-			$tagtendenz = "<img src=\"images/wm2018/runter.jpg\">";
+			$tagtendenz = "<img src=\"images/wm2018/runter.jpg\" alt='runter'>";
 		}
 
 		if ($wm2018_rank == 1) {
@@ -378,6 +379,7 @@ if ($action == "index") {
 		} else {
 			$krone = "";
 		}
+		// Tageswertung *Ende*
 
 		eval("\$wm2018_topuser .= \"" . $tpl->get("wm2018_topuser") . "\";");
 	}
