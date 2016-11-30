@@ -304,6 +304,7 @@ if ($action == "index") {
 	// Gruppentabelle Ende
 	// Punkteverteilung Anfang
 	$result_punkte = $db->query("SELECT * FROM bb" . $n . "_wm2018_punkte ORDER BY punkteid");
+	$wm2018_punkte = '';
 	while ($row_punkte = $db->fetch_array($result_punkte)) {
 		$rowclass = getone($count++, "tablea", "tableb");
 		if ($row_punkte['punkteid'] == 2 && $wm2018_options['tendenz'] == 0) {
@@ -317,7 +318,7 @@ if ($action == "index") {
 		} elseif (($row_punkte['punkteid'] == 6 || $row_punkte['punkteid'] == 7) && $wm2018_options['winnertipp_jn'] == 0) {
 			$count++;
 		} else {
-			eval("\$wm2018_punkte = \"" . $tpl->get("wm2018_punkte") . "\";");
+			eval("\$wm2018_punkte .= \"" . $tpl->get("wm2018_punkte") . "\";");
 		}
 
 	}
