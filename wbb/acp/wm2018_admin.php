@@ -1235,28 +1235,23 @@ if ($action == "result_edit") {
 	$result = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
 	$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
 	$result_2 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_2_id'] . "'");
-	if ($wm2018_options['gk_jn'] == '1' && $result['game_gk'] == '1') {
-		$result_gk = $lang->get("LANG_ACP_WM2018_PHP_YES");
-	}
 
 	if ($wm2018_options['gk_jn'] == '1' && $result['game_gk'] == '0') {
-		$result_gk = $lang->get("LANG_ACP_WM2018_PHP_NO");
+		$selected_result_gk1 = "selected";
+	} else {
+		$selected_result_gk2 = "selected";
 	}
 
 	if ($wm2018_options['rk_jn'] == '1' && $result['game_rk'] == '1') {
-		$result_rk = $lang->get("LANG_ACP_WM2018_PHP_YES");
-	}
-
-	if ($wm2018_options['rk_jn'] == '1' && $result['game_rk'] == '0') {
-		$result_rk = $lang->get("LANG_ACP_WM2018_PHP_NO");
+		$selected_result_rk1 = "selected";
+	} else {
+		$selected_result_rk2 = "selected";
 	}
 
 	if ($wm2018_options['elfer_jn'] == '1' && $result['game_elfer'] == '1') {
-		$result_elfer = $lang->get("LANG_ACP_WM2018_PHP_YES");
-	}
-
-	if ($wm2018_options['elfer_jn'] == '1' && $result['game_elfer'] == '0') {
-		$result_elfer = $lang->get("LANG_ACP_WM2018_PHP_NO");
+		$selected_result_elfer1 = "selected";
+	} else {
+		$selected_result_elfer2 = "selected";
 	}
 
 	$gamecomment = htmlconverter($result['gamecomment']);

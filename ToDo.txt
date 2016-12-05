@@ -2,6 +2,8 @@ ToDo für WM 2018:
 -----------------
 
 + Editierfunktion für ACP-Ergebnisse
+	+ Speichern der Werte
+	+ Punktebrechnung geht nicht (immer 0 am Ende - Bug oder falsche Testdaten?)
 	+ Guthabenhack beachten
 		+ Kontoauszüge zurücksetzen
 		+ Guthaben abziehen + hinzufügen?
@@ -32,6 +34,8 @@ ZU TESTEN
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Editierfunktion für ACP-Ergebnisse
 	+ komplette Punkteneuberechnung
+	+ Template anpassen
+	+ selected-Werte bereitstellen
 
 
 ZU TESTEN (extern)

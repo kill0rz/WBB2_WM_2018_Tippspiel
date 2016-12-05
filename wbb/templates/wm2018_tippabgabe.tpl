@@ -61,10 +61,10 @@
 				<td class="tablea" align="right" width="50%">
 					<span class="normalfont">
 						<b>$name1</b>&nbsp;<img src="images/wm2018/flaggen/$flagge1" alt="$name1" title="$name1" /></span>&nbsp;&nbsp;
-					<input type="number" class="input" name="tipp_1" size="5" maxlength="3" />
+					<input type="number" min="0" class="input" name="tipp_1" size="5"/>
 				</td>
 				<td class="tablea" align="left" width="50%">
-					<input type="number" class="input" name="tipp_2" size="5" maxlength="3" />&nbsp;&nbsp;<img src="images/wm2018/flaggen/$flagge2" alt="$name2" title="$name2" />&nbsp;
+					<input type="number" min="0" class="input" name="tipp_2" size="5"/>&nbsp;&nbsp;<img src="images/wm2018/flaggen/$flagge2" alt="$name2" title="$name2" />&nbsp;
 					<span class="normalfont">
 						<b>$name2</b>
 					</span>
