@@ -94,9 +94,6 @@ if ($action == "index") {
 				 * FeedImport: Importiere RSS 2.0-Feeds und gib die Inhalte aus
 				 * Quelle: http:/www-coding.de/rss-feed-import-mit-php/
 				 * (hier findest du auch Beispiele und Erläuterungen)
-				 *
-				 * BEISPIEL
-				 * siehe rss_example.php
 			*/
 
 			class RSSImport {
@@ -302,6 +299,7 @@ if ($action == "index") {
 		eval("\$wm2018_gruppentabelle .= \"" . $tpl->get("wm2018_gruppentabelle") . "\";");
 	}
 	// Gruppentabelle Ende
+
 	// Punkteverteilung Anfang
 	$result_punkte = $db->query("SELECT * FROM bb" . $n . "_wm2018_punkte ORDER BY punkteid");
 	$wm2018_punkte = '';
