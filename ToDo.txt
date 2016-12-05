@@ -3,7 +3,7 @@ ToDo für WM 2018:
 
 + Editierfunktion für ACP-Ergebnisse
 	+ Speichern der Werte
-	+ Punktebrechnung geht nicht (immer 0 am Ende - Bug oder falsche Testdaten?)
+	+ GK, RK, Elf fehlen in Punkteberechnung (POST-Parameter fehlen noch)
 	+ Guthabenhack beachten
 		+ Kontoauszüge zurücksetzen
 		+ Guthaben abziehen + hinzufügen?
