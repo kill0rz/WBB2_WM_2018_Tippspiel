@@ -1106,6 +1106,18 @@ if ($action == "result_edit") {
 			$result_elfer = 0;
 		}
 
+		if (isset($_POST['game_goals_1'])) {
+			$game_goals_1 = intval($_POST['game_goals_1']);
+		} else {
+			$game_goals_1 = 0;
+		}
+
+		if (isset($_POST['game_goals_2'])) {
+			$game_goals_2 = intval($_POST['game_goals_2']);
+		} else {
+			$game_goals_2 = 0;
+		}
+
 		//Punkteneuberechnung *Anfang*
 
 		// ziehe Punkte für dieses Spiel ab
@@ -1117,7 +1129,7 @@ if ($action == "result_edit") {
 			$punkteplus = 0;
 			$tipp = 0;
 			$ghminus = 0;
-			if ($row_usertipps['goals_1'] == $_POST['game_goals_1'] && $row_usertipps['goals_2'] == intval($_POST['game_goals_2'])) {
+			if ($row_usertipps['goals_1'] == $game_goals_1 && $row_usertipps['goals_2'] == $game_goals_2) {
 				$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
 				$punkteplus = $punkteplus + $punkte4user['wert'];
 				if ($wm2018_options['gh_aktiv'] == 1) {
@@ -1130,7 +1142,7 @@ if ($action == "result_edit") {
 			// Spiel unentschieden, Tipp unentschieden, Tendenz aktiviert und richtig ?
 			if ($ende == 0) {
 				if ($wm2018_options['tendenz'] == 1) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
+					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($game_goals_1 == $game_goals_2)) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
 						$punkteplus = $punkteplus + $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
@@ -1145,7 +1157,7 @@ if ($action == "result_edit") {
 			// Spiel unentschieden, Tipp unentschieden, Tendenz deaktiviert und Tipp falsch ?
 			if ($ende == 0) {
 				if ($wm2018_options['tendenz'] == 0) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
+					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($game_goals_1 == $game_goals_2)) {
 						$tipp = 3;
 						$ende = 1;
 					}
@@ -1154,7 +1166,7 @@ if ($action == "result_edit") {
 			// +++++++++++++++++++ 4. Prüfung
 			// Spiel unentschieden, Tipp Sieg
 			if ($ende == 0) {
-				if (($_POST['game_goals_1'] == $_POST['game_goals_2']) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
+				if (($game_goals_1 == $game_goals_2) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
 					$tipp = 3;
 					$ende = 1;
 				}
@@ -1163,7 +1175,7 @@ if ($action == "result_edit") {
 			// Spiel Sieg, Tipp Sieg (falsch), Tendenz aktiviert und richtig ?
 			if ($ende == 0) {
 				if ($wm2018_options['tendenz'] == 1) {
-					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+					if (($game_goals_1 < $game_goals_2) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($game_goals_1 > $game_goals_2) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
 						$punkteplus = $punkteplus + $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
@@ -1178,7 +1190,7 @@ if ($action == "result_edit") {
 			// Spiel Sieg, Tipp Sieg (falsch), Tendenz deaktiviert und Tipp falsch ?
 			if ($ende == 0) {
 				if ($wm2018_options['tendenz'] == 0) {
-					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+					if (($game_goals_1 < $game_goals_2) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($game_goals_1 > $game_goals_2) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
 						$tipp = 3;
 						$ende = 1;
 					}
@@ -1189,7 +1201,7 @@ if ($action == "result_edit") {
 			// Siel Niederlage, Tipp Sieg
 			// Spiel Sieg, Tipp unentschieden
 			if ($ende == 0) {
-				if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($_POST['game_goals_1'] != $_POST['game_goals_2']) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
+				if (($game_goals_1 < $game_goals_2) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || ($game_goals_1 > $game_goals_2) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($game_goals_1 != $game_goals_2) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
 					$tipp = 3;
 					$ende = 1;
 				}
@@ -1231,7 +1243,7 @@ if ($action == "result_edit") {
 		}
 
 		// Trage die neuen Ergebnisse ein:
-		$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
+		$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "', game_goals_1 = '" . $game_goals_1 . "', game_goals_2 = '" . $game_goals_2 . "' WHERE gameid = '" . intval($_POST['gameid']) . "';");
 
 		// Berechne nun die Punkte neu für dieses Spiel:
 		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");
@@ -1360,6 +1372,8 @@ if ($action == "result_edit") {
 		header("Location: wm2018_admin.php?action=results&sid={$session['hash']}");
 		exit();
 	}
+
+	$gameid = intval($_REQUEST['gameid']);
 	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 	$result = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
 	$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
