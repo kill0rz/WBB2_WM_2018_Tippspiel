@@ -16,6 +16,8 @@
 <text:LANG_ACP_WM2018_PHP_6><br />Es wurde nicht ausgew&auml;hlt, ob es gelbe Karten im Spiel gab</LANG_ACP_WM2018_PHP_6:text>
 <text:LANG_ACP_WM2018_PHP_7><br />Es wurde nicht ausgew&auml;hlt, ob es gelb-rote/rote Karten im Spiel gab</LANG_ACP_WM2018_PHP_7:text>
 <text:LANG_ACP_WM2018_PHP_8><br />Es wurde nicht ausgew&auml;hlt, ob es Elfmeter im Spiel gab</LANG_ACP_WM2018_PHP_8:text>
+<text:LANG_ACP_WM2018_PHP_9>Abzug f&uuml;r Punktekorrektur: WM2018-Tippspiel (SpielLANG_WM2018_TPL_INDEX_8LANG_WM2018_TPL_INDEX_8</LANG_ACP_WM2018_PHP_9:text>
+<text:LANG_ACP_WM2018_PHP_10>minus</LANG_ACP_WM2018_PHP_10:text>
 <text:LANG_ACP_WM2018_PHP_NO>Nein</LANG_ACP_WM2018_PHP_NO:text>
 <text:LANG_ACP_WM2018_PHP_YES>Ja</LANG_ACP_WM2018_PHP_YES:text>
 <text:LANG_ACP_WM2018_TPL_ERROR_1>WM2018-Tippspiel Fehler!</LANG_ACP_WM2018_TPL_ERROR_1:text>
