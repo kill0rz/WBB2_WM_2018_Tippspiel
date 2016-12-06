@@ -1,10 +1,6 @@
 ToDo für WM 2018:
 -----------------
 
-+ Editierfunktion für ACP-Ergebnisse
-	+ Template anpassen
-	+ Speichern der Werte
-	+ GK, RK, Elf fehlen in Punkteberechnung (POST-Parameter fehlen noch)
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 
 + Demo aktualisieren
@@ -31,7 +27,8 @@ ZU TESTEN
 		+ timestamp speichern und per date("m.", $timestamp); prüfen
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Editierfunktion für ACP-Ergebnisse
-	+ selected-Werte bereitstellen
+	+ Speichern der Werte
+	+ GK, RK, Elf fehlen in Punkteberechnung
 	+ Umbauen:
 		+ Punkte berechnen, abziehen
 		+ Negativ Kontoauszug setzen
@@ -50,8 +47,9 @@ ZU TESTEN (extern)
 
 DONE
 ----
-
-
++ Editierfunktion für ACP-Ergebnisse
+	+ selected-Werte bereitstellen
+	+ Template anpassen
 
 
 ToDo für die EM 2020:

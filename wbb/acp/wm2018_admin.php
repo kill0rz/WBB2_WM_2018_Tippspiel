@@ -1088,6 +1088,24 @@ if ($action == "result_edit") {
 			$gamelink = "http://" . $gamelink;
 		}
 
+		if (isset($_POST['result_gk']) && (trim($_POST['result_gk']) == 0 || trim($_POST['result_gk']) == 1)) {
+			$result_gk = intval($_POST['result_gk']);
+		} else {
+			$result_gk = 0;
+		}
+
+		if (isset($_POST['result_rk']) && (trim($_POST['result_rk']) == 0 || trim($_POST['result_rk']) == 1)) {
+			$result_rk = intval($_POST['result_rk']);
+		} else {
+			$result_rk = 0;
+		}
+
+		if (isset($_POST['result_elfer']) && (trim($_POST['result_elfer']) == 0 || trim($_POST['result_elfer']) == 1)) {
+			$result_elfer = intval($_POST['result_elfer']);
+		} else {
+			$result_elfer = 0;
+		}
+
 		//Punkteneuberechnung *Anfang*
 
 		// ziehe Punkte für dieses Spiel ab
@@ -1213,7 +1231,7 @@ if ($action == "result_edit") {
 		}
 
 		// Trage die neuen Ergebnisse ein:
-		$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
+		$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
 
 		// Berechne nun die Punkte neu für dieses Spiel:
 		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");
@@ -1347,7 +1365,7 @@ if ($action == "result_edit") {
 	$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
 	$result_2 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_2_id'] . "'");
 
-	if ($wm2018_options['gk_jn'] == '1' && $result['game_gk'] == '0') {
+	if ($wm2018_options['gk_jn'] == '1' && $result['game_gk'] == '1') {
 		$selected_result_gk1 = "selected";
 	} else {
 		$selected_result_gk2 = "selected";
