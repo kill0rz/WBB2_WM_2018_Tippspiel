@@ -2,6 +2,11 @@ ToDo für WM 2018:
 -----------------
 
 + Editierfunktion für ACP-Ergebnisse
+	+ Umbauen:
+		+ Punkte berechnen, abziehen
+		+ Negativ Kontoauszug setzen
+		+ Punkte für das Spiel neu berechnen
+	+ Template anpassen
 	+ Speichern der Werte
 	+ GK, RK, Elf fehlen in Punkteberechnung (POST-Parameter fehlen noch)
 	+ Guthabenhack beachten
@@ -33,8 +38,6 @@ ZU TESTEN
 		+ timestamp speichern und per date("m.", $timestamp); prüfen
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Editierfunktion für ACP-Ergebnisse
-	+ komplette Punkteneuberechnung
-	+ Template anpassen
 	+ selected-Werte bereitstellen
 
 
