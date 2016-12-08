@@ -3,8 +3,6 @@ ToDo für WM 2018:
 
 + Editierfunktion für ACP-Ergebnisse
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
-+ Tabelle "Noch nicht eingetragene Spiele"
-	+ Höhe kleiner machen
 
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 + Demo aktualisieren
