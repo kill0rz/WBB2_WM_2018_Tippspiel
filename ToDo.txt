@@ -4,6 +4,11 @@ ToDo für WM 2018:
 + Editierfunktion für ACP-Ergebnisse
 + Punkteberechnung immer noch falsch
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
+	+ vgpost editieren
+		+ Post finden
+		+ Post neu generieren
+		+ Post ersetzen
+		+ neu markieren
 
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 + Demo aktualisieren
