@@ -1076,6 +1076,8 @@ if ($action == "result_save") {
 }
 
 if ($action == "result_edit") {
+	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
+
 	if ($_POST['send'] == 'send') {
 		$gamelink = wbb_trim($_POST['gamelink']);
 		if (isset($_POST['gamelink'])) {
@@ -1210,6 +1212,8 @@ if ($action == "result_edit") {
 					$ende = 1;
 				}
 			}
+
+			// RK, GK, Elfmeter
 			if ($wm2018_options['gk_jn'] == 1) {
 				if (intval($current_game_details['game_gk']) == $row_usertipps['gk']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
@@ -1378,7 +1382,6 @@ if ($action == "result_edit") {
 	}
 
 	$gameid = intval($_REQUEST['gameid']);
-	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 	$result = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");
 	$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_1_id'] . "'");
 	$result_2 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . $result['team_2_id'] . "'");

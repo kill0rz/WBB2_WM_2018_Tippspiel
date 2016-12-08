@@ -2,6 +2,7 @@ ToDo für WM 2018:
 -----------------
 
 + Editierfunktion für ACP-Ergebnisse
++ Punkteberechnung immer noch falsch
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
 
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
