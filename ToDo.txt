@@ -2,7 +2,8 @@ ToDo für WM 2018:
 -----------------
 
 + Editierfunktion für ACP-Ergebnisse
-+ Punkteberechnung immer noch falsch
+	+ Punkteberechnung immer noch falsch
+		+ Scheint an der Neuvergabe zu liegen, nicht am Abzug
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
 	+ vgpost editieren
 		+ Post finden

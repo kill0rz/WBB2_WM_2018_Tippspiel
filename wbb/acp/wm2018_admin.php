@@ -1215,19 +1215,19 @@ if ($action == "result_edit") {
 
 			// RK, GK, Elfmeter
 			if ($wm2018_options['gk_jn'] == 1) {
-				if (intval($current_game_details['game_gk']) == $row_usertipps['gk']) {
+				if (intval($current_game_details['game_gk']) == intval($row_usertipps['gk'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
 					$punkteplus = $punkteplus + $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['rk_jn'] == 1) {
-				if (intval($current_game_details['game_rk']) == $row_usertipps['rk']) {
+				if (intval($current_game_details['game_rk']) == intval($row_usertipps['rk'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
 					$punkteplus = $punkteplus + $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['elfer_jn'] == 1) {
-				if (intval($current_game_details['game_elfer']) == $row_usertipps['elfer']) {
+				if (intval($current_game_details['game_elfer']) == intval($row_usertipps['elfer'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
 					$punkteplus = $punkteplus + $punkte4user['wert'];
 				}
