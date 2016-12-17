@@ -438,7 +438,7 @@ if ($action == "result_save") {
 				$ghplus = 0;
 				if ($row_usertipps['goals_1'] == $_POST['game_goals_1'] && $row_usertipps['goals_2'] == intval($_POST['game_goals_2'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 					if ($wm2018_options['gh_aktiv'] == 1) {
 						$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_richtig'];
 					}
@@ -451,7 +451,7 @@ if ($action == "result_save") {
 					if ($wm2018_options['tendenz'] == 1) {
 						if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
 							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-							$punkteplus = $punkteplus + $punkte4user['wert'];
+							$punkteplus += $punkte4user['wert'];
 							if ($wm2018_options['gh_aktiv'] == 1) {
 								$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
 							}
@@ -484,7 +484,7 @@ if ($action == "result_save") {
 					if ($wm2018_options['tendenz'] == 1) {
 						if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
 							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-							$punkteplus = $punkteplus + $punkte4user['wert'];
+							$punkteplus += $punkte4user['wert'];
 							if ($wm2018_options['gh_aktiv'] == 1) {
 								$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
 							}
@@ -516,19 +516,19 @@ if ($action == "result_save") {
 				if ($wm2018_options['gk_jn'] == 1) {
 					if (intval($_POST['game_gk_jn']) == $row_usertipps['gk']) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 					}
 				}
 				if ($wm2018_options['rk_jn'] == 1) {
 					if (intval($_POST['game_rk_jn']) == $row_usertipps['rk']) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 					}
 				}
 				if ($wm2018_options['elfer_jn'] == 1) {
 					if (intval($_POST['game_elfer_jn']) == $row_usertipps['elfer']) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 					}
 				}
 				if ($tipp == 1) {
@@ -1137,7 +1137,7 @@ if ($action == "result_edit") {
 			$ghminus = 0;
 			if ($row_usertipps['goals_1'] == $current_game_details['game_goals_1'] && $row_usertipps['goals_2'] == $current_game_details['game_goals_2']) {
 				$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
-				$punkteplus = $punkteplus + $punkte4user['wert'];
+				$punkteplus += $punkte4user['wert'];
 				if ($wm2018_options['gh_aktiv'] == 1) {
 					$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_richtig'];
 				}
@@ -1150,7 +1150,7 @@ if ($action == "result_edit") {
 				if ($wm2018_options['tendenz'] == 1) {
 					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($current_game_details['game_goals_1'] == $current_game_details['game_goals_2'])) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
 							$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
 						}
@@ -1183,7 +1183,7 @@ if ($action == "result_edit") {
 				if ($wm2018_options['tendenz'] == 1) {
 					if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
 							$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
 						}
@@ -1217,19 +1217,19 @@ if ($action == "result_edit") {
 			if ($wm2018_options['gk_jn'] == 1) {
 				if (intval($current_game_details['game_gk']) == intval($row_usertipps['gk'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['rk_jn'] == 1) {
 				if (intval($current_game_details['game_rk']) == intval($row_usertipps['rk'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['elfer_jn'] == 1) {
 				if (intval($current_game_details['game_elfer']) == intval($row_usertipps['elfer'])) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($tipp == 1) {
@@ -1264,7 +1264,7 @@ if ($action == "result_edit") {
 			$ghplus = 0;
 			if ($row_usertipps['goals_1'] == $_POST['game_goals_1'] && $row_usertipps['goals_2'] == intval($_POST['game_goals_2'])) {
 				$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
-				$punkteplus = $punkteplus + $punkte4user['wert'];
+				$punkteplus += $punkte4user['wert'];
 				if ($wm2018_options['gh_aktiv'] == 1) {
 					$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_richtig'];
 				}
@@ -1277,7 +1277,7 @@ if ($action == "result_edit") {
 				if ($wm2018_options['tendenz'] == 1) {
 					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
 							$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
 						}
@@ -1310,7 +1310,7 @@ if ($action == "result_edit") {
 				if ($wm2018_options['tendenz'] == 1) {
 					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
 						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus = $punkteplus + $punkte4user['wert'];
+						$punkteplus += $punkte4user['wert'];
 						if ($wm2018_options['gh_aktiv'] == 1) {
 							$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
 						}
@@ -1342,19 +1342,19 @@ if ($action == "result_edit") {
 			if ($wm2018_options['gk_jn'] == 1) {
 				if (intval($_POST['game_gk_jn']) == $row_usertipps['gk']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['rk_jn'] == 1) {
 				if (intval($_POST['game_rk_jn']) == $row_usertipps['rk']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['elfer_jn'] == 1) {
 				if (intval($_POST['game_elfer_jn']) == $row_usertipps['elfer']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
-					$punkteplus = $punkteplus + $punkte4user['wert'];
+					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($tipp == 1) {
