@@ -7,6 +7,7 @@ ToDo für WM 2018:
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
 	+ vgpost editieren
 		+ Post finden
+			+ Bei Posterstellung ID des Threads/Posts in DB speichern
 		+ Post neu generieren
 		+ Post ersetzen
 		+ neu markieren
