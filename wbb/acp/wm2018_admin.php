@@ -972,6 +972,9 @@ if ($action == "result_save") {
 							VALUES ('" . $threadid . "', '" . $wm2018_options['vgpostuid'] . "', '" . addslashes($user_info['username']) . "', '" . $wm2018_options['viconid'] . "', '" . addslashes($subjekt) . "', '" . $time . "', '" . addslashes($b_thread) . "', '0', '1', '" . $wm2018_options['vgposthtml'] . "', '1', '1', '1', '" . addslashes($REMOTE_ADDR) . "', '1')");
 					$postid = $db->insert_id();
 
+					/* Post-ID mit Game-ID verbinden */
+					$db->query("UPDATE bb" . $n . "_wm2018_spiele SET post_id='" . $postid . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
+
 					/* Board updaten */
 					$boardstr = $db->query_first("SELECT parentlist FROM bb" . $n . "_boards WHERE boardid = '" . $boardid . "'");
 					$parentlist = $boardstr['parentlist'];

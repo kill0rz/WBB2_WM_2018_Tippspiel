@@ -107,6 +107,7 @@ CREATE TABLE `bb1_wm2018_spiele` (
   `gamelink` varchar(250) NOT NULL default '',
   `gamecomment` text NOT NULL,
   `tipps` int(5) NOT NULL default '0',
+  `post_id` int(10),
   PRIMARY KEY  (`gameid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=52 ;
 

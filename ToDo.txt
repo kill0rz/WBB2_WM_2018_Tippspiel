@@ -7,7 +7,6 @@ ToDo für WM 2018:
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
 	+ vgpost editieren
 		+ Post finden
-			+ Bei Posterstellung ID des Threads/Posts in DB speichern
 		+ Post neu generieren
 		+ Post ersetzen
 		+ neu markieren
@@ -42,6 +41,9 @@ ZU TESTEN
 		+ Punkte berechnen, abziehen
 		+ Negativ Kontoauszug setzen
 		+ Punkte für das Spiel neu berechnen
+	+ vgpost editieren
+		+ Post finden
+			+ Bei Posterstellung ID des Posts in DB speichern
 
 
 ZU TESTEN (extern)
