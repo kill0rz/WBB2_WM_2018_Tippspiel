@@ -1128,9 +1128,9 @@ if ($action == "result_edit") {
 		// ziehe Punkte für dieses Spiel ab
 		// Suche bisherige Ergebnisse zu diesem Spiel
 
-		$current_game_details = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1");
+		$current_game_details = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1;");
 
-		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");
+		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC LIMIT 1;");
 		while ($row_usertipps = $db->fetch_array($result_usertipps)) {
 			// +++++++++++++++++++ 1. Prüfung
 			// Tipp exakt richtig ?
@@ -1343,19 +1343,19 @@ if ($action == "result_edit") {
 				}
 			}
 			if ($wm2018_options['gk_jn'] == 1) {
-				if (intval($_POST['game_gk_jn']) == $row_usertipps['gk']) {
+				if (intval($_POST['result_gk']) == $row_usertipps['gk']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
 					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['rk_jn'] == 1) {
-				if (intval($_POST['game_rk_jn']) == $row_usertipps['rk']) {
+				if (intval($_POST['result_rk']) == $row_usertipps['rk']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
 					$punkteplus += $punkte4user['wert'];
 				}
 			}
 			if ($wm2018_options['elfer_jn'] == 1) {
-				if (intval($_POST['game_elfer_jn']) == $row_usertipps['elfer']) {
+				if (intval($_POST['result_elfer']) == $row_usertipps['elfer']) {
 					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
 					$punkteplus += $punkte4user['wert'];
 				}
