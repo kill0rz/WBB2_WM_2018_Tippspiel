@@ -34,11 +34,6 @@ ZU TESTEN
 		+ timestamp speichern und per date("m.", $timestamp); prüfen
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
 + Editierfunktion für ACP-Ergebnisse
-	+ GK, RK, Elf fehlen in Punkteberechnung
-	+ Umbauen:
-		+ Punkte berechnen, abziehen
-		+ Negativ Kontoauszug setzen
-		+ Punkte für das Spiel neu berechnen
 	+ vgpost editieren
 		+ Post finden
 			+ Bei Posterstellung ID des Posts in DB speichern
@@ -60,6 +55,11 @@ DONE
 	+ selected-Werte bereitstellen
 	+ Template anpassen
 	+ Speichern der Werte
+	+ GK, RK, Elf fehlen in Punkteberechnung
+	+ Umbauen:
+		+ Punkte berechnen, abziehen
+		+ Negativ Kontoauszug setzen
+		+ Punkte für das Spiel neu berechnen
 
 
 ToDo für die EM 2020:
