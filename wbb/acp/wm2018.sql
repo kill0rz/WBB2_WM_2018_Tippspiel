@@ -284,15 +284,15 @@ CREATE TABLE `bb1_wm2018_usertipps` (
 -- Daten für Tabelle `bb1_wm2018_usertipps`
 -- 
 
---DROP TABLE IF EXISTS `bb1_wm2018_bestedrittetmp`;
---CREATE TABLE `bb1_wm2018_bestedrittetmp` (
+-- DROP TABLE IF EXISTS `bb1_wm2018_bestedrittetmp`;
+-- CREATE TABLE `bb1_wm2018_bestedrittetmp` (
 --  `ID` int(11) NOT NULL AUTO_INCREMENT,
 --  `teamid` int(11) NOT NULL,
 --  `punkte` int(11) NOT NULL,
 --  `td` int(11) NOT NULL,
 --  `g` int(11) NOT NULL,
 --  PRIMARY KEY (`ID`)
---) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `bb1_wm2018_vortag`;
 CREATE TABLE `bb1_wm2018_vortag` (
