@@ -41,15 +41,7 @@ ZU TESTEN (extern)
 
 DONE
 ----
-+ Editierfunktion für ACP-Ergebnisse
-	+ selected-Werte bereitstellen
-	+ Template anpassen
-	+ Speichern der Werte
-	+ GK, RK, Elf fehlen in Punkteberechnung
-	+ Umbauen:
-		+ Punkte berechnen, abziehen
-		+ Negativ Kontoauszug setzen
-		+ Punkte für das Spiel neu berechnen
+
 
 
 ToDo für die EM 2020:
