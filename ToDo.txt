@@ -22,7 +22,6 @@ USERWÜNSCHE
 
 ZU TESTEN
 ---------
-+ is_integer in den SQL-Queries checken
 + Tageswertung nur beim ersten Spiel des Tages zurücksetzen lassen
 	+ Speichere Tag bei Rücksetzung
 		+ hier nicht nur den day speichern, weil Zeitzonen
