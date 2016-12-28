@@ -2,7 +2,10 @@ ToDo für WM 2018:
 -----------------
 
 + Editierfunktion für ACP-Ergebnisse
-	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
+	+ Weiterführende Spiele ggf. ersetzen
+		+ In der Gruppenphase prüfen, ob kritisches Spiel schon eingetragen wurde, dann ab da neu berechnen
+		+ Ab Achtelfinale alles weiterführende neu berechnen, solange eingetragen
+			+ prüfen, ob alte Mannschaft == neue Mannschaft, dann break;
 
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 + Demo aktualisieren
