@@ -3,11 +3,6 @@ ToDo für WM 2018:
 
 + Editierfunktion für ACP-Ergebnisse
 	+ Weiterführende Spiele ggf. ersetzen (ab Achtelfinale)
-	+ vgpost editieren
-		+ Post finden
-		+ Post neu generieren
-		+ Post ersetzen
-		+ neu markieren
 
 + "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 + Demo aktualisieren
@@ -37,6 +32,10 @@ ZU TESTEN
 	+ vgpost editieren
 		+ Post finden
 			+ Bei Posterstellung ID des Posts in DB speichern
+	+ Post finden
+	+ Post neu generieren
+	+ Post ersetzen
+	+ neu markieren
 
 
 ZU TESTEN (extern)

@@ -1380,6 +1380,176 @@ if ($action == "result_edit") {
 
 		//Punkteneuberechnung *Ende*
 
+		/* Anfang Posting erstellen vgpost */
+		if ($wm2018_options['po_aktiv'] == 1) {
+			$spiel_erg = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "'");
+			$vgp_gameid = $spiel_erg['gameid'];
+			$vgp_gruppe = $spiel_erg['gruppe'];
+			$vgp_stadion = $spiel_erg['stadion'];
+			$vgp_datum = formatdate($wbbuserdata['dateformat'], $spiel_erg['datetime']);
+			$vgp_zeit = formatdate($wbbuserdata['timeformat'], $spiel_erg['datetime']);
+
+			if ($spiel_erg['game_gk'] == 1) {
+				$vgp_gk = $lang->items['LANG_ACP_GLOBAL_YES'];
+			} else {
+				$vgp_gk = $lang->items['LANG_ACP_GLOBAL_NO'];
+			}
+
+			if ($spiel_erg['game_rk'] == 1) {
+				$vgp_rk = $lang->items['LANG_ACP_GLOBAL_YES'];
+			} else {
+				$vgp_rk = $lang->items['LANG_ACP_GLOBAL_NO'];
+			}
+
+			if ($spiel_erg['game_elfer'] == 1) {
+				$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_YES'];
+			} else {
+				$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_NO'];
+			}
+
+			$vgp_tore1 = $spiel_erg['game_goals_1'];
+			$vgp_tore2 = $spiel_erg['game_goals_2'];
+			$vgp_glink = $spiel_erg['gamelink'];
+			$vgp_comment = stripcrap(wbb_trim($spiel_erg['gamecomment']));
+			$vgp_comment = parseURL($vgp_comment);
+			$vgp_anztipp = $spiel_erg['tipps'];
+			$spiel_name1 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_1_id']) . "'");
+			$vgp_flagge1 = '[img]images/wm2018/flaggen/' . $spiel_name1['flagge'] . '[/img]';
+			$spiel_name2 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_2_id']) . "'");
+			$vgp_flagge2 = '[img]images/wm2018/flaggen/' . $spiel_name2['flagge'] . '[/img]';
+
+			$vgp_user_ranking_01 = '';
+			$vgp_user_ranking_02 = '';
+			$vgp_user_ranking_03 = '';
+			$vgp_user_ranking_04 = '';
+			$vgp_user_ranking_05 = '';
+			$vgp_user_ranking_06 = '';
+			$vgp_user_ranking_07 = '';
+			$vgp_user_ranking_08 = '';
+			$vgp_user_ranking_09 = '';
+			$vgp_user_ranking_10 = '';
+			$vgp_count = 0;
+			$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, tipps_gesamt DESC Limit 0, 10");
+			$wm2018_rank_merk = 0;
+			while ($row_topuser = $db->fetch_array($result_topuser)) {
+				$vgp_count++;
+
+				// ** Ranking Start *//
+				$wm2018_rank_merk = $wm2018_rank_merk + 1;
+				if ($wm2018_punkte_merk != $row_topuser['punkte']) {
+					$wm2018_rank = $wm2018_rank_merk;
+					$wm2018_punkte_merk = $row_topuser['punkte'];
+				}
+				if ($wm2018_rank == 1) {
+					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_1.gif[/img]";
+				}
+
+				if ($wm2018_rank == 2) {
+					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_2.gif[/img]";
+				}
+
+				if ($wm2018_rank == 3) {
+					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_3.gif[/img]";
+				}
+
+				if ($wm2018_rank > 3) {
+					$wm2018_userrank = "[b]{$wm2018_rank}[/b]";
+				}
+
+				// Tageswertung *Anfang*
+				$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
+
+				if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
+					$tagtendenz = "[img]./images/wm2018/hoch.jpg[/IMG]";
+				} elseif ($vortag['pos'] == $wm2018_rank) {
+					$tagtendenz = "[img]./images/wm2018/gleich.gif[/IMG]";
+				} else {
+					$tagtendenz = "[img]./images/wm2018/runter.jpg[/IMG]";
+				}
+
+				// Tageswertung *Ende*
+
+				if ($vgp_count == 1) {
+					$vgp_user_ranking_01 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 2) {
+					$vgp_user_ranking_02 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 3) {
+					$vgp_user_ranking_03 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 4) {
+					$vgp_user_ranking_04 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 5) {
+					$vgp_user_ranking_05 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 6) {
+					$vgp_user_ranking_06 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 7) {
+					$vgp_user_ranking_07 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 8) {
+					$vgp_user_ranking_08 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 9) {
+					$vgp_user_ranking_09 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				if ($vgp_count == 10) {
+					$vgp_user_ranking_10 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+				}
+
+				// ** Ranking Ende *//
+			}
+
+			if ($wm2018_options['vboardid'] != 0) {
+				$time = time();
+				$boardid = $wm2018_options['vboardid'];
+
+				/* Thread erstellen */
+				$posting_thema = '';
+				if ($wm2018_options['vgthema'] != '') {
+					$posting_thema = strtr($wm2018_options['vgthema'], array('{vgp_name1}' => $vgp_name1, '{vgp_name2}' => $vgp_name2));
+				} else {
+					$posting_thema = 'WM2018 - Ergebnis';
+				}
+
+				$posting_prefix = '';
+				if ($wm2018_options['vprefix'] != '') {
+					$posting_prefix = $wm2018_options['vprefix'];
+				} else {
+					$posting_prefix = '';
+				}
+
+				/* Username holen */
+				$user_info = $db->query_first("SELECT username FROM bb" . $n . "_users WHERE userid = '" . $wm2018_options['vgpostuid'] . "'");
+				$vgp_username = $user_info['username'];
+
+				$current_game_details_new = $db->query_first("SELECT threadid FROM bb" . $n . "_posts WHERE postid = '" . $current_game_details['post_id'] . "'");
+				$threadid = $current_game_details_new['threadid'];
+
+				$b_thread = strtr($wm2018_options['message'], array('{vgp_gameid}' => $vgp_gameid, '{vgp_gruppe}' => $vgp_gruppe, '{vgp_stadion}' => $vgp_stadion, '{vgp_datum}' => $vgp_datum, '{vgp_zeit}' => $vgp_zeit, '{vgp_gk}' => $vgp_gk, '{vgp_rk}' => $vgp_rk, '{vgp_elfer}' => $vgp_elfer, '{vgp_glink}' => $vgp_glink, '{vgp_comment}' => $vgp_comment, '{vgp_anztipp}' => $vgp_anztipp, '{vgp_name1}' => $vgp_name1, '{vgp_tore1}' => $vgp_tore1, '{vgp_flagge1}' => $vgp_flagge1, '{vgp_name2}' => $vgp_name2, '{vgp_tore2}' => $vgp_tore2, '{vgp_flagge2}' => $vgp_flagge2, '{vgp_username}' => $vgp_username, '{vgp_user_ranking_01}' => $vgp_user_ranking_01, '{vgp_user_ranking_02}' => $vgp_user_ranking_02, '{vgp_user_ranking_03}' => $vgp_user_ranking_03, '{vgp_user_ranking_04}' => $vgp_user_ranking_04, '{vgp_user_ranking_05}' => $vgp_user_ranking_05, '{vgp_user_ranking_06}' => $vgp_user_ranking_06, '{vgp_user_ranking_07}' => $vgp_user_ranking_07, '{vgp_user_ranking_08}' => $vgp_user_ranking_08, '{vgp_user_ranking_09}' => $vgp_user_ranking_09, '{vgp_user_ranking_10}' => $vgp_user_ranking_10));
+				$b_thread = parseURL($b_thread);
+
+				/* Post editieren */
+				$subjekt = $posting_thema;
+				$db->query("UPDATE bb" . $n . "_posts SET userid='" . $wm2018_options['vgpostuid'] . "', username='" . addslashes($user_info['username']) . "', iconid='" . $wm2018_options['viconid'] . "', posttopic='" . addslashes($subjekt) . "', posttime='" . $time . "', message='" . addslashes($b_thread) . "', attachments='0', allowsmilies='1', allowhtml='" . $wm2018_options['vgposthtml'] . "', allowbbcode='1', allowimages='1', showsignature='1', ipaddress='" . addslashes($REMOTE_ADDR) . "', visible='1'
+					WHERE postid='" . $current_game_details['post_id'] . "'");
+				$postid = $db->insert_id();
+			}
+		}
+		/* Ende Posting erstellen vgpost */
+
 		header("Location: wm2018_admin.php?action=results&sid={$session['hash']}");
 		exit();
 	}
