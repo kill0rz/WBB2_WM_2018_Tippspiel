@@ -31,6 +31,7 @@ WBB-Forum
 		1) Spiele, die der User noch nicht getippt hat und die in den kommenden 24h stattfinden
 		2) Details zu den letzten X Spielen
 
+
 JGS-Portal
 ----------
 	+ Anpassungen an HTML5
@@ -48,7 +49,10 @@ ACP
 	+ Spiele können erst eingetragen werden, wenn das Spiel vorbei ist
 	+ Prüfen, ob cURL installiert ist. Wenn nicht, dann wird im ACP > Optionen einen Hinweis anzgezeigt, dass die Option nicht verfügbar ist
 	+ Menüpunkt "Achtelfinale korrigieren" entfernt (Sonderlocke EM 2016)
-	+ Es gibt eine Editierfunktion für die ACP-Ergebnisse. Punkte werden nach dem Editieren neu berechnet und der Beitrag zum Spiel editiert.
+	+ Es gibt eine Editierfunktion für die ACP-Ergebnisse.
+		+ Punkte werden für dieses Spiel für alle Nutzer neu berechnet
+		+ Wurde eine Posting zu diesem Spiel erstellt, so wird es editiert und die Daten nach dem Edit aktualisiert
+		+ Handelt es sich um ein kritisches Spiel (=ein letztes Spiel einer Gruppe, oder wenn dessen Gewinner eine Runde weiter kommt) handelt, werden die nachfolgenden Spiele neu berechnet
 
 
 Technisches
