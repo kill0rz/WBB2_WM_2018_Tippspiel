@@ -18,19 +18,18 @@ Tippspiel
 		+ aktuell laufende Spiele
 		+ noch nicht eingetragene Spiele
 		+ nächste Spiele
-	+ Liveticker entfernt, da dieser nur http erreichbar ist mit häufiger Downtime
+	+ Liveticker entfernt, da dieser nur via http erreichbar ist und mit häufiger Downtime
 	+ Die Tageswertung wird nun nur noch maximal einmal pro Tag zurückgesetzt und zwar beim Eintragen des ersten Spiels am Tag
 	+ In das Posting, das nach dem Eintragen eines Spiels erstellt wird, wurde die Tageswertung implementiert.
-	+ Hat man bereits einen Vize-/Weltmeister getippt und kehr zur Tippabgabe zurück, wird dieser vorausgewählt.
+	+ Hat man bereits einen Vize-/Weltmeister getippt und kehrt zur Tippabgabe zurück, wird dieser vorausgewählt.
 
 
 WBB-Forum
 ---------
-	+ Es wurde eine Integration geschaffen, die aus dem Forum gelöschte User aus dem Tippspiel entfernt um die Statistiken nicht zu verfälschen und tote Links zu generieren (Hinweis in der Installationsanleitung beachten!)
+	+ Es wurde eine Integration geschaffen, die aus dem Forum gelöschte User aus dem Tippspiel entfernt, um die Statistiken nicht zu verfälschen und tote Links zu generieren (Hinweis in der Installationsanleitung beachten!)
 	+ Integration in die Startseite (Möglichkeit, diese im ACP auszuschalten, Anzahl einzustellen): Zeige zwei Tabellen
 		1) Spiele, die der User noch nicht getippt hat und die in den kommenden 24h stattfinden
 		2) Details zu den letzten X Spielen
-	+ 
 
 JGS-Portal
 ----------
@@ -49,6 +48,7 @@ ACP
 	+ Spiele können erst eingetragen werden, wenn das Spiel vorbei ist
 	+ Prüfen, ob cURL installiert ist. Wenn nicht, dann wird im ACP > Optionen einen Hinweis anzgezeigt, dass die Option nicht verfügbar ist
 	+ Menüpunkt "Achtelfinale korrigieren" entfernt (Sonderlocke EM 2016)
+	+ Es gibt eine Editierfunktion für die ACP-Ergebnisse. Punkte werden nach dem Editieren neu berechnet und der Beitrag zum Spiel editiert.
 
 
 Technisches
@@ -65,4 +65,4 @@ Technisches
 Sonstiges
 ---------
 	+ Rechtschreibung und Grammatik korrigiert
-	+ "Beste Dritte" aus dem EM 2016 rückgebaut
+	+ "Beste Dritte" von der EM 2016 rückgebaut
