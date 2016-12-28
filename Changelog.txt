@@ -60,6 +60,7 @@ Technisches
 	+ Kommaersetzung für gestern/heute/morgen Sprachvariablen überarbeitet; Sprachvariablen unabhängig von Fettschreibung und Textinhalt (funktioniert auch mit anderen Worten); hardgecodeten Text entfernt
 	+ Rücksetzung der Tageswertung aus dem ACP entfernt (bei Ergebnisse eintragen)
 	+ Quotenberechnung wurde in eine globale Funktion ausgelagert und kann nun von überall getriggert werden.
+	+ funktionslose is_integer-Funktion in SQL-Queries korrigiert
 
 
 Sonstiges
