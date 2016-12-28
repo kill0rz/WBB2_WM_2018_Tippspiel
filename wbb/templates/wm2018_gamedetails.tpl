@@ -131,7 +131,6 @@
 						</span>
 					</td>
 				</tr>
-				$game_gk $game_rk $game_elfer
 			</table>
 		</then>
 	</if>
