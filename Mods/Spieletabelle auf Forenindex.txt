@@ -1,7 +1,8 @@
 Dieser Mod zeigt eine Tabelle auf der Startseite des Forums an mit
 	a) Spielen, die in den nächsten 24h fällig sind und vom User noch nicht getuppt wurden
-	b) den letzten X (per ACP steuerbar) Spielen, mit denen man schnell zu den Spieldetails kommt
+	b) den letzten X Spielen, mit denen man schnell zu den Spieldetails kommt
 
+Alle Einstellungen sind per ACP steuerbar.
 
 
 
@@ -58,7 +59,7 @@ Suche in index.php
 require './global.php';
 
 
-füge darunter ein:
+Füge darunter ein:
 ------------------
 
 // WM 2018 *MOD Spieletabelle auf Forenindex* Anfang

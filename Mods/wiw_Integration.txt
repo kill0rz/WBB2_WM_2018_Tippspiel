@@ -1,9 +1,13 @@
-suche in acp/lib/class_wiw.php
+Suche in der Datei acp/lib/class_wiw.php:
+-----------------------------------------
+
 case "index.php":
 
 
 
-füge darunter ein:
+Füge darüber ein:
+-----------------
+
 case "wm2018.php":
-$location = $lang->get("LANG_WIW_FILE_WM2018", array('$SID_ARG_1ST' => $SID_ARG_1ST));
+	$location = $lang->get("LANG_WIW_FILE_WM2018", array('$SID_ARG_1ST' => $SID_ARG_1ST));
 break;

@@ -1,4 +1,4 @@
-Editiere die Datei "thread.php".
+Editiere die Datei "thread.php":
 
 SUCHE
 -----

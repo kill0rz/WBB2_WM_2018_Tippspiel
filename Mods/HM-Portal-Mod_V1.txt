@@ -6,7 +6,7 @@ Demo:
 Was ist zu tun?
 + Im HM-Portal sogenannte php-Boxen einrichten.
 
-Zur Erinnerung: 
+Zur Erinnerung:
 Wie werden HM-Boxen eingerichtet?
 
 - Eine neue Box im ACP im HM-Boxen-Konfigurator erstellen und den gewünschten Namen vergeben, z.B. WM Barometer (oder WM Tipper, WM Quote, etc.).
@@ -26,4 +26,4 @@ h_boxincl: Hier muß der Name und relative Pfad zur wm2018_hmportal.php rein. Am 
 
 - Jetzt noch die Box im Boxenkonfigurator an die richtige Stelle rücken und die gewünschten Einstellungen machen.
 
-- Testen und fertig! 
+- Testen und fertig!
