@@ -22,6 +22,8 @@ Tippspiel
 	+ Die Tageswertung wird nun nur noch maximal einmal pro Tag zurückgesetzt und zwar beim Eintragen des ersten Spiels am Tag
 	+ In das Posting, das nach dem Eintragen eines Spiels erstellt wird, wurde die Tageswertung implementiert.
 	+ Hat man bereits einen Vize-/Weltmeister getippt und kehrt zur Tippabgabe zurück, wird dieser vorausgewählt.
+	+ Der "Gleich"-Pfeil wurde ersetzt (Danke an seedstyLe.!)
+
 
 
 WBB-Forum

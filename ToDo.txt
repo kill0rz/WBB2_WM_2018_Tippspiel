@@ -7,7 +7,6 @@ ToDo für WM 2018:
 		+ Ab Achtelfinale alles weiterführende neu berechnen, solange eingetragen
 			+ prüfen, ob alte Mannschaft == neue Mannschaft, dann break;
 
-+ "Gleich"-Pfeil ersetzen (weitergegeben an seedstyLe.)
 + Demo aktualisieren
 
 
