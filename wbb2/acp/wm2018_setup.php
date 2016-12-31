@@ -455,7 +455,7 @@ if ($step == "database") {
 		$sql_query = new query($query);
 		$sql_query->doquery();
 
-		print "Datenbank-Datei '$sqlfname' installiert.<br />\n";
+		print "Datenbank-Datei '{$sqlfname}' installiert.<br />\n";
 
 	} else {
 		print "<br />\n";
@@ -477,7 +477,7 @@ if ($step == "database") {
 	print " ";
 	print "<b>Fertig!</b><p>";
 	print "Die Installation wurde erfolgreich abgeschlossen.<br />";
-	print "Sie k&ouml;nnen das WM2018-Tippspiel $version jetzt benutzen.<p>";
+	print "Sie k&ouml;nnen das WM2018-Tippspiel {$version} jetzt benutzen.<p>";
 	print "Bitte richten sie es noch im <a href=\"./index.php\">ACP</a> ein, und l&ouml;schen Sie diese<br />";
 	print "Installationsdateien aus dem ACP-Verzeichnis:<br />";
 	print "<pre>wm2018_setup.php, wm2018_de.lng, wm2018.wbb, wm2018.sql</pre>";
@@ -488,5 +488,4 @@ if ($step == "database") {
 print "ABBRUCH: Falscher Link.";
 print "</td></tr></table></body></html>";
 exit();
-
 ?>
