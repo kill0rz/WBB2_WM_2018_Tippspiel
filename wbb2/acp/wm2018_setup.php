@@ -349,7 +349,7 @@ if ($step == "langinst") {
 		$lngdata = readlngfile($lngfile);
 
 		if (!$lngdata) {
-			print "Konnte die Language-Datei $lngfile nicht laden.<p />";
+			print "Konnte die Language-Datei {$lngfile} nicht laden.<p />";
 			print "ABBRUCH.";
 			print "</td></tr></table></body></html>";
 			exit();
