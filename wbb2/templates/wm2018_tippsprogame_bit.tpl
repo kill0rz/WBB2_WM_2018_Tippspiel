@@ -19,21 +19,21 @@
 				<span class="smallfont">$tippright_gk</span>
 			</td>
 		</then>
-	</if>
-	<if($wm2018_options['rk_jn']==1)>
-		<then>
-			<td class="$rowclass" align="center">
-				<span class="smallfont">$game_rk</span>
-				<span class="smallfont">$tippright_rk</span>
-			</td>
-		</then>
-	</if>
-	<if($wm2018_options['elfer_jn']==1)>
-		<then>
-			<td class="$rowclass" align="center">
-				<span class="smallfont">$game_elfer</span>
-				<span class="smallfont">$tippright_elfer</span>
-			</td>
-		</then>
-	</if>
+		</if>
+		<if($wm2018_options['rk_jn']==1)>
+			<then>
+				<td class="$rowclass" align="center">
+					<span class="smallfont">$game_rk</span>
+					<span class="smallfont">$tippright_rk</span>
+				</td>
+			</then>
+			</if>
+			<if($wm2018_options['elfer_jn']==1)>
+				<then>
+					<td class="$rowclass" align="center">
+						<span class="smallfont">$game_elfer</span>
+						<span class="smallfont">$tippright_elfer</span>
+					</td>
+				</then>
+				</if>
 </tr>

@@ -1,6 +1,10 @@
 <tr>
 	<td class="$rowclass" align="center" width="10%">
-		<a href="wm2018.php?action=tippsprogame&gameid={$row_nextgames['gameid']}" title="$lang->items['LANG_WM2018_TPL_NEXTGAMES_2']"><span class="smallfont">$gamedate, <br />$gametime {$lang->items['LANG_WM2018_TPL_NEXTGAMES_1']}</span></a></td>
+		<a href="wm2018.php?action=tippsprogame&gameid={$row_nextgames['gameid']}" title="$lang->items['LANG_WM2018_TPL_NEXTGAMES_2']">
+			<span class="smallfont">$gamedate,
+				<br />$gametime {$lang->items['LANG_WM2018_TPL_NEXTGAMES_1']}</span>
+		</a>
+	</td>
 	<td class="$rowclass" align="center" width="10%">
 		<span class="smallfont">$row_nextgames[stadion]</span>
 	</td>
