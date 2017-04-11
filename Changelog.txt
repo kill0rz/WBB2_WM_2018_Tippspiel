@@ -53,8 +53,8 @@ ACP
 	+ Menüpunkt "Achtelfinale korrigieren" entfernt (Sonderlocke EM 2016)
 	+ Es gibt eine Editierfunktion für die ACP-Ergebnisse.
 		+ Punkte werden für dieses Spiel für alle Nutzer neu berechnet
-		+ Wurde eine Posting zu diesem Spiel erstellt, so wird es editiert und die Daten nach dem Edit aktualisiert
-		+ Handelt es sich um ein kritisches Spiel (=ein letztes Spiel einer Gruppe, oder wenn dessen Gewinner eine Runde weiter kommt) handelt, werden die nachfolgenden Spiele neu berechnet
+		+ Wurde ein Posting zu diesem Spiel erstellt, so wird es editiert und die Daten nach dem Edit aktualisiert
+		+ Handelt es sich um ein kritisches Spiel (=ein letztes Spiel einer Gruppe, oder wenn dessen Gewinner eine Runde weiter kommt), so werden die nachfolgenden Spiele neu berechnet
 
 
 Technisches
@@ -62,7 +62,7 @@ Technisches
 	+ Sämtliches Javascript korrigiert, formatiert und gegen JSHint geprüft
 	+ Quelltext nach k&r formatiert
 	+ kritische Spielenummern in Variablen ausgelagert und diese im Quelltext verwendet (zukünftig nur noch eine Anpassung notwendig)
-		+ ACP -> Optionen -> Bis zu welchem Spiel kann der Vize-/Weltmeister getippt werden --> Sprachvariable für Beschreibung verwendet auch die Variablen
+	+ ACP -> Optionen -> Bis zu welchem Spiel kann der Vize-/Weltmeister getippt werden --> Sprachvariable für Beschreibung verwendet auch die Variablen
 	+ Kommaersetzung für gestern/heute/morgen Sprachvariablen überarbeitet; Sprachvariablen unabhängig von Fettschreibung und Textinhalt (funktioniert auch mit anderen Worten); hardgecodeten Text entfernt
 	+ Rücksetzung der Tageswertung aus dem ACP entfernt (bei Ergebnisse eintragen)
 	+ Quotenberechnung wurde in eine globale Funktion ausgelagert und kann nun von überall getriggert werden.
