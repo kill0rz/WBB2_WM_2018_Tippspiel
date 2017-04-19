@@ -385,7 +385,7 @@ if ($action == "result_add") {
 }
 
 if ($action == "result_save") {
-	if ($_POST['send'] == 'send' && $_POST['mode'] == 'save') {
+	if (isset($_POST['send']) && $_POST['send'] == 'send' && $_POST['mode'] == 'save') {
 		//hier zunächst prüfen, ob dieses Spiel bereits eingetragen wurde. Wenn ja, dann verweigere die Speicherung!
 		//
 		$do_not_proceed = false;
@@ -556,7 +556,13 @@ if ($action == "result_save") {
 			}
 
 			if (!preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
-				$gamelink = "http://" . $gamelink;
+				// check if HTTPS
+				if (isset($_SERVER['SERVER_PORT']) && trim($_SERVER['SERVER_PORT']) == 443 && isset($_SERVER['HTTPS']) && trim($_SERVER['HTTPS']) == 'on') {
+					$gamelink = "https://" . $gamelink;
+				} else {
+					$gamelink = "http://" . $gamelink;
+				}
+
 			}
 
 			// Speichern des Spielergebnisses
