@@ -1559,9 +1559,56 @@ if ($action == "result_edit") {
 			/* Ende Posting erstellen vgpost */
 
 			// Prüfen, ob es ein kritisches Spiel ist, und wenn ja, dann update die nachfolgenden Spiele
-			/* HINWEIS
-				Edit nach Finale nicht mehr möglich!
-			*/
+			switch (wbb_trim($_POST['gameid'])) {
+				case $gameid_vorrundenendspiel:
+					# code...
+					break;
+				case $gameid_achtelfinal1:
+					# code...
+					break;
+				case $gameid_achtelfinal2:
+					# code...
+					break;
+				case $gameid_achtelfinal3:
+					# code...
+					break;
+				case $gameid_achtelfinal4:
+					# code...
+					break;
+				case $gameid_achtelfinal5:
+					# code...
+					break;
+				case $gameid_achtelfinal6:
+					# code...
+					break;
+				case $gameid_achtelfinal7:
+					# code...
+					break;
+				case $gameid_achtelfinal8:
+					# code...
+					break;
+				case $gameid_viertelfinal1:
+					# code...
+					break;
+				case $gameid_viertelfinal2:
+					# code...
+					break;
+				case $gameid_viertelfinal3:
+					# code...
+					break;
+				case $gameid_viertelfinal4:
+					# code...
+					break;
+				case $gameid_halbfinal1:
+					# code...
+					break;
+				case $gameid_halbfinal2:
+					# code...
+					break;
+				case $gameid_spielumplatzdrei:
+					# code...
+					break;
+			}
 		} else {
 			// error, weil finale nicht editiert werden kann
 			$error = $lang->get("LANG_ACP_WM2018_TPL_ERROR_5");
