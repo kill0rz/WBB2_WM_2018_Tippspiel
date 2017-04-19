@@ -557,7 +557,7 @@ if ($action == "result_save") {
 
 			if (!preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
 				// check if HTTPS
-				if (isset($_SERVER['SERVER_PORT']) && trim($_SERVER['SERVER_PORT']) == 443 && isset($_SERVER['HTTPS']) && trim($_SERVER['HTTPS']) == 'on') {
+				if (isset($_SERVER['SERVER_PORT']) && trim($_SERVER['SERVER_PORT']) == 443 && isset($_SERVER['HTTPS']) && strtolower(trim($_SERVER['HTTPS'])) == 'on') {
 					$gamelink = "https://" . $gamelink;
 				} else {
 					$gamelink = "http://" . $gamelink;
@@ -1087,474 +1087,486 @@ if ($action == "result_save") {
 if ($action == "result_edit") {
 	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 
-	if ($_POST['send'] == 'send') {
-		$gamelink = wbb_trim($_POST['gamelink']);
-		if (isset($_POST['gamelink'])) {
-			$gamelink = htmlconverter($_POST['gamelink']);
-		} else {
-			$gamelink = '';
-		}
-
-		if ($gamelink && !preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
-			$gamelink = "http://" . $gamelink;
-		}
-
-		if (isset($_POST['result_gk']) && (trim($_POST['result_gk']) == 0 || trim($_POST['result_gk']) == 1)) {
-			$result_gk = intval($_POST['result_gk']);
-		} else {
-			$result_gk = 0;
-		}
-
-		if (isset($_POST['result_rk']) && (trim($_POST['result_rk']) == 0 || trim($_POST['result_rk']) == 1)) {
-			$result_rk = intval($_POST['result_rk']);
-		} else {
-			$result_rk = 0;
-		}
-
-		if (isset($_POST['result_elfer']) && (trim($_POST['result_elfer']) == 0 || trim($_POST['result_elfer']) == 1)) {
-			$result_elfer = intval($_POST['result_elfer']);
-		} else {
-			$result_elfer = 0;
-		}
-
-		if (isset($_POST['game_goals_1'])) {
-			$game_goals_1 = intval($_POST['game_goals_1']);
-		} else {
-			$game_goals_1 = 0;
-		}
-
-		if (isset($_POST['game_goals_2'])) {
-			$game_goals_2 = intval($_POST['game_goals_2']);
-		} else {
-			$game_goals_2 = 0;
-		}
-
-		//Punkteneuberechnung *Anfang*
-
-		// ziehe Punkte für dieses Spiel ab
-		// Suche bisherige Ergebnisse zu diesem Spiel
-
-		$current_game_details = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1;");
-
-		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC LIMIT 1;");
-		while ($row_usertipps = $db->fetch_array($result_usertipps)) {
-			// +++++++++++++++++++ 1. Prüfung
-			// Tipp exakt richtig ?
-			$ende = 0;
-			$punkteplus = 0;
-			$tipp = 0;
-			$ghminus = 0;
-			if ($row_usertipps['goals_1'] == $current_game_details['game_goals_1'] && $row_usertipps['goals_2'] == $current_game_details['game_goals_2']) {
-				$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
-				$punkteplus += $punkte4user['wert'];
-				if ($wm2018_options['gh_aktiv'] == 1) {
-					$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_richtig'];
-				}
-				$tipp = 1;
-				$ende = 1;
-			}
-			// +++++++++++++++++++ 2. Prüfung
-			// Spiel unentschieden, Tipp unentschieden, Tendenz aktiviert und richtig ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 1) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($current_game_details['game_goals_1'] == $current_game_details['game_goals_2'])) {
-						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus += $punkte4user['wert'];
-						if ($wm2018_options['gh_aktiv'] == 1) {
-							$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
-						}
-						$tipp = 2;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 3. Prüfung
-			// Spiel unentschieden, Tipp unentschieden, Tendenz deaktiviert und Tipp falsch ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 0) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($current_game_details['game_goals_1'] == $current_game_details['game_goals_2'])) {
-						$tipp = 3;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 4. Prüfung
-			// Spiel unentschieden, Tipp Sieg
-			if ($ende == 0) {
-				if (($current_game_details['game_goals_1'] == $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
-					$tipp = 3;
-					$ende = 1;
-				}
-			}
-			// +++++++++++++++++++ 5. Prüfung
-			// Spiel Sieg, Tipp Sieg (falsch), Tendenz aktiviert und richtig ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 1) {
-					if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
-						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus += $punkte4user['wert'];
-						if ($wm2018_options['gh_aktiv'] == 1) {
-							$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
-						}
-						$tipp = 2;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 6. Prüfung
-			// Spiel Sieg, Tipp Sieg (falsch), Tendenz deaktiviert und Tipp falsch ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 0) {
-					if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
-						$tipp = 3;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 7. Prüfung
-			// Spiel Sieg, Tipp Niederlage
-			// Siel Niederlage, Tipp Sieg
-			// Spiel Sieg, Tipp unentschieden
-			if ($ende == 0) {
-				if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] != $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
-					$tipp = 3;
-					$ende = 1;
-				}
-			}
-
-			// RK, GK, Elfmeter
-			if ($wm2018_options['gk_jn'] == 1) {
-				if (intval($current_game_details['game_gk']) == intval($row_usertipps['gk'])) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($wm2018_options['rk_jn'] == 1) {
-				if (intval($current_game_details['game_rk']) == intval($row_usertipps['rk'])) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($wm2018_options['elfer_jn'] == 1) {
-				if (intval($current_game_details['game_elfer']) == intval($row_usertipps['elfer'])) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($tipp == 1) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_richtig=tipps_richtig-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($tipp == 2) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_tendenz=tipps_tendenz-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($tipp == 3) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_falsch=tipps_falsch-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($wm2018_options['gh_aktiv'] == 1 && $ghminus > 0) {
-				$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-{$ghminus} WHERE userid = '" . $row_usertipps['userid'] . "'");
-				$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row_usertipps['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_9'] . " #" . intval($_POST['gameid']) . ")','" . $ghminus . "','" . $lang->items['LANG_ACP_WM2018_PHP_10'] . "')");
-			}
-		}
-
-		// Trage die neuen Ergebnisse ein:
-		$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "', game_goals_1 = '" . $game_goals_1 . "', game_goals_2 = '" . $game_goals_2 . "' WHERE gameid = '" . intval($_POST['gameid']) . "';");
-
-		// Berechne nun die Punkte neu für dieses Spiel:
-		$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");
-		while ($row_usertipps = $db->fetch_array($result_usertipps)) {
-			// +++++++++++++++++++ 1. Prüfung
-			// Tipp exakt richtig ?
-			$ende = 0;
-			$punkteplus = 0;
-			$tipp = 0;
-			$ghplus = 0;
-			if ($row_usertipps['goals_1'] == $_POST['game_goals_1'] && $row_usertipps['goals_2'] == intval($_POST['game_goals_2'])) {
-				$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
-				$punkteplus += $punkte4user['wert'];
-				if ($wm2018_options['gh_aktiv'] == 1) {
-					$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_richtig'];
-				}
-				$tipp = 1;
-				$ende = 1;
-			}
-			// +++++++++++++++++++ 2. Prüfung
-			// Spiel unentschieden, Tipp unentschieden, Tendenz aktiviert und richtig ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 1) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
-						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus += $punkte4user['wert'];
-						if ($wm2018_options['gh_aktiv'] == 1) {
-							$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
-						}
-						$tipp = 2;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 3. Prüfung
-			// Spiel unentschieden, Tipp unentschieden, Tendenz deaktiviert und Tipp falsch ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 0) {
-					if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
-						$tipp = 3;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 4. Prüfung
-			// Spiel unentschieden, Tipp Sieg
-			if ($ende == 0) {
-				if (($_POST['game_goals_1'] == $_POST['game_goals_2']) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
-					$tipp = 3;
-					$ende = 1;
-				}
-			}
-			// +++++++++++++++++++ 5. Prüfung
-			// Spiel Sieg, Tipp Sieg (falsch), Tendenz aktiviert und richtig ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 1) {
-					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
-						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
-						$punkteplus += $punkte4user['wert'];
-						if ($wm2018_options['gh_aktiv'] == 1) {
-							$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
-						}
-						$tipp = 2;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 6. Prüfung
-			// Spiel Sieg, Tipp Sieg (falsch), Tendenz deaktiviert und Tipp falsch ?
-			if ($ende == 0) {
-				if ($wm2018_options['tendenz'] == 0) {
-					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
-						$tipp = 3;
-						$ende = 1;
-					}
-				}
-			}
-			// +++++++++++++++++++ 7. Prüfung
-			// Spiel Sieg, Tipp Niederlage
-			// Siel Niederlage, Tipp Sieg
-			// Spiel Sieg, Tipp unentschieden
-			if ($ende == 0) {
-				if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($_POST['game_goals_1'] != $_POST['game_goals_2']) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
-					$tipp = 3;
-					$ende = 1;
-				}
-			}
-			if ($wm2018_options['gk_jn'] == 1) {
-				if (intval($_POST['result_gk']) == $row_usertipps['gk']) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($wm2018_options['rk_jn'] == 1) {
-				if (intval($_POST['result_rk']) == $row_usertipps['rk']) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($wm2018_options['elfer_jn'] == 1) {
-				if (intval($_POST['result_elfer']) == $row_usertipps['elfer']) {
-					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
-					$punkteplus += $punkte4user['wert'];
-				}
-			}
-			if ($tipp == 1) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_richtig=tipps_richtig+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($tipp == 2) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_tendenz=tipps_tendenz+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($tipp == 3) {
-				$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_falsch=tipps_falsch+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
-			}
-
-			if ($wm2018_options['gh_aktiv'] == 1 && $ghplus > 0) {
-				$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben+{$ghplus} WHERE userid = '" . $row_usertipps['userid'] . "'");
-				$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row_usertipps['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_1'] . " #" . intval($_POST['gameid']) . ")','" . $ghplus . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
-			}
-		}
-
-		//Punkteneuberechnung *Ende*
-
-		/* Anfang Posting erstellen vgpost */
-		if ($wm2018_options['po_aktiv'] == 1) {
-			$spiel_erg = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "'");
-			$vgp_gameid = $spiel_erg['gameid'];
-			$vgp_gruppe = $spiel_erg['gruppe'];
-			$vgp_stadion = $spiel_erg['stadion'];
-			$vgp_datum = formatdate($wbbuserdata['dateformat'], $spiel_erg['datetime']);
-			$vgp_zeit = formatdate($wbbuserdata['timeformat'], $spiel_erg['datetime']);
-
-			if ($spiel_erg['game_gk'] == 1) {
-				$vgp_gk = $lang->items['LANG_ACP_GLOBAL_YES'];
+	if (isset($_POST['gameid']) && isset($_POST['send']) && trim($_POST['send']) == 'send') {
+		if (intval($_POST['gameid']) < $gameid_finale) {
+			// Editspiel ist kleiner als Finale; kann also editiert werden
+			$gamelink = wbb_trim($_POST['gamelink']);
+			if (isset($_POST['gamelink'])) {
+				$gamelink = htmlconverter($_POST['gamelink']);
 			} else {
-				$vgp_gk = $lang->items['LANG_ACP_GLOBAL_NO'];
+				$gamelink = '';
 			}
 
-			if ($spiel_erg['game_rk'] == 1) {
-				$vgp_rk = $lang->items['LANG_ACP_GLOBAL_YES'];
+			if ($gamelink && !preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
+				$gamelink = "http://" . $gamelink;
+			}
+
+			if (isset($_POST['result_gk']) && (trim($_POST['result_gk']) == 0 || trim($_POST['result_gk']) == 1)) {
+				$result_gk = intval($_POST['result_gk']);
 			} else {
-				$vgp_rk = $lang->items['LANG_ACP_GLOBAL_NO'];
+				$result_gk = 0;
 			}
 
-			if ($spiel_erg['game_elfer'] == 1) {
-				$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_YES'];
+			if (isset($_POST['result_rk']) && (trim($_POST['result_rk']) == 0 || trim($_POST['result_rk']) == 1)) {
+				$result_rk = intval($_POST['result_rk']);
 			} else {
-				$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_NO'];
+				$result_rk = 0;
 			}
 
-			$vgp_tore1 = $spiel_erg['game_goals_1'];
-			$vgp_tore2 = $spiel_erg['game_goals_2'];
-			$vgp_glink = $spiel_erg['gamelink'];
-			$vgp_comment = stripcrap(wbb_trim($spiel_erg['gamecomment']));
-			$vgp_comment = parseURL($vgp_comment);
-			$vgp_anztipp = $spiel_erg['tipps'];
-			$spiel_name1 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_1_id']) . "'");
-			$vgp_flagge1 = '[img]images/wm2018/flaggen/' . $spiel_name1['flagge'] . '[/img]';
-			$spiel_name2 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_2_id']) . "'");
-			$vgp_flagge2 = '[img]images/wm2018/flaggen/' . $spiel_name2['flagge'] . '[/img]';
-
-			$vgp_user_ranking_01 = '';
-			$vgp_user_ranking_02 = '';
-			$vgp_user_ranking_03 = '';
-			$vgp_user_ranking_04 = '';
-			$vgp_user_ranking_05 = '';
-			$vgp_user_ranking_06 = '';
-			$vgp_user_ranking_07 = '';
-			$vgp_user_ranking_08 = '';
-			$vgp_user_ranking_09 = '';
-			$vgp_user_ranking_10 = '';
-			$vgp_count = 0;
-			$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, tipps_gesamt DESC Limit 0, 10");
-			$wm2018_rank_merk = 0;
-			while ($row_topuser = $db->fetch_array($result_topuser)) {
-				$vgp_count++;
-
-				// ** Ranking Start *//
-				$wm2018_rank_merk = $wm2018_rank_merk + 1;
-				if ($wm2018_punkte_merk != $row_topuser['punkte']) {
-					$wm2018_rank = $wm2018_rank_merk;
-					$wm2018_punkte_merk = $row_topuser['punkte'];
-				}
-				if ($wm2018_rank == 1) {
-					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_1.gif[/img]";
-				}
-
-				if ($wm2018_rank == 2) {
-					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_2.gif[/img]";
-				}
-
-				if ($wm2018_rank == 3) {
-					$wm2018_userrank = "[img]images/wm2018/wm2018_rank_3.gif[/img]";
-				}
-
-				if ($wm2018_rank > 3) {
-					$wm2018_userrank = "[b]{$wm2018_rank}[/b]";
-				}
-
-				// Tageswertung *Anfang*
-				$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
-
-				if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
-					$tagtendenz = "[img]./images/wm2018/hoch.jpg[/IMG]";
-				} elseif ($vortag['pos'] == $wm2018_rank) {
-					$tagtendenz = "[img]./images/wm2018/gleich.gif[/IMG]";
-				} else {
-					$tagtendenz = "[img]./images/wm2018/runter.jpg[/IMG]";
-				}
-
-				// Tageswertung *Ende*
-
-				if ($vgp_count == 1) {
-					$vgp_user_ranking_01 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 2) {
-					$vgp_user_ranking_02 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 3) {
-					$vgp_user_ranking_03 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 4) {
-					$vgp_user_ranking_04 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 5) {
-					$vgp_user_ranking_05 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 6) {
-					$vgp_user_ranking_06 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 7) {
-					$vgp_user_ranking_07 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 8) {
-					$vgp_user_ranking_08 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 9) {
-					$vgp_user_ranking_09 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				if ($vgp_count == 10) {
-					$vgp_user_ranking_10 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
-				}
-
-				// ** Ranking Ende *//
+			if (isset($_POST['result_elfer']) && (trim($_POST['result_elfer']) == 0 || trim($_POST['result_elfer']) == 1)) {
+				$result_elfer = intval($_POST['result_elfer']);
+			} else {
+				$result_elfer = 0;
 			}
 
-			if ($wm2018_options['vboardid'] != 0) {
-				$time = time();
-				$boardid = $wm2018_options['vboardid'];
+			if (isset($_POST['game_goals_1'])) {
+				$game_goals_1 = intval($_POST['game_goals_1']);
+			} else {
+				$game_goals_1 = 0;
+			}
 
-				/* Thread erstellen */
-				$posting_thema = '';
-				if ($wm2018_options['vgthema'] != '') {
-					$posting_thema = strtr($wm2018_options['vgthema'], array('{vgp_name1}' => $vgp_name1, '{vgp_name2}' => $vgp_name2));
-				} else {
-					$posting_thema = 'WM2018 - Ergebnis';
+			if (isset($_POST['game_goals_2'])) {
+				$game_goals_2 = intval($_POST['game_goals_2']);
+			} else {
+				$game_goals_2 = 0;
+			}
+
+			//Punkteneuberechnung *Anfang*
+
+			// ziehe Punkte für dieses Spiel ab
+			// Suche bisherige Ergebnisse zu diesem Spiel
+
+			$current_game_details = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1;");
+
+			$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC LIMIT 1;");
+			while ($row_usertipps = $db->fetch_array($result_usertipps)) {
+				// +++++++++++++++++++ 1. Prüfung
+				// Tipp exakt richtig ?
+				$ende = 0;
+				$punkteplus = 0;
+				$tipp = 0;
+				$ghminus = 0;
+				if ($row_usertipps['goals_1'] == $current_game_details['game_goals_1'] && $row_usertipps['goals_2'] == $current_game_details['game_goals_2']) {
+					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
+					$punkteplus += $punkte4user['wert'];
+					if ($wm2018_options['gh_aktiv'] == 1) {
+						$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_richtig'];
+					}
+					$tipp = 1;
+					$ende = 1;
+				}
+				// +++++++++++++++++++ 2. Prüfung
+				// Spiel unentschieden, Tipp unentschieden, Tendenz aktiviert und richtig ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 1) {
+						if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($current_game_details['game_goals_1'] == $current_game_details['game_goals_2'])) {
+							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
+							$punkteplus += $punkte4user['wert'];
+							if ($wm2018_options['gh_aktiv'] == 1) {
+								$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
+							}
+							$tipp = 2;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 3. Prüfung
+				// Spiel unentschieden, Tipp unentschieden, Tendenz deaktiviert und Tipp falsch ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 0) {
+						if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && ($current_game_details['game_goals_1'] == $current_game_details['game_goals_2'])) {
+							$tipp = 3;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 4. Prüfung
+				// Spiel unentschieden, Tipp Sieg
+				if ($ende == 0) {
+					if (($current_game_details['game_goals_1'] == $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
+						$tipp = 3;
+						$ende = 1;
+					}
+				}
+				// +++++++++++++++++++ 5. Prüfung
+				// Spiel Sieg, Tipp Sieg (falsch), Tendenz aktiviert und richtig ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 1) {
+						if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
+							$punkteplus += $punkte4user['wert'];
+							if ($wm2018_options['gh_aktiv'] == 1) {
+								$ghminus = $ghminus + $wm2018_options['gh_gut_normtipp_tendenz'];
+							}
+							$tipp = 2;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 6. Prüfung
+				// Spiel Sieg, Tipp Sieg (falsch), Tendenz deaktiviert und Tipp falsch ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 0) {
+						if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+							$tipp = 3;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 7. Prüfung
+				// Spiel Sieg, Tipp Niederlage
+				// Siel Niederlage, Tipp Sieg
+				// Spiel Sieg, Tipp unentschieden
+				if ($ende == 0) {
+					if (($current_game_details['game_goals_1'] < $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] > $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($current_game_details['game_goals_1'] != $current_game_details['game_goals_2']) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
+						$tipp = 3;
+						$ende = 1;
+					}
 				}
 
-				$posting_prefix = '';
-				if ($wm2018_options['vprefix'] != '') {
-					$posting_prefix = $wm2018_options['vprefix'];
+				// RK, GK, Elfmeter
+				if ($wm2018_options['gk_jn'] == 1) {
+					if (intval($current_game_details['game_gk']) == intval($row_usertipps['gk'])) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($wm2018_options['rk_jn'] == 1) {
+					if (intval($current_game_details['game_rk']) == intval($row_usertipps['rk'])) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($wm2018_options['elfer_jn'] == 1) {
+					if (intval($current_game_details['game_elfer']) == intval($row_usertipps['elfer'])) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($tipp == 1) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_richtig=tipps_richtig-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($tipp == 2) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_tendenz=tipps_tendenz-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($tipp == 3) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte-{$punkteplus}, tipps_falsch=tipps_falsch-1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($wm2018_options['gh_aktiv'] == 1 && $ghminus > 0) {
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben-{$ghminus} WHERE userid = '" . $row_usertipps['userid'] . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row_usertipps['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_9'] . " #" . intval($_POST['gameid']) . ")','" . $ghminus . "','" . $lang->items['LANG_ACP_WM2018_PHP_10'] . "')");
+				}
+			}
+
+			// Trage die neuen Ergebnisse ein:
+			$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "', game_goals_1 = '" . $game_goals_1 . "', game_goals_2 = '" . $game_goals_2 . "' WHERE gameid = '" . intval($_POST['gameid']) . "';");
+
+			// Berechne nun die Punkte neu für dieses Spiel:
+			$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC");
+			while ($row_usertipps = $db->fetch_array($result_usertipps)) {
+				// +++++++++++++++++++ 1. Prüfung
+				// Tipp exakt richtig ?
+				$ende = 0;
+				$punkteplus = 0;
+				$tipp = 0;
+				$ghplus = 0;
+				if ($row_usertipps['goals_1'] == $_POST['game_goals_1'] && $row_usertipps['goals_2'] == intval($_POST['game_goals_2'])) {
+					$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '1'");
+					$punkteplus += $punkte4user['wert'];
+					if ($wm2018_options['gh_aktiv'] == 1) {
+						$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_richtig'];
+					}
+					$tipp = 1;
+					$ende = 1;
+				}
+				// +++++++++++++++++++ 2. Prüfung
+				// Spiel unentschieden, Tipp unentschieden, Tendenz aktiviert und richtig ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 1) {
+						if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
+							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
+							$punkteplus += $punkte4user['wert'];
+							if ($wm2018_options['gh_aktiv'] == 1) {
+								$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
+							}
+							$tipp = 2;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 3. Prüfung
+				// Spiel unentschieden, Tipp unentschieden, Tendenz deaktiviert und Tipp falsch ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 0) {
+						if (($row_usertipps['goals_1'] == $row_usertipps['goals_2']) && (intval($_POST['game_goals_1']) == intval($_POST['game_goals_2']))) {
+							$tipp = 3;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 4. Prüfung
+				// Spiel unentschieden, Tipp Sieg
+				if ($ende == 0) {
+					if (($_POST['game_goals_1'] == $_POST['game_goals_2']) && ($row_usertipps['goals_1'] != $row_usertipps['goals_2'])) {
+						$tipp = 3;
+						$ende = 1;
+					}
+				}
+				// +++++++++++++++++++ 5. Prüfung
+				// Spiel Sieg, Tipp Sieg (falsch), Tendenz aktiviert und richtig ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 1) {
+						if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+							$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '2'");
+							$punkteplus += $punkte4user['wert'];
+							if ($wm2018_options['gh_aktiv'] == 1) {
+								$ghplus = $ghplus + $wm2018_options['gh_gut_normtipp_tendenz'];
+							}
+							$tipp = 2;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 6. Prüfung
+				// Spiel Sieg, Tipp Sieg (falsch), Tendenz deaktiviert und Tipp falsch ?
+				if ($ende == 0) {
+					if ($wm2018_options['tendenz'] == 0) {
+						if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2'])) {
+							$tipp = 3;
+							$ende = 1;
+						}
+					}
+				}
+				// +++++++++++++++++++ 7. Prüfung
+				// Spiel Sieg, Tipp Niederlage
+				// Siel Niederlage, Tipp Sieg
+				// Spiel Sieg, Tipp unentschieden
+				if ($ende == 0) {
+					if (($_POST['game_goals_1'] < $_POST['game_goals_2']) && ($row_usertipps['goals_1'] > $row_usertipps['goals_2']) || (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) && ($row_usertipps['goals_1'] < $row_usertipps['goals_2']) || ($_POST['game_goals_1'] != $_POST['game_goals_2']) && ($row_usertipps['goals_1'] == $row_usertipps['goals_2'])) {
+						$tipp = 3;
+						$ende = 1;
+					}
+				}
+				if ($wm2018_options['gk_jn'] == 1) {
+					if (intval($_POST['result_gk']) == $row_usertipps['gk']) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '3'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($wm2018_options['rk_jn'] == 1) {
+					if (intval($_POST['result_rk']) == $row_usertipps['rk']) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '4'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($wm2018_options['elfer_jn'] == 1) {
+					if (intval($_POST['result_elfer']) == $row_usertipps['elfer']) {
+						$punkte4user = $db->query_first("SELECT wert FROM bb" . $n . "_wm2018_punkte WHERE punkteid = '5'");
+						$punkteplus += $punkte4user['wert'];
+					}
+				}
+				if ($tipp == 1) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_richtig=tipps_richtig+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($tipp == 2) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_tendenz=tipps_tendenz+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($tipp == 3) {
+					$db->query("UPDATE bb" . $n . "_wm2018_userpunkte SET punkte=punkte+{$punkteplus}, tipps_falsch=tipps_falsch+1 WHERE userid = '" . $row_usertipps['userid'] . "'");
+				}
+
+				if ($wm2018_options['gh_aktiv'] == 1 && $ghplus > 0) {
+					$db->query("UPDATE bb" . $n . "_users SET guthaben=guthaben+{$ghplus} WHERE userid = '" . $row_usertipps['userid'] . "'");
+					$db->query("INSERT INTO bb" . $n . "_kontoauszug VALUES ('','" . $row_usertipps['userid'] . "','" . time() . "','" . $lang->items['LANG_ACP_WM2018_PHP_1'] . " #" . intval($_POST['gameid']) . ")','" . $ghplus . "','" . $lang->items['LANG_ACP_WM2018_PHP_2'] . "')");
+				}
+			}
+
+			//Punkteneuberechnung *Ende*
+
+			/* Anfang Posting erstellen vgpost */
+			if ($wm2018_options['po_aktiv'] == 1) {
+				$spiel_erg = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "'");
+				$vgp_gameid = $spiel_erg['gameid'];
+				$vgp_gruppe = $spiel_erg['gruppe'];
+				$vgp_stadion = $spiel_erg['stadion'];
+				$vgp_datum = formatdate($wbbuserdata['dateformat'], $spiel_erg['datetime']);
+				$vgp_zeit = formatdate($wbbuserdata['timeformat'], $spiel_erg['datetime']);
+
+				if ($spiel_erg['game_gk'] == 1) {
+					$vgp_gk = $lang->items['LANG_ACP_GLOBAL_YES'];
 				} else {
+					$vgp_gk = $lang->items['LANG_ACP_GLOBAL_NO'];
+				}
+
+				if ($spiel_erg['game_rk'] == 1) {
+					$vgp_rk = $lang->items['LANG_ACP_GLOBAL_YES'];
+				} else {
+					$vgp_rk = $lang->items['LANG_ACP_GLOBAL_NO'];
+				}
+
+				if ($spiel_erg['game_elfer'] == 1) {
+					$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_YES'];
+				} else {
+					$vgp_elfer = $lang->items['LANG_ACP_GLOBAL_NO'];
+				}
+
+				$vgp_tore1 = $spiel_erg['game_goals_1'];
+				$vgp_tore2 = $spiel_erg['game_goals_2'];
+				$vgp_glink = $spiel_erg['gamelink'];
+				$vgp_comment = stripcrap(wbb_trim($spiel_erg['gamecomment']));
+				$vgp_comment = parseURL($vgp_comment);
+				$vgp_anztipp = $spiel_erg['tipps'];
+				$spiel_name1 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_1_id']) . "'");
+				$vgp_flagge1 = '[img]images/wm2018/flaggen/' . $spiel_name1['flagge'] . '[/img]';
+				$spiel_name2 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_2_id']) . "'");
+				$vgp_flagge2 = '[img]images/wm2018/flaggen/' . $spiel_name2['flagge'] . '[/img]';
+
+				$vgp_user_ranking_01 = '';
+				$vgp_user_ranking_02 = '';
+				$vgp_user_ranking_03 = '';
+				$vgp_user_ranking_04 = '';
+				$vgp_user_ranking_05 = '';
+				$vgp_user_ranking_06 = '';
+				$vgp_user_ranking_07 = '';
+				$vgp_user_ranking_08 = '';
+				$vgp_user_ranking_09 = '';
+				$vgp_user_ranking_10 = '';
+				$vgp_count = 0;
+				$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, tipps_gesamt DESC Limit 0, 10");
+				$wm2018_rank_merk = 0;
+				while ($row_topuser = $db->fetch_array($result_topuser)) {
+					$vgp_count++;
+
+					// ** Ranking Start *//
+					$wm2018_rank_merk = $wm2018_rank_merk + 1;
+					if ($wm2018_punkte_merk != $row_topuser['punkte']) {
+						$wm2018_rank = $wm2018_rank_merk;
+						$wm2018_punkte_merk = $row_topuser['punkte'];
+					}
+					if ($wm2018_rank == 1) {
+						$wm2018_userrank = "[img]images/wm2018/wm2018_rank_1.gif[/img]";
+					}
+
+					if ($wm2018_rank == 2) {
+						$wm2018_userrank = "[img]images/wm2018/wm2018_rank_2.gif[/img]";
+					}
+
+					if ($wm2018_rank == 3) {
+						$wm2018_userrank = "[img]images/wm2018/wm2018_rank_3.gif[/img]";
+					}
+
+					if ($wm2018_rank > 3) {
+						$wm2018_userrank = "[b]{$wm2018_rank}[/b]";
+					}
+
+					// Tageswertung *Anfang*
+					$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
+
+					if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
+						$tagtendenz = "[img]./images/wm2018/hoch.jpg[/IMG]";
+					} elseif ($vortag['pos'] == $wm2018_rank) {
+						$tagtendenz = "[img]./images/wm2018/gleich.gif[/IMG]";
+					} else {
+						$tagtendenz = "[img]./images/wm2018/runter.jpg[/IMG]";
+					}
+
+					// Tageswertung *Ende*
+
+					if ($vgp_count == 1) {
+						$vgp_user_ranking_01 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 2) {
+						$vgp_user_ranking_02 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 3) {
+						$vgp_user_ranking_03 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 4) {
+						$vgp_user_ranking_04 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 5) {
+						$vgp_user_ranking_05 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 6) {
+						$vgp_user_ranking_06 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 7) {
+						$vgp_user_ranking_07 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 8) {
+						$vgp_user_ranking_08 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 9) {
+						$vgp_user_ranking_09 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					if ($vgp_count == 10) {
+						$vgp_user_ranking_10 = $wm2018_userrank . '  [url=' . $url2board . '/wm2018.php?action=showusertippsdetail&userid=' . $row_topuser['userid'] . ']' . $row_topuser['username'] . '[/URL] Punkte: ' . $row_topuser['punkte'] . ' | Anzahl Tipps: ' . $row_topuser['tipps_gesamt'] . $tagtendenz;
+					}
+
+					// ** Ranking Ende *//
+				}
+
+				if ($wm2018_options['vboardid'] != 0) {
+					$time = time();
+					$boardid = $wm2018_options['vboardid'];
+
+					/* Thread erstellen */
+					$posting_thema = '';
+					if ($wm2018_options['vgthema'] != '') {
+						$posting_thema = strtr($wm2018_options['vgthema'], array('{vgp_name1}' => $vgp_name1, '{vgp_name2}' => $vgp_name2));
+					} else {
+						$posting_thema = 'WM2018 - Ergebnis';
+					}
+
 					$posting_prefix = '';
-				}
+					if ($wm2018_options['vprefix'] != '') {
+						$posting_prefix = $wm2018_options['vprefix'];
+					} else {
+						$posting_prefix = '';
+					}
 
-				/* Username holen */
-				$user_info = $db->query_first("SELECT username FROM bb" . $n . "_users WHERE userid = '" . $wm2018_options['vgpostuid'] . "'");
-				$vgp_username = $user_info['username'];
+					/* Username holen */
+					$user_info = $db->query_first("SELECT username FROM bb" . $n . "_users WHERE userid = '" . $wm2018_options['vgpostuid'] . "'");
+					$vgp_username = $user_info['username'];
 
-				$current_game_details_new = $db->query_first("SELECT threadid FROM bb" . $n . "_posts WHERE postid = '" . $current_game_details['post_id'] . "'");
-				$threadid = $current_game_details_new['threadid'];
+					$current_game_details_new = $db->query_first("SELECT threadid FROM bb" . $n . "_posts WHERE postid = '" . $current_game_details['post_id'] . "'");
+					$threadid = $current_game_details_new['threadid'];
 
-				$b_thread = strtr($wm2018_options['message'], array('{vgp_gameid}' => $vgp_gameid, '{vgp_gruppe}' => $vgp_gruppe, '{vgp_stadion}' => $vgp_stadion, '{vgp_datum}' => $vgp_datum, '{vgp_zeit}' => $vgp_zeit, '{vgp_gk}' => $vgp_gk, '{vgp_rk}' => $vgp_rk, '{vgp_elfer}' => $vgp_elfer, '{vgp_glink}' => $vgp_glink, '{vgp_comment}' => $vgp_comment, '{vgp_anztipp}' => $vgp_anztipp, '{vgp_name1}' => $vgp_name1, '{vgp_tore1}' => $vgp_tore1, '{vgp_flagge1}' => $vgp_flagge1, '{vgp_name2}' => $vgp_name2, '{vgp_tore2}' => $vgp_tore2, '{vgp_flagge2}' => $vgp_flagge2, '{vgp_username}' => $vgp_username, '{vgp_user_ranking_01}' => $vgp_user_ranking_01, '{vgp_user_ranking_02}' => $vgp_user_ranking_02, '{vgp_user_ranking_03}' => $vgp_user_ranking_03, '{vgp_user_ranking_04}' => $vgp_user_ranking_04, '{vgp_user_ranking_05}' => $vgp_user_ranking_05, '{vgp_user_ranking_06}' => $vgp_user_ranking_06, '{vgp_user_ranking_07}' => $vgp_user_ranking_07, '{vgp_user_ranking_08}' => $vgp_user_ranking_08, '{vgp_user_ranking_09}' => $vgp_user_ranking_09, '{vgp_user_ranking_10}' => $vgp_user_ranking_10));
-				$b_thread = parseURL($b_thread);
+					$b_thread = strtr($wm2018_options['message'], array('{vgp_gameid}' => $vgp_gameid, '{vgp_gruppe}' => $vgp_gruppe, '{vgp_stadion}' => $vgp_stadion, '{vgp_datum}' => $vgp_datum, '{vgp_zeit}' => $vgp_zeit, '{vgp_gk}' => $vgp_gk, '{vgp_rk}' => $vgp_rk, '{vgp_elfer}' => $vgp_elfer, '{vgp_glink}' => $vgp_glink, '{vgp_comment}' => $vgp_comment, '{vgp_anztipp}' => $vgp_anztipp, '{vgp_name1}' => $vgp_name1, '{vgp_tore1}' => $vgp_tore1, '{vgp_flagge1}' => $vgp_flagge1, '{vgp_name2}' => $vgp_name2, '{vgp_tore2}' => $vgp_tore2, '{vgp_flagge2}' => $vgp_flagge2, '{vgp_username}' => $vgp_username, '{vgp_user_ranking_01}' => $vgp_user_ranking_01, '{vgp_user_ranking_02}' => $vgp_user_ranking_02, '{vgp_user_ranking_03}' => $vgp_user_ranking_03, '{vgp_user_ranking_04}' => $vgp_user_ranking_04, '{vgp_user_ranking_05}' => $vgp_user_ranking_05, '{vgp_user_ranking_06}' => $vgp_user_ranking_06, '{vgp_user_ranking_07}' => $vgp_user_ranking_07, '{vgp_user_ranking_08}' => $vgp_user_ranking_08, '{vgp_user_ranking_09}' => $vgp_user_ranking_09, '{vgp_user_ranking_10}' => $vgp_user_ranking_10));
+					$b_thread = parseURL($b_thread);
 
-				/* Post editieren */
-				$subjekt = $posting_thema;
-				$db->query("UPDATE bb" . $n . "_posts SET userid='" . $wm2018_options['vgpostuid'] . "', username='" . addslashes($user_info['username']) . "', iconid='" . $wm2018_options['viconid'] . "', posttopic='" . addslashes($subjekt) . "', posttime='" . $time . "', message='" . addslashes($b_thread) . "', attachments='0', allowsmilies='1', allowhtml='" . $wm2018_options['vgposthtml'] . "', allowbbcode='1', allowimages='1', showsignature='1', ipaddress='" . addslashes($REMOTE_ADDR) . "', visible='1'
+					/* Post editieren */
+					$subjekt = $posting_thema;
+					$db->query("UPDATE bb" . $n . "_posts SET userid='" . $wm2018_options['vgpostuid'] . "', username='" . addslashes($user_info['username']) . "', iconid='" . $wm2018_options['viconid'] . "', posttopic='" . addslashes($subjekt) . "', posttime='" . $time . "', message='" . addslashes($b_thread) . "', attachments='0', allowsmilies='1', allowhtml='" . $wm2018_options['vgposthtml'] . "', allowbbcode='1', allowimages='1', showsignature='1', ipaddress='" . addslashes($REMOTE_ADDR) . "', visible='1'
 					WHERE postid='" . $current_game_details['post_id'] . "'");
-				$postid = $db->insert_id();
+					$postid = $db->insert_id();
+				}
 			}
+			/* Ende Posting erstellen vgpost */
+
+			// Prüfen, ob es ein kritisches Spiel ist, und wenn ja, dann update die nachfolgenden Spiele
+			/* HINWEIS
+				Edit nach Finale nicht mehr möglich!
+			*/
+		} else {
+			// error, weil finale nicht editiert werden kann
+			$error = $lang->get("LANG_ACP_WM2018_TPL_ERROR_5");
+			eval("\$tpl->output(\"" . $tpl->get('wm2018_error', 1) . "\");");
 		}
-		/* Ende Posting erstellen vgpost */
 
 		header("Location: wm2018_admin.php?action=results&sid={$session['hash']}");
 		exit();
