@@ -1,26 +1,29 @@
 <?php
 
 // Konfiguration für die WM 2018
-$gameid_vorrundenendspiel = 48;
 
-$gameid_achtelfinal1 = 49;
-$gameid_achtelfinal2 = 50;
-$gameid_achtelfinal3 = 51;
-$gameid_achtelfinal4 = 52;
-$gameid_achtelfinal5 = 53;
-$gameid_achtelfinal6 = 54;
-$gameid_achtelfinal7 = 55;
-$gameid_achtelfinal8 = 56;
+$gameids = array();
 
-$gameid_viertelfinal1 = 57;
-$gameid_viertelfinal2 = 58;
-$gameid_viertelfinal3 = 59;
-$gameid_viertelfinal4 = 60;
+$gameids['vorrundenspiel'] = 48;
 
-$gameid_halbfinal1 = 61;
-$gameid_halbfinal2 = 62;
+$gameids['achtelfinal1'] = 49;
+$gameids['achtelfinal2'] = 50;
+$gameids['achtelfinal3'] = 51;
+$gameids['achtelfinal4'] = 52;
+$gameids['achtelfinal5'] = 53;
+$gameids['achtelfinal6'] = 54;
+$gameids['achtelfinal7'] = 55;
+$gameids['achtelfinal8'] = 56;
 
-$gameid_spielumplatzdrei = 63;
-$gameid_finale = 64;
+$gameids['viertelfinal1'] = 57;
+$gameids['viertelfinal2'] = 58;
+$gameids['viertelfinal3'] = 59;
+$gameids['viertelfinal4'] = 60;
+
+$gameids['halbfinal1'] = 61;
+$gameids['halbfinal2'] = 62;
+
+$gameids['spielumplatzdrei'] = 63;
+$gameids['finale'] = 64;
 
 // Konfiguration Ende

@@ -365,7 +365,7 @@ if ($action == "result_add") {
 	$result = $db->query("SELECT gameid FROM bb" . $n . "_wm2018_spiele WHERE team_1_id AND team_2_id AND game_goals_1 != '' AND game_goals_2 != '' AND gameid < " . intval($_REQUEST['gameid']) . " ORDER BY datetime ASC");
 
 	$entry_games_until = intval($_REQUEST['gameid']) - 1;
-	if (intval($_REQUEST['gameid']) > $gameid_vorrundenendspiel && $db->num_rows($result) != $entry_games_until) {
+	if (intval($_REQUEST['gameid']) > $gameids['vorrundenspiel'] && $db->num_rows($result) != $entry_games_until) {
 		// error
 		eval("\$tpl->output(\"" . $tpl->get('wm2018_result_add_error', 1) . "\");");
 	} else {
@@ -568,7 +568,7 @@ if ($action == "result_save") {
 			// Speichern des Spielergebnisses
 			$db->query("UPDATE bb" . $n . "_wm2018_spiele SET game_goals_1 = '" . intval($_POST['game_goals_1']) . "', game_goals_2 = '" . intval($_POST['game_goals_2']) . "', game_gk = '" . intval($_POST['game_gk_jn']) . "', game_rk = '" . intval($_POST['game_rk_jn']) . "', game_elfer = '" . intval($_POST['game_elfer_jn']) . "', gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "' WHERE gameid = '" . intval($_POST['gameid']) . "'");
 			// Update der Teamdaten bei Vorrundenspielen
-			if (intval($_POST['gameid']) <= $gameid_vorrundenendspiel) {
+			if (intval($_POST['gameid']) <= $gameids['vorrundenspiel']) {
 				// Tordifferenz berechnen
 				$td1 = intval($_POST['game_goals_1']) - intval($_POST['game_goals_2']);
 				$td2 = intval($_POST['game_goals_2']) - intval($_POST['game_goals_1']);
@@ -694,7 +694,7 @@ if ($action == "result_save") {
 			// Viertelfinale aufbauen
 			$checkgameids1 = array(54, 59, 56, 51);
 			$checkgameids2 = array(53, 60, 55, 52);
-			$savegameids = array($gameid_viertelfinal1, $gameid_viertelfinal2, $gameid_viertelfinal3, $gameid_viertelfinal4);
+			$savegameids = array($gameids['viertelfinal1'], $gameids['viertelfinal2'], $gameids['viertelfinal3'], $gameids['viertelfinal4']);
 			// Team 1 eintragen
 			if (in_array($_POST['gameid'], $checkgameids1)) {
 				for ($i = 0; $i < count($checkgameids1); $i++) {
@@ -727,55 +727,55 @@ if ($action == "result_save") {
 			}
 
 			// Halbfinale aufbauen
-			if (intval($_POST['gameid']) == $gameid_viertelfinal1) {
+			if (intval($_POST['gameid']) == $gameids['viertelfinal1']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal1}'");
-			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal2) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameids['halbfinal1']}'");
+			} elseif (intval($_POST['gameid']) == $gameids['viertelfinal2']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal1}'");
-			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal3) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameids['halbfinal1']}'");
+			} elseif (intval($_POST['gameid']) == $gameids['viertelfinal3']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal2}'");
-			} elseif (intval($_POST['gameid']) == $gameid_viertelfinal4) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameids['halbfinal2']}'");
+			} elseif (intval($_POST['gameid']) == $gameids['viertelfinal4']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_halbfinal2}'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameids['halbfinal2']}'");
 			}
 
 			// Finale aufbauen
-			if (intval($_POST['gameid']) == $gameid_halbfinal1) {
+			if (intval($_POST['gameid']) == $gameids['halbfinal1']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameid_finale}'");
-			} elseif (intval($_POST['gameid']) == $gameid_halbfinal2) {
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '{$team_g}' WHERE gameid = '{$gameids['finale']}'");
+			} elseif (intval($_POST['gameid']) == $gameids['halbfinal2']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 				} else {
 					$team_g = intval($_POST['team2']);
 				}
-				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameid_finale}'");
+				$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '{$team_g}' WHERE gameid = '{$gameids['finale']}'");
 			}
 
 			// Finale abschließen
-			if (intval($_POST['gameid']) == $gameid_finale) {
+			if (intval($_POST['gameid']) == $gameids['finale']) {
 				if (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
 					$team_g = intval($_POST['team1']);
 					$team_v = intval($_POST['team2']);
@@ -1036,7 +1036,7 @@ if ($action == "result_save") {
 			$error .= $lang->get("LANG_ACP_WM2018_PHP_8");
 		}
 
-		if ($gameid > $gameid_vorrundenendspiel && ($tore1 == $tore2)) {
+		if ($gameid > $gameids['vorrundenspiel'] && ($tore1 == $tore2)) {
 			$error .= $lang->get("LANG_ACP_WM2018_PHP_9");
 		}
 
@@ -1088,7 +1088,7 @@ if ($action == "result_edit") {
 	$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 
 	if (isset($_POST['gameid']) && isset($_POST['send']) && trim($_POST['send']) == 'send') {
-		if (intval($_POST['gameid']) < $gameid_finale) {
+		if (intval($_POST['gameid']) < $gameids['finale']) {
 			// Editspiel ist kleiner als Finale; kann also editiert werden
 			$gamelink = wbb_trim($_POST['gamelink']);
 			if (isset($_POST['gamelink'])) {
@@ -1560,52 +1560,52 @@ if ($action == "result_edit") {
 
 			// Prüfen, ob es ein kritisches Spiel ist, und wenn ja, dann update die nachfolgenden Spiele
 			switch (wbb_trim($_POST['gameid'])) {
-				case $gameid_vorrundenendspiel:
+				case $gameids['vorrundenspiel']:
 					# code...
 					break;
-				case $gameid_achtelfinal1:
+				case $gameids['achtelfinal1']:
 					# code...
 					break;
-				case $gameid_achtelfinal2:
+				case $gameids['achtelfinal2']:
 					# code...
 					break;
-				case $gameid_achtelfinal3:
+				case $gameids['achtelfinal3']:
 					# code...
 					break;
-				case $gameid_achtelfinal4:
+				case $gameids['achtelfinal4']:
 					# code...
 					break;
-				case $gameid_achtelfinal5:
+				case $gameids['achtelfinal5']:
 					# code...
 					break;
-				case $gameid_achtelfinal6:
+				case $gameids['achtelfinal6']:
 					# code...
 					break;
-				case $gameid_achtelfinal7:
+				case $gameids['achtelfinal7']:
 					# code...
 					break;
-				case $gameid_achtelfinal8:
+				case $gameids['achtelfinal8']:
 					# code...
 					break;
-				case $gameid_viertelfinal1:
+				case $gameids['viertelfinal1']:
 					# code...
 					break;
-				case $gameid_viertelfinal2:
+				case $gameids['viertelfinal2']:
 					# code...
 					break;
-				case $gameid_viertelfinal3:
+				case $gameids['viertelfinal3']:
 					# code...
 					break;
-				case $gameid_viertelfinal4:
+				case $gameids['viertelfinal4']:
 					# code...
 					break;
-				case $gameid_halbfinal1:
+				case $gameids['halbfinal1']:
 					# code...
 					break;
-				case $gameid_halbfinal2:
+				case $gameids['halbfinal2']:
 					# code...
 					break;
-				case $gameid_spielumplatzdrei:
+				case $gameids['spielumplatzdrei']:
 					# code...
 					break;
 			}

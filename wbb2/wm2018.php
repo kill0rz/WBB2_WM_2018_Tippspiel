@@ -597,31 +597,31 @@ if ($action == "showresults") {
 			$auswahl = "1";
 
 			// Achtelfinale
-			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_achtelfinal1) . ";");
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameids['achtelfinal1']) . ";");
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "2";
 			}
 
 			// Viertelfinale
-			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_viertelfinal1) . ";");
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameids['viertelfinal1']) . ";");
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "3";
 			}
 
 			// Halbfinale
-			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_halbfinal1) . ";");
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameids['halbfinal1']) . ";");
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "4";
 			}
 
 			// Spiel um Platz 3
-			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_spielumplatzdrei) . ";");
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameids['spielumplatzdrei']) . ";");
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "5";
 			}
 
 			// Finale
-			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameid_finale) . ";");
+			$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($gameids['finale']) . ";");
 			if ($result['datetime'] < $curr_timestamp) {
 				$auswahl = "6";
 			}
@@ -858,7 +858,7 @@ if ($action == "tippabgabe") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > $gameid_vorrundenendspiel && ($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
+		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && ($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=tippabgabe&amp;gameid={$_POST['gameid']}" . $SID_ARG_2ND);
 		}
 
@@ -1713,7 +1713,7 @@ if ($action == "edittipp") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale, Spiel um Platz 3 oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > $gameid_vorrundenendspiel && (intval($_POST['tipp_1']) == intval($_POST['tipp_2']))) {
+		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && (intval($_POST['tipp_1']) == intval($_POST['tipp_2']))) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=edittipp&amp;gameid={$_POST['gameid']}&amp;userid={$wbbuserdata['userid']}" . $SID_ARG_2ND);
 		}
 
