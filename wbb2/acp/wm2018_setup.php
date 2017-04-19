@@ -27,6 +27,7 @@ if (get_magic_quotes_runtime()) {
 	set_magic_quotes_runtime(0);
 }
 $phpversion = phpversion();
+$requiredphpversion = "7.0";
 
 /* page output function */
 function informationPage($content, $title = '') {
@@ -92,8 +93,8 @@ if (!$step) {
   </tr>
   <tr>
    <td>PHP Version</td>
-   <td>5.3</td>
-   <td><span style="color: ' . ((version_compare($phpversion, "5.3") == -1) ? ('red') : ('lime')) . '">' . $phpversion . '</span></td>
+   <td>' . $requiredphpversion . '</td>
+   <td><span style="color: ' . ((version_compare($phpversion, $requiredphpversion) == -1) ? ('red') : ('lime')) . '">' . $phpversion . '</span></td>
   </tr>
   <tr>
    <td>Sprachdatei "/acp/wm2018_de.lng"</td>
