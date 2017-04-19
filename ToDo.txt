@@ -8,6 +8,7 @@ ToDo für WM 2018:
 			+ prüfen, ob alte Mannschaft == neue Mannschaft, dann break;
 
 + Demo aktualisieren
++ addslashes durch mysqli_real_escape_string ersetzen?
 
 
 
