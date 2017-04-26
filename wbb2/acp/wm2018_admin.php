@@ -1558,57 +1558,19 @@ if ($action == "result_edit") {
 			}
 			/* Ende Posting erstellen vgpost */
 
-			// Prüfen, ob es ein kritisches Spiel ist, und wenn ja, dann update die nachfolgenden Spiele
-			switch (wbb_trim($_POST['gameid'])) {
-				case $gameids['vorrundenspiel']:
-					# code...
-					break;
-				case $gameids['achtelfinal1']:
-					# code...
-					break;
-				case $gameids['achtelfinal2']:
-					# code...
-					break;
-				case $gameids['achtelfinal3']:
-					# code...
-					break;
-				case $gameids['achtelfinal4']:
-					# code...
-					break;
-				case $gameids['achtelfinal5']:
-					# code...
-					break;
-				case $gameids['achtelfinal6']:
-					# code...
-					break;
-				case $gameids['achtelfinal7']:
-					# code...
-					break;
-				case $gameids['achtelfinal8']:
-					# code...
-					break;
-				case $gameids['viertelfinal1']:
-					# code...
-					break;
-				case $gameids['viertelfinal2']:
-					# code...
-					break;
-				case $gameids['viertelfinal3']:
-					# code...
-					break;
-				case $gameids['viertelfinal4']:
-					# code...
-					break;
-				case $gameids['halbfinal1']:
-					# code...
-					break;
-				case $gameids['halbfinal2']:
-					# code...
-					break;
-				case $gameids['spielumplatzdrei']:
-					# code...
-					break;
-			}
+			// Vorgehensweise
+			//
+			// Spiel in Gruppe? ($gameid < $gameids['vorrundenspiel'])
+			// 	Finde Gruppe zu Spiel
+			// 	Berechne Gruppe neu
+			// 	1. vorher != 1. nachher?
+			// 		cont.
+			//
+			// Ab 8.Finale
+			// 	direkte Kette prüfen
+			// 	Wenn unterschiedlich
+			// 		update
+			// 		für jedes beeinflusste Ergebnis dessen Kette prüfen
 		} else {
 			// error, weil finale nicht editiert werden kann
 			$error = $lang->get("LANG_ACP_WM2018_TPL_ERROR_5");
