@@ -3,6 +3,14 @@
 // Konfiguration für die WM 2018
 
 $gameids = array(
+	'lastgroupgame_a' => 34,
+	'lastgroupgame_b' => 36,
+	'lastgroupgame_c' => 38,
+	'lastgroupgame_d' => 40,
+	'lastgroupgame_e' => 44,
+	'lastgroupgame_f' => 42,
+	'lastgroupgame_g' => 48,
+	'lastgroupgame_h' => 46,
 	'vorrundenspiel' => 48,
 	'achtelfinal1' => 49,
 	'achtelfinal2' => 50,
