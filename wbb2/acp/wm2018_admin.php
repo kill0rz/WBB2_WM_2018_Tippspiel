@@ -585,7 +585,6 @@ if ($action == "result_save") {
 			}
 
 			// Achtelfinale aufbauen
-			$gruppenids = array("A", "B", "C", "D", "E", "F", "G", "H");
 			$check_8_gameids = array($gameids['lastgroupgame_a'], $gameids['lastgroupgame_b'], $gameids['lastgroupgame_c'], $gameids['lastgroupgame_d'], $gameids['lastgroupgame_e'], $gameids['lastgroupgame_f'], $gameids['lastgroupgame_g'], $gameids['lastgroupgame_46']);
 			$savegameids1 = array($gameids['achtelfinal2'], $gameids['achtelfinal3'], $gameids['achtelfinal1'], $gameids['achtelfinal4'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal5'], $gameids['achtelfinal7']);
 			$savegameids2 = array($gameids['achtelfinal3'], $gameids['achtelfinal2'], $gameids['achtelfinal4'], $gameids['achtelfinal1'], $gameids['achtelfinal8'], $gameids['achtelfinal6'], $gameids['achtelfinal7'], $gameids['achtelfinal5']);
@@ -1568,6 +1567,24 @@ if ($action == "result_edit") {
 				// 	Finde Gruppe zu Spiel
 				// 	speichere 1. der Gruppe zwischen
 				// 	Berechne Gruppe neu
+				$check_8_gameids = array($gameids['lastgroupgame_a'], $gameids['lastgroupgame_b'], $gameids['lastgroupgame_c'], $gameids['lastgroupgame_d'], $gameids['lastgroupgame_e'], $gameids['lastgroupgame_f'], $gameids['lastgroupgame_g'], $gameids['lastgroupgame_46']);
+				$savegameids1 = array($gameids['achtelfinal2'], $gameids['achtelfinal3'], $gameids['achtelfinal1'], $gameids['achtelfinal4'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal5'], $gameids['achtelfinal7']);
+				$savegameids2 = array($gameids['achtelfinal3'], $gameids['achtelfinal2'], $gameids['achtelfinal4'], $gameids['achtelfinal1'], $gameids['achtelfinal8'], $gameids['achtelfinal6'], $gameids['achtelfinal7'], $gameids['achtelfinal5']);
+				if (in_array(intval($_POST['gameid']), $check_8_gameids)) {
+					for ($i = 0; $i < count($check_8_gameids); $i++) {
+						if (intval($_POST['gameid']) == $check_8_gameids[$i]) {
+							$result = $db->query("SELECT teamid FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . $gruppenids[$i] . "' ORDER BY punkte DESC, td DESC, g DESC LIMIT 2");
+							while ($row = $db->fetch_array($result)) {
+								$teamids[] = $row['teamid'];
+							}
+
+							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '" . $teamids['0'] . "' WHERE gameid = '" . $savegameids1[$i] . "'");
+
+							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
+						}
+					}
+				}
+
 				// 	1. vorher != 1. nachher?
 				// 		cont.
 			} else {

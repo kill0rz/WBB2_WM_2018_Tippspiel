@@ -30,4 +30,6 @@ $gameids = array(
 	'finale' => 64,
 );
 
+$gruppenids = array("A", "B", "C", "D", "E", "F", "G", "H");
+
 // Konfiguration Ende
