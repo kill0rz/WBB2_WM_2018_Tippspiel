@@ -1613,14 +1613,24 @@ if ($action == "result_edit") {
 					// Es gibt noch Spiele in der Pipe, die abgearbeitet werden müssen
 					// starte Queue
 					foreach ($editgame_gamestorecalculate as $oldgameid => $newgameids) {
-						foreach ($newgameids as $newgameid) {
+						foreach ($newgameids as $newgameid_string) {
 							// Gewinner, bzw verlierer ID aus DB holen
-							if (preg_match("/\d*[a-zA-Z]{1}/", $newgameid)) {
-								// Verlierer verwenden
-							} else {
-								// Gewinner verwenden
+							preg_match_all("/([a-zA-Z]{1})\-(\d{2})\-([a-zA-Z]{1})/", $newgameid_string, $matches);
+							$editgame_winnerloser = trim($matches[1]) == "L" ? "L" : "W";
+							$editgame_newgameid = intval($matches[2]);
+							$editgame_team12 = intval($matches[3]) == 1 ? 1 : 2;
+
+							// Hole Informationen zu dem neuen Spiel
+							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
+							$editgame_newgamedetails = $db->query_first($sql_query);
+							// Hole Informationen zu dem alten Spiel
+							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
+							$editgame_oldgamedetails = $db->query_first($sql_query);
+							
+							// Prüfe, ob ein Update gefahren werden muss
+							if ($editgame_newgamedetails["team_" . $editgame_team12 . "_id"] != ) {
+								# todo
 							}
-							$sql_query = "SELECT ";
 							// neue gameid prüfen und ggf. updaten
 							// wenn update durchgeführt, dann erweitere $editgame_gamestorecalculate um $newgameids[$x]
 						}
