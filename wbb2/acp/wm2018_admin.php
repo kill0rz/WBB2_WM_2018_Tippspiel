@@ -1569,6 +1569,9 @@ if ($action == "result_edit") {
 				$editgame_gruppe = $gruppe_tmp['gruppe'];
 				$editgame_continue = false;
 
+				// überschreibe game_id, damit eine Neuberechnung auf jeden Fall stattfindet
+				$_POST['gameid'] = $gameids['lastgroupgame_' . strtolower($editgame_gruppe)];
+
 				// Berechne Gruppe neu
 				$check_8_gameids = array($gameids['lastgroupgame_a'], $gameids['lastgroupgame_b'], $gameids['lastgroupgame_c'], $gameids['lastgroupgame_d'], $gameids['lastgroupgame_e'], $gameids['lastgroupgame_f'], $gameids['lastgroupgame_g'], $gameids['lastgroupgame_46']);
 				$savegameids1 = array($gameids['achtelfinal2'], $gameids['achtelfinal3'], $gameids['achtelfinal1'], $gameids['achtelfinal4'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal5'], $gameids['achtelfinal7']);
@@ -1601,15 +1604,32 @@ if ($action == "result_edit") {
 			}
 			if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] || $editgame_continue) {
 				// ab 8.Finale
+				// hier kommen jetzt nur noch kritische gameids rein; entweder letztes Vorrundenspiel oder ab 8.Achtelfinale.
+				// Für jedes Spiel wird die Kette geprüft und diese bis zum Schluss abgearbeitet (bis Update stattfindet)
 
-				// Ab 8.Finale
-				// 	direkte Kette prüfen
-				// 	Wenn unterschiedlich
-				// 		update
-				// 		für jedes beeinflusste Ergebnis dessen Kette prüfen
+				$editgame_gamestorecalculate = $gameids_kette[intval($_POST['gameid'])];
+
+				while (isset($editgame_gamestorecalculate) && count($editgame_gamestorecalculate) > 0) {
+					// Es gibt noch Spiele in der Pipe, die abgearbeitet werden müssen
+					// starte Queue
+					foreach ($editgame_gamestorecalculate as $oldgameid => $newgameids) {
+						foreach ($newgameids as $newgameid) {
+							// Gewinner, bzw verlierer ID aus DB holen
+							if (preg_match("/\d*[a-zA-Z]{1}/", $newgameid)) {
+								// Verlierer verwenden
+							} else {
+								// Gewinner verwenden
+							}
+							$sql_query = "SELECT ";
+							// neue gameid prüfen und ggf. updaten
+							// wenn update durchgeführt, dann erweitere $editgame_gamestorecalculate um $newgameids[$x]
+						}
+					}
+				}
+
 			}
 		} else {
-			// error, weil finale nicht editiert werden kann
+			// error, weil Finale nicht editiert werden kann
 			$error = $lang->get("LANG_ACP_WM2018_TPL_ERROR_5");
 			eval("\$tpl->output(\"" . $tpl->get('wm2018_error', 1) . "\");");
 		}
