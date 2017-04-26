@@ -1560,13 +1560,16 @@ if ($action == "result_edit") {
 
 			// Vorgehensweise
 			//
-			// Spiel in Gruppe? ($gameid < $gameids['vorrundenspiel'])
+			// Spiel in Gruppe?
 			if (intval($_POST['gameid']) <= $gameids['vorrundenspiel']) {
 				// In Gruppe
 
-				// 	Finde Gruppe zu Spiel
-				// 	speichere 1. der Gruppe zwischen
-				// 	Berechne Gruppe neu
+				// Finde Gruppe zu Spiel
+				$editgame_gruppe_tmp = $db->query_first("SELECT gruppe FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . intval($_POST['gameid']));
+				$editgame_gruppe = $gruppe_tmp['gruppe'];
+				$editgame_continue = false;
+
+				// Berechne Gruppe neu
 				$check_8_gameids = array($gameids['lastgroupgame_a'], $gameids['lastgroupgame_b'], $gameids['lastgroupgame_c'], $gameids['lastgroupgame_d'], $gameids['lastgroupgame_e'], $gameids['lastgroupgame_f'], $gameids['lastgroupgame_g'], $gameids['lastgroupgame_46']);
 				$savegameids1 = array($gameids['achtelfinal2'], $gameids['achtelfinal3'], $gameids['achtelfinal1'], $gameids['achtelfinal4'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal5'], $gameids['achtelfinal7']);
 				$savegameids2 = array($gameids['achtelfinal3'], $gameids['achtelfinal2'], $gameids['achtelfinal4'], $gameids['achtelfinal1'], $gameids['achtelfinal8'], $gameids['achtelfinal6'], $gameids['achtelfinal7'], $gameids['achtelfinal5']);
@@ -1578,16 +1581,25 @@ if ($action == "result_edit") {
 								$teamids[] = $row['teamid'];
 							}
 
-							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '" . $teamids['0'] . "' WHERE gameid = '" . $savegameids1[$i] . "'");
+							// Haben sich weiterführende Spiele geändert?
+							$editgame_tmp_lastplaces = $db->query_first("SELECT team_1_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $savegameids1[$i] . "';");
+							if ($editgame_tmp_lastplaces['team_1_id'] != $teamids['0']) {
+								// weitermachen
+								$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_1_id = '" . $teamids['0'] . "' WHERE gameid = '" . $savegameids1[$i] . "'");
+								$editgame_continue = true;
+							}
 
-							$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
+							$editgame_tmp_lastplaces = $db->query_first("SELECT team_1_id FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . $savegameids1[$i] . "';");
+							if ($editgame_tmp_lastplaces['team_2_id'] != $teamids['1']) {
+								// weitermachen
+								$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_2_id = '" . $teamids['1'] . "' WHERE gameid = '" . $savegameids2[$i] . "'");
+								$editgame_continue = true;
+							}
 						}
 					}
 				}
-
-				// 	1. vorher != 1. nachher?
-				// 		cont.
-			} else {
+			}
+			if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] || $editgame_continue) {
 				// ab 8.Finale
 
 				// Ab 8.Finale
