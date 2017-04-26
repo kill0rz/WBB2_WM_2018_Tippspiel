@@ -585,10 +585,10 @@ if ($action == "result_save") {
 			}
 
 			// Achtelfinale aufbauen
-			$check_8_gameids = array(34, 36, 38, 40, 44, 42, 48, 46);
+			$check_8_gameids = array($gameids['lastgroupgame_a'], $gameids['lastgroupgame_b'], $gameids['lastgroupgame_c'], $gameids['lastgroupgame_d'], $gameids['lastgroupgame_e'], $gameids['lastgroupgame_f'], $gameids['lastgroupgame_g'], $gameids['lastgroupgame_46']);
 			$gruppenids = array("A", "B", "C", "D", "E", "F", "G", "H");
-			$savegameids1 = array(50, 51, 49, 52, 54, 56, 53, 55);
-			$savegameids2 = array(51, 50, 52, 49, 56, 54, 55, 53);
+			$savegameids1 = array($gameids['achtelfinal2'], $gameids['achtelfinal3'], $gameids['achtelfinal1'], $gameids['achtelfinal4'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal5'], $gameids['achtelfinal7']);
+			$savegameids2 = array($gameids['achtelfinal3'], $gameids['achtelfinal2'], $gameids['achtelfinal4'], $gameids['achtelfinal1'], $gameids['achtelfinal8'], $gameids['achtelfinal6'], $gameids['achtelfinal7'], $gameids['achtelfinal5']);
 			if (in_array(intval($_POST['gameid']), $check_8_gameids)) {
 				for ($i = 0; $i < count($check_8_gameids); $i++) {
 					if (intval($_POST['gameid']) == $check_8_gameids[$i]) {
@@ -692,10 +692,11 @@ if ($action == "result_save") {
 			// Vorrunde vorbei, jetzt wird die KO-Runde aufgebaut
 
 			// Viertelfinale aufbauen
-			$checkgameids1 = array(54, 59, 56, 51);
-			$checkgameids2 = array(53, 60, 55, 52);
-			$savegameids = array($gameids['viertelfinal1'], $gameids['viertelfinal2'], $gameids['viertelfinal3'], $gameids['viertelfinal4']);
+			$checkgameids1 = array($gameids['achtelfinal1'], $gameids['achtelfinal6'], $gameids['achtelfinal8'], $gameids['achtelfinal3']);
+			$checkgameids2 = array($gameids['achtelfinal2'], $gameids['achtelfinal5'], $gameids['achtelfinal7'], $gameids['achtelfinal4']);
+			$savegameids = array($gameids['viertelfinal1'], $gameids['viertelfinal2'], $gameids['viertelfinal3'], $gameids['viertelfinal14']);
 			// Team 1 eintragen
+
 			if (in_array($_POST['gameid'], $checkgameids1)) {
 				for ($i = 0; $i < count($checkgameids1); $i++) {
 					if ($_POST['gameid'] == $checkgameids1[$i]) {
@@ -1561,16 +1562,23 @@ if ($action == "result_edit") {
 			// Vorgehensweise
 			//
 			// Spiel in Gruppe? ($gameid < $gameids['vorrundenspiel'])
-			// 	Finde Gruppe zu Spiel
-			// 	Berechne Gruppe neu
-			// 	1. vorher != 1. nachher?
-			// 		cont.
-			//
-			// Ab 8.Finale
-			// 	direkte Kette prüfen
-			// 	Wenn unterschiedlich
-			// 		update
-			// 		für jedes beeinflusste Ergebnis dessen Kette prüfen
+			if (intval($_POST['gameid']) <= $gameids['vorrundenspiel']) {
+				// In Gruppe
+
+				// 	Finde Gruppe zu Spiel
+				// 	speichere 1. der Gruppe zwischen
+				// 	Berechne Gruppe neu
+				// 	1. vorher != 1. nachher?
+				// 		cont.
+			} else {
+				// ab 8.Finale
+
+				// Ab 8.Finale
+				// 	direkte Kette prüfen
+				// 	Wenn unterschiedlich
+				// 		update
+				// 		für jedes beeinflusste Ergebnis dessen Kette prüfen
+			}
 		} else {
 			// error, weil finale nicht editiert werden kann
 			$error = $lang->get("LANG_ACP_WM2018_TPL_ERROR_5");
