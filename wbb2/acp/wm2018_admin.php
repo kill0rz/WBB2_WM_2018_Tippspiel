@@ -1074,8 +1074,14 @@ if ($action == "result_save") {
 			$gamelink = '';
 		}
 
-		if ($gamelink && !preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
-			$gamelink = "http://" . $gamelink;
+		if (!preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
+			// check if HTTPS
+			if (isset($_SERVER['SERVER_PORT']) && trim($_SERVER['SERVER_PORT']) == 443 && isset($_SERVER['HTTPS']) && strtolower(trim($_SERVER['HTTPS'])) == 'on') {
+				$gamelink = "https://" . $gamelink;
+			} else {
+				$gamelink = "http://" . $gamelink;
+			}
+
 		}
 
 		$gamecomment = addslashes($_POST['gamecomment']);
@@ -1097,8 +1103,14 @@ if ($action == "result_edit") {
 				$gamelink = '';
 			}
 
-			if ($gamelink && !preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
-				$gamelink = "http://" . $gamelink;
+			if (!preg_match("/[a-zA-Z]:\/\//si", $gamelink)) {
+				// check if HTTPS
+				if (isset($_SERVER['SERVER_PORT']) && trim($_SERVER['SERVER_PORT']) == 443 && isset($_SERVER['HTTPS']) && strtolower(trim($_SERVER['HTTPS'])) == 'on') {
+					$gamelink = "https://" . $gamelink;
+				} else {
+					$gamelink = "http://" . $gamelink;
+				}
+
 			}
 
 			if (isset($_POST['result_gk']) && (trim($_POST['result_gk']) == 0 || trim($_POST['result_gk']) == 1)) {
@@ -1616,20 +1628,24 @@ if ($action == "result_edit") {
 						foreach ($newgameids as $newgameid_string) {
 							// Gewinner, bzw verlierer ID aus DB holen
 							preg_match_all("/([a-zA-Z]{1})\-(\d{2})\-([a-zA-Z]{1})/", $newgameid_string, $matches);
+							// Soll der Gewinner oder der Verlierer vom alten Spiel eingetragen werden?
 							$editgame_winnerloser = trim($matches[1]) == "L" ? "L" : "W";
+							// ID des neuen Spiels
 							$editgame_newgameid = intval($matches[2]);
+							// Wird in Team 1 oder Team 2 des neuen Spiels eingetragen?
 							$editgame_team12 = intval($matches[3]) == 1 ? 1 : 2;
 
-							// Hole Informationen zu dem neuen Spiel
+							// Hole Informationen zu dem neuen Spiel --> Team, das eingetragen werden soll
 							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
 							$editgame_newgamedetails = $db->query_first($sql_query);
-							// Hole Informationen zu dem alten Spiel
+							// Hole Informationen zu dem alten Spiel --> Gewinner, bzw. Verlierer
+							// todo
 							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
 							$editgame_oldgamedetails = $db->query_first($sql_query);
-							
+
 							// Prüfe, ob ein Update gefahren werden muss
-							if ($editgame_newgamedetails["team_" . $editgame_team12 . "_id"] != ) {
-								# todo
+							if ($editgame_newgamedetails["team_" . $editgame_team12 . "_id"] != $editgame_oldgamedetails["team_" . $editgame_team12 . "_id"]) {
+								$sql_query = "UPDATE bb" . $n . "_wm2018_spiele SET team_" . $editgame_team12 . "_id = '" . 'xxx' . "'";
 							}
 							// neue gameid prüfen und ggf. updaten
 							// wenn update durchgeführt, dann erweitere $editgame_gamestorecalculate um $newgameids[$x]
