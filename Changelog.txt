@@ -54,7 +54,7 @@ ACP
 	+ Es gibt eine Editierfunktion für die ACP-Ergebnisse.
 		+ Punkte werden für dieses Spiel für alle Nutzer neu berechnet
 		+ Wurde ein Posting zu diesem Spiel erstellt, so wird es editiert und die Daten nach dem Edit aktualisiert
-		+ Handelt es sich um ein kritisches Spiel (=ein letztes Spiel einer Gruppe, oder wenn dessen Gewinner eine Runde weiter kommt), so werden die nachfolgenden Spiele neu berechnet
+		+ Handelt es sich um ein kritisches Spiel (=ein letztes Spiel einer Gruppe, oder wenn dessen Gewinner eine Runde weiter kommt), so werden die nachfolgenden Spiele neu berechnet und aktualisiert.
 
 
 Technisches

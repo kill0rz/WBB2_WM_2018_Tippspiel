@@ -1,12 +1,6 @@
 ToDo für WM 2018:
 -----------------
 
-+ Editierfunktion für ACP-Ergebnisse
-	+ Weiterführende Spiele ggf. ersetzen
-		+ In der Gruppenphase prüfen, ob kritisches Spiel schon eingetragen wurde, dann ab da neu berechnen
-		+ Ab Achtelfinale alles weiterführende neu berechnen, solange eingetragen
-			+ prüfen, ob alte Mannschaft == neue Mannschaft, dann break;
-
 + Demo aktualisieren
 + addslashes durch mysqli_real_escape_string ersetzen?
 
@@ -30,6 +24,8 @@ ZU TESTEN
 		+ hier nicht nur den day speichern, weil Zeitzonen
 		+ timestamp speichern und per date("m.", $timestamp); prüfen
 	+ Vor Rücksetzung auf Tag prüfen, wenn date==date, dann nicht, sonst überschreiben und rücksetzen
++ Editierfunktion für ACP-Ergebnisse
+	+ Weiterführende Spiele ggf. ersetzen
 
 
 ZU TESTEN (extern)
