@@ -1638,21 +1638,32 @@ if ($action == "result_edit") {
 							// Hole Informationen zu dem neuen Spiel --> Team, das eingetragen werden soll
 							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
 							$editgame_newgamedetails = $db->query_first($sql_query);
+
 							// Hole Informationen zu dem alten Spiel --> Gewinner, bzw. Verlierer
-							// todo
-							$sql_query = "SELECT team_" . $editgame_team12 . "_id FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_newgameid;
+							$sql_query = "SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid=" . $editgame_oldgameid;
 							$editgame_oldgamedetails = $db->query_first($sql_query);
 
-							// Prüfe, ob ein Update gefahren werden muss
-							if ($editgame_newgamedetails["team_" . $editgame_team12 . "_id"] != $editgame_oldgamedetails["team_" . $editgame_team12 . "_id"]) {
-								$sql_query = "UPDATE bb" . $n . "_wm2018_spiele SET team_" . $editgame_team12 . "_id = '" . 'xxx' . "'";
+							if (intval($editgame_oldgamedetails['game_goals_1']) > intval($editgame_oldgamedetails['game_goals_2'])) {
+								$editgame_siegerteam = intval($editgame_oldgamedetails['team1']);
+								$editgame_verliererteam = intval($editgame_oldgamedetails['team2']);
+							} else {
+								$editgame_siegerteam = intval($editgame_oldgamedetails['team2']);
+								$editgame_verliererteam = intval($editgame_oldgamedetails['team1']);
 							}
-							// neue gameid prüfen und ggf. updaten
-							// wenn update durchgeführt, dann erweitere $editgame_gamestorecalculate um $newgameids[$x]
+
+							// Prüfe, ob ein Update gefahren werden muss
+							if ($editgame_newgamedetails["team_" . $editgame_team12 . "_id"] != ($editgame_winnerloser == "W" ? $editgame_siegerteam : $editgame_verliererteam)) {
+
+								// Update nachführendes Spiel
+								$db->query("UPDATE bb" . $n . "_wm2018_spiele SET team_" . $editgame_team12 . "_id = '" . $editgame_winnerloser == "W" ? $editgame_siegerteam : $editgame_verliererteam . "' WHERE gameid = '" . $editgame_newgameid . "'");
+
+								// wenn update durchgeführt, dann erntferne aktuellen Eintrag und erweitere $editgame_gamestorecalculate um $newgameids[$x]
+								unset($editgame_gamestorecalculate[$oldgameid]);
+								$editgame_gamestorecalculate[] = $gameids_kette[intval($editgame_newgameid)];
+							}
 						}
 					}
 				}
-
 			}
 		} else {
 			// error, weil Finale nicht editiert werden kann
