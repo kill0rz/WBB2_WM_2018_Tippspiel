@@ -61,7 +61,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_17>Kann getippt werden, ob es Elfmeter im Spiel gab?</LANG_ACP_WM2018_TPL_OPTIONS_17:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_18>Kann der Weltmeister / Vize-Weltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_18:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_19>Bis zu welchem Spiel kann der Weltmeister / Vizeweltmeister getippt werden?</LANG_ACP_WM2018_TPL_OPTIONS_19:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_20>(Gameid, Wert zwischen 1 und $gameids['finale']<br />Game $gameids['vorrundenspiel'] = letztes Vorrundenspiel<br />Game $gameids['finale'] = Finalspiel)</LANG_ACP_WM2018_TPL_OPTIONS_20:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_20>(Gameid, Wert zwischen 1 und $gameids[finale]<br />Game $gameids[vorrundenspiel] = letztes Vorrundenspiel<br />Game $gameids[finale] = Finalspiel)</LANG_ACP_WM2018_TPL_OPTIONS_20:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_21>Einstellungen f&uuml;r den Guthabenhack (V1.9.5 von Lasall ben&ouml;tigt)</LANG_ACP_WM2018_TPL_OPTIONS_21:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_22>Soll der Guthabenhack f&uuml;r das WM2018-Tippspiel genutzt werden?</LANG_ACP_WM2018_TPL_OPTIONS_22:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_23>Sollen die Infos zu Kosten und Gewinnen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_23:text>
