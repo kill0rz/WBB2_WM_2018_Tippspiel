@@ -116,7 +116,7 @@
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_2>Du kannst dieses Spiel noch nicht eintragen, weil du vorher noch andere eintragen musst. <br /> Es ist wichtig, dass du die Spiele in der richtigen Reihenfolge eintr&auml;gst. <br /><br /> <b>Bitte trage zun&auml;chst alle Spiele bis zum Spiel </LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_2:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_3> ein.</b></LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_3:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_4>&larr; zur&uuml;ck</LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_4:text>
-<text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_5>Das Spiel hat noch nicht angefangen oder l&auuml;ft noch. Bitte warte, bis es zu Ende ist!</LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_5:text>
+<text:LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_5>Das Spiel hat noch nicht angefangen oder l&auml;ft noch. Bitte warte, bis es zu Ende ist!</LANG_ACP_WM2018_TPL_RESULT_ADD_ERROR_5:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_1>Ergebnis best&auml;tigen</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_1:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_2>Bisher wurde noch nichts in die Datenbank eingetragen.<br />Bitte &uuml;berpr&uuml;fe die von Dir eingetragenen Werte und best&auml;tige dann.<br />Da es keine Editierfunktion f&uuml;r die Ergebnisse gibt, kontrolliere genau !!!</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_2:text>
 <text:LANG_ACP_WM2018_TPL_RESULT_CONFIRM_3>Erzielte Tore von</LANG_ACP_WM2018_TPL_RESULT_CONFIRM_3:text>
@@ -387,8 +387,7 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_1>Uhr</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_1:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_2>Link zum Spiel</LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_BIT_2:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_1>WM2018-Tippspiel | Usertipps-&Uuml;bersicht</LANG_WM2018_TPL_SHOWUSERTIPPS_1:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPS_10>Vize-Weltmeister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_10:text>
-<text:LANG_WM2018_TPL_SHOWUSERTIPPS_11>Punkte</LANG_WM2018_TPL_SHOWUSERTIPPS_11:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPS_2>WM2018-Tippspiel</LANG_WM2018_TPL_SHOWUSERTIPPS_2:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_3>Usertipps-&Uuml;bersicht</LANG_WM2018_TPL_SHOWUSERTIPPS_3:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_4>Username</LANG_WM2018_TPL_SHOWUSERTIPPS_4:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_5>Abgegebene Tipps</LANG_WM2018_TPL_SHOWUSERTIPPS_5:text>
@@ -396,6 +395,8 @@
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_7>Falsche Tipps</LANG_WM2018_TPL_SHOWUSERTIPPS_7:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_8>Tendenz richtig</LANG_WM2018_TPL_SHOWUSERTIPPS_8:text>
 <text:LANG_WM2018_TPL_SHOWUSERTIPPS_9>Weltmeister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_9:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPS_10>Vize-Weltmeister-Tipp</LANG_WM2018_TPL_SHOWUSERTIPPS_10:text>
+<text:LANG_WM2018_TPL_SHOWUSERTIPPS_11>Punkte</LANG_WM2018_TPL_SHOWUSERTIPPS_11:text>
 <text:LANG_WM2018_TPL_TIPOK_1>Erfolgreiche Tipabgabe</LANG_WM2018_TPL_TIPOK_1:text>
 <text:LANG_WM2018_TPL_TIPOK_2>Dein Tip wurde erfolgreich angenommen.</LANG_WM2018_TPL_TIPOK_2:text>
 <text:LANG_WM2018_TPL_TIPOK_3>Klicke hier, um zum Tipspiel zur&uuml;ckzukehren.</LANG_WM2018_TPL_TIPOK_3:text>
@@ -412,10 +413,10 @@
 <text:LANG_WM2018_TPL_TIPPABGABE_RK_2>Wird es gelb-rote / rote Karten im Spiel geben?</LANG_WM2018_TPL_TIPPABGABE_RK_2:text>
 <text:LANG_WM2018_TPL_tippabgabe_vwm_1>Vize-Weltmeister</LANG_WM2018_TPL_tippabgabe_vwm_1:text>
 <text:LANG_WM2018_TPL_tippabgabe_vwm_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_tippabgabe_vwm_2:text>
-<text:LANG_WM2018_TPL_tippabgabe_vwm_3>Welche Mannschaft wird Vize-Weltmeister 2016?</LANG_WM2018_TPL_tippabgabe_vwm_3:text>
+<text:LANG_WM2018_TPL_tippabgabe_vwm_3>Welche Mannschaft wird Vize-Weltmeister 2018?</LANG_WM2018_TPL_tippabgabe_vwm_3:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_WM_1>Weltmeister</LANG_WM2018_TPL_TIPPABGABE_WM_1:text>
 <text:LANG_WM2018_TPL_TIPPABGABE_WM_2>(optionaler Tipp, tippbar bis $lastgamedate, $lastgametime Uhr)</LANG_WM2018_TPL_TIPPABGABE_WM_2:text>
-<text:LANG_WM2018_TPL_TIPPABGABE_WM_3>Welche Mannschaft wird Weltmeister 2016?</LANG_WM2018_TPL_TIPPABGABE_WM_3:text>
+<text:LANG_WM2018_TPL_TIPPABGABE_WM_3>Welche Mannschaft wird Weltmeister 2018?</LANG_WM2018_TPL_TIPPABGABE_WM_3:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_1>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_1:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_2>WM2018-Tippspiel-Startseite</LANG_WM2018_TPL_TIPPEDIT_2:text>
 <text:LANG_WM2018_TPL_TIPPEDIT_3>Tipp editieren</LANG_WM2018_TPL_TIPPEDIT_3:text>
@@ -455,4 +456,4 @@
 
 [thread]
 
-<text:LANG_THREAD_WM2018_ANZEIGE_1><br /><b>Teilnehmer des EM-Tippspiels 2016</b><br /><br />Tipps: $wm2018_thread_tipps<br />Punkte: $wm2018_thread_userpunkte<br />Tippspiel-Ranking: $wm2018_userrank</LANG_THREAD_WM2018_ANZEIGE_1:text>
+<text:LANG_THREAD_WM2018_ANZEIGE_1><br /><b>Teilnehmer des WM-Tippspiels 2018</b><br /><br />Tipps: $wm2018_thread_tipps<br />Punkte: $wm2018_thread_userpunkte<br />Tippspiel-Ranking: $wm2018_userrank</LANG_THREAD_WM2018_ANZEIGE_1:text>
