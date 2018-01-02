@@ -3,6 +3,7 @@ ToDo für WM 2018:
 
 + Demo aktualisieren
 + addslashes durch mysqli_real_escape_string ersetzen?
++ Umlaute werden in non-UTF-8-Foren inkorrekt dargestellt -> https://www.v-gn.de/wbb/thread.php?postid=135524#post135524
 
 
 
