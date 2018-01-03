@@ -479,9 +479,32 @@ if ($step == "database") {
 	print "<b>Fertig!</b><p>";
 	print "Die Installation wurde erfolgreich abgeschlossen.<br />";
 	print "Sie k&ouml;nnen das WM2018-Tippspiel {$version} jetzt benutzen.<p>";
-	print "Bitte richten Sie es noch im <a href=\"./index.php\">ACP</a> ein, und l&ouml;schen Sie diese<br />";
-	print "Installationsdateien aus dem ACP-Verzeichnis:<br />";
-	print "<pre>wm2018_setup.php, wm2018_de.lng, wm2018.wbb, wm2018.sql</pre>";
+	print "Bitte richten Sie es noch im <a href=\"./index.php\">ACP</a> ein.<br />";
+
+	if (unlink("./wm2018_setup.php")) {
+		print "<pre>wm2018_setup.php</pre> wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='red'><pre>wm2018_setup.php</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
+	}
+	
+	if (unlink("./wm2018_de.lng")) {
+		print "<pre>wm2018_de.lng</pre> wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='red'><pre>wm2018_de.lng</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
+	}
+	
+	if (unlink("./wm2018.wbb")) {
+		print "<pre>wm2018.wbb</pre> wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='red'><pre>wm2018.wbb</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
+	}
+
+	if (unlink("./wm2018.sql")) {
+		print "<pre>wm2018.sql</pre> wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='red'><pre>wm2018.sql</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
+	}
+
 	print "<b>Viel Spa&szlig;! :)</b></td></tr></table></body></html>";
 	exit();
 }
