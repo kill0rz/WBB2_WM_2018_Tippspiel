@@ -6,7 +6,7 @@ ToDo für WM 2018:
 BUGS
 ----
 + Umlaute werden in non-UTF-8-Foren inkorrekt dargestellt -> https://www.v-gn.de/wbb/thread.php?postid=135524#post135524
-+ Für Beta: Alle Spiele dürfen immer eingetragen werden
++ Für Beta: Alle Spiele dürfen immer eingetragen werden -> nach Betaphase in wm2018_admin.php rückgängig machen
 + getquuote() zeigt für das jeweils erste Spiel keine Zahl an, wenn 0 - und wird auch nicht geresettet
 
 

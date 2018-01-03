@@ -1,7 +1,7 @@
 ï»¿-- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_options`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_options`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_options`;
@@ -54,7 +54,7 @@ CREATE TABLE `bb1_wm2018_options` (
 ) ENGINE=MyISAM;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_options`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_options`
 -- 
 
 INSERT INTO `bb1_wm2018_options` (`message`) VALUES ('Hallo,\r\n\r\nhier das Ergebnis von Spiel [B]{vgp_gameid}[/B] der Gruppe [B]{vgp_gruppe}[/B].\r\n\r\nDas Spiel fand in {vgp_stadion}, am {vgp_datum} um {vgp_zeit} Uhr statt.\r\n\r\n[CENTER][B]{vgp_name1}[/B] {vgp_flagge1} - [B]{vgp_name2}[/B] {vgp_flagge2}[/CENTER]\r\n[CENTER][SIZE=16][B]{vgp_tore1}[/B] - [B]{vgp_tore2}[/B][/SIZE][/CENTER]\r\n\r\nGelbe-Karten: [B]{vgp_gk}[/B]\r\nRote-Karten; [B]{vgp_rk}[/B]\r\nElfmeter: [B]{vgp_elfer} [/B]\r\n\r\nEs haben [B]{vgp_anztipp}[/B] User am Tipp fÃ¼r das Spiel teilgenommen.\r\n\r\nHier mehr zum Spiel: {vgp_glink}\r\n\r\nMein Kommentar zum Spiel:\r\n {vgp_comment}\r\n\r\n[B][SIZE=16][CENTER]Aktuelles Top-User-Ranking:[/CENTER][/SIZE][/B]\r\n[CENTER]{vgp_user_ranking_01} [/CENTER]\r\n[CENTER]{vgp_user_ranking_02} [/CENTER]\r\n[CENTER]{vgp_user_ranking_03} [/CENTER]\r\n[CENTER]{vgp_user_ranking_04} [/CENTER]\r\n[CENTER]{vgp_user_ranking_05} [/CENTER]\r\n[CENTER]{vgp_user_ranking_06} [/CENTER]\r\n[CENTER]{vgp_user_ranking_07} [/CENTER]\r\n[CENTER]{vgp_user_ranking_08} [/CENTER]\r\n[CENTER]{vgp_user_ranking_09} [/CENTER]\r\n[CENTER]{vgp_user_ranking_10} [/CENTER]');
@@ -62,7 +62,7 @@ INSERT INTO `bb1_wm2018_options` (`message`) VALUES ('Hallo,\r\n\r\nhier das Erg
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_punkte`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_punkte`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_punkte`;
@@ -74,7 +74,7 @@ CREATE TABLE `bb1_wm2018_punkte` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 ;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_punkte`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_punkte`
 -- 
 
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (1, 'Exaktes Ergebnis', 10);
@@ -88,7 +88,7 @@ INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (7, 'Vize-We
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_spiele`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_spiele`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_spiele`;
@@ -112,7 +112,7 @@ CREATE TABLE `bb1_wm2018_spiele` (
 ) ENGINE=MyISAM AUTO_INCREMENT=52 ;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_spiele`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_spiele`
 -- 
 
 INSERT INTO `bb1_wm2018_spiele` (`gameid`, `gruppe`, `datetime`, `stadion`, `team_1_id`, `team_2_id`, `game_gk`, `game_rk`, `game_elfer`, `game_goals_1`, `game_goals_2`, `gamelink`, `gamecomment`, `tipps`) VALUES
@@ -184,7 +184,7 @@ INSERT INTO `bb1_wm2018_spiele` (`gameid`, `gruppe`, `datetime`, `stadion`, `tea
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_teams`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_teams`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_teams`;
@@ -203,13 +203,13 @@ CREATE TABLE `bb1_wm2018_teams` (
 ) ENGINE=MyISAM AUTO_INCREMENT=33 ;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_teams`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_teams`
 -- 
 
 INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES
 (1, 'Russland', 'A',  'ru.png', 0,  0,  0,  0,  0,  0),
 (2, 'Saudi-Arabien',  'A',  'sa.png',  0,  0,  0,  0,  0,  0),
-(3, 'Ägypten',  'A',  'eg.png',  0,  0,  0,  0,  0,  0),
+(3, 'Ã„ypten',  'A',  'eg.png',  0,  0,  0,  0,  0,  0),
 (4, 'Uruguay',  'A',  'uy.png',  0,  0,  0,  0,  0,  0),
 (5, 'Portugal',  'B',  'pt.png',  0,  0,  0,  0,  0,  0),
 (6, 'Spanien',  'B',  'es.png',  0,  0,  0,  0,  0,  0),
@@ -218,7 +218,7 @@ INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, 
 (9, 'Frankreich',  'C',  'fr.png',  0,  0,  0,  0,  0,  0),
 (10,  'Australien',  'C',  'au.png',  0,  0,  0,  0,  0,  0),
 (11,  'Peru',  'C',  'pe.png',  0,  0,  0,  0,  0,  0),
-(12,  'Dänemark',  'C',  'dk.png',  0,  0,  0,  0,  0,  0),
+(12,  'DÃ¤nemark',  'C',  'dk.png',  0,  0,  0,  0,  0,  0),
 (13,  'Argentinien',  'D',  'ar.png',  0,  0,  0,  0,  0,  0),
 (14,  'Island',  'D',  'is.png',  0,  0,  0,  0,  0,  0),
 (15,  'Kroatien',  'D',  'hr.png',  0,  0,  0,  0,  0,  0),
@@ -230,7 +230,7 @@ INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, 
 (21,  'Deutschland',  'F',  'de.png',  0,  0,  0,  0,  0,  0),
 (22,  'Mexiko',  'F',  'mx.png',  0,  0,  0,  0,  0,  0),
 (23,  'Schweden',  'F',  'se.png',  0,  0,  0,  0,  0,  0),
-(24,  'Südkorea',  'F',  'kr.png',  0,  0,  0,  0,  0,  0),
+(24,  'SÃ¼dkorea',  'F',  'kr.png',  0,  0,  0,  0,  0,  0),
 (25,  'Belgien',  'G',  'be.png',  0,  0,  0,  0,  0,  0),
 (26,  'Panama',  'G',  'pa.png',  0,  0,  0,  0,  0,  0),
 (27,  'Tunesien',  'G',  'tn.png',  0,  0,  0,  0,  0,  0),
@@ -243,7 +243,7 @@ INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, 
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_userpunkte`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_userpunkte`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_userpunkte`;
@@ -259,14 +259,14 @@ CREATE TABLE `bb1_wm2018_userpunkte` (
 ) ENGINE=MyISAM;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_userpunkte`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_userpunkte`
 -- 
 
 
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `bb1_wm2018_usertipps`
+-- Tabellenstruktur fÃ¼r Tabelle `bb1_wm2018_usertipps`
 -- 
 
 DROP TABLE IF EXISTS `bb1_wm2018_usertipps`;
@@ -281,7 +281,7 @@ CREATE TABLE `bb1_wm2018_usertipps` (
 ) ENGINE=MyISAM;
 
 -- 
--- Daten für Tabelle `bb1_wm2018_usertipps`
+-- Daten fÃ¼r Tabelle `bb1_wm2018_usertipps`
 -- 
 
 -- DROP TABLE IF EXISTS `bb1_wm2018_bestedrittetmp`;
@@ -303,7 +303,7 @@ CREATE TABLE `bb1_wm2018_vortag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- UNIQUE für Tabelle `bb1_wm2018_userpunkte` setzen
+-- UNIQUE fÃ¼r Tabelle `bb1_wm2018_userpunkte` setzen
 -- 
 
 ALTER TABLE `bb1_wm2018_userpunkte` ADD UNIQUE(`userid`);
