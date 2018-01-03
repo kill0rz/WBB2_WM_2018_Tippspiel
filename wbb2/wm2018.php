@@ -773,6 +773,10 @@ if ($action == "maketipp") {
 	$templatetime = $wm2018_options['tipptime'] / 60;
 	$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE game_goals_1 = '' AND game_goals_2 = '' AND team_1_id IS NOT NULL AND team_2_id IS NOT NULL AND datetime > {$tipptime2} ORDER BY datetime ASC");
 	while ($row = $db->fetch_array($result)) {
+		unset($name1);
+		unset($flagge1);
+		unset($flagge2);
+		unset($name2);
 		$rowclass = getone($count++, "tablea", "tableb");
 		$date = formatdate($wbbuserdata['dateformat'], $row['datetime'], 1);
 		$time = formatdate($wbbuserdata['timeformat'], $row['datetime']);

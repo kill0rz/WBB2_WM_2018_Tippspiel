@@ -6,7 +6,6 @@ ToDo für WM 2018:
 BUGS
 ----
 + Umlaute werden in non-UTF-8-Foren inkorrekt dargestellt -> https://www.v-gn.de/wbb/thread.php?postid=135524#post135524
-+ Gegner sind ab Achtelfinale schon eingetragen, obwohl sie nicht feststehen: /wm2018.php?action=maketipp&games_art=2
 
 
 USERWÜNSCHE
