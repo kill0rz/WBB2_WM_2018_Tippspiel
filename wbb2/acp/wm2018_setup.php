@@ -481,25 +481,25 @@ if ($step == "database") {
 	print "Sie k&ouml;nnen das WM2018-Tippspiel {$version} jetzt benutzen.<p>";
 	print "Bitte richten Sie es noch im <a href=\"./index.php\">ACP</a> ein.<br />";
 
-	if (unlink("./wm2018_setup.php")) {
+	if (@unlink("./wm2018_setup.php")) {
 		print "<pre>wm2018_setup.php</pre> wurde erfolgreich entfernt!<br />";
 	} else {
 		print "<font color='red'><pre>wm2018_setup.php</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
 	}
 	
-	if (unlink("./wm2018_de.lng")) {
+	if (@unlink("./wm2018_de.lng")) {
 		print "<pre>wm2018_de.lng</pre> wurde erfolgreich entfernt!<br />";
 	} else {
 		print "<font color='red'><pre>wm2018_de.lng</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
 	}
 	
-	if (unlink("./wm2018.wbb")) {
+	if (@unlink("./wm2018.wbb")) {
 		print "<pre>wm2018.wbb</pre> wurde erfolgreich entfernt!<br />";
 	} else {
 		print "<font color='red'><pre>wm2018.wbb</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
 	}
 
-	if (unlink("./wm2018.sql")) {
+	if (@unlink("./wm2018.sql")) {
 		print "<pre>wm2018.sql</pre> wurde erfolgreich entfernt!<br />";
 	} else {
 		print "<font color='red'><pre>wm2018.sql</pre> konnte nicht gel&ooml;scht werden. Bitte manuell entfernen!</font><br />";
