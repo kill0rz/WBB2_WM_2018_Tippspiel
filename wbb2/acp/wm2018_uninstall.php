@@ -156,15 +156,44 @@ if ($step == "delete") {
 
 if ($step == "delete2") {
 	informationPage('<b>Letzte T&auml;tigkeiten f&uuml;r die komplette De-Installation</b>');
-	print "<br />Um die De-Installation erfolgreich abzuschlie&szlig;en, musst Du nun noch selber einmal Hand anlegen und folgende ";
-	print "Dinge vom Server l&ouml;schen:";
-	print "<br /><br />- L&ouml;schen des Verzeichnisses <b>wm2018</b> inklusive aller Dateien und Unterverzeichnisse im /images-Ordner";
-	print "<br />- L&ouml;schen aller ACP-Templates aus dem Verzeichnis /acp/templates, die mit <b>wm2018_</b> beginnen";
-	print "<br />- L&ouml;schen der Dateien <b>wm2018.php</b> und <b>wm2018_global.php</b> aus dem Hauptverzeichnis";
-	print "<br />- L&ouml;schen der Datei <b>wm2018_admin.php</b> aus dem ACP-Verzeichnis /acp";
-	print "<br />- und ganz zum Schlu&szlig; nach Abschluss dieser De-Installation:";
-	print "<br />- L&ouml;schen der Datei <b>wm2018_uninstall.php</b> aus dem ACP-Verzeichnis /acp";
-	print "<br /><br />Danach ist das WM2018-Tippspiel komplett und sauber aus Deinem Forum entfernt.";
+
+	if (@unlink("./templates/wm2018_*")) {
+		print "ACP Templates wurden erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>ACP Templates konnten nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/templates/wm2018_*)</font><br />";
+	}
+
+	if (@unlink("../wm2018.php")) {
+		print "/wbb2/wm2018.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/wm2018.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/wm2018.php)</font><br />";
+	}
+
+	if (@unlink("../wm2018_global.php")) {
+		print "/wbb2/wm2018_global.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/wm2018_global.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/wm2018_global.php)</font><br />";
+	}
+
+	if (@unlink("./wm2018_admin.php")) {
+		print "/wbb2/acp/wm2018_admin.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/acp/wm2018_admin.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/wm2018_admin.php)</font><br />";
+	}
+
+	if (@unlink("./wm2018_uninstall.php")) {
+		print "/wbb2/acp/wm2018_uninstall.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/acp/wm2018_uninstall.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/wm2018_uninstall.php)</font><br />";
+	}
+
+	if (@rmdir("../images/wm2018/")) {
+		print "Bilderordner wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>Bilderordner konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/images/wm2018/)</font><br />";
+	}
+
+	print "<br /><br />Jetzt ist das WM2018-Tippspiel komplett und sauber aus Deinem Forum entfernt.";
 	print "<br /><br />Ich hoffe, das Tippspiel hat Dir und Deinen Usern viel Spa&szlig; gemacht.";
 	print "<br />Greetz<br />G&uuml;nni, Viktor und kill0rz";
 	print "</td></tr></table></body></html>";
