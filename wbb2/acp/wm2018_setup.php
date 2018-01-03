@@ -479,7 +479,7 @@ if ($step == "database") {
 	print "<b>Fertig!</b><p>";
 	print "Die Installation wurde erfolgreich abgeschlossen.<br />";
 	print "Sie k&ouml;nnen das WM2018-Tippspiel {$version} jetzt benutzen.<p>";
-	print "Bitte richten sie es noch im <a href=\"./index.php\">ACP</a> ein, und l&ouml;schen Sie diese<br />";
+	print "Bitte richten Sie es noch im <a href=\"./index.php\">ACP</a> ein, und l&ouml;schen Sie diese<br />";
 	print "Installationsdateien aus dem ACP-Verzeichnis:<br />";
 	print "<pre>wm2018_setup.php, wm2018_de.lng, wm2018.wbb, wm2018.sql</pre>";
 	print "<b>Viel Spa&szlig;! :)</b></td></tr></table></body></html>";

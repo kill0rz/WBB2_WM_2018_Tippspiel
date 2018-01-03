@@ -39,7 +39,7 @@
 	<type>truefalse</type>
 	<defaultvalue>0</defaultvalue>
 	<title>WM2018-Tippspiel</title>
-	<desc>Benutzer dieser Gruppe können die Optionen des WM2018-Tippspiels bearbeiten?</desc>
+	<desc>Benutzer dieser Gruppe k&ouml;nnen die Optionen des WM2018-Tippspiels bearbeiten?</desc>
 	<group>ADMIN_WM2018</group>
 	<acpmode>2</acpmode>
 </wBBgroupvariable>
