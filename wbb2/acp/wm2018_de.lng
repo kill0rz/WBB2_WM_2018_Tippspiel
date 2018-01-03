@@ -165,7 +165,7 @@
 <br /><b>»{vgp_name2}«</b> setzt den <b>Namen der Auswärtsmannschaft</b> im Text ein.
 <br /><b>»{vgp_tore2}«</b> setzt die <b>Tore der Auswärtsmannschaft</b> im Text ein.
 <br /><b>»{vgp_flagge2}«</b> setzt die <b>Flagge der Auswärtsmannschaft</b> im Text ein.
-<br /><b>»{vgp_username}«</b> um den <b>Username vom Poster</b> einzufügen.
+<br /><b>»{vgp_username}«</b> um den <b>Username vom Poster</b> einzuf&uuml;gen.
 <br /><b>»{vgp_user_ranking_01} bis {vgp_user_ranking_10«</b> setzt den <b>Top-User</b> im Text ein.
 </LANG_ACP_WM2018_TPL_OPTIONS_V59:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V60>Board-ID:</b><br />In welchem Board soll der Thread erstellt werden?</LANG_ACP_WM2018_TPL_OPTIONS_V60:text>
