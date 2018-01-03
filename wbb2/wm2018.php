@@ -825,7 +825,7 @@ if ($action == "maketipp") {
 		}
 	}
 
-	//check if emwm and vwm tipp still possible
+	//check if wm and vwm tipp still possible
 	$result = $db->query("SELECT gameid FROM bb" . $n . "_wm2018_spiele WHERE team_1_id AND team_2_id AND game_goals_1 != '' AND game_goals_2 != '' ORDER BY datetime ASC");
 	$lastgametipped = $db->num_rows($result);
 

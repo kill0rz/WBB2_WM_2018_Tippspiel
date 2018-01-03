@@ -341,6 +341,10 @@ if ($action == "results") {
 	}
 	$result_games = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE team_1_id IS NOT NULL AND team_2_id IS NOT NULL ORDER BY datetime ASC");
 	while ($row_games = $db->fetch_array($result_games)) {
+		unset($name1);
+		unset($flagge1);
+		unset($name2);
+		unset($flagge2);
 		$rowclass = getone($count++, "firstrow", "secondrow");
 		$date = formatdate($wbbuserdata['dateformat'], $row_games['datetime'], 1);
 		$date = preg_replace("/((<b>)?[a-zA-Z]*(<\/b>)?),/", "$1", $date);
