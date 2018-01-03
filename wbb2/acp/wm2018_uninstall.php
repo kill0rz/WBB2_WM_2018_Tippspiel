@@ -181,6 +181,12 @@ if ($step == "delete2") {
 		print "<font color='lightred'>/wbb2/acp/wm2018_admin.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/wm2018_admin.php)</font><br />";
 	}
 
+	if (@unlink("./wm2018_gameids.php")) {
+		print "/wbb2/acp/wm2018_gameids.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/acp/wm2018_gameids.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/wm2018_gameids.php)</font><br />";
+	}
+
 	if (@unlink("./wm2018_uninstall.php")) {
 		print "/wbb2/acp/wm2018_uninstall.php wurde erfolgreich entfernt!<br />";
 	} else {
