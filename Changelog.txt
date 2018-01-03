@@ -74,3 +74,4 @@ Sonstiges
 	+ Rechtschreibung und Grammatik korrigiert
 	+ "Beste Dritte" von der EM 2016 rückgebaut
 	+ Setup löscht nicht mehr benötigte Dateien bei der Installation von selbst
+	+ Deinstallation löscht alle nicht mehr benötigten Dateien selbstständig
