@@ -1,4 +1,4 @@
-﻿-- --------------------------------------------------------
+﻿--------------------------------------------------------
 
 -- 
 -- Tabellenstruktur für Tabelle `bb1_wm2018_options`
@@ -209,7 +209,7 @@ CREATE TABLE `bb1_wm2018_teams` (
 INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, `g`, `v`, `u`, `td`, `punkte`) VALUES
 (1, 'Russland', 'A',  'ru.png', 0,  0,  0,  0,  0,  0),
 (2, 'Saudi-Arabien',  'A',  'sa.png',  0,  0,  0,  0,  0,  0),
-(3, 'Äypten',  'A',  'eg.png',  0,  0,  0,  0,  0,  0),
+(3, '&Auml;gypten',  'A',  'eg.png',  0,  0,  0,  0,  0,  0),
 (4, 'Uruguay',  'A',  'uy.png',  0,  0,  0,  0,  0,  0),
 (5, 'Portugal',  'B',  'pt.png',  0,  0,  0,  0,  0,  0),
 (6, 'Spanien',  'B',  'es.png',  0,  0,  0,  0,  0,  0),
@@ -218,7 +218,7 @@ INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, 
 (9, 'Frankreich',  'C',  'fr.png',  0,  0,  0,  0,  0,  0),
 (10,  'Australien',  'C',  'au.png',  0,  0,  0,  0,  0,  0),
 (11,  'Peru',  'C',  'pe.png',  0,  0,  0,  0,  0,  0),
-(12,  'Dänemark',  'C',  'dk.png',  0,  0,  0,  0,  0,  0),
+(12,  'D&auml;nemark',  'C',  'dk.png',  0,  0,  0,  0,  0,  0),
 (13,  'Argentinien',  'D',  'ar.png',  0,  0,  0,  0,  0,  0),
 (14,  'Island',  'D',  'is.png',  0,  0,  0,  0,  0,  0),
 (15,  'Kroatien',  'D',  'hr.png',  0,  0,  0,  0,  0,  0),
@@ -230,7 +230,7 @@ INSERT INTO `bb1_wm2018_teams` (`teamid`, `name`, `gruppe`, `flagge`, `spiele`, 
 (21,  'Deutschland',  'F',  'de.png',  0,  0,  0,  0,  0,  0),
 (22,  'Mexiko',  'F',  'mx.png',  0,  0,  0,  0,  0,  0),
 (23,  'Schweden',  'F',  'se.png',  0,  0,  0,  0,  0,  0),
-(24,  'Südkorea',  'F',  'kr.png',  0,  0,  0,  0,  0,  0),
+(24,  'S&uuml;dkorea',  'F',  'kr.png',  0,  0,  0,  0,  0,  0),
 (25,  'Belgien',  'G',  'be.png',  0,  0,  0,  0,  0,  0),
 (26,  'Panama',  'G',  'pa.png',  0,  0,  0,  0,  0,  0),
 (27,  'Tunesien',  'G',  'tn.png',  0,  0,  0,  0,  0,  0),

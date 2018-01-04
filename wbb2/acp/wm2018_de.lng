@@ -1,4 +1,4 @@
-﻿# Languagepack-Export: Deutsch
+# Languagepack-Export: Deutsch
 # Languagecode: de
 # Date: 14.04.2016 21:38
 # wBB Version: 2.3
@@ -80,7 +80,7 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_36><b>Wie soll der Feed geladen werden?</b><br /><br />file_get_contents: Ben&ouml;tigt die php-Einstellung <i>allow_url_fopen</i> auf 1<br />cURL: Ben&ouml;tigt die php-Erweiterung cURL<br /><br />Wenn du dir nicht sicher bist, nimm <i>file_get_contents</i>, wenn das Probleme macht, nimm <i>cURL</i>.</LANG_ACP_WM2018_TPL_OPTIONS_36:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_37>Wie viele noch nicht eingetragene Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_37:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_38>Wie viele aktuell laufende Spiele sollen auf der Startseite angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_38:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_39><b>Welcher Feed soll verwendet werden?</b><br /><br />FIFA = Weltfußballnachrichten<br />UEFA = Europafußballnachrichten</b></LANG_ACP_WM2018_TPL_OPTIONS_39:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_39><b>Welcher Feed soll verwendet werden?</b><br /><br />FIFA = Weltfu&szlig;ballnachrichten<br />UEFA = Europafu&szlig;ballnachrichten</b></LANG_ACP_WM2018_TPL_OPTIONS_39:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_40>Einstellungen f&uuml;r die Tabelle auf dem Forenindex</LANG_ACP_WM2018_TPL_OPTIONS_40:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_41>Soll die Tabelle f&uuml;r noch nicht getippte Spiele angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_41:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_42>Diese Optionen kannst du nur nutzen, wenn du den Mod "Spieletabelle auf Forenindex" installiert hast.</LANG_ACP_WM2018_TPL_OPTIONS_42:text>
@@ -142,34 +142,34 @@
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V54>Welches Icon soll zum Posting angezeigt werden?</LANG_ACP_WM2018_TPL_OPTIONS_V54:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V55>(0 = kein Icon)</LANG_ACP_WM2018_TPL_OPTIONS_V55:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V56>
-<b>»{vgp_name1}«</b> setzt den Namen der Heimmannschaft im Text ein.
-<br /><b>»{vgp_name2}«</b> setzt den Namen der Ausw&auml;rtsmannschaft im Text ein.
+<b>&raquo;{vgp_name1}&laquo;</b> setzt den Namen der Heimmannschaft im Text ein.
+<br /><b>&raquo;{vgp_name2}&laquo;</b> setzt den Namen der Ausw&auml;rtsmannschaft im Text ein.
 </LANG_ACP_WM2018_TPL_OPTIONS_V56:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V57>Thema:</LANG_ACP_WM2018_TPL_OPTIONS_V57:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V58>Beitrag:</LANG_ACP_WM2018_TPL_OPTIONS_V58:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V59>
-<b>»{vgp_gameid}«</b> setzt die <b>Spielnummer</b> im Text ein.
-<br /><b>»{vgp_gruppe}«</b> setzt die <b>Gruppe</b> im Text ein.
-<br /><b>»{vgp_stadion}«</b> setzt das <b>Stadion</b> im Text ein.
-<br /><b>»{vgp_datum}«</b> setzt das <b>Spieldatum</b> im Text ein.
-<br /><b>»{vgp_zeit}«</b> setzt die <b>Spielzeit</b> im Text ein.
-<br /><b>»{vgp_gk}«</b> setzt die <b>Gelbenkarten</b> im Text ein.
-<br /><b>»{vgp_rk}«</b> setzt die <b>Rotenkarte</b>n im Text ein.
-<br /><b>»{vgp_elfer}«</b> setzt die <b>Elfmeter</b> im Text ein.
-<br /><b>»{vgp_glink}«</b> setzt den <b>ext. Link zum Spiel</b> im Text ein.
-<br /><b>»{vgp_comment}«</b> setzt den <b>Kommentar</b> im Text ein.
-<br /><b>»{vgp_anztipp}«</b> setzt die <b>Anzahl der Tipper</b> im Text ein.
-<br /><b>»{vgp_name1}«</b> setzt den <b>Namen der Heimmannschaft</b> im Text ein.
-<br /><b>»{vgp_tore1}«</b> setzt die <b>Tore der Heimmannschaft</b> im Text ein.
-<br /><b>»{vgp_flagge1}«</b> setzt die <b>Flagge der Heimmannschaft</b> im Text ein.
-<br /><b>»{vgp_name2}«</b> setzt den <b>Namen der Auswärtsmannschaft</b> im Text ein.
-<br /><b>»{vgp_tore2}«</b> setzt die <b>Tore der Auswärtsmannschaft</b> im Text ein.
-<br /><b>»{vgp_flagge2}«</b> setzt die <b>Flagge der Auswärtsmannschaft</b> im Text ein.
-<br /><b>»{vgp_username}«</b> um den <b>Username vom Poster</b> einzuf&uuml;gen.
-<br /><b>»{vgp_user_ranking_01} bis {vgp_user_ranking_10«</b> setzt den <b>Top-User</b> im Text ein.
+<b>&raquo;{vgp_gameid}&laquo;</b> setzt die <b>Spielnummer</b> im Text ein.
+<br /><b>&raquo;{vgp_gruppe}&laquo;</b> setzt die <b>Gruppe</b> im Text ein.
+<br /><b>&raquo;{vgp_stadion}&laquo;</b> setzt das <b>Stadion</b> im Text ein.
+<br /><b>&raquo;{vgp_datum}&laquo;</b> setzt das <b>Spieldatum</b> im Text ein.
+<br /><b>&raquo;{vgp_zeit}&laquo;</b> setzt die <b>Spielzeit</b> im Text ein.
+<br /><b>&raquo;{vgp_gk}&laquo;</b> setzt die <b>Gelbenkarten</b> im Text ein.
+<br /><b>&raquo;{vgp_rk}&laquo;</b> setzt die <b>Rotenkarte</b>n im Text ein.
+<br /><b>&raquo;{vgp_elfer}&laquo;</b> setzt die <b>Elfmeter</b> im Text ein.
+<br /><b>&raquo;{vgp_glink}&laquo;</b> setzt den <b>ext. Link zum Spiel</b> im Text ein.
+<br /><b>&raquo;{vgp_comment}&laquo;</b> setzt den <b>Kommentar</b> im Text ein.
+<br /><b>&raquo;{vgp_anztipp}&laquo;</b> setzt die <b>Anzahl der Tipper</b> im Text ein.
+<br /><b>&raquo;{vgp_name1}&laquo;</b> setzt den <b>Namen der Heimmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_tore1}&laquo;</b> setzt die <b>Tore der Heimmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_flagge1}&laquo;</b> setzt die <b>Flagge der Heimmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_name2}&laquo;</b> setzt den <b>Namen der Ausw&auml;rtsmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_tore2}&laquo;</b> setzt die <b>Tore der Ausw&auml;rtsmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_flagge2}&laquo;</b> setzt die <b>Flagge der Ausw&auml;rtsmannschaft</b> im Text ein.
+<br /><b>&raquo;{vgp_username}&laquo;</b> um den <b>Username vom Poster</b> einzuf&uuml;gen.
+<br /><b>&raquo;{vgp_user_ranking_01} bis {vgp_user_ranking_10}&laquo;</b> setzt den <b>Top-User</b> im Text ein.
 </LANG_ACP_WM2018_TPL_OPTIONS_V59:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V60>Board-ID:</b><br />In welchem Board soll der Thread erstellt werden?</LANG_ACP_WM2018_TPL_OPTIONS_V60:text>
-<text:LANG_ACP_WM2018_TPL_OPTIONS_V61>Wenn Thread-ID angegeben wir das Posting angehängt sonst ein neues erstellt.</LANG_ACP_WM2018_TPL_OPTIONS_V61:text>
+<text:LANG_ACP_WM2018_TPL_OPTIONS_V61>Wenn Thread-ID angegeben wir das Posting angeh&auml;ngt sonst ein neues erstellt.</LANG_ACP_WM2018_TPL_OPTIONS_V61:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V62><b>Prefix:</b><br />Hier bitte den Prefix eingeben!</LANG_ACP_WM2018_TPL_OPTIONS_V62:text>
 <text:LANG_ACP_WM2018_TPL_OPTIONS_V63>Posting als HTML?</LANG_ACP_WM2018_TPL_OPTIONS_V63:text>
 <text:LANG_ACP_WM2018_CORRECT8_1>Speichern!</LANG_ACP_WM2018_CORRECT8_1:text>
