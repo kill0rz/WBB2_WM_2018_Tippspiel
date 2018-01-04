@@ -54,6 +54,7 @@ function getQuote($gameid) {
 	// Original by Mr.Fisch, Anpassungen by kill0rz
 	// berechnet die Tippquoten für das übergebene Spiel
 	global $quote1, $quote2, $db, $n;
+	$quote1 = 0;
 	$quote2 = 0;
 	$minusanzahl = 0;
 
@@ -66,7 +67,6 @@ function getQuote($gameid) {
 		} else {
 			$minusanzahl++;
 		}
-
 	}
 
 	list($anzahl) = $db->query_first("SELECT count(*) FROM bb" . $n . "_wm2018_usertipps WHERE gameid = " . $gameid);

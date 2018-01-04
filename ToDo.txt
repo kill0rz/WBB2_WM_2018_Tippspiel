@@ -6,7 +6,6 @@ ToDo für WM 2018:
 BUGS
 ----
 + Für Beta: Alle Spiele dürfen immer eingetragen werden -> nach Betaphase in wm2018_admin.php rückgängig machen
-+ getquote() zeigt für das jeweils erste Spiel keine Zahl an, wenn 0 - und wird auch nicht geresettet
 + Spiele, bei denen die Paarungen noch nicht feststehen, sind tippbar --> wm2018.php?action=maketipp&games_art=2
 + Uninstall löscht nicht alle Dateien
 
