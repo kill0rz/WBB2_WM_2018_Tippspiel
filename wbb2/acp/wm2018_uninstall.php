@@ -199,6 +199,12 @@ if ($step == "delete2") {
 		print "<font color='lightred'>/wbb2/acp/wm2018_uninstall.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/acp/wm2018_uninstall.php)</font><br />";
 	}
 
+	if (@unlink("../images/top_wm2018.gif")) {
+		print "/wbb2/images/top_wm2018.gif wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/images/top_wm2018.gif konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/images/top_wm2018.gif)</font><br />";
+	}
+
 	if (@rmdir("../images/wm2018/")) {
 		print "Bilderordner wurde erfolgreich entfernt!<br />";
 	} else {
