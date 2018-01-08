@@ -175,6 +175,12 @@ if ($step == "delete2") {
 		print "<font color='lightred'>/wbb2/wm2018_global.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/wm2018_global.php)</font><br />";
 	}
 
+	if (@unlink("../wm2018_hmportal.php.php")) {
+		print "/wbb2/wm2018_hmportal.php.php wurde erfolgreich entfernt!<br />";
+	} else {
+		print "<font color='lightred'>/wbb2/wm2018_hmportal.php.php konnte nicht gel&ouml;scht werden. Bitte manuell entfernen! (/wbb2/wm2018_hmportal.php.php)</font><br />";
+	}
+
 	if (@unlink("./wm2018_admin.php")) {
 		print "/wbb2/acp/wm2018_admin.php wurde erfolgreich entfernt!<br />";
 	} else {
