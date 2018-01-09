@@ -771,7 +771,8 @@ if ($action == "maketipp") {
 	$servertime = formatdate($wbbuserdata['timeformat'], $akttime);
 	$tipptime2 = $akttime + $wm2018_options['tipptime'];
 	$templatetime = $wm2018_options['tipptime'] / 60;
-	$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE game_goals_1 = '' AND game_goals_2 = '' AND team_1_id IS NOT NULL AND team_2_id IS NOT NULL AND datetime > {$tipptime2} ORDER BY datetime ASC");
+	// regex is to test whether i valid team is aleady known and hide non-tippable games from table
+	$result = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE game_goals_1 = '' AND game_goals_2 = '' AND team_1_id IS NOT NULL AND team_2_id IS NOT NULL AND team_1_id REGEXP '^-?[0-9]+$' AND team_2_id REGEXP '^-?[0-9]+$' AND datetime > {$tipptime2} ORDER BY datetime ASC");
 	while ($row = $db->fetch_array($result)) {
 		unset($name1);
 		unset($flagge1);
