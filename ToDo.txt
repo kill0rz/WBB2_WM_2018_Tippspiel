@@ -1,7 +1,6 @@
 ToDo für WM 2018:
 -----------------
 + Demo aktualisieren
-+ addslashes durch mysqli_real_escape_string ersetzen?
 
 BUGS
 ----
@@ -50,3 +49,4 @@ ToDo für die EM 2020:
 + Spielereihenfolde beim Eintragen beachten
 	+ Bestedritte Berechnung folgt nicht der Spielenummerierung
 + SQL: Datentypen von team_1_id und team_2_id in bb1_em2020_spiele in INT ändern (ggf. in SQL-Queries ebenfalls bearbeiten)
++ addslashes durch mysqli_real_escape_string ersetzen?
