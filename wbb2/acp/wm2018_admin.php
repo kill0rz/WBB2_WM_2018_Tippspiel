@@ -339,7 +339,7 @@ if ($action == "results") {
 		$allnames2[] = $row_teams['name'];
 		$allflags2[] = $row_teams['flagge'];
 	}
-	$result_games = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE team_1_id IS NOT NULL AND team_2_id IS NOT NULL ORDER BY datetime ASC");
+	$result_games = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE team_1_id IS NOT NULL AND team_2_id IS NOT NULL AND team_1_id REGEXP '^-?[0-9]+$' AND team_2_id REGEXP '^-?[0-9]+$' ORDER BY datetime ASC");
 	while ($row_games = $db->fetch_array($result_games)) {
 		unset($name1);
 		unset($flagge1);
