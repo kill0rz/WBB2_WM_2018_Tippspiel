@@ -7,7 +7,6 @@ BUGS
 ----
 + Für Beta: Alle Spiele dürfen immer eingetragen werden -> nach Betaphase in wm2018_admin.php rückgängig machen
 + Spiele, bei denen die Paarungen noch nicht feststehen, sind tippbar --> wm2018.php?action=maketipp&games_art=2
-+ Uninstall löscht nicht alle Dateien
 
 
 USERWÜNSCHE
