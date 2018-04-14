@@ -65,7 +65,7 @@ für das Tippspiel.
 ##########################################################################################
 ##########################################################################################
 
-Weder Batida444, Viktor noch ich (kill0rz) übernehmen  Haftung für eventuelle Schäden, Fehler o.ä.,
+Weder Batida444, Viktor noch ich (kill0rz) übernehmen Haftung für eventuelle Schäden, Fehler o.ä.,
 die beim Einbau oder mit der Benutzung dieses Hacks entstehen könnten.
 Ich weise ausdrücklich darauf hin, dass der Einbau auf eigene Gefahr geschieht.
 Deshalb gilt: Vor dem Einbau auf alle Fälle ein Backup der Datenbank und der Dateien machen!!!!!
@@ -74,4 +74,4 @@ Es gibt keinen Anspruch auf Gewährleistung oder Ersatz.
 Ich wünsche dir und deinen Usern viel Spaß bei der EM :-)
 
 Greetz
-Günni , Viktor und kill0rz
+Günni, Viktor und kill0rz
