@@ -375,8 +375,7 @@ if ($action == "result_add") {
 	} else {
 		// Check, ob das Spiel schon vorbei ist:
 		$result = $db->query_first("SELECT datetime FROM bb" . $n . "_wm2018_spiele WHERE gameid = " . intval($_REQUEST['gameid']) . " LIMIT 1;");
-		//todo: remove after beta!!!
-		if (true || $result['datetime'] + 6300 < time()) {
+		if ($result['datetime'] + 6300 < time()) {
 			// proceed
 			$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
 			$result = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_REQUEST['gameid']) . "'");

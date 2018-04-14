@@ -18,7 +18,7 @@ if (file_exists("./lib/wm2018_install.lock")) {
 
 $filename = "wm2018_setup.php";
 
-$version = "v1BETA";
+$version = "v1";
 
 @error_reporting(7);
 @set_time_limit(0);

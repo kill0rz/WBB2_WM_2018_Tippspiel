@@ -12,7 +12,7 @@ diese bitte im entsprechenden Supportthread stellen.
 2) Rufe nun die Datei /acp/wm2018_setup.php auf und folge den Installationsschritten.
 
 Sollte es während der Installation zu Fehlermeldungen kommen, führe die Installation bis zum Ende aus
-und melde dich bei http://v-gn.de/wbb/ im entsprechenden Thread.
+und melde dich bei https://v-gn.de/wbb/ im entsprechenden Thread.
 
 Nach der Installation kannst du folgende Dateien wieder vom Server löschen:
 /acp/wm2018.sql
