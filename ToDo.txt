@@ -20,3 +20,4 @@ ToDo für die EM 2020:
 	+ Bestedritte Berechnung folgt nicht der Spielenummerierung
 + SQL: Datentypen von team_1_id und team_2_id in bb1_em2020_spiele in INT ändern (ggf. in SQL-Queries ebenfalls bearbeiten)
 + addslashes durch mysqli_real_escape_string ersetzen?
++ Autofocus in erstes Feld bei ?action=tippabgabe
