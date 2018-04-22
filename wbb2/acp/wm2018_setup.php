@@ -20,6 +20,7 @@ $filename = "wm2018_setup.php";
 
 $version = "v1";
 
+define('ENCODING', 'UTF-8');
 @error_reporting(7);
 @set_time_limit(0);
 if (get_magic_quotes_runtime()) {
