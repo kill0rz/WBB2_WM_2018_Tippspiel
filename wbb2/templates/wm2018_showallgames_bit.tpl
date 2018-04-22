@@ -27,7 +27,7 @@
 		<span class="smallfont">$row[game_goals_1]&nbsp;:&nbsp;$row[game_goals_2]</span>
 	</td>
 	<td class="$rowclass" align="center">
-		<if($row[tipps]!=0)>
+		<if($row['tipps']!=0)>
 			<then>
 				<a href="wm2018.php?action=tippsprogame&amp;gameid=$row[gameid]{$SID_ARG_2ND}"><img src="images/wm2018/info.gif" border="0"alt="{$lang->items['LANG_WM2018_PHP_42']}" title="{$lang->items['LANG_WM2018_PHP_42']}"></a>&nbsp;
 			</then>
