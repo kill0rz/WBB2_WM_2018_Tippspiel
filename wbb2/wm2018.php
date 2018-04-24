@@ -18,7 +18,7 @@ include "./acp/wm2018_gameids.php";
 $lang->load("WM2018");
 
 if (isset($_REQUEST['action'])) {
-	$action = $_REQUEST['action'];
+	$action = trim($_REQUEST['action']);
 } else {
 	$action = "index";
 }
@@ -1185,7 +1185,6 @@ if ($action == "showusertippsdetail") {
 						if ($lastgame4wmtipp['datetime'] > $akttime) {
 							$vwmtipp_edit = "&nbsp;<a href=\"wm2018.php?action=editvwmtipp&amp;userid={$wbbuserdata['userid']}{$SID_ARG_2ND}\"><img src=\"images/wm2018/edit.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" title=\"{$lang->items['LANG_WM2018_TPL_SHOWUSERTIPPSDETAIL_14']}\" /></a>";
 						}
-
 					} else {
 						if ($akttime > $lastgame4wmtipp['datetime']) {
 							$vwmtipp_name = $allnames2[$ii];
@@ -1853,7 +1852,7 @@ if ($action == "editwmtipp") {
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_editwmtipp") . "\");");
 }
 // +++++++++++++++++++++++++++++
-// ++ Vize-EM-Tipp editieren +++
+// ++ Vize-WM-Tipp editieren +++
 // +++++++++++++++++++++++++++++
 if ($action == "editvwmtipp") {
 	if ($lastgame4wmtipp['datetime'] < $akttime) {
@@ -1929,3 +1928,5 @@ if ($action == "wmtipp_only") {
 	}
 	eval("\$tpl->output(\"" . $tpl->get("wm2018_wmtipp_only") . "\");");
 }
+
+?>

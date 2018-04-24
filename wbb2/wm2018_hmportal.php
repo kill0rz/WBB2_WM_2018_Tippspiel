@@ -13,7 +13,7 @@ $count = 0;
 eval("print(\"" . $hm_boxhead_tpl . "\");");
 
 // Hier wird geprüft, welche action angesprochen werden soll
-switch ($_GET['action']) {
+switch (trim($_GET['action'])) {
 	case 'meister':
 		// alle Tipps durchgehen
 		$result_m = $db->query("SELECT tipp_wm,tipp_vwm FROM bb" . $n . "_wm2018_userpunkte");
@@ -184,3 +184,5 @@ switch ($_GET['action']) {
 }
 
 eval("print(\"" . $hm_boxtail_tpl . "\");");
+
+?>
