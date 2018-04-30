@@ -413,9 +413,7 @@ if ($action == "result_save") {
 			// Wenn nein, dann fahre ein Update
 			if (date("m", $result_lastreset['lasttageswertungreset']) < date("m", time())) {
 				$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
-				$db->query("CREATE TABLE bb" . $n . "_wm2018_vortag (userid int(5), punkte int(10), pos int(3) default NULL auto_increment, PRIMARY KEY (pos));");
-				$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST, CHANGE `userid` `userid` int(10) NULL AFTER `id`, CHANGE `pos` `pos` int(10) NOT NULL AFTER `punkte`;");
-				$db->query("ALTER TABLE bb" . $n . "_wm2018_vortag ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;");
+				$db->query("CREATE TABLE `bb1_wm2018_vortag` (`id` int(5) NOT NULL AUTO_INCREMENT, `userid` int(10) DEFAULT NULL, `punkte` int(10) DEFAULT NULL, `pos` int(10) NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `id` (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;");
 				$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset = '" . time() . "';");
 				$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
 
@@ -1018,8 +1016,8 @@ if ($action == "result_save") {
 	// ++++++++++++++++++++++++++++++++++++
 	if ($_POST['send'] == 'send' && $_POST['mode'] == 'confirm') {
 		$wm2018_options = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_options");
-		$result_1 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team1']) . "'");
-		$result_2 = $db->query_first("SELECT name FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team2']) . "'");
+		$result_1 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team1']) . "'");
+		$result_2 = $db->query_first("SELECT name,flagge FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($_POST['team2']) . "'");
 		$gameid = intval($_POST['gameid']);
 		$tore1 = intval($_POST['game_goals_1']);
 		$tore2 = intval($_POST['game_goals_2']);
