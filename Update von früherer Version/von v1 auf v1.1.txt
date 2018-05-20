@@ -1,1 +1,4 @@
-Lade die Templates neu hoch und importiere sie.
+1) Lade alle Templates neu hoch und importiere sie.
+
+2) Wenn du die Mods für das JGS-Portal schon eingebaut hast:
+	Entferne den alten Code und ersetze ihn durch den neuen aus den Dateien

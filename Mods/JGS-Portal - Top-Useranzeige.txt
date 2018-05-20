@@ -14,68 +14,67 @@ Suche nach
 Füge darüber ein:
 
 /* WM2018 - Die Top-Tipper */
-if($seiteninfos[seiten_text]=="[wmtippbest5]")
-{
-	include("./wm2018_global.php");
+if ($seiteninfos['seiten_text'] == "[wmtippbest5]") {
+	require_once "./wm2018_global.php";
 	$lang->load("WM2018");
 	$count = 0;
-		$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,$wm2018_options[topuser]");
-		while ($row_topuser = $db->fetch_array($result_topuser)) {
-			$rowclass = getone($count++, "tablea", "tableb");
-			//** Ranking Start *//
-			$wm2018_rank_merk = $wm2018_rank_merk + 1;
-			if ($wm2018_punkte_merk != $row_topuser['punkte']) {
-				$wm2018_rank = $wm2018_rank_merk;
-				$wm2018_punkte_merk = $row_topuser['punkte'];
-			}
-			if ($wm2018_rank == 1) {
-				$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_1.gif\" border=\"0\" alt=\"wm2018_rank_1.gif\" title=\"\" />";
-			}
-
-			if ($wm2018_rank == 2) {
-				$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_2.gif\" border=\"0\" alt=\"wm2018_rank_2.gif\" title=\"\" />";
-			}
-
-			if ($wm2018_rank == 3) {
-				$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_3.gif\" border=\"0\" alt=\"wm2018_rank_3.gif\" title=\"\" />";
-			}
-
-			if ($wm2018_rank > 3) {
-				$wm2018_userrank = "<b>$wm2018_rank</b>";
-			}
-			//** Ranking Ende *//
-
-			$richtig = $row_topuser['tipps_richtig'] + $row_topuser['tipps_tendenz'];
-			if (($richtig + $row_topuser['tipps_falsch']) > 0) {
-				$quote = round($richtig * 100 / ($richtig + $row_topuser['tipps_falsch']));
-			} else {
-				$quote = 0;
-			}
-
-			$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
-
-			$tagerg = $row_topuser['punkte'] - $vortag['punkte'];
-			if ($tagerg >= 0) {
-				$tagerg = "+" . $tagerg;
-			}
-
-			if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
-				$tagtendenz = "<img src=\"images/wm2018/hoch.jpg\">";
-			} elseif ($vortag['pos'] == $wm2018_rank) {
-				$tagtendenz = "<img src=\"images/wm2018/gleich.gif\">";
-			} else {
-				$tagtendenz = "<img src=\"images/wm2018/runter.jpg\">";
-			}
-
-			if ($wm2018_rank == 1) {
-				$krone = "<img src=\"images/wm2018/krone.gif\" alt='krone'>";
-			} else {
-				$krone = "";
-			}
-
-			eval("\$wm2018_topuser .= \"" . $tpl->get("wm2018_topuser") . "\";");
+	$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
+	while ($row_topuser = $db->fetch_array($result_topuser)) {
+		$rowclass = getone($count++, "tablea", "tableb");
+		//** Ranking Start *//
+		$wm2018_rank_merk = $wm2018_rank_merk + 1;
+		if ($wm2018_punkte_merk != $row_topuser['punkte']) {
+			$wm2018_rank = $wm2018_rank_merk;
+			$wm2018_punkte_merk = $row_topuser['punkte'];
 		}
-	eval ("\$seiteninfos[seiten_text]=\"".$tpl->get("sponsor_portalboxen_wmtippbest5")."\";");
+		if ($wm2018_rank == 1) {
+			$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_1.gif\" border=\"0\" alt=\"wm2018_rank_1.gif\" title=\"\" />";
+		}
+
+		if ($wm2018_rank == 2) {
+			$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_2.gif\" border=\"0\" alt=\"wm2018_rank_2.gif\" title=\"\" />";
+		}
+
+		if ($wm2018_rank == 3) {
+			$wm2018_userrank = "<img src=\"images/wm2018/wm2018_rank_3.gif\" border=\"0\" alt=\"wm2018_rank_3.gif\" title=\"\" />";
+		}
+
+		if ($wm2018_rank > 3) {
+			$wm2018_userrank = "<b>$wm2018_rank</b>";
+		}
+		//** Ranking Ende *//
+
+		$richtig = $row_topuser['tipps_richtig'] + $row_topuser['tipps_tendenz'];
+		if (($richtig + $row_topuser['tipps_falsch']) > 0) {
+			$quote = round($richtig * 100 / ($richtig + $row_topuser['tipps_falsch']));
+		} else {
+			$quote = 0;
+		}
+
+		$vortag = $db->query_first("SELECT userid,pos,punkte FROM bb" . $n . "_wm2018_vortag WHERE userid = '" . intval($row_topuser['userid']) . "'");
+
+		$tagerg = $row_topuser['punkte'] - $vortag['punkte'];
+		if ($tagerg >= 0) {
+			$tagerg = "+" . $tagerg;
+		}
+
+		if (!isset($vortag['pos']) || $vortag['pos'] > $wm2018_rank) {
+			$tagtendenz = "<img src=\"images/wm2018/hoch.jpg\">";
+		} elseif ($vortag['pos'] == $wm2018_rank) {
+			$tagtendenz = "<img src=\"images/wm2018/gleich.gif\">";
+		} else {
+			$tagtendenz = "<img src=\"images/wm2018/runter.jpg\">";
+		}
+
+		if ($wm2018_rank == 1) {
+			$krone = "<img src=\"images/wm2018/krone.gif\" alt='krone'>";
+		} else {
+			$krone = "";
+		}
+
+		eval("\$wm2018_topuser .= \"" . $tpl->get("wm2018_topuser") . "\";");
+	}
+	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_wmtippbest5") . "\";");
 
 }
 /* WM2018 - Die Top-Tipper */

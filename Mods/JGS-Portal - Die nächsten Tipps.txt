@@ -16,7 +16,7 @@ Füge darüber ein:
 
 /* WM2018 - Die nächsten Spiele */
 if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
-	include "./wm2018_global.php";
+	require_once "./wm2018_global.php";
 	$lang->load("WM2018");
 
 	$akttime = time();
@@ -96,7 +96,6 @@ if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
 	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_wmtippnext5") . "\";");
 }
 /* WM2018 - Die nächsten Spiele */
-
 
 
 Gehe nun ins ACP und erstelle eine neue Box unter dem Menü-Punkt Box hinzufügen.
