@@ -9,7 +9,7 @@
  *   copyright            : WM2018-Tippspiel © 2018 @ kill0rz
  *   web                  : www.v-gn.de
  *   Boardversion         : Burning Board wBB 2.3
- *   Rev                  : V1.0
+ *   Rev                  : v1.1
  ***************************************************************************/
 
 if (file_exists("./lib/wm2018_install.lock")) {
@@ -18,7 +18,7 @@ if (file_exists("./lib/wm2018_install.lock")) {
 
 $filename = "wm2018_setup.php";
 
-$version = "v1";
+$version = "v1.1";
 
 define('ENCODING', 'UTF-8');
 @error_reporting(7);
