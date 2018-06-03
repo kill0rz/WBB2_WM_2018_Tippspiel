@@ -311,11 +311,11 @@ ALTER TABLE `bb1_wm2018_vortag` ADD `id` int(5) NULL AUTO_INCREMENT UNIQUE FIRST
 ALTER TABLE `bb1_wm2018_vortag` ADD PRIMARY KEY `id` (`id`), DROP INDEX `PRIMARY`;
 
 -- 03.06.2018: Fix falscher Spiele in Gruppen
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '41';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '42';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '43';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '44';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '45';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '46';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '47';
-  UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '48';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '41';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '42';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '43';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '44';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '45';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '46';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '47';
+UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '48';
