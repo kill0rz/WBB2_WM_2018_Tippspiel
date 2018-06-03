@@ -1,0 +1,2 @@
+1) lade das Template wm2018_index.tpl hoch udn importiere es erneut
+2) Wenn du den Button in Header eingefügt dann, dann entferne den Code und ersetze ihn durch den Code im Mod.
