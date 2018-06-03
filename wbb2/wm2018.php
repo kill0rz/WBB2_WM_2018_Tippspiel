@@ -73,10 +73,6 @@ if ($action == "index") {
 				if ($count <= $wm2018_options['rssnews']) {
 					preg_match("/<title>(.+)<\/title>/U", $item, $title);
 					preg_match("/<link>(.+)<\/link>/U", $item, $link);
-					$link1 = 'http://de.fifa.com' . $link[1];
-					// $link1 = $link[1];
-					// $link1 = substr("$link1", 9);
-					// $link1 = substr("$link1", 0, - 3);
 					$title1 = $title[1];
 					$title1 = substr("$title1", 9);
 					$title1 = substr("$title1", 0, -3);
@@ -86,7 +82,7 @@ if ($action == "index") {
 						$title1 = wbb_substr($title1, 0, 50) . "...";
 					}
 
-					$newswm2018total .= "&raquo; <a href=\"{$link1}\" target=\"_blank\" title=\"{$title2}\">{$title1}</a><br />";
+					$newswm2018total .= "&raquo; <a href=\"{$link[1]}\" target=\"_blank\" title=\"{$title2}\">{$title1}</a><br />";
 				}
 			}
 		} else {
