@@ -101,7 +101,7 @@ if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
 Gehe nun ins ACP und erstelle eine neue Box unter dem Menü-Punkt Box hinzufügen.
 
 Titel der Box: "WM2018 - Die nächsten Spiele" oder was du möchtest.
-Inhalt der Box: [wmtippnext5_2018]
+Inhalt der Box: [wmtippnext5]
 Gruppenrechte und Design der Boxen an eure Wünsche anpassen.
 Die Box dann an gewünschter Stelle im Portal einfügen.
 
