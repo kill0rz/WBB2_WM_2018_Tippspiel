@@ -74,9 +74,9 @@ if ($action == "index") {
 					preg_match("/<title>(.+)<\/title>/U", $item, $title);
 					preg_match("/<link>(.+)<\/link>/U", $item, $link);
 					$title1 = $title[1];
-					$title1 = substr("$title1", 9);
-					$title1 = substr("$title1", 0, -3);
-					$title1 = utf8_decode("$title1");
+					$title1 = substr($title1, 9);
+					$title1 = substr($title1, 0, -3);
+					// $title1 = utf8_decode($title1);
 					$title2 = $title1;
 					if (wbb_strlen($title1) > 50) {
 						$title1 = wbb_substr($title1, 0, 50) . "...";
