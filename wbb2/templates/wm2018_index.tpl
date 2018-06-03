@@ -199,6 +199,12 @@
 										</a> |
 										<a href="wm2018.php?gruppensort=F{$SID_ARG_2ND}">
 											<b>F</b>
+										</a> |
+										<a href="wm2018.php?gruppensort=G{$SID_ARG_2ND}">
+											<b>G</b>
+										</a> |
+										<a href="wm2018.php?gruppensort=H{$SID_ARG_2ND}">
+											<b>H</b>
 										</a>
 										</b>
 									</span>
