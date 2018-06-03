@@ -1,1 +1,3 @@
-1) ersetze die Datei wbb/wm2018.php
+1) ersetze die Datei wbb2/wm2018.php
+2) Falls du das JGS-Portal nutzt, dann baue bitte die Mods nocheinmal ein, ersetze dabei alten Code. Templates auch ersetzen.
+2) Falls du das HM-Portal nutzt, dann baue bitte die Mods nocheinmal ein, ersetze dabei alten Code. Templates auch ersetzen.

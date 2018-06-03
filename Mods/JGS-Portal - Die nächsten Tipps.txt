@@ -93,7 +93,7 @@ if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
 		eval("\$wm2018_nextgames .= \"" . $tpl->get("wm2018_nextgames") . "\";");
 	}
 
-	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_wmtippnext5") . "\";");
+	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("wm108_sponsor_portalboxen_wmtippnext5") . "\";");
 }
 /* WM2018 - Die nächsten Spiele */
 
@@ -101,13 +101,13 @@ if ($seiteninfos['seiten_text'] == "[wmtippnext5]") {
 Gehe nun ins ACP und erstelle eine neue Box unter dem Menü-Punkt Box hinzufügen.
 
 Titel der Box: "WM2018 - Die nächsten Spiele" oder was du möchtest.
-Inhalt der Box: [wmtippnext5]
+Inhalt der Box: [wmtippnext5_2018]
 Gruppenrechte und Design der Boxen an eure Wünsche anpassen.
 Die Box dann an gewünschter Stelle im Portal einfügen.
 
 Gehe nun in das ACP und erstelle ein neues Template unter dem Menuepunkt Template erstellen.
 
-Templatename: sponsor_portalboxen_wmtippnext5
+Templatename: wm108_sponsor_portalboxen_wmtippnext5
 Inhalt:
 
 <table cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}" class="tableinborder">
