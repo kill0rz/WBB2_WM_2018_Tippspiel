@@ -1154,7 +1154,7 @@ if ($action == "result_edit") {
 
 			$current_game_details = $db->query_first("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1;");
 
-			$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC LIMIT 1;");
+			$result_usertipps = $db->query("SELECT * FROM bb" . $n . "_wm2018_usertipps WHERE gameid = '" . intval($_POST['gameid']) . "' ORDER BY userid ASC;");
 			while ($row_usertipps = $db->fetch_array($result_usertipps)) {
 				// +++++++++++++++++++ 1. Prüfung
 				// Tipp exakt richtig ?
