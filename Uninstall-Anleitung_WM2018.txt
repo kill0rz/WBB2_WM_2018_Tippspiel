@@ -1,4 +1,4 @@
-Version: v1.1
+Version: v1.2
 
 
 De-Installations-Anleitung für das WM2018-Tippspiel

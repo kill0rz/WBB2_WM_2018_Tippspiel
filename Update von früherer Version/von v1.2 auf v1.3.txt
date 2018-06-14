@@ -1,0 +1,15 @@
+1) lade das Template wm2018_index.tpl hoch und importiere es erneut
+2) Wenn du den Button in Header eingefügt dann, dann entferne den Code und ersetze ihn durch den Code im Mod.
+3) Wenn du das JGS-Portal nutzt, dann mache bitte folgendes:
+
+	Datei: jgs_portal_meincode.php
+	Suche
+		if ($seiteninfos['seiten_text'] == "[wmtippbest5]") {
+	Ersetze mit
+		if ($seiteninfos['seiten_text'] == "[wm2018tippbest5]") {
+
+	Benenne die Top-Tipper-Box im JGS-Portal um
+	von
+		[wmtippbest5]
+	in
+		[wm2018tippbest5]

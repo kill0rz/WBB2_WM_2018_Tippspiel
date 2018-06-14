@@ -1,0 +1,13 @@
+1) ersetze die Datei wbb2/wm2018.php
+2) Falls du das JGS-Portal nutzt, dann baue bitte die Mods nocheinmal ein, ersetze dabei alten Code. Templates auch ersetzen.
+3) Falls du das HM-Portal nutzt, dann baue bitte die Mods nocheinmal ein, ersetze dabei alten Code. Templates auch ersetzen.
+4) Gehe ins ACP und führe solgende SQL-Befehle aus (geht auch im phpmyadmin):
+
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '41';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'E' WHERE `gameid` = '42';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '43';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'F' WHERE `gameid` = '44';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '45';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'G' WHERE `gameid` = '46';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '47';
+	UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '48';

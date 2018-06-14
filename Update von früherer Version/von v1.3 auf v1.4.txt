@@ -1,0 +1,2 @@
+1) Gehe ins ACP und führe solgenden SQL-Befehl aus:
+	UPDATE `bb1_wm2018_spiele` SET `datetime` = `datetime`-3600,

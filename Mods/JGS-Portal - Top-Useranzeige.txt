@@ -14,7 +14,7 @@ Suche nach
 Füge darüber ein:
 
 /* WM2018 - Die Top-Tipper */
-if ($seiteninfos['seiten_text'] == "[wmtippbest5]") {
+if ($seiteninfos['seiten_text'] == "[wm2018tippbest5]") {
 	require_once "./wm2018_global.php";
 	$lang->load("WM2018");
 	$count = 0;
@@ -74,7 +74,7 @@ if ($seiteninfos['seiten_text'] == "[wmtippbest5]") {
 
 		eval("\$wm2018_topuser .= \"" . $tpl->get("wm2018_topuser") . "\";");
 	}
-	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("sponsor_portalboxen_wmtippbest5") . "\";");
+	eval("\$seiteninfos['seiten_text']=\"" . $tpl->get("wm2018_sponsor_portalboxen_wmtippbest5") . "\";");
 
 }
 /* WM2018 - Die Top-Tipper */
@@ -85,13 +85,13 @@ if ($seiteninfos['seiten_text'] == "[wmtippbest5]") {
 Gehe nun ins ACP und erstelle eine neue Box unter dem Menue-Punkt Box hinzufügen.
 
 Titel der Box: WM2018 - Top Tipper oder was du gerne möchtest.
-Inhalt der Box: [wmtippbest5]
+Inhalt der Box: [wm2018tippbest5]
 Gruppenrechte und Design der Boxen an Eure Wünsche anpassen.
 Die Box dann an gewünschter Stelle im Portal einfügen.
 
 Gehe nun in das ACP und erstelle ein neues Template unter dem Menue-Punkt Template erstellen.
 
-Templatename: sponsor_portalboxen_wmtippbest5
+Templatename: wm2018_sponsor_portalboxen_wmtippbest5
 Inhalt:
 
 <table  cellpadding="{$style['tableincellpadding']}" cellspacing="{$style['tableincellspacing']}" border="{$style['tableinborder']}" style="width:{$style['tableinwidth']}"  class="tableinborder">
