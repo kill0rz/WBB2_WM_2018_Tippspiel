@@ -150,7 +150,7 @@ if ($action == "index") {
 
 				// Speichern der einzelnen RSS-Einträge in $this -> feedItems //
 				private function __saveItems($xml) {
-					foreach ($xml->channel->item AS $item) {
+					foreach ($xml->channel->item as $item) {
 						// Zeit in einen Timestamp umwandeln //
 						$itemDate = DateTime::createFromFormat('D, d M Y H:i:s O', $item->pubDate);
 
