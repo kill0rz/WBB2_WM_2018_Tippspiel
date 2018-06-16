@@ -192,7 +192,7 @@ while ($row_tableonindex = $db->fetch_array($result_tableonindex)) {
 
 // untere Tabelle: Letzte X Spiele
 
-$result_tableonindex = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE datetime < '" . $akttime . "' ORDER BY datetime ASC LIMIT {$wm2018_options['showtableonindex_donegamescount']};");
+$result_tableonindex = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE datetime < '" . $akttime . "' ORDER BY datetime DESC LIMIT {$wm2018_options['showtableonindex_donegamescount']};");
 
 if ($db->num_rows($result_tableonindex) < $wm2018_options['showtableonindex_donegamescount']) {
 	$wm2018_showtableonindex_maxdonegames = $db->num_rows($result_tableonindex);

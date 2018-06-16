@@ -2,7 +2,6 @@ Bugtracker und Featurewünsche aus WM 2018:
 ------------------------------------------
 + Demo aktualisieren
 + Tabelle im Tippspiel: Die letzten 4 Spiele
-	+ Tabelle auf Startseite ignoriert Spiele von heute
 + Indextabelle:
 	+ die nächsten 4 Spiele
 
