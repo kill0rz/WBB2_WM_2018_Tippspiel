@@ -172,7 +172,7 @@ if ($action == "index") {
 				foreach ($items AS $item) {
 					$count++;
 					if ($count <= $wm2018_options['rssnews']) {
-						$newswm2018total .= "&raquo; <a href='{$item['link']}' target='_blank' title='{$item['title']}''>" . utf8_decode($item['title']) . "</a><br />";
+						$newswm2018total .= "&raquo; <a href='{$item['link']}' target='_blank' title='{$item['title']}''>" . $item['title'] . "</a><br />";
 					}
 				}
 			}
