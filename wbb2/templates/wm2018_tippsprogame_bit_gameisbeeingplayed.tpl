@@ -16,7 +16,6 @@
 		<then>
 			<td class="$rowclass" align="center">
 				<span class="smallfont">$game_gk</span>
-				<span class="smallfont">$tippright_gk</span>
 			</td>
 		</then>
 	</if>
@@ -24,7 +23,6 @@
 		<then>
 			<td class="$rowclass" align="center">
 				<span class="smallfont">$game_rk</span>
-				<span class="smallfont">$tippright_rk</span>
 			</td>
 		</then>
 	</if>
@@ -32,7 +30,6 @@
 		<then>
 			<td class="$rowclass" align="center">
 				<span class="smallfont">$game_elfer</span>
-				<span class="smallfont">$tippright_elfer</span>
 			</td>
 		</then>
 	</if>
