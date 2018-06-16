@@ -2,6 +2,7 @@ ToDo für EM 2020:
 -----------------
 + Demo aktualisieren
 + Tabelle im Tippspiel: Die letzten 4 Spiele
+	+ Tabelle auf Startseite ignoriert Spiele von heute
 
 
 USERWÜNSCHE
