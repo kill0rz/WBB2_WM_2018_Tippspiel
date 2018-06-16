@@ -4,6 +4,8 @@ Bugtracker und Featurewünsche aus WM 2018:
 + Tabelle im Tippspiel: Die letzten 4 Spiele
 + Indextabelle:
 	+ die nächsten 4 Spiele
++ tippsprogame
+	+ Stimmen die Daumen, wenn das Spiel noch gar nicht eingetragen wurde?
 
 
 USERWÜNSCHE
