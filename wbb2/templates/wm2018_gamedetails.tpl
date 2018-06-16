@@ -131,6 +131,9 @@
 						</span>
 					</td>
 				</tr>
+				$gamed_gk
+				$gamed_rk
+				$gamed_elfer
 			</table>
 		</then>
 	</if>

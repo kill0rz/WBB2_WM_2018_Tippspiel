@@ -1486,34 +1486,30 @@ if ($action == "gamedetails") {
 	}
 	if ($wm2018_options['gk_jn'] == 1) {
 		if ($result['game_gk'] == 1) {
-			$game_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_34']}</span></td></tr>";
+			$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_34']}</span></td></tr>";
 		}
-
 		if ($result['game_gk'] == 0) {
-			$game_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_35']}</span></td></tr>";
+			$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_35']}</span></td></tr>";
 		}
-
 	}
 	if ($wm2018_options['rk_jn'] == 1) {
 		if ($result['game_rk'] == 1) {
-			$game_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_36']}</span></td></tr>";
+			$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_36']}</span></td></tr>";
 		}
 
 		if ($result['game_rk'] == 0) {
-			$game_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_37']}</span></td></tr>";
+			$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_37']}</span></td></tr>";
 		}
-
 	}
 	if ($wm2018_options['elfer_jn'] == 1) {
 		if ($result['game_elfer'] == 1) {
-			$game_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_38']}</span></td></tr>";
+			$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_38']}</span></td></tr>";
 		}
-
 		if ($result['game_elfer'] == 0) {
-			$game_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_39']}</span></td></tr>";
+			$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_39']}</span></td></tr>";
 		}
-
 	}
+
 	$linkjn = 0;
 	if (!empty($result['gamelink'])) {
 		$linkjn = 1;
