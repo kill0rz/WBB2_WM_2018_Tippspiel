@@ -82,8 +82,8 @@ INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (2, 'Tendenz
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (3, 'Gelbe Karten', 3);
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (4, 'Rote Karten', 3);
 INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (5, 'Elfmeter', 3);
-INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (6, 'Weltmeister', 10);
-INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (7, 'Vize-Weltmeister', 10);
+INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (6, 'Weltmeister', 100);
+INSERT INTO `bb1_wm2018_punkte` (`punkteid`, `desc`, `wert`) VALUES (7, 'Vize-Weltmeister', 100);
 
 -- --------------------------------------------------------
 
