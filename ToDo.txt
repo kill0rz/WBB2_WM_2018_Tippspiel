@@ -1,6 +1,7 @@
-ToDo für WM 2018:
+ToDo für EM 2020:
 -----------------
 + Demo aktualisieren
++ Tabelle im Tippspiel: Die letzten 4 Spiele
 
 
 USERWÜNSCHE
