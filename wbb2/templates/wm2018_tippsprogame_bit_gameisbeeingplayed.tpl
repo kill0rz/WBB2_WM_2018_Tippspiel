@@ -9,7 +9,6 @@
 	<td class="$rowclass" align="center">
 		<span class="smallfont">
 			<b>$row[goals_1]&nbsp;:&nbsp;$row[goals_2]</b>
-			<span class="smallfont">$tippright_result</span>
 		</span>
 	</td>
 	<if($wm2018_options['gk_jn']==1)>
