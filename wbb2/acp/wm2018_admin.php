@@ -1439,8 +1439,10 @@ if ($action == "result_edit") {
 				$vgp_anztipp = $spiel_erg['tipps'];
 				$spiel_name1 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_1_id']) . "'");
 				$vgp_flagge1 = '[img]images/wm2018/flaggen/' . $spiel_name1['flagge'] . '[/img]';
+				$vgp_name1 = $spiel_name1['name'];
 				$spiel_name2 = $db->query_first("SELECT name, flagge  FROM bb" . $n . "_wm2018_teams WHERE teamid = '" . intval($spiel_erg['team_2_id']) . "'");
 				$vgp_flagge2 = '[img]images/wm2018/flaggen/' . $spiel_name2['flagge'] . '[/img]';
+				$vgp_name2 = $spiel_name2['name'];
 
 				$vgp_user_ranking_01 = '';
 				$vgp_user_ranking_02 = '';
