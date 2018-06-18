@@ -6,6 +6,8 @@ Bugtracker und Featurewünsche aus WM 2018:
 	+ die nächsten 4 Spiele
 + Nach Editierung eines Tipps steht in der Redirectmeldung, dass man nun auf die Startseite weitergeleitet wird, obwohl das nicht stimmt
 	+ Meldung ändern
++ Editierfunktion der Ergebnisse
+	+ Es muss auch die Mannschaftstabelle neu berechnet werden
 
 
 USERWÜNSCHE
