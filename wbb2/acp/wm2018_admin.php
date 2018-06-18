@@ -395,7 +395,7 @@ if ($action == "result_save") {
 		$do_not_proceed = false;
 		$result_checkgameexistance = $db->query("SELECT * FROM bb" . $n . "_wm2018_spiele WHERE gameid = '" . intval($_POST['gameid']) . "' LIMIT 1;");
 		while ($row_checkgameexistance = $db->fetch_array($result_checkgameexistance)) {
-			if ($row['game_goals_1'] > 0) {
+			if (!empty($row['game_goals_1'])) {
 				//Ergebnis steht schon drin
 				$do_not_proceed = true;
 			}
@@ -411,7 +411,7 @@ if ($action == "result_save") {
 			$result_lastreset = $db->query_first("SELECT lasttageswertungreset FROM bb" . $n . "_wm2018_options LIMIT 1;");
 
 			// Wenn nein, dann fahre ein Update
-			if (date("m", $result_lastreset['lasttageswertungreset']) < date("m", time())) {
+			if (date("d", $result_lastreset['lasttageswertungreset']) < date("d", time())) {
 				$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
 				$db->query("CREATE TABLE `bb" . $n . "_wm2018_vortag` (`id` int(5) NOT NULL AUTO_INCREMENT, `userid` int(10) DEFAULT NULL, `punkte` int(10) DEFAULT NULL, `pos` int(10) NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `id` (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;");
 				$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset = '" . time() . "';");
