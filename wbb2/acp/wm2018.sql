@@ -104,7 +104,7 @@ CREATE TABLE `bb1_wm2018_spiele` (
   `game_elfer` int(1) NOT NULL default '0',
   `game_goals_1` char(2) NOT NULL default '',
   `game_goals_2` char(2) NOT NULL default '',
-  `gamelink` varchar(250) NOT NULL default '',
+  `gamelink` varchar(16000) NOT NULL default '',
   `gamecomment` text NOT NULL,
   `tipps` int(5) NOT NULL default '0',
   `post_id` int(10),
