@@ -1563,7 +1563,7 @@ if ($action == "gamedetails") {
 			}
 
 		}
-		if ($result_datetime['datetime'] > $akttime + 6300) {
+		if ($result_datetime['datetime'] < $akttime + 6300) {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
 		} else {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit_gameisbeeingplayed") . "\";");
@@ -1697,7 +1697,7 @@ if ($action == "tippsprogame") {
 				$tippright_elfer = "&nbsp;<img src=\"images/wm2018/thumbs_down.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_32']}\" title=\"{$lang->items['LANG_WM2018_PHP_32']}\" />";
 			}
 		}
-		if ($result_datetime['datetime'] > $akttime + 6300) {
+		if ($result_datetime['datetime'] < $akttime + 6300) {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
 		} else {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit_gameisbeeingplayed") . "\";");
