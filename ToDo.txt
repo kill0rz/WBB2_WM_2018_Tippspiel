@@ -8,6 +8,7 @@ Bugtracker und Featurewünsche aus WM 2018:
 	+ Meldung ändern
 + Editierfunktion der Ergebnisse
 	+ Es muss auch die Mannschaftstabelle neu berechnet werden
+	+ bb1_wm2018_userpunkte auch updaten
 
 
 USERWÜNSCHE
