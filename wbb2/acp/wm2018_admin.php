@@ -413,7 +413,7 @@ if ($action == "result_save") {
 			// Wenn nein, dann fahre ein Update
 			if (date("d", $result_lastreset['lasttageswertungreset']) < date("d", time())) {
 				$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
-				$db->query("CREATE TABLE `bb" . $n . "_wm2018_vortag` (`id` int(5) NOT NULL AUTO_INCREMENT, `userid` int(10) DEFAULT NULL, `punkte` int(10) DEFAULT NULL, `pos` int(10) NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `id` (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci;");
+				$db->query("CREATE TABLE `bb" . $n . "_wm2018_vortag` (`id` int(5) NOT NULL AUTO_INCREMENT, `userid` int(10) DEFAULT NULL, `punkte` int(10) DEFAULT NULL, `pos` int(10) NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `id` (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;");
 				$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset = '" . time() . "';");
 				$result_topuser = $db->query("SELECT u.username,p.* FROM bb" . $n . "_wm2018_userpunkte p LEFT JOIN bb" . $n . "_users u USING (userid) ORDER BY punkte DESC, ((tipps_richtig+tipps_tendenz)/tipps_falsch) DESC,tipps_gesamt DESC Limit 0,{$wm2018_options['topuser']}");
 
