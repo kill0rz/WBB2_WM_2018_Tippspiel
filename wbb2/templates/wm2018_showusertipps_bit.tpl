@@ -21,7 +21,7 @@
 	<if($wm2018_options['winnertipp_jn']==1)>
 		<then>
 			<td class="$rowclass" align="center">
-				<span class="smallfont">$image_wmtippimage_wmtipp</span>
+				<span class="smallfont">$image_wmtipp</span>
 			</td>
 			<td class="$rowclass" align="center">
 				<span class="smallfont">$image_vwmtipp</span>

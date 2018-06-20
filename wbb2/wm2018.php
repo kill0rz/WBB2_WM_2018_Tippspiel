@@ -1077,10 +1077,8 @@ if ($action == "showusertipps") {
 		} else {
 			for ($i = 0; $i < count($allids2); $i++) {
 				if ($wbbuserdata['userid'] == intval($row['userid'])) {
-					if ($akttime > $lastgame4wmtipp['datetime']) {
-						if ($row['tipp_wm'] == $allids2[$i]) {
-							$image_wmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
-						}
+					if ($row['tipp_wm'] == $allids2[$i]) {
+						$image_wmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 					}
 				} else {
 					if ($akttime > $lastgame4wmtipp['datetime']) {
@@ -1098,10 +1096,8 @@ if ($action == "showusertipps") {
 		} else {
 			for ($i = 0; $i < count($allids2); $i++) {
 				if ($wbbuserdata['userid'] == intval($row['userid'])) {
-					if ($akttime > $lastgame4wmtipp['datetime']) {
-						if ($row['tipp_vwm'] == $allids2[$i]) {
-							$image_vwmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
-						}
+					if ($row['tipp_vwm'] == $allids2[$i]) {
+						$image_vwmtipp = "<img src=\"images/wm2018/flaggen/$allflags2[$i]\" border=\"0\" alt=\"$allnames2[$i]\" title=\"$allnames2[$i]\" />";
 					}
 				} else {
 					if ($akttime > $lastgame4wmtipp['datetime']) {
