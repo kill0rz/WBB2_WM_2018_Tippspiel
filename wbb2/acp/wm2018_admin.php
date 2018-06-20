@@ -578,11 +578,11 @@ if ($action == "result_save") {
 					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, u=u+1, td=td+{$td1}, punkte=punkte+1 WHERE teamid = '" . intval($_POST['team1']) . "'");
 					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, u=u+1, td=td+{$td2}, punkte=punkte+1 WHERE teamid = '" . intval($_POST['team2']) . "'");
 				} elseif (intval($_POST['game_goals_1']) > intval($_POST['game_goals_2'])) {
-					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+$td1, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team1']) . "'");
-					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+$td2 WHERE teamid = '" . intval($_POST['team2']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+{$td1}, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+{$td2} WHERE teamid = '" . intval($_POST['team2']) . "'");
 				} elseif (intval($_POST['game_goals_1']) < intval($_POST['game_goals_2'])) {
-					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+$td1 WHERE teamid = '" . intval($_POST['team1']) . "'");
-					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+$td2, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team2']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+{$td1} WHERE teamid = '" . intval($_POST['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+{$td2}, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team2']) . "'");
 				}
 			}
 
@@ -1277,7 +1277,42 @@ if ($action == "result_edit") {
 				}
 			}
 
-			// Trage die neuen Ergebnisse ein:
+			// ziehe jetzt die Daten für die Teamtabelle ab (gespielte, gewonnene, verlorene Spiele, Tendenz, usw.)
+			// aber nur wenn Vorrundenspiel
+			if (intval($current_game_details['gameid']) <= $gameids['vorrundenspiel']) {
+				$td1 = intval($current_game_details['game_goals_1']) - intval($current_game_details['game_goals_2']);
+				$td2 = intval($current_game_details['game_goals_2']) - intval($current_game_details['game_goals_1']);
+
+				if (intval($current_game_details['game_goals_1']) == intval($current_game_details['game_goals_2'])) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, u=u-1, td=td-{$td1}, punkte=punkte-1 WHERE teamid = '" . intval($current_game_details['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, u=u-1, td=td-{$td2}, punkte=punkte-1 WHERE teamid = '" . intval($current_game_details['team2']) . "'");
+				} elseif (intval($current_game_details['game_goals_1']) > intval($current_game_details['game_goals_2'])) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, g=g-1, td=td-{$td1}, punkte=punkte-3 WHERE teamid = '" . intval($current_game_details['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, v=v-1, td=td-{$td2} WHERE teamid = '" . intval($current_game_details['team2']) . "'");
+				} elseif (intval($current_game_details['game_goals_1']) < intval($current_game_details['game_goals_2'])) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, v=v-1, td=td-{$td1} WHERE teamid = '" . intval($current_game_details['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, g=g-1, td=td-{$td2}, punkte=punkte-3 WHERE teamid = '" . intval($current_game_details['team2']) . "'");
+				}
+			}
+
+			// Trage jetzt die neuen Werte für die Teamtabelle ein.
+			if (intval($current_game_details['gameid']) <= $gameids['vorrundenspiel']) {
+				$td1 = $game_goals_1 - $game_goals_2;
+				$td2 = $game_goals_2 - $game_goals_1;
+
+				if ($game_goals_1 == $game_goals_2) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele-1, u=u+1, td=td+{$td1}, punkte=punkte+1 WHERE teamid = '" . intval($_POST['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, u=u+1, td=td+{$td2}, punkte=punkte+1 WHERE teamid = '" . intval($_POST['team2']) . "'");
+				} elseif ($game_goals_1 > $game_goals_2) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+{$td1}, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+{$td2} WHERE teamid = '" . intval($_POST['team2']) . "'");
+				} elseif ($game_goals_1 < $game_goals_2) {
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, v=v+1, td=td+{$td1} WHERE teamid = '" . intval($_POST['team1']) . "'");
+					$db->query("UPDATE bb" . $n . "_wm2018_teams SET spiele=spiele+1, g=g+1, td=td+{$td2}, punkte=punkte+3 WHERE teamid = '" . intval($_POST['team2']) . "'");
+				}
+			}
+
+			// Trage die neuen Ergebnisse in die Spieletabelle ein:
 			$db->query("UPDATE bb" . $n . "_wm2018_spiele SET gamelink = '" . addslashes($gamelink) . "', gamecomment = '" . addslashes($_POST['gamecomment']) . "', game_gk = '" . intval($result_gk) . "', game_rk = '" . intval($result_rk) . "', game_elfer = '" . intval($result_elfer) . "', game_goals_1 = '" . $game_goals_1 . "', game_goals_2 = '" . $game_goals_2 . "' WHERE gameid = '" . intval($_POST['gameid']) . "';");
 
 			// Berechne nun die Punkte neu für dieses Spiel:
