@@ -4,10 +4,6 @@ Bugtracker und Featurewünsche aus WM 2018:
 + Tabelle im Tippspiel: Die letzten 4 Spiele
 + Indextabelle:
 	+ die nächsten 4 Spiele
-+ Nach Editierung eines Tipps steht in der Redirectmeldung, dass man nun auf die Startseite weitergeleitet wird, obwohl das nicht stimmt
-	+ Meldung ändern
-+ tipsprogame
-	+ Mannschaften sollten noch irgendwo erscheinen
 
 
 USERWÜNSCHE
