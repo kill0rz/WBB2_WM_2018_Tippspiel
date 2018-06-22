@@ -1480,8 +1480,7 @@ if ($action == "gamedetails") {
 			$flagge2 = $allflags2[$i];
 		}
 	}
-	if (!empty($result_gamedetails['game_goals_1']) || $result_gamedetails['game_goals_1'] == '0') {
-		$gamed_stillrunning = "";
+	if (!empty($result['game_goals_1']) || $result['game_goals_1'] == '0') {
 		if ($wm2018_options['gk_jn'] == 1) {
 			if ($result['game_gk'] == 1) {
 				$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_34']}</span></td></tr>";
