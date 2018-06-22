@@ -134,6 +134,7 @@
 				$gamed_gk
 				$gamed_rk
 				$gamed_elfer
+				$gamed_stillrunning
 			</table>
 		</then>
 	</if>

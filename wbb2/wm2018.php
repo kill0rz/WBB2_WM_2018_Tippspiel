@@ -1480,30 +1480,39 @@ if ($action == "gamedetails") {
 			$flagge2 = $allflags2[$i];
 		}
 	}
-	if ($wm2018_options['gk_jn'] == 1) {
-		if ($result['game_gk'] == 1) {
-			$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_34']}</span></td></tr>";
+	if (!empty($result_gamedetails['game_goals_1']) || $result_gamedetails['game_goals_1'] == '0') {
+		$gamed_stillrunning = "";
+		if ($wm2018_options['gk_jn'] == 1) {
+			if ($result['game_gk'] == 1) {
+				$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_34']}</span></td></tr>";
+			}
+			if ($result['game_gk'] == 0) {
+				$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_35']}</span></td></tr>";
+			}
 		}
-		if ($result['game_gk'] == 0) {
-			$gamed_gk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_35']}</span></td></tr>";
-		}
-	}
-	if ($wm2018_options['rk_jn'] == 1) {
-		if ($result['game_rk'] == 1) {
-			$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_36']}</span></td></tr>";
-		}
+		if ($wm2018_options['rk_jn'] == 1) {
+			if ($result['game_rk'] == 1) {
+				$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_36']}</span></td></tr>";
+			}
 
-		if ($result['game_rk'] == 0) {
-			$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_37']}</span></td></tr>";
+			if ($result['game_rk'] == 0) {
+				$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_37']}</span></td></tr>";
+				$gamed_rk = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_37']}</span></td></tr>";
+			}
 		}
-	}
-	if ($wm2018_options['elfer_jn'] == 1) {
-		if ($result['game_elfer'] == 1) {
-			$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_38']}</span></td></tr>";
+		if ($wm2018_options['elfer_jn'] == 1) {
+			if ($result['game_elfer'] == 1) {
+				$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_38']}</span></td></tr>";
+			}
+			if ($result['game_elfer'] == 0) {
+				$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_39']}</span></td></tr>";
+			}
 		}
-		if ($result['game_elfer'] == 0) {
-			$gamed_elfer = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_39']}</span></td></tr>";
-		}
+	} else {
+		$gamed_gk = '';
+		$gamed_rk = '';
+		$gamed_elfer = '';
+		$gamed_stillrunning = "<tr><td class=\"tablea\" align=\"center\"><span class=\"normalfont\">{$lang->items['LANG_WM2018_PHP_62']}</span></td></tr>";
 	}
 
 	$linkjn = 0;
@@ -1537,7 +1546,6 @@ if ($action == "gamedetails") {
 			if ($row['gk'] == 1) {
 				$game_gk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
 			}
-
 		}
 		if ($wm2018_options['rk_jn'] == 1) {
 			if ($row['rk'] == 0) {
@@ -1547,7 +1555,6 @@ if ($action == "gamedetails") {
 			if ($row['rk'] == 1) {
 				$game_rk = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
 			}
-
 		}
 		if ($wm2018_options['elfer_jn'] == 1) {
 			if ($row['elfer'] == 0) {
@@ -1557,7 +1564,6 @@ if ($action == "gamedetails") {
 			if ($row['elfer'] == 1) {
 				$game_elfer = "<img src=\"images/wm2018/ok.gif\" border=\"0\" alt=\"{$lang->items['LANG_WM2018_PHP_29']}\" title=\"{$lang->items['LANG_WM2018_PHP_29']}\" />";
 			}
-
 		}
 
 		// Tendenzbildchen
@@ -1672,7 +1678,7 @@ if ($action == "gamedetails") {
 			}
 		}
 
-		if (!empty($result_gamedetails['game_goals_1']) || $result_gamedetails['game_goals_1'] == '0' || $result_gamedetails['game_goals_1'] == '0') {
+		if (!empty($result_gamedetails['game_goals_1']) || $result_gamedetails['game_goals_1'] == '0') {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit") . "\";");
 		} else {
 			eval("\$wm2018_tippsprogame_bit .= \"" . $tpl->get("wm2018_tippsprogame_bit_gameisbeeingplayed") . "\";");

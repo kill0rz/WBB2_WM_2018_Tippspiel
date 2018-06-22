@@ -219,9 +219,9 @@
 <text:LANG_WM2018_PHP_32>Tipp war nicht richtig</LANG_WM2018_PHP_32:text>
 <text:LANG_WM2018_PHP_33>Tendenz war richtig</LANG_WM2018_PHP_33:text>
 <text:LANG_WM2018_PHP_34>Es gab gelbe Karten im Spiel</LANG_WM2018_PHP_34:text>
-<text:LANG_WM2018_PHP_35>Es gab keine gelben Karten im Spiel</LANG_WM2018_PHP_35:text>
-<text:LANG_WM2018_PHP_36>Es gab gelb-rote/rote Karten im Spiel</LANG_WM2018_PHP_36:text>
-<text:LANG_WM2018_PHP_37>Es gab keine gelb-roten/roten Karten im Spiel</LANG_WM2018_PHP_37:text>
+<text:LANG_WM2018_PHP_35>Es gab keine gelben Karten im Spiel.</LANG_WM2018_PHP_35:text>
+<text:LANG_WM2018_PHP_36>Es gab gelb-rote/rote Karten im Spiel.</LANG_WM2018_PHP_36:text>
+<text:LANG_WM2018_PHP_37>Es gab keine gelb-roten/roten Karten im Spiel.</LANG_WM2018_PHP_37:text>
 <text:LANG_WM2018_PHP_38>Es gab Elfmeter im Spiel</LANG_WM2018_PHP_38:text>
 <text:LANG_WM2018_PHP_39>Es gab keine Elfmeter im Spiel</LANG_WM2018_PHP_39:text>
 <text:LANG_WM2018_PHP_4>Achtelfinale</LANG_WM2018_PHP_4:text>
@@ -248,6 +248,7 @@
 <text:LANG_WM2018_PHP_59>Du hast noch keinen Vize-Weltmeister-Tipp abgegeben, den Du editieren k&ouml;nntest.<br />Du wirst jetzt auf die WM2018-Startseite weitergeleitet.</LANG_WM2018_PHP_59:text>
 <text:LANG_WM2018_PHP_60>Du kannst Dir nur Spieltipps ansehen von Spielen, die schon vorbei sind.</LANG_WM2018_PHP_60:text>
 <text:LANG_WM2018_PHP_61>Der Nutzer existiert nicht.</LANG_WM2018_PHP_61:text>
+<text:LANG_WM2018_PHP_62>Die Ergenbnisse erscheinen, wenn das Spiel eingetragen wurde.</LANG_WM2018_PHP_62:text>
 <text:LANG_WM2018_PHP_6>Viertelfinale</LANG_WM2018_PHP_6:text>
 <text:LANG_WM2018_PHP_7>Spiel</LANG_WM2018_PHP_7:text>
 <text:LANG_WM2018_PHP_8>Halbfinale</LANG_WM2018_PHP_8:text>
