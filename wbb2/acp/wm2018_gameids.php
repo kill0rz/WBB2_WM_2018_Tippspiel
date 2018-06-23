@@ -7,11 +7,11 @@ $gameids = array(
 	'lastgroupgame_b' => 36,
 	'lastgroupgame_c' => 38,
 	'lastgroupgame_d' => 40,
-	'lastgroupgame_e' => 44,
-	'lastgroupgame_f' => 42,
-	'lastgroupgame_g' => 48,
-	'lastgroupgame_h' => 46,
-	'vorrundenspiel' => 48,
+	'lastgroupgame_e' => 42,
+	'lastgroupgame_f' => 44,
+	'lastgroupgame_g' => 46,
+	'lastgroupgame_h' => 48,
+	'vorrundenspiel' => 46,
 	'achtelfinal1' => 49,
 	'achtelfinal2' => 50,
 	'achtelfinal3' => 51,
@@ -32,15 +32,15 @@ $gameids = array(
 
 // Erklärung: für jedes Spiel werden die nächsten, direkt beeinflussten Spiele angegeben
 // Diese Funktionalität wird für das Editieren der Spiele benötigt.
-// Hier treten nur die Spiele auf, die kritisch sind (letzte Vorrundenspiele pro Gruppe + alles ab 8telfinale)
+// Hier treten nur die Spiele auf, die kritisch sind (letzte Vorrundenspiele pro Gruppe + alles ab 8.Finale)
 // Aufbau: {Gewinner/Verlier des Ausgangsspiels}-{Nummer des neuen Spiels}-{Team 1 oder 2 des neuen Spiels}
 $gameids_kette = array(
 	34 => array('W-50-1', 'W-51-2'),
 	36 => array('W-50-1', 'W-51-2'),
 	38 => array('W-49-1', 'W-52-2'),
 	40 => array('W-49-1', 'W-52-2'),
-	44 => array('W-54-1', 'W-56-2'),
 	42 => array('W-54-1', 'W-56-2'),
+	44 => array('W-54-1', 'W-56-2'),
 	48 => array('W-53-1', 'W-55-2'),
 	46 => array('W-53-1', 'W-55-2'),
 	49 => array('W-57-1'),
@@ -62,5 +62,3 @@ $gameids_kette = array(
 $gruppenids = array("A", "B", "C", "D", "E", "F", "G", "H");
 
 // Konfiguration Ende
-
-?>
