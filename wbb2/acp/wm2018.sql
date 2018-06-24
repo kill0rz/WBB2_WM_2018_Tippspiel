@@ -322,3 +322,19 @@ UPDATE `bb1_wm2018_spiele` SET `gruppe` = 'H' WHERE `gameid` = '48';
 
 -- 10.06.2018: Fix falsche Spielzeiten wegen Sommerzeit
 UPDATE `bb1_wm2018_spiele` SET `datetime` = `datetime`-3600;
+
+-- 24.06.2018: Fix falsche eingetragene Spieldaten
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530108000' WHERE `gameid` = '43';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530108000' WHERE `gameid` = '44';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530122400' WHERE `gameid` = '41';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530122400' WHERE `gameid` = '42';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530194400' WHERE `gameid` = '48';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530194400', `team_1_id` = '32', `team_2_id` = '29' WHERE `gameid` = '47';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530208800' WHERE `gameid` = '45';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530208800' WHERE `gameid` = '46';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530540000' WHERE `gameid` = '54';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530554400' WHERE `gameid` = '53';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530626400' WHERE `gameid` = '56';
+UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530640800' WHERE `gameid` = '55';
+UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-53', `team_2_id` = 'W-54' WHERE `gameid` = '58';
+UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-55', `team_2_id` = 'W-56' WHERE `gameid` = '59';
