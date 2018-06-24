@@ -627,7 +627,7 @@ if ($action == "showresults") {
 	}
 
 	if ($auswahl == 1) {
-		$gruppen = "A,B,C,D,E,F,G,H";
+		$gruppen = implode($gruppenids, ",");
 		$type = $lang->items['LANG_WM2018_PHP_3'];
 	}
 	if ($auswahl == 2) {
