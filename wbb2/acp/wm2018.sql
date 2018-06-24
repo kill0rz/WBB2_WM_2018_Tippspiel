@@ -338,3 +338,5 @@ UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530626400' WHERE `gameid` = '56';
 UPDATE `bb1_wm2018_spiele` SET `datetime` = '1530640800' WHERE `gameid` = '55';
 UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-53', `team_2_id` = 'W-54' WHERE `gameid` = '58';
 UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-55', `team_2_id` = 'W-56' WHERE `gameid` = '59';
+UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-59', `team_2_id` = 'W-60' WHERE `gameid` = '62';
+UPDATE `bb1_wm2018_spiele` SET `team_1_id` = 'W-57', `team_2_id` = 'W-58' WHERE `gameid` = '61';
