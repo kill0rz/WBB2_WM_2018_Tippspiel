@@ -289,7 +289,7 @@ if ($action == "index") {
 	}
 
 	$gruppensort = substr($gruppensort, 0, 1);
-	$result_gruppentabelle = $db->query("SELECT * FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . addslashes($gruppensort) . "' ORDER BY punkte DESC, td DESC, g DESC");
+	$result_gruppentabelle = $db->query("SELECT * FROM bb" . $n . "_wm2018_teams WHERE gruppe = '" . addslashes($gruppensort) . "' ORDER BY punkte DESC, td DESC, g DESC" . ($gruppensort == "B") ? ", name DESC" : "");
 	while ($row_gruppentabelle = $db->fetch_array($result_gruppentabelle)) {
 		$rowclass = getone($count++, "tablea", "tableb");
 		eval("\$wm2018_gruppentabelle .= \"" . $tpl->get("wm2018_gruppentabelle") . "\";");

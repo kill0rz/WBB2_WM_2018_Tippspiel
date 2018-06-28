@@ -24,3 +24,4 @@ ToDo für die EM 2020:
 + SQL: Datentypen von team_1_id und team_2_id in bb1_em2020_spiele in INT ändern (ggf. in SQL-Queries ebenfalls bearbeiten)
 + addslashes durch mysqli_real_escape_string ersetzen?
 + Autofocus in erstes Feld bei ?action=tippabgabe
++ rm: Fix Gruppe B Sortierung in wm2018.php:292
