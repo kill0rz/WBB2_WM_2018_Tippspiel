@@ -4,6 +4,9 @@ Bugtracker und Featurewünsche aus WM 2018:
 + Tabelle im Tippspiel: Die letzten 4 Spiele
 + Indextabelle:
 	+ die nächsten 4 Spiele
++ Editfunktion
+	+ nochmal checken, ob alles beachtet wird
+	+ Gruppentabelle ab Achtelfinale nicht mehr updaten
 
 
 USERWÜNSCHE
