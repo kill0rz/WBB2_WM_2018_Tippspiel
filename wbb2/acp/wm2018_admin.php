@@ -369,7 +369,7 @@ if ($action == "result_add") {
 	$result = $db->query("SELECT gameid FROM bb" . $n . "_wm2018_spiele WHERE team_1_id AND team_2_id AND game_goals_1 != '' AND game_goals_2 != '' AND gameid < " . intval($_REQUEST['gameid']) . " ORDER BY datetime ASC");
 
 	$entry_games_until = intval($_REQUEST['gameid']) - 1;
-	if (intval($_REQUEST['gameid']) > $gameids['vorrundenspiel'] && $db->num_rows($result) != $entry_games_until) {
+	if (intval($_REQUEST['gameid']) > $gameids['vorrundenspiel'] && $db->num_rows($result) != $entry_games_until && intval($_REQUEST['gameid']) != 54 && intval($_REQUEST['gameid']) != 56) {
 		// error
 		eval("\$tpl->output(\"" . $tpl->get('wm2018_result_add_error', 1) . "\");");
 	} else {

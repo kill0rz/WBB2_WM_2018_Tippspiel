@@ -28,3 +28,4 @@ ToDo für die EM 2020:
 + addslashes durch mysqli_real_escape_string ersetzen?
 + Autofocus in erstes Feld bei ?action=tippabgabe
 + rm: Fix Gruppe B Sortierung in wm2018.php:292
++ rm: Fix Falsche Spielreihenfolge in wm2018_admin.php:372
