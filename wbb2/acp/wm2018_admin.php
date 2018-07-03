@@ -411,7 +411,7 @@ if ($action == "result_save") {
 			$result_lastreset = $db->query_first("SELECT lasttageswertungreset FROM bb" . $n . "_wm2018_options LIMIT 1;");
 
 			// Wenn nein, dann fahre ein Update
-			if (date("d", $result_lastreset['lasttageswertungreset']) < date("d", time())) {
+			if (date("Ymd", $result_lastreset['lasttageswertungreset']) < date("Ymd", time())) {
 				$db->query("DROP TABLE IF EXISTS bb" . $n . "_wm2018_vortag");
 				$db->query("CREATE TABLE `bb" . $n . "_wm2018_vortag` (`id` int(5) NOT NULL AUTO_INCREMENT, `userid` int(10) DEFAULT NULL, `punkte` int(10) DEFAULT NULL, `pos` int(10) NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `id` (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;");
 				$db->query("UPDATE bb" . $n . "_wm2018_options SET lasttageswertungreset = '" . time() . "';");
