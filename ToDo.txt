@@ -31,3 +31,4 @@ ToDo für die EM 2020:
 + Autofocus in erstes Feld bei ?action=tippabgabe
 + rm: Fix Gruppe B Sortierung in wm2018.php:292
 + rm: Fix Falsche Spielreihenfolge in wm2018_admin.php:372
++ wm2018.php:209,:233 --> schöner machen

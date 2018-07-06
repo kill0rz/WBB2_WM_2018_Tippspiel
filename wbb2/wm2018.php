@@ -859,7 +859,7 @@ if ($action == "tippabgabe") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && (intval($_POST['tipp_1'])) == intval($_POST['tipp_2'])) {
+		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && intval($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=tippabgabe&amp;gameid={$_POST['gameid']}" . $SID_ARG_2ND);
 		}
 
@@ -1830,7 +1830,7 @@ if ($action == "edittipp") {
 		}
 
 		// Prüfen ob Achtelfinale, Viertelfinale, Halbfinale, Spiel um Platz 3 oder Finale und Tipp unentschieden
-		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && (intval($_POST['tipp_1']) == intval($_POST['tipp_2']))) {
+		if (intval($_POST['gameid']) > $gameids['vorrundenspiel'] && intval($_POST['tipp_1']) == intval($_POST['tipp_2'])) {
 			redirect($lang->get("LANG_WM2018_PHP_41"), $url = "wm2018.php?action=edittipp&amp;gameid={$_POST['gameid']}&amp;userid={$wbbuserdata['userid']}" . $SID_ARG_2ND);
 		}
 
